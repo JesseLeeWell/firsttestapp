@@ -4,14 +4,7 @@ function onDeviceReady() {
 	navigator.splashscreen.hide();
 	deviceInfoApp = new deviceInfoApp();
 	deviceInfoApp.run();
-	var ref = window.open('https://www.continuetogive.com', '_blank', 'location=yes');
-	ref.addEventListener('loadstop', 
-		function(event) 
-		{ 
-			var s = event.url;
-			alert(s.indexOf("home/churches") != -1);
-			
-		});
+	
 }
 
 function openPage(page)
@@ -27,6 +20,9 @@ var ref = window.open(page, '_blank', 'location=yes');
 		});
 	*/
 	ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
+	ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
+         ref.addEventListener('exit', function(event) { alert(event.type); });
+
 
 		//mCordovaWebView.sendJavaScript("javascript:cardswipefilldata('123', '123', '123', '123', '123', '123', '123', '123', '123')");
 alert("done with page");
