@@ -10,22 +10,8 @@ function onDeviceReady() {
 function openPage(page)
 {
 alert("start of page");
-var ref = window.open(page, '_self', 'location=yes');
-/*
-	ref.addEventListener('loadstop', 
-		function(event) 
-		{ 
-			alert("done loading");
-			
-		});
-	*/
-	ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
-	ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
-         ref.addEventListener('exit', function(event) { alert(event.type); });
-setInterval(function(){mCordovaWebView.sendJavaScript("javascript:cardswipefilldata('123', '123', '123', '123', '123', '123', '123', '123', '123')");},3000);
+var ref = window.open(page, '_blank', 'location=yes');
 
-		//ref.sendJavaScript("javascript:cardswipefilldata('123', '123', '123', '123', '123', '123', '123', '123', '123')");
-alert("done with page");
 }
 
 
