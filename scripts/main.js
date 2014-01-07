@@ -4,7 +4,7 @@ function onDeviceReady() {
 	navigator.splashscreen.hide();
 	deviceInfoApp = new deviceInfoApp();
 	deviceInfoApp.run();
-	
+	alert( device.uuid);
 }
 
 function openPage(page)
