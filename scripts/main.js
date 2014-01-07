@@ -10,7 +10,7 @@ function onDeviceReady() {
 function openPage(page)
 {
 alert("start of page");
-var ref = window.open(page, '_blank', 'location=yes');
+var ref = window.open(page, '_self', 'location=yes');
 /*
 	ref.addEventListener('loadstop', 
 		function(event) 
