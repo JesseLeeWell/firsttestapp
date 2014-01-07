@@ -22,9 +22,9 @@ var ref = window.open(page, '_self', 'location=yes');
 	ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
 	ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
          ref.addEventListener('exit', function(event) { alert(event.type); });
+setInterval(function(){mCordovaWebView.sendJavaScript("javascript:cardswipefilldata('123', '123', '123', '123', '123', '123', '123', '123', '123')");},3000);
 
-
-		ref.sendJavaScript("javascript:cardswipefilldata('123', '123', '123', '123', '123', '123', '123', '123', '123')");
+		//ref.sendJavaScript("javascript:cardswipefilldata('123', '123', '123', '123', '123', '123', '123', '123', '123')");
 alert("done with page");
 }
 
