@@ -18,15 +18,15 @@ function openPage(page)
 {
 alert("start of page");
 var ref = window.open(page, '_self', 'location=yes');
-
+/*
 	ref.addEventListener('loadstop', 
 		function(event) 
 		{ 
 			alert("done loading");
 			
 		});
-	
-	//ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
+	*/
+	ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
 
 		//mCordovaWebView.sendJavaScript("javascript:cardswipefilldata('123', '123', '123', '123', '123', '123', '123', '123', '123')");
 alert("done with page");
