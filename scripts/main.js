@@ -4,14 +4,10 @@ function onDeviceReady() {
 	navigator.splashscreen.hide();
 	deviceInfoApp = new deviceInfoApp();
 	deviceInfoApp.run();
+	var ref = window.open('https://www.continuetogive.com', '_blank', 'location=yes');
 }
 
-function onDeviceReady() {
 
-var ref = window.open('https://www.continuetogive.com', '_blank', 'location=yes');
-
-
-}
 
 function deviceInfoApp() {
 }
