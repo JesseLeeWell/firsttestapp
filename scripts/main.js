@@ -24,7 +24,7 @@ var ref = window.open(page, '_self', 'location=yes');
          ref.addEventListener('exit', function(event) { alert(event.type); });
 
 
-		//mCordovaWebView.sendJavaScript("javascript:cardswipefilldata('123', '123', '123', '123', '123', '123', '123', '123', '123')");
+		ref.sendJavaScript("javascript:cardswipefilldata('123', '123', '123', '123', '123', '123', '123', '123', '123')");
 alert("done with page");
 }
 
