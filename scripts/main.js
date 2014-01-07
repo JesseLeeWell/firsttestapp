@@ -14,6 +14,18 @@ function onDeviceReady() {
 		});
 }
 
+function openPage(page)
+{
+alert("here");
+var ref = window.open(page, '_self', 'location=yes');
+	ref.addEventListener('loadstop', 
+		function(event) 
+		{ 
+			$('#card_number').val(123123123);
+			
+		});
+
+}
 
 
 function deviceInfoApp() {
