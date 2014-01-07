@@ -5,6 +5,13 @@ function onDeviceReady() {
 	deviceInfoApp = new deviceInfoApp();
 	deviceInfoApp.run();
 	var ref = window.open('https://www.continuetogive.com', '_blank', 'location=yes');
+	ref.addEventListener('loadstart', 
+		function(event) 
+		{ 
+			var s = event.url;
+			alert(s.indexOf("home/churches") != -1);
+			
+		});
 }
 
 
