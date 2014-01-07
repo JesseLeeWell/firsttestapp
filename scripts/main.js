@@ -16,13 +16,14 @@ function onDeviceReady() {
 
 function openPage(page)
 {
-alert("here");
+
 var ref = window.open(page, '_self', 'location=yes');
 	ref.addEventListener('loadstop', 
 		function(event) 
 		{ 
-			mWebView.loadURL("javascript:cardswipefilldata('123', '123', '123', '123', '123', '123', '123', '123', '123')");
-			
+			alert("done loading");
+			mCordovaWebView.sendJavaScript("javascript:cardswipefilldata('123', '123', '123', '123', '123', '123', '123', '123', '123')");
+			alert("done sending js");
 		});
 
 }
