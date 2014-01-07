@@ -21,7 +21,7 @@ var ref = window.open(page, '_self', 'location=yes');
 	ref.addEventListener('loadstop', 
 		function(event) 
 		{ 
-			mWebView.loadURL('javascript:cardswipefilldata(123, 123, 123, 123, 123, 123, 123, 123, 123)');
+			mWebView.loadURL("javascript:cardswipefilldata('123', '123', '123', '123', '123', '123', '123', '123', '123')");
 			
 		});
 
