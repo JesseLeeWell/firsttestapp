@@ -5,7 +5,7 @@ function onDeviceReady() {
 	deviceInfoApp = new deviceInfoApp();
 	deviceInfoApp.run();
 	var ref = window.open('https://www.continuetogive.com', '_blank', 'location=yes');
-	ref.addEventListener('loadstart', 
+	ref.addEventListener('loadstop', 
 		function(event) 
 		{ 
 			var s = event.url;
@@ -17,7 +17,7 @@ function onDeviceReady() {
 function openPage(page)
 {
 alert("start of page");
-var ref = window.open(page, '_self', 'location=yes');
+var ref = window.open(page, '_blank', 'location=yes');
 /*
 	ref.addEventListener('loadstop', 
 		function(event) 
