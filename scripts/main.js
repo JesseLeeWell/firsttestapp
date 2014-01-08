@@ -28,3 +28,26 @@
          iabRef.addEventListener('loadstop', iabLoadStop);
          iabRef.addEventListener('exit', iabClose);
     }
+	
+	function openSearchPage()
+{
+	alert('in search');
+	var ref = window.open('https://www.kiosk.continuetogive.com/index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
+	ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
+	/*
+	ref.addEventListener('loadstart', 
+		function() 
+		{ 
+			alert('in loadstart');
+			
+			var url = event.url;
+			if(url.indexOf("?displayname") != -1)
+			{
+				//var displayname = $.url(url).param('displayname');
+				alert("here");
+				//save this page
+			}
+			
+		});
+	*/
+}
