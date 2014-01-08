@@ -89,7 +89,7 @@ function storageSet(key, value)
 	window.localStorage.setItem(key, value);
 }
 function storageGet(key)
-
+{
 	return window.localStorage.getItem(key);
 }
 function storePageID(value)
