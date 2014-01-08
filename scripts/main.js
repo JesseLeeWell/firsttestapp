@@ -27,9 +27,8 @@ function iabLoadStart(event) {
 	
 	if(cururl.indexOf("?displayname") != -1)
 	{
-		storeFullURL(cururl);
-		setupDonationAndPurchaseButtons();
-		
+		storeURLInfo(cururl);		
+		setupDonationAndPurchaseButtons();	
 		
 	}
 }
@@ -112,11 +111,18 @@ function getPageID()
 {
 	return storageGet(_storagePageID);
 }
-
-function setupDonationAndPurchaseButtons()
+function getDisplayName()
 {
-	var fullURL = storageGet(_storageFullURL);
-	//now get the pageid
+	return storageGet(_storageDisplayName);
+}
+function getFullURL()
+{
+	return storageGet(_storageFullURL);
+}
+function storeURLInfo(fullURL)
+{
+	
+	storeFullURL(fullURL);
 	var pageid = findPageID(fullURL);
 	//get displayname
 	var displayname = getParameterByName("displayname", fullURL);
@@ -124,6 +130,14 @@ function setupDonationAndPurchaseButtons()
 	//save these
 	storePageID(pageid);
 	storeDisplayName(displayname);
+}
+function setupDonationAndPurchaseButtons()
+{
+	var fullURL = getFullURL();
+	//now get the pageid
+	
+	var pageid = getPageID();
+	var displayname = getDisplayName();
 	
 	var infoField = document.getElementById("savedSearchDonationButton");
 	infoField.innerHTML = displayname;
@@ -140,5 +154,7 @@ function findPageID(fullURL)
 	//var donationURL = "https://www.kiosk.continuetogive.com/1597539/show_donation_prompt?donation_template.amount";
 	var urlAux = fullURL.split('/');
     var pageid = urlAux[3];
+	urlAux = pageid.split('?');
+	pageid = urlAux[0];
 	return pageid;
 }
