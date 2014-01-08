@@ -23,12 +23,16 @@
     // Cordova is ready
     //
     function onDeviceReady() {
-         iabRef = window.open('http://apache.org', '_blank', 'location=yes');
-         iabRef.addEventListener('loadstart', iabLoadStart);
-         iabRef.addEventListener('loadstop', iabLoadStop);
-         iabRef.addEventListener('exit', iabClose);
+         openstartpage();
     }
 	
+	function openstartpage()
+	{
+		iabRef = window.open('http://apache.org', '_blank', 'location=yes');
+		 iabRef.addEventListener('loadstart', iabLoadStart);
+		 iabRef.addEventListener('loadstop', iabLoadStop);
+		 iabRef.addEventListener('exit', iabClose);
+	}
 	function openSearchPage()
 {
 	alert('in search');
