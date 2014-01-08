@@ -42,7 +42,8 @@ function iabClose(event) {
     // Cordova is ready
     //
 function onDeviceReady() {
-	window.localStorage.getItem("displayname", "displayname");
+	var displayname = window.localStorage.getItem("displayname", "displayname");
+	alert(displayname);
 }
 	
 function openstartpage()
