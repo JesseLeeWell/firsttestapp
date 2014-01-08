@@ -50,6 +50,7 @@
 			alert('in loadstart search');
 			
 			var url = event.url;
+			alert(url);
 			if(url.indexOf("?displayname") != -1)
 			{
 				//var displayname = $.url(url).param('displayname');
