@@ -77,7 +77,7 @@ function getParameterByName(name, url) {
 
 function openDonationPage(extras)
 {
-	var pageid = window.localStorage.getItem("pageid");
+	var pageid = getPageID();
 	var url =_kioskURL + pageid + extras;
 	iabRef = window.open(url, '_blank', 'location=yes');	
 	
@@ -103,6 +103,10 @@ function storeFullURL(value)
 function storeDisplayName(value)
 {
 	storageSet(_storageDisplayName, value);
+}
+function getPageID()
+{
+	return storageGet(_storagePageID);
 }
 
 function setupDonationAndPurchaseButtons()
