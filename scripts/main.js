@@ -8,6 +8,22 @@
     function iabLoadStart(event) { 
         alert(event.type + ' - ' + event.url);
     }
+	
+	 function iabLoadStartSearch(event) { 
+        alert(event.type + ' - ' + event.url);
+		alert('in loadstart search');
+		alert(event.type + ' - ' + event.url);
+		cururl = event.url;
+		alert(event.type + ' - ' + event.url);
+		alert(cururl);
+		if(cururl.indexOf("?displayname") != -1)
+		{
+			//var displayname = $.url(url).param('displayname');
+			alert("here");
+			//save this page
+		}
+    }
+
 
     function iabLoadStop(event) {
         alert(event.type + ' - ' + event.url);
@@ -44,22 +60,7 @@
 	//ref = window.open('https://www.kiosk.continuetogive.com/index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
 	//ref.addEventListener('loadstart', iabLoadStart);
 	
-	iabRef.addEventListener('loadstart', 
-		function() 
-		{ 
-			alert(event.type + ' - ' + event.url);
-			alert('in loadstart search');
-			alert(event.type + ' - ' + event.url);
-			cururl = event.url;
-			alert(event.type + ' - ' + event.url);
-			alert(cururl);
-			if(cururl.indexOf("?displayname") != -1)
-			{
-				//var displayname = $.url(url).param('displayname');
-				alert("here");
-				//save this page
-			}
-			
-		});
+	iabRef.addEventListener('loadstart', iabLoadStartSearch);
+	 iabRef.addEventListener('exit', iabClose);
 	
 }
