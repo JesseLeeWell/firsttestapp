@@ -5,7 +5,7 @@
     // Global InAppBrowser reference
     var iabRef = null;
 
-    function iabLoadStart(event) { alert('in load start');
+    function iabLoadStart(event) { 
         alert(event.type + ' - ' + event.url);
     }
 
@@ -48,8 +48,9 @@
 		function() 
 		{ 
 			alert('in loadstart search');
-			
+			alert(event.type + ' - ' + event.url);
 			cururl = event.url;
+			alert(event.type + ' - ' + event.url);
 			alert(cururl);
 			if(cururl.indexOf("?displayname") != -1)
 			{
