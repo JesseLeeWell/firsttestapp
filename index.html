@@ -18,12 +18,13 @@
 		<div class="content">
             <div class="action-area ch70">
 			
-                <button class="button dh" onclick ="javascript:openSignupPage();">Sign Up</button>
+                <button class="button dh" onclick ="javascript:openSignupPage();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Sign Up</button>
 				<button class="button dh" onclick ="javascript:openSearchPage();">Search</button>
 				<button class="button dh" id="savedSearchDonationButton" onclick ="javascript:openDonationPage('');"></button>
 				<button class="button dh" id="savedSearchPOSButton" onclick ="javascript:openDonationPage('/donation_prompt?show_purchase_form=true');"></button>
-				<a class="button dh" href="securekiosk.html">Secure Kiosk</a>
+				
 				<a href="securekiosk.html" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true">dialog</a>
+				<a href="securekiosk.html" data-role="button" data-transition="slidefade" data-inline="true">page</a>
 				
 			</div>
             <div class="result-area ch30">
