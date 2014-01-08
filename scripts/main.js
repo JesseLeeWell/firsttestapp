@@ -26,7 +26,7 @@ function openSearchPage()
 		function() 
 		{ 
 			alert('in loadstart');
-			/*
+			
 			var url = event.url;
 			if(url.indexOf("?displayname") != -1)
 			{
@@ -34,7 +34,7 @@ function openSearchPage()
 				alert("here");
 				//save this page
 			}
-			*/
+			
 		});
 	*/
 }
