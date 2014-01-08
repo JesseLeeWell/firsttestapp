@@ -5,7 +5,7 @@
     // Global InAppBrowser reference
     var iabRef = null;
 
-    function iabLoadStart(event) {
+    function iabLoadStart(event) { alert('in load start');
         alert(event.type + ' - ' + event.url);
     }
 
@@ -33,8 +33,8 @@
 {
 	alert('in search');
 	var ref = null;
-	iabRef = window.open('https://www.kiosk.continuetogive.com/index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
-	iabRef.addEventListener('loadstart', function() { alert('start: ' + event.url); });
+	ref = window.open('https://www.kiosk.continuetogive.com/index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
+	ref.addEventListener('loadstart', iabLoadStart);
 	/*
 	ref.addEventListener('loadstart', 
 		function() 
