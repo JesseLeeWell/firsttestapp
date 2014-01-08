@@ -80,6 +80,9 @@ function openDonationPage(extras)
 	var pageid = getPageID();
 	var url =_kioskURL + pageid + extras;
 	alert(url);
+	alert(_kioskURL);
+	alert(pageid);
+	alert(extras);
 	iabRef = window.open(url, '_blank', 'location=yes');	
 	
 	iabRef.addEventListener('exit', iabClose);
