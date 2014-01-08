@@ -2,7 +2,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 	//navigator.splashscreen.hide();
-	
+	alert("here");
 	 var ref = window.open('http://apache.org', '_blank', 'location=yes');
          ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
          ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
