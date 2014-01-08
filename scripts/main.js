@@ -5,7 +5,7 @@ function onDeviceReady() {
 	deviceInfoApp = new deviceInfoApp();
 	deviceInfoApp.run();
 	
-	window.localStorage.setItem("key", "value");
+	//window.localStorage.setItem("key", "value");
         //var keyname = window.localStorage.key(i);
         // keyname is now equal to "key"
         var value = window.localStorage.getItem("key");
