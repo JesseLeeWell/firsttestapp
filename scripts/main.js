@@ -49,9 +49,9 @@
 		{ 
 			alert('in loadstart search');
 			
-			var url = event.url;
-			alert(url);
-			if(url.indexOf("?displayname") != -1)
+			var cururl = event.url;
+			alert(cururl);
+			if(cururl.indexOf("?displayname") != -1)
 			{
 				//var displayname = $.url(url).param('displayname');
 				alert("here");
