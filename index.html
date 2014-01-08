@@ -14,14 +14,10 @@
 		<div class="content">
             <div class="action-area ch70">
 			
-                <button class="button dh" id="deviceName">Device Name</button>
-				<button class="button dh" id="deviceCordovaVersion">Cordova version</button>
-                <button class="button dh" id="devicePlatform">Device patform</button>
-				<button class="button dh" id="deviceUUID">Device UUID</button>
-                <button class="button dh" id="deviceVersion">Device version</button>
-				
+                <button class="button dh" onclick ="javascript:openSignupPage();">Sign Up</button>
 				<button class="button dh" onclick ="javascript:openSearchPage();">Search</button>
-				<button class="button dh" id="savedSearchDonationButton" onclick ="javascript:openDonationPage();"></button>
+				<button class="button dh" id="savedSearchDonationButton" onclick ="javascript:openDonationPage('');"></button>
+				<button class="button dh" id="savedSearchPOSButton" onclick ="javascript:openDonationPage('/donation_prompt?show_purchase_form=true');"></button>
 			
 				
 			</div>
