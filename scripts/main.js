@@ -10,7 +10,8 @@ function onDeviceReady() {
         // keyname is now equal to "key"
         var value = window.localStorage.getItem("key");
         // value is now equal to "value"
-        window.localStorage.removeItem("key");
+		alert (value);
+        //window.localStorage.removeItem("key");
         window.localStorage.setItem("key2", "value2");
 
 		
