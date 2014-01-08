@@ -36,9 +36,13 @@
 	function openSearchPage()
 {
 	alert('in search');
-	var ref = null;
-	ref = window.open('https://www.kiosk.continuetogive.com/index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
-	ref.addEventListener('loadstart', iabLoadStart);
+	iabRef = window.open('https://www.kiosk.continuetogive.com/index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
+	 iabRef.addEventListener('loadstart', iabLoadStart);
+	 iabRef.addEventListener('loadstop', iabLoadStop);
+	 iabRef.addEventListener('exit', iabClose);
+	//var ref = null;
+	//ref = window.open('https://www.kiosk.continuetogive.com/index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
+	//ref.addEventListener('loadstart', iabLoadStart);
 	/*
 	ref.addEventListener('loadstart', 
 		function() 
