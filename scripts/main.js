@@ -23,6 +23,7 @@ function openSearchPage()
 	ref.addEventListener('loadstart', 
 		function() 
 		{ 
+			alert('in loadstart');
 			var url = event.url;
 			if(url.indexOf("?displayname") != -1)
 			{
