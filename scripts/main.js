@@ -20,7 +20,7 @@ function iabLoadStart(event) {
 			
 		alert(displayname);
 		//displayname = $.url(url).param('displayname');
-		window.localStorage.setItem("displayname", "displayname");
+		window.localStorage.setItem("displayname", displayname);
 		alert("here");
 		//alert(displayname);
 		//save this page
@@ -42,7 +42,7 @@ function iabClose(event) {
     // Cordova is ready
     //
 function onDeviceReady() {
-	
+	window.localStorage.getItem("displayname", "displayname");
 }
 	
 function openstartpage()
