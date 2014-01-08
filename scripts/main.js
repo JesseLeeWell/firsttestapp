@@ -49,7 +49,7 @@
 		{ 
 			alert('in loadstart search');
 			
-			var cururl = event.url;
+			cururl = event.url;
 			alert(cururl);
 			if(cururl.indexOf("?displayname") != -1)
 			{
