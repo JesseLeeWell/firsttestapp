@@ -15,10 +15,22 @@ function iabLoadStart(event) {
 	
 	if(cururl.indexOf("?displayname") != -1)
 	{
-		displayname = $.url(url).param('displayname');
+		var urlParams;
+		var match,
+        pl     = /\+/g,  // Regex for replacing addition symbol with a space
+        search = /([^&=]+)=?([^&]*)/g,
+        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+        query  = window.location.search.substring(1);
+
+		urlParams = {};
+		while (match = search.exec(query))
+			urlParams[decode(match[1])] = decode(match[2]);
+			
+		alert(urlParams["displayname"]);
+		//displayname = $.url(url).param('displayname');
 		window.localStorage.setItem("displayname", "displayname");
 		alert("here");
-		alert(displayname);
+		//alert(displayname);
 		//save this page
 	}
 }
