@@ -1,66 +1,59 @@
  // Wait for Cordova to load
     //
-    document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReady, false);
 
     // Global InAppBrowser reference
-    var iabRef = null;
+var iabRef = null;
 
-    function iabLoadStart(event) { 
-        alert(event.type + ' - ' + event.url);
-    }
+function iabLoadStart(event) { 
+	alert(event.type + ' - ' + event.url);
+}
+
+ function iabLoadStartSearch(event) { 
 	
-	 function iabLoadStartSearch(event) { 
-        alert(event.type + ' - ' + event.url);
-		alert('in loadstart search');
-		alert(event.type + ' - ' + event.url);
-		cururl = event.url;
-		alert(event.type + ' - ' + event.url);
-		alert(cururl);
-		if(cururl.indexOf("?displayname") != -1)
-		{
-			//var displayname = $.url(url).param('displayname');
-			alert("here");
-			//save this page
-		}
-    }
+	cururl = event.url;
+	
+	if(cururl.indexOf("?displayname") != -1)
+	{
+		displayname = $.url(url).param('displayname');
+		window.localStorage.setItem("displayname", "displayname");
+		alert("here");
+		alert(displayname);
+		//save this page
+	}
+}
 
 
-    function iabLoadStop(event) {
-        alert(event.type + ' - ' + event.url);
-    }
+function iabLoadStop(event) {
+	alert(event.type + ' - ' + event.url);
+}
 
-    function iabClose(event) {
-         alert(event.type);
-         iabRef.removeEventListener('loadstart', iabLoadStart);
-         iabRef.removeEventListener('loadstop', iabLoadStop);
-         iabRef.removeEventListener('exit', iabClose);
-    }
+function iabClose(event) {
+	 alert(event.type);
+	 iabRef.removeEventListener('loadstart', iabLoadStart);
+	 iabRef.removeEventListener('loadstop', iabLoadStop);
+	 iabRef.removeEventListener('exit', iabClose);
+}
 
     // Cordova is ready
     //
-    function onDeviceReady() {
-        
-    }
+function onDeviceReady() {
 	
-	function openstartpage()
-	{
-		iabRef = window.open('http://apache.org', '_blank', 'location=yes');
-		 iabRef.addEventListener('loadstart', iabLoadStart);
-		 iabRef.addEventListener('loadstop', iabLoadStop);
-		 iabRef.addEventListener('exit', iabClose);
-	}
-	function openSearchPage()
+}
+	
+function openstartpage()
 {
-	alert('in search');
+	iabRef = window.open('http://apache.org', '_blank', 'location=yes');
+	 iabRef.addEventListener('loadstart', iabLoadStart);
+	 iabRef.addEventListener('loadstop', iabLoadStop);
+	 iabRef.addEventListener('exit', iabClose);
+}
+function openSearchPage()
+{
+	
 	iabRef = window.open('https://www.kiosk.continuetogive.com/index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
-	 //iabRef.addEventListener('loadstart', iabLoadStart);
-	// iabRef.addEventListener('loadstop', iabLoadStop);
-	 //iabRef.addEventListener('exit', iabClose);
-	//var ref = null;
-	//ref = window.open('https://www.kiosk.continuetogive.com/index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
-	//ref.addEventListener('loadstart', iabLoadStart);
 	
 	iabRef.addEventListener('loadstart', iabLoadStartSearch);
-	 iabRef.addEventListener('exit', iabClose);
+	iabRef.addEventListener('exit', iabClose);
 	
 }
