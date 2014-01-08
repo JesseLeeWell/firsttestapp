@@ -10,7 +10,7 @@ function onDeviceReady() {
         // keyname is now equal to "key"
         var value = window.localStorage.getItem("key");
         // value is now equal to "value"
-		alert(value);
+		//alert(value);
         //window.localStorage.removeItem("key");
         window.localStorage.setItem("key2", "value2");
 
@@ -27,8 +27,8 @@ function openSearchPage()
 			var url = event.url;
 			if(url.indexOf("?displayname") != -1)
 			{
-				var displayname = $.url(url).param('displayname');
-				alert(displayname);
+				//var displayname = $.url(url).param('displayname');
+				alert("here");
 				//save this page
 			}
 			
