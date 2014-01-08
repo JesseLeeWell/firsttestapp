@@ -14,7 +14,8 @@ function onDeviceReady() {
         //window.localStorage.removeItem("key");
         window.localStorage.setItem("key2", "value2");
 
-		
+		var ref = window.open('https://www.kiosk.continuetogive.com/index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
+	ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
 	
 }
 function openSearchPage()
