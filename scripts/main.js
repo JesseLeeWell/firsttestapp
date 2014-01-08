@@ -23,7 +23,7 @@
     // Cordova is ready
     //
     function onDeviceReady() {
-         openstartpage();
+        
     }
 	
 	function openstartpage()
@@ -37,17 +37,17 @@
 {
 	alert('in search');
 	iabRef = window.open('https://www.kiosk.continuetogive.com/index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
-	 iabRef.addEventListener('loadstart', iabLoadStart);
-	 iabRef.addEventListener('loadstop', iabLoadStop);
-	 iabRef.addEventListener('exit', iabClose);
+	 //iabRef.addEventListener('loadstart', iabLoadStart);
+	// iabRef.addEventListener('loadstop', iabLoadStop);
+	 //iabRef.addEventListener('exit', iabClose);
 	//var ref = null;
 	//ref = window.open('https://www.kiosk.continuetogive.com/index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
 	//ref.addEventListener('loadstart', iabLoadStart);
-	/*
-	ref.addEventListener('loadstart', 
+	
+	iabRef.addEventListener('loadstart', 
 		function() 
 		{ 
-			alert('in loadstart');
+			alert('in loadstart search');
 			
 			var url = event.url;
 			if(url.indexOf("?displayname") != -1)
@@ -58,5 +58,5 @@
 			}
 			
 		});
-	*/
+	
 }
