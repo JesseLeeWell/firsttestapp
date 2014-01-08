@@ -17,7 +17,23 @@ function onDeviceReady() {
 		
 	
 }
+function openSearchPage()
+{
+	var ref = window.open('https://www.kiosk.continuetogive.com/index.php?moduleType=Module_Search', '_blank', 'location=yes');
+	ref.addEventListener('loadstart', 
+		function() 
+		{ 
+			var url = event.url;
+			if(url.indexOf("?displayname") != -1)
+			{
+				var displayname = $.url(url).param('displayname');
+				alert(displayname);
+				//save this page
+			}
+			
+		});
 
+}
 function openPage(page)
 {
 alert("start of page");
