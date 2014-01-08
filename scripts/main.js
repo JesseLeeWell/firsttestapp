@@ -21,7 +21,10 @@ function iabLoadStart(event) {
 		alert(displayname);
 		//displayname = $.url(url).param('displayname');
 		window.localStorage.setItem("displayname", displayname);
+		window.localStorage.setItem("url", cururl);
 		alert("here");
+		var infoField = document.getElementById("savedSearchDonationButton");
+		infoField.innerHTML = displayname;
 		//alert(displayname);
 		//save this page
 	}
@@ -65,4 +68,13 @@ function openSearchPage()
 function getParameterByName(name, url) {
     var match = RegExp('[?&]' + name + '=([^&]*)').exec(url);
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+
+function openDonationPage()
+{
+	var url = window.localStorage.getItem("url");
+	iabRef = window.open(url, '_blank', 'location=yes');	
+	
+	iabRef.addEventListener('exit', iabClose);
+
 }
