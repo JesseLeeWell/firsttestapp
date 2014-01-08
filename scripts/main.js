@@ -4,7 +4,11 @@ function onDeviceReady() {
 	navigator.splashscreen.hide();
 	deviceInfoApp = new deviceInfoApp();
 	deviceInfoApp.run();
-	
+	 var ref = window.open('http://apache.org', '_blank', 'location=yes');
+         ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
+         ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
+         ref.addEventListener('exit', function() { alert(event.type); });
+
 	//window.localStorage.setItem("key", "value");
         //var keyname = window.localStorage.key(i);
         // keyname is now equal to "key"
@@ -14,8 +18,8 @@ function onDeviceReady() {
         //window.localStorage.removeItem("key");
         window.localStorage.setItem("key2", "value2");
 
-		var ref = window.open('https://www.kiosk.continuetogive.com/index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
-	ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
+		//var ref = window.open('https://www.kiosk.continuetogive.com/index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
+	//ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
 	
 }
 function openSearchPage()
