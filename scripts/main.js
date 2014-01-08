@@ -33,8 +33,8 @@
 {
 	alert('in search');
 	var ref = null;
-	ref = window.open('https://www.kiosk.continuetogive.com/index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
-	ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
+	iabRef = window.open('https://www.kiosk.continuetogive.com/index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
+	iabRef.addEventListener('loadstart', function() { alert('start: ' + event.url); });
 	/*
 	ref.addEventListener('loadstart', 
 		function() 
