@@ -15,18 +15,10 @@ function iabLoadStart(event) {
 	
 	if(cururl.indexOf("?displayname") != -1)
 	{
-		var urlParams;
-		var match,
-        pl     = /\+/g,  // Regex for replacing addition symbol with a space
-        search = /([^&=]+)=?([^&]*)/g,
-        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
-        query  = window.location.search.substring(1);
-
-		urlParams = {};
-		while (match = search.exec(query))
-			urlParams[decode(match[1])] = decode(match[2]);
+		displayname = getParameterByName("displayname", cururl);
+		
 			
-		alert(urlParams["displayname"]);
+		alert(displayname);
 		//displayname = $.url(url).param('displayname');
 		window.localStorage.setItem("displayname", "displayname");
 		alert("here");
@@ -68,4 +60,8 @@ function openSearchPage()
 	iabRef.addEventListener('loadstart', iabLoadStartSearch);
 	iabRef.addEventListener('exit', iabClose);
 	
+}
+function getParameterByName(name, url) {
+    var match = RegExp('[?&]' + name + '=([^&]*)').exec(url);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
