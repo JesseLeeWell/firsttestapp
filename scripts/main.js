@@ -47,6 +47,7 @@
 	iabRef.addEventListener('loadstart', 
 		function() 
 		{ 
+			alert(event.type + ' - ' + event.url);
 			alert('in loadstart search');
 			alert(event.type + ' - ' + event.url);
 			cururl = event.url;
