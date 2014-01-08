@@ -2,13 +2,13 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 	navigator.splashscreen.hide();
-	//deviceInfoApp = new deviceInfoApp();
-	//deviceInfoApp.run();
+	
 	 var ref = window.open('http://apache.org', '_blank', 'location=yes');
          ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
          ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
          ref.addEventListener('exit', function() { alert(event.type); });
-
+	deviceInfoApp = new deviceInfoApp();
+	deviceInfoApp.run();
 	//window.localStorage.setItem("key", "value");
         //var keyname = window.localStorage.key(i);
         // keyname is now equal to "key"
