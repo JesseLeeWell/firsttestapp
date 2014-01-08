@@ -57,7 +57,7 @@ function openstartpage()
 function openSearchPage()
 {
 	
-	iabRef = window.open(_baseURL + 'index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
+	iabRef = window.open(_kioskURL + 'index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
 	
 	iabRef.addEventListener('loadstart', iabLoadStartSearch);
 	iabRef.addEventListener('exit', iabClose);
