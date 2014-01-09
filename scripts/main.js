@@ -2,10 +2,42 @@
     //
 document.addEventListener("deviceready", onDeviceReady, false);
 
-    // Global InAppBrowser reference
+//environment
+var environment = 'dev';
+//var environment = 'qa';
+//var environment = 'prod';
+//var environment = 'local';
+ // Global InAppBrowser reference
+if(environment == 'dev')
+{
+	var _baseURL = 'http://dev.continuetogive.com/';
+	var _kioskURL = 'http://dev.kiosk.continuetogive.com/';
+	
+}
+else if(environment == 'qa')
+{
+	var _baseURL = 'http://qa.continuetogive.com/';
+	var _kioskURL = 'http://qa.kiosk.continuetogive.com/';
+}
+else if(environment == 'local')
+{
+	var _baseURL = 'http://dev.continuetogive.com/';
+	var _kioskURL = 'http://dev.kiosk.continuetogive.com/';
+}
+else if(environment == 'prod')
+{
+	var _baseURL = 'http://www.continuetogive.com/';
+	var _kioskURL = 'http://www.kiosk.continuetogive.com/';
+}
+else
+{
+	var _baseURL = 'http://dev.continuetogive.com/';
+	var _kioskURL = 'http://dev.kiosk.continuetogive.com/';
+}
+var _kiosksetupURL = 'index.php?moduleType=Module_kiosk&task=setupkiosk';
+var _forgotPinURL = 'index.php?moduleType=Module_system&task=kioskforgotpassword';
+
 var iabRef = null;
-var _baseURL = 'https://www.continuetogive.com/';
-var _kioskURL = 'https://www.kiosk.continuetogive.com/';
 var _storagePageID = "storagePageID";
 var _storageDisplayName = "storageDisplayName";
 var _storageFullURL = "storageFullURL";
@@ -147,8 +179,7 @@ function setupDonationAndPurchaseButtons()
 }
 function findPageID(fullURL)
 {
-	//alert("here");
-	//var donationURL = "https://www.kiosk.continuetogive.com/1597539/show_donation_prompt?donation_template.amount";
+	
 	var urlAux = fullURL.split('/');
     var pageid = urlAux[3];
 	urlAux = pageid.split('?');

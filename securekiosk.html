@@ -3,33 +3,34 @@
 	<head>
 		<title>Secure Kiosk</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="styles/main.css" />
-		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-		<script type="text/javascript" charset="utf-8" src="scripts/main.js"></script>
+		<script type="text/javascript" charset="utf-8" src="scripts/securekiosk.js"></script>
 	</head>
 	<body>
-		<header class="header">
-			<h1>ecure Kiosk</h1>
+		<header >
+			<h1>Secure Your Kiosk</h1>
 		</header>
-		<div class="content">
-            <div class="action-area ch70">
-			
-                <button class="button dh" onclick ="javascript:openSignupPage();">Sign Up</button>
-				<button class="button dh" onclick ="javascript:openSearchPage();">Search</button>
-				<button class="button dh" id="savedSearchDonationButton" onclick ="javascript:openDonationPage('');"></button>
-				<button class="button dh" id="savedSearchPOSButton" onclick ="javascript:openDonationPage('/donation_prompt?show_purchase_form=true');"></button>
-				<a class="button dh" href="securekiosk.html">Secure Kiosk</a>
+		<div >
+            <div >
+				<input id="pin" placeholder='Pin'/>
+				<input id="confirmpin" placeholder='Confirm Pin'/>
+				<input id="email" placeholder='Email Address'/>
+				<input id="name" placeholder='Name'/>
+				
+				<input id="phonenumber" placeholder='Phone Number'/>
+				<h3>I represent a</h3>
+				<select id='represents'>
+					<option value="Church" >Church</option>
+					<option value="Nonprofit" >Non-profit</option>
+					<option value="Missionary" >Missionary</option>
+					<option value="Person" >Person</option>
+					<option value="Donor" >Donor</option>
+					
+				</select>
+				
+				<a onclick ="javascript:secureKiosk();" data-role="button" data-transition="slidefade" data-inline="true">Secure Kiosk</a>
+				<a href="index.html" data-role="button" data-transition="slidefade" data-inline="true">Cancel</a>
+                
 				
 			</div>
-            <div class="result-area ch30">
-                <div class="results">
-                   <div id="infoField" class="desc" type="text" readonly="readonly"></div> 
-                </div>
-                <div class="separator"></div>
-			</div>			
-		</div>
-	</body>
-	<footer class="footer">
-		<div>Cordova API Samples</div>
-	</footer>
+        </body>   
 </html>
