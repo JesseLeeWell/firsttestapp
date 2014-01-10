@@ -43,13 +43,21 @@ var _storagePageID = "storagePageID";
 var _storageDisplayName = "storageDisplayName";
 var _storageFullURL = "storageFullURL";
 var _storagePin = 'pin';
+//set our startpageselection
+var tmpstartpageselection = storageGet('startpageselection');
+if(!tmpstartpageselection)
+{
+	//if they never set it before, set it to settingspage
+	storageSet('startpageselection', 'settingspage');
+}
 
 
     // Cordova is ready
     //
 
 function onDeviceReady() {
-	setupDonationAndPurchaseButtons();
+	setupSettingsScreen();
+	
 
 }
 
@@ -66,7 +74,7 @@ function iabLoadStart(event) {
 	{
 		
 		storeURLInfo(cururl);		
-		setupDonationAndPurchaseButtons();
+		setupSettingsScreen();
 		
 		browserwindow.removeEventListener('exit', iabCloseSearch);
 		//browserwindow.addEventListener('exit', iabCloseDonation);
@@ -195,6 +203,14 @@ function storeURLInfo(fullURL)
 	storePageID(pageid);
 	storeDisplayName(displayname);
 }
+function setupSettingsPage()
+{
+	//set up the radio buttons for start page
+	var tmpstartpageselection = storageGet('startpageselection');
+	$('input[name=startpagegroup]:checked').val(tmpstartpageselection);
+	//setup the donation buttons
+	setupDonationAndPurchaseButtons();
+}
 function setupDonationAndPurchaseButtons()
 {
 	var fullURL = getFullURL();
@@ -251,11 +267,18 @@ function showSecureKioskPage()
 	//$.mobile.changePage('#securekioskpage','slidefade');
 	//window.location = "securekiosk.html";
 }
-
+function saveStartPageRadioButtonValue()
+{
+	var startpageselection = $('input[name=startpagegroup]:checked').val();
+	alert(startpageselection);
+	storageSet('startpageselection', startpageselection);
+	
+}
 function clearDataForTesting()
 {
 	
 	localStorage.clear();
+	setupSettingsScreen();
 }
 function showMessageCallBack()
 {

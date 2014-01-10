@@ -61,7 +61,7 @@ function fogotPin()
 }
 function cancelUnlockKioskIfStateIsCorrect()
 {
-
+	//check to see what the unlock state is to know if we need to redirect to the whatever the cancel button does. 
 	var unlockkioskcurrentstate = storageGet('unlockkioskcurrentstate');
 	if(unlockkioskcurrentstate == 'unlocked')
 	{
