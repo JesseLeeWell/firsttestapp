@@ -223,9 +223,14 @@ function findPageID(fullURL)
 }
 function showUnlockKioskPage()
 {
+	//set the state to locked so our timer function will cancel after the apointed time.
+	//but if they unlock it with the correct pin, then the state will go to unlocked, and the cancel option will not happen
+	storageSet('unlockkioskcurrentstate', 'locked');
 	setTimeout(function() {
-		  cancelUnlockKiosk();// Do something after 5 seconds
-	}, 5000);
+		  cancelUnlockKioskIfStateIsCorrect();// Do something after 5 seconds
+	}, 10000);
+	
+	
 	 $(':mobile-pagecontainer').pagecontainer('change', '#unlockkioskpage', {
         transition: 'slidefade',
         changeHash: false,

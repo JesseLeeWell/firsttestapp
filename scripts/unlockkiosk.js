@@ -10,6 +10,8 @@ function unlockKiosk()
 	
 	if(pintyped == pinstored)
 	{
+		//set the unlock state to unlocked so that our timer doesn't do a cancel
+		storageSet('unlockkioskcurrentstate', 'unlocked');
 		if(successPath == 'search')
 		{
 			showMessage("Your kiosk has been unlocked.  You can now search for the church, organization, or fundraiser you are setting your kiosk to.", '', " ", "OK");
@@ -56,6 +58,19 @@ function fogotPin()
 
 	
 
+}
+cancelUnlockKioskIfStateIsCorrect()
+{
+
+	var unlockkioskcurrentstate = storageGet('unlockkioskcurrentstate');
+	if(unlockkioskcurrentstate == 'unlocked')
+	{
+		return true; //basically do nothing because they already entered the correct pin
+	}
+	else
+	{
+		cancelUnlockKiosk();
+	}
 }
 function cancelUnlockKiosk()
 {
