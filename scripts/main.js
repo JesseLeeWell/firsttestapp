@@ -44,19 +44,9 @@ var _storageFullURL = "storageFullURL";
 
     // Cordova is ready
     //
-	function alertDismissed() {
-    // do something
-}
+
 function onDeviceReady() {
 	setupDonationAndPurchaseButtons();
-
-
-navigator.notification.alert(
-    'You are the winner!',  // message
-    alertDismissed,         // callback
-    'Game Over',            // title
-    'Done'                  // buttonName
-);
 
 }
 
@@ -200,7 +190,7 @@ function findPageID(fullURL)
 }
 function showMessageCallBack()
 {
-	alert("in callback");
+	
 	return true;
 }
 function showMessage(message, callback, title, buttonName){
@@ -213,16 +203,11 @@ function showMessage(message, callback, title, buttonName){
 			alert(callback);
 			navigator.notification.alert(
 				message,  // message
-				alertDismissed,         // callback
+				showMessageCallBack,         // callback
 				title,            // title
 				buttonName                  // buttonName
 			);
-            navigator.notification.alert(
-                message,
-                callback,
-                title,
-                buttonName
-            );
+           
 
         }else{
 
