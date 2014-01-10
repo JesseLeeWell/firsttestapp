@@ -69,9 +69,8 @@ function iabLoadStart(event) {
 		//browserwindow.removeEventListener('exit', iabCloseSearch);
 		//browserwindow.addEventListener('exit', iabCloseDonation);
 		//reopen the window with as a donation window (donation listeners) .  THis is so we have more control of the window as  a donation window.
-		iabCloseSearch(event);
-		openDonationPage('');	
-		
+		showMessage("Now that your page is set, you can put your kiosk into donation or point of sale mode from this settings screen ", '', " ", "OK");
+		appwindow = window.open('index.html', '_self', 'location=yes');
 	}
 }
 
