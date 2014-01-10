@@ -211,6 +211,12 @@ function showMessage(message, callback, title, buttonName){
 		alert(callback);
         if(navigator.notification && navigator.notification.alert){
 			alert(callback);
+			navigator.notification.alert(
+				'You are the winner!',  // message
+				alertDismissed,         // callback
+				'Game Over',            // title
+				'Done'                  // buttonName
+			);
             navigator.notification.alert(
                 message,
                 callback,
