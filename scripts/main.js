@@ -37,7 +37,8 @@ else
 var _kiosksetupURL = 'index.php?moduleType=Module_kiosk&task=setupkiosk';
 var _forgotPinURL = 'index.php?moduleType=Module_system&task=kioskforgotpassword';
 
-var iabRef = null;
+var appwindow = null;
+var browserwindow = null;
 var _storagePageID = "storagePageID";
 var _storageDisplayName = "storageDisplayName";
 var _storageFullURL = "storageFullURL";
@@ -63,7 +64,7 @@ function iabLoadStart(event) {
 	{
 		storeURLInfo(cururl);		
 		setupDonationAndPurchaseButtons();
-		iabRef = window.open('index.html', '_self', 'location=yes');		
+		appwindow = window.open('index.html', '_self', 'location=yes');		
 		
 	}
 }
@@ -74,34 +75,34 @@ function iabLoadStop(event) {
 }
 
 function iabClose(event) {	 
-	 iabRef.removeEventListener('loadstart', iabLoadStart);
-	 iabRef.removeEventListener('loadstop', iabLoadStop);
-	 iabRef.removeEventListener('exit', iabClose);
+	 browserwindow.removeEventListener('loadstart', iabLoadStart);
+	 browserwindow.removeEventListener('loadstop', iabLoadStop);
+	 browserwindow.removeEventListener('exit', iabClose);
 }
 
 
 	
 function openstartpage()
 {
-	iabRef = window.open('http://apache.org', '_blank', 'location=yes');
-	 iabRef.addEventListener('loadstart', iabLoadStart);
-	 iabRef.addEventListener('loadstop', iabLoadStop);
-	 iabRef.addEventListener('exit', iabClose);
+	browserwindow = window.open('http://apache.org', '_blank', 'location=yes');
+	 browserwindow.addEventListener('loadstart', iabLoadStart);
+	 browserwindow.addEventListener('loadstop', iabLoadStop);
+	 browserwindow.addEventListener('exit', iabClose);
 }
 function openSearchPage()
 {
 	
-	iabRef = window.open(_kioskURL + 'index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
+	browserwindow = window.open(_kioskURL + 'index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
 	
-	iabRef.addEventListener('loadstart', iabLoadStartSearch);
-	iabRef.addEventListener('exit', iabClose);
+	browserwindow.addEventListener('loadstart', iabLoadStartSearch);
+	browserwindow.addEventListener('exit', iabClose);
 	
 }
 function openSignupPage()
 {
 	
-	iabRef = window.open(_baseURL + "home/churches", '_blank', 'location=yes');
-	iabRef.addEventListener('exit', iabClose);
+	browserwindow = window.open(_baseURL + "home/churches", '_blank', 'location=yes');
+	browserwindow.addEventListener('exit', iabClose);
 	
 }
 function getParameterByName(name, url) {
@@ -114,9 +115,9 @@ function openDonationPage(extras)
 	var pageid = getPageID();
 	var url =_kioskURL + pageid + extras;
 	
-	iabRef = window.open(url, '_blank', 'location=yes');	
+	browserwindow = window.open(url, '_blank', 'location=yes');	
 	
-	iabRef.addEventListener('exit', iabClose);
+	browserwindow.addEventListener('exit', iabClose);
 
 }
 function storageSet(key, value)
