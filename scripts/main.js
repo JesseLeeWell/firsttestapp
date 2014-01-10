@@ -210,12 +210,12 @@ function showMessage(message, callback, title, buttonName){
 		callback = callback || 'showMessageCallBack';
 		alert(callback);
         if(navigator.notification && navigator.notification.alert){
-
+			alert(callback);
             navigator.notification.alert(
-                message,    // message
-                callback,   // callback
-                title,      // title
-                buttonName  // buttonName
+                message,
+                callback,
+                title,
+                buttonName
             );
 
         }else{
