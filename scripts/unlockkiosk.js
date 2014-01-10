@@ -66,7 +66,7 @@ function cancelUnlockKiosk()
 		$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
 			transition: 'slidefade',
 			changeHash: false,
-			reverse: false,
+			reverse: true,
 			showLoadMsg: true
 		});
 		
