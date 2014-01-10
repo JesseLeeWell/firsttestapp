@@ -91,7 +91,7 @@ function iabCloseSearch(event) {
 
 function iabCloseDonation(event) {	
  
-	_unlockPath = 'settings';
+	
 	showUnlockKioskPage();
 	alert("in donation close");
 	 
@@ -103,8 +103,8 @@ function iabCloseDonation(event) {
 
 function openSearchPage()
 {
-	
-	browserwindow = window.open(_kioskURL + 'index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes,closebuttoncaption=settings');
+	_unlockPath = 'search';
+	browserwindow = window.open(_kioskURL + 'index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=no,closebuttoncaption=settings');
 	
 	browserwindow.addEventListener('loadstart', iabLoadStartSearch);
 	browserwindow.addEventListener('exit', iabCloseSearch);
@@ -113,7 +113,7 @@ function openSearchPage()
 function openSignupPage()
 {
 	
-	browserwindow = window.open(_baseURL + "home/churches", '_blank', 'location=yes');
+	browserwindow = window.open(_baseURL + "home/churches", '_blank', 'location=no,closebuttoncaption=settings');
 	//browserwindow.addEventListener('exit', iabClose);
 	
 }
@@ -124,11 +124,12 @@ function getParameterByName(name, url) {
 
 function openDonationPage(extras)
 {
-	alert("in donation open");
+	_unlockPath = 'settings';
+	
 	var pageid = getPageID();
 	var url =_kioskURL + pageid + extras;
-	alert("in donation open" + url);
-	browserwindow = window.open(url, '_blank', 'location=yes');	
+	
+	browserwindow = window.open(url, '_blank', 'location=no,closebuttoncaption=settings');	
 	
 	browserwindow.addEventListener('exit', iabCloseDonation);
 
