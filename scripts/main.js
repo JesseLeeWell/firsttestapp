@@ -44,8 +44,20 @@ var _storageFullURL = "storageFullURL";
 
     // Cordova is ready
     //
+	function alertDismissed() {
+    // do something
+}
 function onDeviceReady() {
 	setupDonationAndPurchaseButtons();
+
+
+navigator.notification.alert(
+    'You are the winner!',  // message
+    alertDismissed,         // callback
+    'Game Over',            // title
+    'Done'                  // buttonName
+);
+
 }
 
 
