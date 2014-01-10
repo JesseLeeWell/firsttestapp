@@ -24,7 +24,7 @@ function secureKiosk()
 	// Assign handlers immediately after making the request,
 	// and remember the jqxhr object for this request
 	var jqxhr = $.post( urltocall);
-	showMessage("Your kiosk has been secured.  You can now search for the organization you are setting your kiosk to.", '', " ", "OK");
+	showMessage("Your kiosk has been secured.  You can now search for the church, organization, or fundraiser you are setting your kiosk to.", '', " ", "OK");
 
 	iabRef = window.open(_kioskURL + 'index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
 	
