@@ -1,12 +1,7 @@
 
 function unlockKiosk()
 {
-	alert("Sorry, but this is not the correct pin");
-	iabRef = window.open(_kioskURL + 'index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
 	
-		iabRef.addEventListener('loadstart', iabLoadStartSearch);
-		iabRef.addEventListener('exit', iabClose);
-		/*
 	//get the pin they entered.  If it is correct, let them go to search.
 	var pintyped = $('#pin').val();
 	var pinstored = storageGet('pin');
@@ -21,11 +16,9 @@ function unlockKiosk()
 	}
 	else
 	{
-		
-		alert("Sorry, but this is not the correct pin");
+		showMessage("Sorry, but this is not the correct pin", '', " ", "OK");
+		//alert("Sorry, but this is not the correct pin");
 	}
-	
-	*/
 	
 }
 
@@ -41,7 +34,8 @@ function fogotPin()
 	
 	var urltocall = _baseURL + _forgotPinURL + urlstring;	
 	var jqxhr = $.post( urltocall);
-	alert("We have sent your pin to "+email);
+	showMessage("We have sent your pin to "+email, '', " ", "OK");
+	//alert("We have sent your pin to "+email);
 
 	
 

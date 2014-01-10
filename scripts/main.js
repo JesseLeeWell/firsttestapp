@@ -186,3 +186,30 @@ function findPageID(fullURL)
 	pageid = urlAux[0];
 	return pageid;
 }
+
+function showMessage(message, callback, title, buttonName){
+
+        title = title || "default title";
+        buttonName = buttonName || 'OK';
+		callback = callback || 'showMessageCallBack';
+
+        if(navigator.notification && navigator.notification.alert){
+
+            navigator.notification.alert(
+                message,    // message
+                callback,   // callback
+                title,      // title
+                buttonName  // buttonName
+            );
+
+        }else{
+
+            alert(message);
+            callback();
+        }
+
+    }
+function showMessageCallBack()
+{
+	return true;
+}
