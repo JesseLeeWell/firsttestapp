@@ -15,7 +15,8 @@ function unlockKiosk()
 		}
 		else
 		{
-			appwindow = window.open('index.html', '_self', 'location=yes');
+			$.mobile.changePage('#indexkpage','slide');
+			//appwindow = window.open('index.html', '_self', 'location=yes');
 		}
 	}
 	else

@@ -209,7 +209,7 @@ function showUnlockKioskPage()
 }
 function showSecureKioskPage()
 {
-	$.mobile.changePage('#securekiosk.html','slide');
+	$.mobile.changePage('#securekioskpage','slide');
 	//window.location = "securekiosk.html";
 }
 function showMessageCallBack()
