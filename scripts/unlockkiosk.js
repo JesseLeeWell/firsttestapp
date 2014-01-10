@@ -16,7 +16,7 @@ function unlockKiosk()
 	}
 	else
 	{
-		showMessage("Sorry, but this is not the correct pin", '', "Pin", "OK");
+		showMessage("Incorrect Pin, please try again.", '', " ", "OK");
 		//alert("Sorry, but this is not the correct pin");
 	}
 	

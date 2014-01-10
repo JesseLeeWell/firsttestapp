@@ -198,9 +198,9 @@ function showMessage(message, callback, title, buttonName){
         title = title || "default title";
         buttonName = buttonName || 'OK';
 		callback = callback || 'showMessageCallBack';
-		alert(callback);
+		
         if(navigator.notification && navigator.notification.alert){
-			alert(callback);
+			
 			navigator.notification.alert(
 				message,  // message
 				showMessageCallBack,         // callback
