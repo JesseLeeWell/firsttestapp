@@ -95,7 +95,7 @@ function iabCloseDonation(event) {
 	 
 	 browserwindow.removeEventListener('loadstop', iabLoadStop);
 	 browserwindow.removeEventListener('exit', iabCloseDonation);
-	appwindow = window.open('index.html', '_self', 'location=yes');	//donation windows should already be at the index any ways
+	//appwindow = window.open('index.html', '_self', 'location=yes');	//donation windows should already be at the index any ways
 	openDonationPage('');
 }
 
