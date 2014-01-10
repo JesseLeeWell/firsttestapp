@@ -62,7 +62,8 @@ function iabLoadStart(event) {
 	if(cururl.indexOf("?displayname") != -1)
 	{
 		storeURLInfo(cururl);		
-		setupDonationAndPurchaseButtons();	
+		setupDonationAndPurchaseButtons();
+		iabRef = window.open('index.html', '_self', 'location=yes');		
 		
 	}
 }

@@ -8,7 +8,7 @@ function unlockKiosk()
 	
 	if(pintyped == pinstored)
 	{
-		iabRef = window.open('index.html', '_self', 'location=yes');
+		
 		showMessage("Your kiosk has been unlocked.  You can now search for the church, organization, or fundraiser you are setting your kiosk to.", '', " ", "OK");
 		openSearchPage();
 	}
