@@ -5,7 +5,7 @@ function unlockKiosk()
 	//get the pin they entered.  If it is correct, let them go to either search or settings (index) depending on success path
 	var successPath = storageGet('securesuccesspath');
 	
-	var pintyped = $('#pin').val();
+	var pintyped = $('#unlockpin').val();
 	var pinstored = storageGet('pin');
 	alert(pintyped);
 	alert(pinstored);
@@ -58,7 +58,7 @@ function fogotPin()
 }
 function cancelUnlockKiosk()
 {
-	var securecancelpath = storageSet('securecancelpath', 'index');
+	var securecancelpath = storageget('securecancelpath');
 	if(securecancelpath == 'index')
 	{
 		$(':mobile-pagecontainer').pagecontainer('change', '#indexkpage', {

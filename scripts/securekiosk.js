@@ -4,8 +4,8 @@ function secureKiosk()
 	
 	//first gather the data they entered
 	//do some checking and validating	
-	var pin = $('#pin').val();
-	var confirmpin = $('#confirmpin').val();
+	var pin = $('#securepin').val();
+	var confirmpin = $('#secureconfirmpin').val();
 	var email = $('#email').val();
 	var name = $('#name').val();	
 	var phonenumber = $('#phonenumber').val();
