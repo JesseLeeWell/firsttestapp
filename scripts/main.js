@@ -205,7 +205,13 @@ function findPageID(fullURL)
 }
 function showUnlockKioskPage()
 {
-	$.mobile.changePage('#unlockkioskpage','slidefade');
+	 $(':mobile-pagecontainer').pagecontainer('change', '#unlockkioskpage', {
+        transition: 'slidefade',
+        changeHash: false,
+        reverse: false,
+        showLoadMsg: true
+    });
+	//$.mobile.changePage('#unlockkioskpage','slidefade');
 	//appwindow = window.open('index.html#unlockkioskpage', '_self', 'location=yes');
 }
 function showSecureKioskPage()
@@ -213,7 +219,7 @@ function showSecureKioskPage()
 	 $(':mobile-pagecontainer').pagecontainer('change', '#securekioskpage', {
         transition: 'slidefade',
         changeHash: false,
-        reverse: true,
+        reverse: false,
         showLoadMsg: true
     });
 	//$.mobile.changePage('#securekioskpage','slidefade');
