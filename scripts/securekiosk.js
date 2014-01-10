@@ -25,7 +25,7 @@ function secureKiosk()
 	// and remember the jqxhr object for this request
 	var jqxhr = $.post( urltocall);
 	showMessage("Your kiosk has been secured.  You can now search for the church, organization, or fundraiser you are setting your kiosk to.", '', " ", "OK");
-
+	
 	openSearchPage();
 	
 }

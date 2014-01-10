@@ -64,7 +64,7 @@ function iabLoadStart(event) {
 	{
 		storeURLInfo(cururl);		
 		setupDonationAndPurchaseButtons();
-		appwindow = window.open('index.html', '_self', 'location=yes');		
+			
 		
 	}
 }
@@ -91,7 +91,7 @@ function openstartpage()
 }
 function openSearchPage()
 {
-	
+	appwindow = window.open('index.html', '_self', 'location=yes');	
 	browserwindow = window.open(_kioskURL + 'index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
 	
 	browserwindow.addEventListener('loadstart', iabLoadStartSearch);
