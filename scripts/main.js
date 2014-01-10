@@ -66,9 +66,10 @@ function iabLoadStart(event) {
 		storeURLInfo(cururl);		
 		setupDonationAndPurchaseButtons();
 		//close the search app window
-		browserwindow.close();
+		browserwindow.removeEventListener('exit', iabCloseSearch);
+		browserwindow.addEventListener('exit', iabCloseDonation);
 		//reopen the window with as a donation window (donation listeners) .  THis is so we have more control of the window as  a donation window.
-		openDonationPage('');	
+		//openDonationPage('');	
 		
 	}
 }
@@ -94,7 +95,7 @@ function iabCloseDonation(event) {
 	 browserwindow.removeEventListener('loadstart', iabLoadStart);
 	 browserwindow.removeEventListener('loadstop', iabLoadStop);
 	 browserwindow.removeEventListener('exit', iabCloseDonation);
-	// appwindow = window.open('index.html', '_self', 'location=yes');	//donation windows should already be at the index any ways
+	appwindow = window.open('index.html', '_self', 'location=yes');	//donation windows should already be at the index any ways
 	openDonationPage('');
 }
 
