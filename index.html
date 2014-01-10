@@ -41,7 +41,7 @@
 				</div>
 			</div>
 			<!-- end index page -->
-			<!-- Start of index page page -->
+			<!-- Start of securekioskpage page page -->
 			<div data-role="page" id="securekioskpage">
 				<div >
 					<input id="pin" placeholder='Pin' value='123'/>
@@ -66,7 +66,33 @@
 					
 				</div>
 			</div>
-			<!-- end index page -->
+			<!-- end securekioskpage page -->
+			<!-- Start of unlockkioskpage page -->
+			<div data-role="page" id="unlockkioskpage">
+				<div >
+					<input id="pin" placeholder='Pin' value='123'/>
+					<input id="confirmpin" placeholder='Confirm Pin' value='123'/>
+					<input id="email" placeholder='Email Address' value='jesseleewell@yahoo.com'/>
+					<input id="name" placeholder='Name'/>
+					
+					<input id="phonenumber" placeholder='Phone Number'/>
+					<h3>I represent a</h3>
+					<select id='represents'>
+						<option value="Church" >Church</option>
+						<option value="Nonprofit" >Non-profit</option>
+						<option value="Missionary" >Missionary</option>
+						<option value="Person" >Person</option>
+						<option value="Donor" >Donor</option>
+						
+					</select>
+					
+					<a onclick ="javascript:secureKiosk();" data-role="button" data-transition="slidefade" data-inline="true">Secure Kiosk</a>
+					<a href="index.html" data-role="button" data-transition="reverse slidefade" data-inline="true">Cancel</a>
+					
+					
+				</div>
+			</div>
+			<!-- end unlockkioskpage page -->
 			
 		</div>
 	</body>

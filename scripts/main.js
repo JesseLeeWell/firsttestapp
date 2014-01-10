@@ -205,11 +205,11 @@ function findPageID(fullURL)
 }
 function showUnlockKioskPage()
 {
-	appwindow = window.open('unlockkiosk.html', '_self', 'location=yes');
+	appwindow = window.open('index.html#unlockkioskpage', '_self', 'location=yes');
 }
 function showSecureKioskPage()
 {
-	$.mobile.changePage('#securekioskpage','slide');
+	$.mobile.changePage('#securekioskpage','slidefade');
 	//window.location = "securekiosk.html";
 }
 function showMessageCallBack()
