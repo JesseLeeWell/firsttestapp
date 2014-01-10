@@ -62,6 +62,7 @@ function iabLoadStart(event) {
 	
 	if(cururl.indexOf("?displayname") != -1)
 	{
+		
 		storeURLInfo(cururl);		
 		setupDonationAndPurchaseButtons();
 			
@@ -78,6 +79,7 @@ function iabClose(event) {
 	 browserwindow.removeEventListener('loadstart', iabLoadStart);
 	 browserwindow.removeEventListener('loadstop', iabLoadStop);
 	 browserwindow.removeEventListener('exit', iabClose);
+	 appwindow = window.open('index.html', '_self', 'location=yes');	
 }
 
 
@@ -91,7 +93,7 @@ function openstartpage()
 }
 function openSearchPage()
 {
-	appwindow = window.open('index.html', '_self', 'location=yes');	
+	
 	browserwindow = window.open(_kioskURL + 'index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
 	
 	browserwindow.addEventListener('loadstart', iabLoadStartSearch);
