@@ -91,7 +91,7 @@ function iabCloseSearch(event) {
 function iabCloseDonation(event) {	
  
 	
-	
+	alert("in donation close");
 	 browserwindow.removeEventListener('loadstart', iabLoadStart);
 	 browserwindow.removeEventListener('loadstop', iabLoadStop);
 	 browserwindow.removeEventListener('exit', iabCloseDonation);
@@ -122,6 +122,7 @@ function getParameterByName(name, url) {
 
 function openDonationPage(extras)
 {
+	alert("in donation open");
 	var pageid = getPageID();
 	var url =_kioskURL + pageid + extras;
 	
