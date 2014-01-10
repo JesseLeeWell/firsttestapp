@@ -205,11 +205,12 @@ function findPageID(fullURL)
 }
 function showUnlockKioskPage()
 {
-	appwindow = window.open('index.html#unlockkioskpage', '_self', 'location=yes');
+	$.mobile.changePage('#unlockkioskpage','flip');
+	//appwindow = window.open('index.html#unlockkioskpage', '_self', 'location=yes');
 }
 function showSecureKioskPage()
 {
-	$.mobile.changePage('#securekioskpage','slidefade');
+	$.mobile.changePage('#securekioskpage','flip');
 	//window.location = "securekiosk.html";
 }
 function showMessageCallBack()

@@ -15,12 +15,13 @@
 		
 	</head>
 	<body>
-		<header class="header">
-			<h1>Continue To Give</h1>
-		</header>
+		
 		<div class="content">
 			<!-- Start of index page page -->
 			<div data-role="page" id="indexpage">
+				<header class="header">
+					<h1>Continue To Give</h1>
+				</header>
 				<div class="action-area ch70">
 				
 					<button class="button dh" onclick ="javascript:openSignupPage();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Sign Up</button>
@@ -30,7 +31,7 @@
 					
 					
 					<a href="javascript:showSecureKioskPage();" data-role="button" data-transition="slidefade" data-inline="true">Secure Kiosk</a>
-					<a href="unlockkiosk.html" data-role="button" data-transition="slidefade" data-inline="true">Unlock Kiosk</a>
+					<a href="javascript:showUnlockKioskPage();" data-role="button" data-transition="slidefade" data-inline="true">Unlock Kiosk</a>
 					
 				</div>
 				<div class="result-area ch30">
@@ -70,24 +71,12 @@
 			<!-- Start of unlockkioskpage page -->
 			<div data-role="page" id="unlockkioskpage">
 				<div >
-					<input id="pin" placeholder='Pin' value='123'/>
-					<input id="confirmpin" placeholder='Confirm Pin' value='123'/>
-					<input id="email" placeholder='Email Address' value='jesseleewell@yahoo.com'/>
-					<input id="name" placeholder='Name'/>
+					<input id="pin" placeholder='Pin'/>				
+				
 					
-					<input id="phonenumber" placeholder='Phone Number'/>
-					<h3>I represent a</h3>
-					<select id='represents'>
-						<option value="Church" >Church</option>
-						<option value="Nonprofit" >Non-profit</option>
-						<option value="Missionary" >Missionary</option>
-						<option value="Person" >Person</option>
-						<option value="Donor" >Donor</option>
-						
-					</select>
-					
-					<a onclick ="javascript:secureKiosk();" data-role="button" data-transition="slidefade" data-inline="true">Secure Kiosk</a>
-					<a href="index.html" data-role="button" data-transition="reverse slidefade" data-inline="true">Cancel</a>
+					<a onclick ="javascript:unlockKiosk();" data-role="button" data-transition="slidefade" data-inline="true">Unlock</a>
+					<a onclick="javascript:fogotPin();" data-role="button" data-transition="slidefade" data-inline="true">Forgot Pin</a>
+					<a href ="javascript:cancelUnlockKiosk();" data-role="button" data-transition="reverse slidefade" data-inline="true">Cancel</a>
 					
 					
 				</div>
