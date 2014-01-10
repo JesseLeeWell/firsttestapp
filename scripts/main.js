@@ -83,18 +83,11 @@ function iabClose(event) {
 }
 
 
-	
-function openstartpage()
-{
-	browserwindow = window.open('http://apache.org', '_blank', 'location=yes');
-	 browserwindow.addEventListener('loadstart', iabLoadStart);
-	 browserwindow.addEventListener('loadstop', iabLoadStop);
-	 browserwindow.addEventListener('exit', iabClose);
-}
+
 function openSearchPage()
 {
 	
-	browserwindow = window.open(_kioskURL + 'index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes');
+	browserwindow = window.open(_kioskURL + 'index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes,closebuttoncaption=settings');
 	
 	browserwindow.addEventListener('loadstart', iabLoadStartSearch);
 	browserwindow.addEventListener('exit', iabClose);
