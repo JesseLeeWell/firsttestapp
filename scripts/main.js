@@ -81,7 +81,7 @@ function iabLoadStop(event) {
 
 function iabCloseSearch(event) {	
  
-	 browserwindow.removeEventListener('loadstart', iabLoadStart);
+	 browserwindow.removeEventListener('loadstart', iabLoadStartSearch);
 	 browserwindow.removeEventListener('loadstop', iabLoadStop);
 	 browserwindow.removeEventListener('exit', iabCloseSearch);
 	 //make sure the home screen is back to index
@@ -92,7 +92,7 @@ function iabCloseDonation(event) {
  
 	
 	alert("in donation close");
-	 browserwindow.removeEventListener('loadstart', iabLoadStart);
+	 
 	 browserwindow.removeEventListener('loadstop', iabLoadStop);
 	 browserwindow.removeEventListener('exit', iabCloseDonation);
 	appwindow = window.open('index.html', '_self', 'location=yes');	//donation windows should already be at the index any ways
@@ -125,7 +125,7 @@ function openDonationPage(extras)
 	alert("in donation open");
 	var pageid = getPageID();
 	var url =_kioskURL + pageid + extras;
-	
+	alert("in donation open" + url);
 	browserwindow = window.open(url, '_blank', 'location=yes');	
 	
 	browserwindow.addEventListener('exit', iabCloseDonation);
