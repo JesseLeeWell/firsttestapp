@@ -198,13 +198,17 @@ function findPageID(fullURL)
 	pageid = urlAux[0];
 	return pageid;
 }
-
+function showMessageCallBack()
+{
+	alert("in callback");
+	return true;
+}
 function showMessage(message, callback, title, buttonName){
-
+	
         title = title || "default title";
         buttonName = buttonName || 'OK';
 		callback = callback || 'showMessageCallBack';
-
+		alert(callback);
         if(navigator.notification && navigator.notification.alert){
 
             navigator.notification.alert(
@@ -221,7 +225,3 @@ function showMessage(message, callback, title, buttonName){
         }
 
     }
-function showMessageCallBack()
-{
-	return true;
-}
