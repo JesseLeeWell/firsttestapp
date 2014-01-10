@@ -65,7 +65,10 @@ function iabLoadStart(event) {
 		
 		storeURLInfo(cururl);		
 		setupDonationAndPurchaseButtons();
-			
+		//close the search app window
+		browserwindow.close();
+		//reopen the window with as a donation window (donation listeners) .  THis is so we have more control of the window as  a donation window.
+		openDonationPage('');	
 		
 	}
 }
@@ -75,14 +78,25 @@ function iabLoadStop(event) {
 	
 }
 
-function iabClose(event) {	 
+function iabCloseSearch(event) {	
+ 
 	 browserwindow.removeEventListener('loadstart', iabLoadStart);
 	 browserwindow.removeEventListener('loadstop', iabLoadStop);
-	 browserwindow.removeEventListener('exit', iabClose);
+	 browserwindow.removeEventListener('exit', iabCloseSearch);
+	 //make sure the home screen is back to index
 	 appwindow = window.open('index.html', '_self', 'location=yes');	
 }
 
-
+function iabCloseDonation(event) {	
+ 
+	
+	
+	 browserwindow.removeEventListener('loadstart', iabLoadStart);
+	 browserwindow.removeEventListener('loadstop', iabLoadStop);
+	 browserwindow.removeEventListener('exit', iabCloseDonation);
+	// appwindow = window.open('index.html', '_self', 'location=yes');	//donation windows should already be at the index any ways
+	openDonationPage('');
+}
 
 function openSearchPage()
 {
@@ -90,14 +104,14 @@ function openSearchPage()
 	browserwindow = window.open(_kioskURL + 'index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=yes,closebuttoncaption=settings');
 	
 	browserwindow.addEventListener('loadstart', iabLoadStartSearch);
-	browserwindow.addEventListener('exit', iabClose);
+	browserwindow.addEventListener('exit', iabCloseSearch);
 	
 }
 function openSignupPage()
 {
 	
 	browserwindow = window.open(_baseURL + "home/churches", '_blank', 'location=yes');
-	browserwindow.addEventListener('exit', iabClose);
+	//browserwindow.addEventListener('exit', iabClose);
 	
 }
 function getParameterByName(name, url) {
@@ -112,7 +126,7 @@ function openDonationPage(extras)
 	
 	browserwindow = window.open(url, '_blank', 'location=yes');	
 	
-	browserwindow.addEventListener('exit', iabClose);
+	browserwindow.addEventListener('exit', iabCloseDonation);
 
 }
 function storageSet(key, value)
