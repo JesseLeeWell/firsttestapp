@@ -42,6 +42,7 @@ var browserwindow = null;
 var _storagePageID = "storagePageID";
 var _storageDisplayName = "storageDisplayName";
 var _storageFullURL = "storageFullURL";
+var _unlockPath = "search";
 
     // Cordova is ready
     //
@@ -65,10 +66,10 @@ function iabLoadStart(event) {
 		
 		storeURLInfo(cururl);		
 		setupDonationAndPurchaseButtons();
-		//close the search app window
-		//browserwindow.removeEventListener('exit', iabCloseSearch);
+		
+		browserwindow.removeEventListener('exit', iabCloseSearch);
 		//browserwindow.addEventListener('exit', iabCloseDonation);
-		//reopen the window with as a donation window (donation listeners) .  THis is so we have more control of the window as  a donation window.
+		
 		showMessage("Now that your page is set, you can put your kiosk into donation or point of sale mode from this settings screen ", '', " ", "OK");
 		appwindow = window.open('index.html', '_self', 'location=yes');
 	}
@@ -90,7 +91,8 @@ function iabCloseSearch(event) {
 
 function iabCloseDonation(event) {	
  
-	
+	_unlockPath = 'settings';
+	showUnlockKioskPage();
 	alert("in donation close");
 	 
 	 browserwindow.removeEventListener('loadstop', iabLoadStop);
@@ -200,6 +202,10 @@ function findPageID(fullURL)
 	urlAux = pageid.split('?');
 	pageid = urlAux[0];
 	return pageid;
+}
+function showUnlockKioskPage()
+{
+	appwindow = window.open('unlockkiosk.html', '_self', 'location=yes');
 }
 function showMessageCallBack()
 {

@@ -8,9 +8,15 @@ function unlockKiosk()
 	
 	if(pintyped == pinstored)
 	{
-		
-		showMessage("Your kiosk has been unlocked.  You can now search for the church, organization, or fundraiser you are setting your kiosk to.", '', " ", "OK");
-		openSearchPage();
+		if(_unlockPath == 'search')
+		{
+			showMessage("Your kiosk has been unlocked.  You can now search for the church, organization, or fundraiser you are setting your kiosk to.", '', " ", "OK");
+			openSearchPage();
+		}
+		else
+		{
+			appwindow = window.open('index.html', '_self', 'location=yes');
+		}
 	}
 	else
 	{
@@ -37,4 +43,15 @@ function fogotPin()
 
 	
 
+}
+function cancelUnlockKiosk()
+{
+	if(_unlockPath == 'search')
+		{
+			appwindow = window.open('index.html', '_self', 'location=yes');
+		}
+		else
+		{
+			openDonationPage('');
+		}
 }
