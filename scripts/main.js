@@ -92,9 +92,7 @@ function iabCloseSearch(event) {
 function iabCloseDonation(event) {	
  
 	
-	showUnlockKioskPage();
-	alert("in donation close");
-	 
+	showUnlockKioskPage();	 
 	 browserwindow.removeEventListener('loadstop', iabLoadStop);
 	 browserwindow.removeEventListener('exit', iabCloseDonation);
 	//appwindow = window.open('index.html', '_self', 'location=yes');	//donation windows should already be at the index any ways
