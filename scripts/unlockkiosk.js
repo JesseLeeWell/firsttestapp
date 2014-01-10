@@ -1,14 +1,16 @@
-var _unlockPath = storageGet('unlockpath');
+
 function unlockKiosk()
 {
 	
-	//get the pin they entered.  If it is correct, let them go to search.
+	//get the pin they entered.  If it is correct, let them go to either search or settings (index) depending on success path
+	var successPath = storageGet('securesuccesspath');
+	storageSet('securecancelpath', 'index');
 	var pintyped = $('#pin').val();
 	var pinstored = storageGet('pin');
 	
 	if(pintyped == pinstored)
 	{
-		if(_unlockPath == 'search')
+		if(successPath == 'search')
 		{
 			showMessage("Your kiosk has been unlocked.  You can now search for the church, organization, or fundraiser you are setting your kiosk to.", '', " ", "OK");
 			openSearchPage();
@@ -35,6 +37,8 @@ function unlockKiosk()
 
 function fogotPin()
 {
+	
+	
 	//forgot pin, send email
 	//get the pin they entered in storage, and hit our server with the email
 	//they have saved.  Then let them know we sent the pin.
@@ -53,18 +57,19 @@ function fogotPin()
 }
 function cancelUnlockKiosk()
 {
-	if(_unlockPath == 'search')
-		{
-			$(':mobile-pagecontainer').pagecontainer('change', '#indexkpage', {
-				transition: 'slidefade',
-				changeHash: false,
-				reverse: false,
-				showLoadMsg: true
-			});
-			//appwindow = window.open('index.html', '_self', 'location=yes');
-		}
-		else
-		{
-			openDonationPage('');
-		}
+	var securecancelpath = storageSet('securecancelpath', 'index');
+	if(securecancelpath == 'index')
+	{
+		$(':mobile-pagecontainer').pagecontainer('change', '#indexkpage', {
+			transition: 'slidefade',
+			changeHash: false,
+			reverse: false,
+			showLoadMsg: true
+		});
+		//appwindow = window.open('index.html', '_self', 'location=yes');
+	}
+	else
+	{
+		openDonationPage('');
+	}
 }

@@ -102,7 +102,8 @@ function iabCloseDonation(event) {
 function openSearch()
 {
 	//set the settings path
-	storageSet('unlockpath', 'search');
+	storageSet('securesuccesspath', 'search');
+	storageSet('securecancelpath', 'index');
 	//determin if they should go to the secure kiosk or the unlock kiosk page
 	var pin = storageGet(_storagePin);
 	var email = storageGet('email');
@@ -139,7 +140,8 @@ function getParameterByName(name, url) {
 function openDonationPage(extras)
 {
 	
-	storageSet('unlockpath', 'settings');
+	storageSet('securesuccesspath', 'index');
+	storageSet('securecancelpath', 'donation');
 	var pageid = getPageID();
 	var url =_kioskURL + pageid + extras;
 	
