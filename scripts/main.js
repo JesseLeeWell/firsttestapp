@@ -42,7 +42,7 @@ var browserwindow = null;
 var _storagePageID = "storagePageID";
 var _storageDisplayName = "storageDisplayName";
 var _storageFullURL = "storageFullURL";
-var _unlockPath = "search";
+
 
     // Cordova is ready
     //
@@ -103,7 +103,8 @@ function iabCloseDonation(event) {
 
 function openSearchPage()
 {
-	_unlockPath = 'search';
+	storageSet('unlockpath', 'search');
+	
 	browserwindow = window.open(_kioskURL + 'index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=no,closebuttoncaption=settings');
 	
 	browserwindow.addEventListener('loadstart', iabLoadStartSearch);
@@ -124,8 +125,8 @@ function getParameterByName(name, url) {
 
 function openDonationPage(extras)
 {
-	_unlockPath = 'settings';
 	
+	storageSet('unlockpath', 'settings');
 	var pageid = getPageID();
 	var url =_kioskURL + pageid + extras;
 	

@@ -1,4 +1,4 @@
-
+var _unlockPath = storageGet('unlockpath');
 function unlockKiosk()
 {
 	
