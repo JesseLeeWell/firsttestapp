@@ -107,13 +107,14 @@ function openSearch()
 	//determin if they should go to the secure kiosk or the unlock kiosk page
 	var pin = storageGet(_storagePin);
 	var email = storageGet('email');
-	if(pin && email)
+	if((!pin || /^\s*$/.test(pin)) || (!email || /^\s*$/.test(email)))
 	{
-		showUnlockKioskPage();
+		showSecureKioskPage();
 	}
 	else
 	{
-		showSecureKioskPage();
+		
+		showUnlockKioskPage();
 	
 	}
 }

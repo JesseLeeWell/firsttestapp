@@ -4,7 +4,7 @@ function unlockKiosk()
 	
 	//get the pin they entered.  If it is correct, let them go to either search or settings (index) depending on success path
 	var successPath = storageGet('securesuccesspath');
-	storageSet('securecancelpath', 'index');
+	
 	var pintyped = $('#pin').val();
 	var pinstored = storageGet('pin');
 	
