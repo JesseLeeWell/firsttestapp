@@ -18,16 +18,16 @@ function unlockKiosk()
 		}
 		else
 		{
-		/*
-			$(':mobile-pagecontainer').pagecontainer('change', '#indexkpage', {
+		
+			$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
 				transition: 'slidefade',
 				changeHash: false,
 				reverse: false,
 				showLoadMsg: true
 			});
-			*/
+			
 			//$.mobile.changePage('#indexkpage','slide');
-			appwindow = window.open('index.html', '_self', 'location=yes');
+			//appwindow = window.open('index.html', '_self', 'location=yes');
 		}
 	}
 	else
@@ -63,15 +63,15 @@ function cancelUnlockKiosk()
 	var securecancelpath = storageGet('securecancelpath');
 	if(securecancelpath == 'index')
 	{
-		/*
-		$(':mobile-pagecontainer').pagecontainer('change', '#indexkpage', {
+		
+		$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
 			transition: 'slidefade',
 			changeHash: false,
 			reverse: false,
 			showLoadMsg: true
 		});
-		*/
-		appwindow = window.open('index.html', '_self', 'location=yes');
+		
+		//appwindow = window.open('index.html', '_self', 'location=yes');
 	}
 	else
 	{
