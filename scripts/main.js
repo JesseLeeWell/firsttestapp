@@ -207,6 +207,10 @@ function showUnlockKioskPage()
 {
 	appwindow = window.open('unlockkiosk.html', '_self', 'location=yes');
 }
+function showSecureKioskPage()
+{
+	window.location = "securekiosk.html";
+}
 function showMessageCallBack()
 {
 	
