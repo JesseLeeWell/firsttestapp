@@ -209,7 +209,8 @@ function showUnlockKioskPage()
 }
 function showSecureKioskPage()
 {
-	window.location = "securekiosk.html";
+	$.mobile.changePage('#securekiosk.html','slide');
+	//window.location = "securekiosk.html";
 }
 function showMessageCallBack()
 {
