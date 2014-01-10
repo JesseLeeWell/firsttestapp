@@ -15,7 +15,13 @@ function unlockKiosk()
 		}
 		else
 		{
-			$.mobile.changePage('#indexkpage','slide');
+			$(':mobile-pagecontainer').pagecontainer('change', '#indexkpage', {
+				transition: 'slidefade',
+				changeHash: false,
+				reverse: false,
+				showLoadMsg: true
+			});
+			//$.mobile.changePage('#indexkpage','slide');
 			//appwindow = window.open('index.html', '_self', 'location=yes');
 		}
 	}
@@ -49,7 +55,13 @@ function cancelUnlockKiosk()
 {
 	if(_unlockPath == 'search')
 		{
-			appwindow = window.open('index.html', '_self', 'location=yes');
+			$(':mobile-pagecontainer').pagecontainer('change', '#indexkpage', {
+				transition: 'slidefade',
+				changeHash: false,
+				reverse: false,
+				showLoadMsg: true
+			});
+			//appwindow = window.open('index.html', '_self', 'location=yes');
 		}
 		else
 		{

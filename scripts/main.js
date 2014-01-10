@@ -42,6 +42,7 @@ var browserwindow = null;
 var _storagePageID = "storagePageID";
 var _storageDisplayName = "storageDisplayName";
 var _storageFullURL = "storageFullURL";
+var _storagePin = 'pin';
 
 
     // Cordova is ready
@@ -98,11 +99,25 @@ function iabCloseDonation(event) {
 	//appwindow = window.open('index.html', '_self', 'location=yes');	//donation windows should already be at the index any ways
 	//openDonationPage('');
 }
-
-function openSearchPage()
+function openSearch()
 {
+	//set the settings path
 	storageSet('unlockpath', 'search');
+	//determin if they should go to the secure kiosk or the unlock kiosk page
+	var pin = storageGet(_storagePin);
+	var email = storageGet('email');
+	if(pin && email)
+	{
+		showUnlockKioskPage();
+	}
+	else
+	{
+		showSecureKioskPage();
 	
+	}
+}
+function openSearchPage()
+{	
 	browserwindow = window.open(_kioskURL + 'index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=no,closebuttoncaption=settings');
 	
 	browserwindow.addEventListener('loadstart', iabLoadStartSearch);
@@ -224,6 +239,12 @@ function showSecureKioskPage()
     });
 	//$.mobile.changePage('#securekioskpage','slidefade');
 	//window.location = "securekiosk.html";
+}
+
+function clearDataForTesting()
+{
+	
+	localStorage.clear();
 }
 function showMessageCallBack()
 {

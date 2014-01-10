@@ -15,7 +15,7 @@ function secureKiosk()
 	
 	var urltocall = _baseURL + _kiosksetupURL + urlstring;
 	//store this stuff locally
-	storageSet('pin', pin);
+	storageSet(_storagePin, pin);
 	storageSet('email', email);
 	storageSet('name', name);
 	storageSet('phonenumber', phonenumber);
