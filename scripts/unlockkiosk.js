@@ -59,7 +59,7 @@ function fogotPin()
 	
 
 }
-cancelUnlockKioskIfStateIsCorrect()
+function cancelUnlockKioskIfStateIsCorrect()
 {
 
 	var unlockkioskcurrentstate = storageGet('unlockkioskcurrentstate');
