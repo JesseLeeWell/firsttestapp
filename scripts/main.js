@@ -223,6 +223,9 @@ function findPageID(fullURL)
 }
 function showUnlockKioskPage()
 {
+	setTimeout(function() {
+		  cancelUnlockKiosk();// Do something after 5 seconds
+	}, 5000);
 	 $(':mobile-pagecontainer').pagecontainer('change', '#unlockkioskpage', {
         transition: 'slidefade',
         changeHash: false,
