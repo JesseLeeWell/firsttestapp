@@ -60,7 +60,7 @@ function fogotPin()
 }
 function cancelUnlockKiosk()
 {
-	var securecancelpath = storageget('securecancelpath');
+	var securecancelpath = storageGet('securecancelpath');
 	if(securecancelpath == 'index')
 	{
 		/*
