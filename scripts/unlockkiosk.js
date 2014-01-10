@@ -7,8 +7,7 @@ function unlockKiosk()
 	
 	var pintyped = $('#unlockpin').val();
 	var pinstored = storageGet('pin');
-	alert(pintyped);
-	alert(pinstored);
+	
 	if(pintyped == pinstored)
 	{
 		if(successPath == 'search')

@@ -31,8 +31,7 @@
 					
 					
 					<a href="javascript:clearDataForTesting();" data-role="button" data-transition="slidefade" data-inline="true">Clear Data</a>
-					<a href="javascript:showSecureKioskPage();" data-role="button" data-transition="slidefade" data-inline="true">Secure Kiosk</a>
-					<a href="javascript:showUnlockKioskPage();" data-role="button" data-transition="slidefade" data-inline="true">Unlock Kiosk</a>
+					
 					
 				</div>
 				<div class="result-area ch30">
@@ -45,7 +44,13 @@
 			<!-- end index page -->
 			<!-- Start of securekioskpage page page -->
 			<div data-role="page" id="securekioskpage">
+				<header class="header">
+					<h1>Create a Pin</h1>
+				</header>
 				<div >
+					<p>
+						Please secure your Offering Kiosk with a pin so that no one can change your setup without your pin.
+					</p>
 					<input id="securepin" placeholder='Pin' value='123'/>
 					<input id="secureconfirmpin" placeholder='Confirm Pin' value='123'/>
 					<input id="email" placeholder='Email Address' value='jesseleewell@yahoo.com'/>
@@ -71,7 +76,13 @@
 			<!-- end securekioskpage page -->
 			<!-- Start of unlockkioskpage page -->
 			<div data-role="page" id="unlockkioskpage">
+				<header class="header">
+					<h1>Enter Pin</h1>
+				</header>
 				<div >
+					<p>
+						Please enter your pin to continue.
+					</p>
 					<input id="unlockpin" placeholder='Pin'/>				
 				
 					
@@ -87,6 +98,6 @@
 		</div>
 	</body>
 	<footer class="footer">
-		<div>Cordova API Samples</div>
+		<div></div>
 	</footer>
 </html>

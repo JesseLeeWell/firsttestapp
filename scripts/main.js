@@ -237,7 +237,7 @@ function showSecureKioskPage()
 	 $(':mobile-pagecontainer').pagecontainer('change', '#securekioskpage', {
         transition: 'slidefade',
         changeHash: false,
-        reverse: false,
+        reverse: true,
         showLoadMsg: true
     });
 	//$.mobile.changePage('#securekioskpage','slidefade');
