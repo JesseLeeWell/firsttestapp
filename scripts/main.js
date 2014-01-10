@@ -213,7 +213,7 @@ function showMessage(message, callback, title, buttonName){
 			alert(callback);
 			navigator.notification.alert(
 				message,  // message
-				callback,         // callback
+				alertDismissed,         // callback
 				title,            // title
 				buttonName                  // buttonName
 			);
