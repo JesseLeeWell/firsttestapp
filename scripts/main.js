@@ -208,7 +208,7 @@ function setupSettingsPage()
 	//set up the radio buttons for start page
 	var startpageselection = storageGet('startpageselection');
 	alert(tmpstartpageselection);
-	$('input:radio[value="'+startpageselection+'"']').attr('checked', 'checked');
+	$('input:radio[value="'+startpageselection+'"]').attr('checked', 'checked');
 	//$('input[name=startpagegroup]:checked').val(startpageselection);
 	//setup the donation buttons
 	setupDonationAndPurchaseButtons();
