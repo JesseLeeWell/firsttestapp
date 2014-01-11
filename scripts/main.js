@@ -206,9 +206,9 @@ function storeURLInfo(fullURL)
 function setupSettingsPage()
 {
 	//set up the radio buttons for start page
-	var tmpstartpageselection = storageGet('startpageselection');
+	var startpageselection = storageGet('startpageselection');
 	alert(tmpstartpageselection);
-	$('input[name=startpagegroup]:checked').val(tmpstartpageselection);
+	$('input[name=startpagegroup]:checked').val(startpageselection);
 	//setup the donation buttons
 	setupDonationAndPurchaseButtons();
 	alert('done in setup');
