@@ -55,17 +55,24 @@ if(!tmpstartpageselection)
     // Cordova is ready
     //
 
-function onDeviceReady() {
+function onDeviceReady() { 
 	setupSettingsPage();
 	
 }
+
 /*
 $( document ).ready(function() {
 $('input[name=startpagegroup]').val(['settingspage']);
 //var nametoset = "radiostartpagegroup"+'settingspage';
-var nametoset = "radiostartpagegrouppointofsalepage";
-$("#"+nametoset).attr("checked", "checked"); 
-	alert("here");
+var nametoset1 = "radiostartpagegrouppointofsalepage";
+//$("#"+nametoset).attr("checked", "checked"); 
+var nametoset2 = "radiostartpagegroup" + "pointofsalepage";
+
+	$("#"+nametoset2).prop("checked", true); 
+	
+	//alert(nametoset1);
+	alert(nametoset2);
+	
 });
 */
 function iabLoadStart(event) { 
@@ -215,7 +222,10 @@ function setupSettingsPage()
 	var startpageselection = storageGet('startpageselection');
 	alert(startpageselection);
 	var nametoset = "radiostartpagegroup"+startpageselection;
-	$("#"+nametoset).attr("checked", "checked"); 
+	//$("#"+nametoset).attr("checked", "checked"); 
+	//var nametoset2 = "radiostartpagegroup" + "pointofsalepage";
+
+	$("#"+nametoset).prop("checked", true);
 	//$('input:radio[value="'+startpageselection+'"]').prop('checked', true);
 	//$('input[name=startpagegroup]:checked').val(startpageselection);
 	//$('input[name=startpagegroup]').val([startpageselection]);
