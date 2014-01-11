@@ -58,10 +58,16 @@ if(!tmpstartpageselection)
 function onDeviceReady() {
 	setupSettingsPage();
 	
-
 }
-
-
+/*
+$( document ).ready(function() {
+$('input[name=startpagegroup]').val(['settingspage']);
+//var nametoset = "radiostartpagegroup"+'settingspage';
+var nametoset = "radiostartpagegrouppointofsalepage";
+$("#"+nametoset).attr("checked", "checked"); 
+	alert("here");
+});
+*/
 function iabLoadStart(event) { 
 	//alert(event.type + ' - ' + event.url);
 }
@@ -207,9 +213,12 @@ function setupSettingsPage()
 {
 	//set up the radio buttons for start page
 	var startpageselection = storageGet('startpageselection');
-	alert(tmpstartpageselection);
-	$('input:radio[value="'+startpageselection+'"]').prop('checked', true);
+	alert(startpageselection);
+	var nametoset = "radiostartpagegroup"+startpageselection;
+	$("#"+nametoset).attr("checked", "checked"); 
+	//$('input:radio[value="'+startpageselection+'"]').prop('checked', true);
 	//$('input[name=startpagegroup]:checked').val(startpageselection);
+	//$('input[name=startpagegroup]').val([startpageselection]);
 	//setup the donation buttons
 	setupDonationAndPurchaseButtons();
 	alert('done in setup');
