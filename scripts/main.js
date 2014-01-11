@@ -207,9 +207,11 @@ function setupSettingsPage()
 {
 	//set up the radio buttons for start page
 	var tmpstartpageselection = storageGet('startpageselection');
+	alert(tmpstartpageselection);
 	$('input[name=startpagegroup]:checked').val(tmpstartpageselection);
 	//setup the donation buttons
 	setupDonationAndPurchaseButtons();
+	alert('done in setup');
 }
 function setupDonationAndPurchaseButtons()
 {
