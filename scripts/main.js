@@ -219,17 +219,11 @@ function storeURLInfo(fullURL)
 function setupSettingsPage()
 {
 	//set up the radio buttons for start page
-	var startpageselection = storageGet('startpageselection');
-	alert(startpageselection);
+	var startpageselection = storageGet('startpageselection');	
 	var nametoset = "radiostartpagegroup"+startpageselection;
-	//$("#"+nametoset).attr("checked", "checked"); 
-	//var nametoset2 = "radiostartpagegroup" + "pointofsalepage";
-
 	$("#radiostartpagegrouppointofsalepage").prop("checked", true);
 	$("input[type='radio']").checkboxradio("refresh");
-	//$('input:radio[value="'+startpageselection+'"]').prop('checked', true);
-	//$('input[name=startpagegroup]:checked').val(startpageselection);
-	//$('input[name=startpagegroup]').val([startpageselection]);
+	
 	//setup the donation buttons
 	setupDonationAndPurchaseButtons();
 	alert('done in setup');
@@ -247,6 +241,19 @@ function setupDonationAndPurchaseButtons()
 	
 	var infoField2 = document.getElementById("savedSearchPOSButton");
 	infoField2.innerHTML = displayname;
+	
+	//determin if we should show those buttons
+	if((!pageid || /^\s*$/.test(pin)) || (!displayname || /^\s*$/.test(email)))
+	{
+		$( "#preselectedpagediv" ).hide();
+	}
+	else
+	{
+		
+		$( "#preselectedpagediv" ).show();
+	
+	}
+	
 	
 	
 
@@ -301,7 +308,7 @@ function clearDataForTesting()
 {
 	
 	localStorage.clear();
-	setupSettingsScreen();
+	setupSettingsPage();
 }
 function showMessageCallBack()
 {
