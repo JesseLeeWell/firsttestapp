@@ -56,7 +56,7 @@ if(!tmpstartpageselection)
     //
 
 function onDeviceReady() {
-	setupSettingsScreen();
+	setupSettingsPage();
 	
 
 }
@@ -74,7 +74,7 @@ function iabLoadStart(event) {
 	{
 		
 		storeURLInfo(cururl);		
-		setupSettingsScreen();
+		setupSettingsPage();
 		
 		browserwindow.removeEventListener('exit', iabCloseSearch);
 		//browserwindow.addEventListener('exit', iabCloseDonation);

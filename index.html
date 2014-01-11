@@ -31,10 +31,17 @@
 					
 					
 					<a href="javascript:clearDataForTesting();" data-role="button" data-transition="slidefade" data-inline="true">Clear Data</a>
-					<p>When you start your app, what screen do you want to 
-					<input type="radio" onclick="javascript:saveStartPageRadioButtonValue();" name="startpagegroup" value="settingspage"> Settings Page<br>
-					<input type="radio" onclick="javascript:saveStartPageRadioButtonValue();" name="startpagegroup" value="donationpage"> Donation Page<br>
-					<input type="radio" onclick="javascript:saveStartPageRadioButtonValue();" name="startpagegroup" value="pointofsalepage" > Point of Sale Page </br>
+					<fieldset data-role="controlgroup">
+						<legend>When you start your app, what screen do you want to open:</legend>
+					
+						<input type="radio" onclick="javascript:saveStartPageRadioButtonValue();" name="startpagegroup" id="radiostartpagegroupsettingspage" value="settingspage">
+						<label for="radiostartpagegroupsettingspage">Settings Page</label>
+
+						<input type="radio" onclick="javascript:saveStartPageRadioButtonValue();" name="startpagegroup" id="radiostartpagegroupdonationpage" value="donationpage">
+						<label for="radiostartpagegroupdonationpage">Donation Page</label>
+						<input type="radio" onclick="javascript:saveStartPageRadioButtonValue();" name="startpagegroup" id="radiostartpagegrouppointofsalepage" value="pointofsalepage" >
+						<label for="radiostartpagegrouppointofsalepage">Point of Sale Page</label>
+					</fieldset>
 					
 				</div>
 				<div class="result-area ch30">
