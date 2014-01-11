@@ -226,6 +226,7 @@ function setupSettingsPage()
 	//var nametoset2 = "radiostartpagegroup" + "pointofsalepage";
 
 	$("#radiostartpagegrouppointofsalepage").prop("checked", true);
+	$("input[type='radio']").checkboxradio("refresh");
 	//$('input:radio[value="'+startpageselection+'"]').prop('checked', true);
 	//$('input[name=startpagegroup]:checked').val(startpageselection);
 	//$('input[name=startpagegroup]').val([startpageselection]);
