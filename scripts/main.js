@@ -83,14 +83,9 @@ function iabLoadStart(event) {
 		//alert("end found displayname");
 		//appwindow = window.open('index.html', '_self', 'location=yes');
 		
-		$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
-			transition: 'slidefade',
-			changeHash: false,
-			reverse: true,
-			showLoadMsg: true
-		});
 		
-		//browserwindow.close();
+		
+		browserwindow.close();
 	}
 }
 
