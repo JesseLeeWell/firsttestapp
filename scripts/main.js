@@ -77,8 +77,8 @@ function determinStartPage()
 	{
 		
 		//determine what they set as the opeing page
-		var tstartpageselection = storageGet('startpageselection');
-		switch(n)
+		var startpageselection = storageGet('startpageselection');
+		switch(startpageselection)
 		{
 			case 'donationpage':
 			  openDonationPage('');
