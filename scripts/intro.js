@@ -28,3 +28,4 @@ $(document).on('pageinit', function(event){
   $(document).on('pagehide', function () { $(this).off('swipeleft swiperight'); });
 });
 
+ $(document).on('pagehide', function () { $(this).off('swipeleft swiperight'); });
