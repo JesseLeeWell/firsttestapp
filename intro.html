@@ -32,7 +32,15 @@
     height: 100%;
 } 
 /* --- end youtube ---*/
-	
+
+.ui-footer
+{
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	 z-index: 1000000;
+	 text-align:center;
+}	
 </style>
 	<body style='padding:5px;'>
 		
@@ -40,18 +48,19 @@
 			<header class="header">
 				<h1>Intro page one</h1>
 			</header>
-			<div >
-				<!--
+			<div >				
 				<div class="video-content desktop-fluid-video-content" style = 'z-index:0;'>
 					<iframe src="https://www.youtube.com/embed/HUqSaZbCHmc?rel=0&wmode=opaque" frameborder="0" allowfullscreen></iframe>
-				</div>--> <!-- end .video-content -->
+				</div> <!-- end .video-content -->
 				<p>
 					adfadsf
 				</p>
 				
 			</div>
 			<div data-role="footer">
-				1 -2-3-4
+				<div>
+					<span style='color:red; font-size:1.2em;'>1</span> -2-3-4
+				</div>
 				<button class="button dh" onclick ="javascript:closeIntro();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Close Intro</button>
 				<button class="button dh" onclick ="javascript:closeIntroPerminataly();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Don't show intro again</button>
 			</div>
@@ -67,7 +76,9 @@
 				
 			</div>
 			<div data-role="footer">
-				1 -2-3-4
+				<div>
+					1-<span style='color:red; font-size:1.2em;'>2</span>-3-4
+				</div>
 				<button class="button dh" onclick ="javascript:closeIntro();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Close Intro</button>
 				<button class="button dh" onclick ="javascript:closeIntroPerminataly();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Don't show intro again</button>
 			</div>
@@ -83,7 +94,9 @@
 				
 			</div>
 			<div data-role="footer">
-				1 -2-3-4
+				<div>
+					1-2-<span style='color:red; font-size:1.2em;'>3</span>-4
+				</div>
 				<button class="button dh" onclick ="javascript:closeIntro();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Close Intro</button>
 				<button class="button dh" onclick ="javascript:closeIntroPerminataly();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Don't show intro again</button>
 			</div>
@@ -99,7 +112,9 @@
 				
 			</div>
 			<div data-role="footer">
-				1 -2-3-4
+				<div>
+					1-2-3-<span style='color:red; font-size:1.2em;'>4</span>
+				</div>
 				<button class="button dh" onclick ="javascript:closeIntro();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Close Intro</button>
 				<button class="button dh" onclick ="javascript:closeIntroPerminataly();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Don't show intro again</button>
 			</div>

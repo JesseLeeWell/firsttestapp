@@ -62,18 +62,17 @@ function onDeviceReady() {
 	
 	if((hideIntro && hideIntro == 'true') || (alreadyshowedintro && alreadyshowedintro == 'true'))
 	{
-		
+		setupSettingsPage();
+		determinStartPage();
 	}
 	else
 	{
 		//set the session storage that it showed the intro
-		window.sessionStorage.setItem("alreadyshowedintro", "true");
-		
+		window.sessionStorage.setItem("alreadyshowedintro", "true");		
 		appwindow = window.open('intro.html', '_self', 'location=yes');
 	}
 	
-	setupSettingsPage();
-	determinStartPage();
+	
 	
 }
 function determinStartPage()
