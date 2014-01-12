@@ -74,19 +74,22 @@ function iabLoadStart(event) {
 		storeURLInfo(cururl);		
 		setupSettingsPage();
 		
-		browserwindow.removeEventListener('exit', iabCloseSearch);
+		//browserwindow.removeEventListener('exit', iabCloseSearch);
 		//browserwindow.addEventListener('exit', iabCloseDonation);
 		//browserwindow.close();
-		showMessage("Now that your page is set, you can put your kiosk into donation or point of sale mode from this settings screen ", '', " ", "OK");
+		//showMessage("Now that your page is set, you can put your kiosk into donation or point of sale mode from this settings screen ", '', " ", "OK");
 		//browserwindow.close();
-		alert("end found displayname");
+		//alert("end found displayname");
 		//appwindow = window.open('index.html', '_self', 'location=yes');
+		/*
 		$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
 			transition: 'slidefade',
 			changeHash: false,
 			reverse: true,
 			showLoadMsg: true
 		});
+		*/
+		browserwindow.close();
 	}
 }
 
