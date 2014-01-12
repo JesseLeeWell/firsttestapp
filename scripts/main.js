@@ -60,21 +60,6 @@ function onDeviceReady() {
 	
 }
 
-/*
-$( document ).ready(function() {
-$('input[name=startpagegroup]').val(['settingspage']);
-//var nametoset = "radiostartpagegroup"+'settingspage';
-var nametoset1 = "radiostartpagegrouppointofsalepage";
-//$("#"+nametoset).attr("checked", "checked"); 
-var nametoset2 = "radiostartpagegroup" + "pointofsalepage";
-
-	$("#"+nametoset2).prop("checked", true); 
-	
-	//alert(nametoset1);
-	alert(nametoset2);
-	
-});
-*/
 function iabLoadStart(event) { 
 	//alert(event.type + ' - ' + event.url);
 }
@@ -89,13 +74,19 @@ function iabLoadStart(event) {
 		storeURLInfo(cururl);		
 		setupSettingsPage();
 		
-		//browserwindow.removeEventListener('exit', iabCloseSearch);
+		browserwindow.removeEventListener('exit', iabCloseSearch);
 		//browserwindow.addEventListener('exit', iabCloseDonation);
 		//browserwindow.close();
 		showMessage("Now that your page is set, you can put your kiosk into donation or point of sale mode from this settings screen ", '', " ", "OK");
 		//browserwindow.close();
 		alert("end found displayname");
-		browserwindow = window.open('index.html', '_self', 'location=yes');
+		//appwindow = window.open('index.html', '_self', 'location=yes');
+		$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
+			transition: 'slidefade',
+			changeHash: false,
+			reverse: true,
+			showLoadMsg: true
+		});
 	}
 }
 
