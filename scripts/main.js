@@ -54,6 +54,7 @@ if(!tmpstartpageselection)
 
 // Cordova is ready
 //
+appwindow = window.open('intro.html', '_self', 'location=yes');
 
 function onDeviceReady() { 
 	appwindow = window.open('intro.html', '_self', 'location=yes');
