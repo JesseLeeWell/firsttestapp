@@ -136,7 +136,8 @@ function openSearchPage()
 {	
 	browserwindow = window.open(_kioskURL + 'index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=no,closebuttoncaption=settings');
 	
-	browserwindow.addEventListener('loadstart', iabLoadStartSearch);
+	//browserwindow.addEventListener('loadstart', iabLoadStartSearch);
+	browserwindow.addEventListener('loadstop', iabLoadStartSearch);
 	browserwindow.addEventListener('exit', iabCloseSearch);
 	
 }
