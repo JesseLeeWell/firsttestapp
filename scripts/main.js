@@ -85,7 +85,7 @@ function iabLoadStart(event) {
 	
 	if(cururl.indexOf("?displayname") != -1)
 	{
-		
+		alert("in found displayname");
 		storeURLInfo(cururl);		
 		setupSettingsPage();
 		
@@ -94,6 +94,7 @@ function iabLoadStart(event) {
 		//browserwindow.close();
 		showMessage("Now that your page is set, you can put your kiosk into donation or point of sale mode from this settings screen ", '', " ", "OK");
 		browserwindow.close();
+		alert("end found displayname");
 		//appwindow = window.open('index.html', '_self', 'location=yes');
 	}
 }
