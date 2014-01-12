@@ -52,14 +52,49 @@ if(!tmpstartpageselection)
 }
 
 
-    // Cordova is ready
-    //
+// Cordova is ready
+//
 
 function onDeviceReady() { 
 	setupSettingsPage();
+	determinStartPage();
 	
 }
+function determinStartPage()
+{
+	//based on the settings they chose, open the correct screen
+	//settings vs donation vs point of sale
+	
+	//first make sure we have a donation page set, if not defaule to settings.
+	var pageid = getPageID();
+	var displayname = getDisplayName();	
+	
+	if((!pageid || /^\s*$/.test(pageid)) || (!displayname || /^\s*$/.test(displayname)))
+	{
+		return true; //just leave them on the settings screen
+	}
+	else
+	{
+		
+		//determine what they set as the opeing page
+		var tstartpageselection = storageGet('startpageselection');
+		switch(n)
+		{
+			case 'donationpage':
+			  openDonationPage('');
+			  break;
+			case 'pointofsalepage':
+			  openDonationPage('/donation_prompt?show_purchase_form=true');
+			  break;
+			default:
+			  //default is just settings page, so just do nothing
+			  break;
+		}
+	
+	}
+	
 
+}
 function iabLoadStart(event) { 
 	//alert(event.type + ' - ' + event.url);
 }
