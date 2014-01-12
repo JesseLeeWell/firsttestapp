@@ -73,7 +73,7 @@ function iabLoadStart(event) {
 		alert("in found displayname");
 		storeURLInfo(cururl);		
 		setupSettingsPage();
-		
+		alert("in found displayname");
 		//browserwindow.removeEventListener('exit', iabCloseSearch);
 		//browserwindow.addEventListener('exit', iabCloseDonation);
 		//browserwindow.close();
