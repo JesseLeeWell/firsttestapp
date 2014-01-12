@@ -223,8 +223,9 @@ function setupSettingsPage()
 	$("input[type='radio']").checkboxradio("refresh");
 	
 	//setup the donation buttons
+	alert('before setupDonationAndPurchaseButtons');
 	setupDonationAndPurchaseButtons();
-	//alert('done in setup');
+	alert('done in setup');
 }
 function setupDonationAndPurchaseButtons()
 {
