@@ -1,9 +1,4 @@
-$(document).bind("mobileinit", function() {
-                       $.mobile.autoInitializePage = false;
-                       $.mobile.defaultPageTransition = 'none';
-                       $.mobile.touchOverflowEnabled = false;
-                       $.mobile.defaultDialogTransition = 'none';
-                       $.mobile.loadingMessage = '' ;   
+  
 $(document).on('pageinit', function(event){
   $('div.ui-page').on("swipeleft", function () {
     var nextpage = $(this).next('div[data-role="page"]');
