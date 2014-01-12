@@ -56,6 +56,7 @@ if(!tmpstartpageselection)
 //
 
 function onDeviceReady() { 
+	appwindow = window.open('intro.html', '_self', 'location=yes');
 	setupSettingsPage();
 	determinStartPage();
 	
