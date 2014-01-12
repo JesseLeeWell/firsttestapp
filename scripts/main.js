@@ -89,11 +89,12 @@ function iabLoadStart(event) {
 		storeURLInfo(cururl);		
 		setupSettingsPage();
 		
-		browserwindow.removeEventListener('exit', iabCloseSearch);
+		//browserwindow.removeEventListener('exit', iabCloseSearch);
 		//browserwindow.addEventListener('exit', iabCloseDonation);
 		//browserwindow.close();
 		showMessage("Now that your page is set, you can put your kiosk into donation or point of sale mode from this settings screen ", '', " ", "OK");
-		appwindow = window.open('index.html', '_self', 'location=yes');
+		browserwindow.close();
+		//appwindow = window.open('index.html', '_self', 'location=yes');
 	}
 }
 
@@ -300,7 +301,7 @@ function showSecureKioskPage()
 function saveStartPageRadioButtonValue()
 {
 	var startpageselection = $('input[name=startpagegroup]:checked').val();
-	alert(startpageselection);
+	//alert(startpageselection);
 	storageSet('startpageselection', startpageselection);
 	
 }
