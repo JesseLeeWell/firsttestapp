@@ -71,7 +71,8 @@ function iabLoadStart(event) {
 	if(cururl.indexOf("?displayname") != -1)
 	{
 		alert("in found displayname");
-		storeURLInfo(cururl);		
+		storeURLInfo(cururl);
+alert("in found displayname");		
 		setupSettingsPage();
 		alert("in found displayname");
 		//browserwindow.removeEventListener('exit', iabCloseSearch);
