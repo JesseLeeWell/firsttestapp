@@ -1,4 +1,4 @@
-
+$(document).on('pagehide', function () { $(this).off('swipeleft swiperight'); });
 $(document).on('pageinit', function(event){
   $('div.ui-page').on("swipeleft", function () {
     var nextpage = $(this).next('div[data-role="page"]');
