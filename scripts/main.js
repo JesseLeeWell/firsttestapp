@@ -59,7 +59,7 @@ if(!tmpstartpageselection)
 function onDeviceReady() { 
 	var hideIntro = storageGet('hideintro');
 	var alreadyshowedintro = window.sessionStorage.getItem('alreadyshowedintro');
-	alert(alreadyshowedintro);
+	
 	if((hideIntro && hideIntro == 'true') || (alreadyshowedintro && alreadyshowedintro == 'true'))
 	{
 		

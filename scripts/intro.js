@@ -43,6 +43,7 @@ function closeIntro()
 }
 function closeIntroPerminataly()
 {
-	storageSet('hideintro', 'true');
+	//storageSet('hideintro', 'true');
+	window.localStorage.setItem('hideintro', 'true');
 	appwindow = window.open('index.html', '_self', 'location=yes');
 }
