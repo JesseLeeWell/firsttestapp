@@ -93,9 +93,9 @@ function iabLoadStart(event) {
 		//browserwindow.addEventListener('exit', iabCloseDonation);
 		//browserwindow.close();
 		showMessage("Now that your page is set, you can put your kiosk into donation or point of sale mode from this settings screen ", '', " ", "OK");
-		browserwindow.close();
+		//browserwindow.close();
 		alert("end found displayname");
-		//appwindow = window.open('index.html', '_self', 'location=yes');
+		appwindow = window.open('index.html', '_self', 'location=yes');
 	}
 }
 
