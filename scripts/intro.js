@@ -4,6 +4,7 @@ $(document).on('pageinit', function(event){
     var nextpage = $(this).next('div[data-role="page"]');
       if (nextpage.length > 0) {
        // $.mobile.changePage(nextpage, "slide", false, true);
+	   event.stopImmediatePropagation();
 		$(':mobile-pagecontainer').pagecontainer('change', nextpage, {
 			transition: 'slidefade',
 			changeHash: false,
@@ -17,6 +18,7 @@ $(document).on('pageinit', function(event){
     var prevpage = $(this).prev('div[data-role="page"]');
     if (prevpage.length > 0) {
      // $.mobile.changePage(prevpage, { transition: "slide", reverse: true }, true, true);
+	 event.stopImmediatePropagation();
 	  $(':mobile-pagecontainer').pagecontainer('change', prevpage, {
 			transition: 'slidefade',
 			changeHash: false,
