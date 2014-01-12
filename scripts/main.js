@@ -54,10 +54,15 @@ if(!tmpstartpageselection)
 
 // Cordova is ready
 //
-appwindow = window.open('intro.html', '_self', 'location=yes');
+
 
 function onDeviceReady() { 
-	appwindow = window.open('intro.html', '_self', 'location=yes');
+	var hideIntro = storageGet('hideintro');
+	if(!(hideIntro && hideIntro == 'true'))
+	{
+		appwindow = window.open('intro.html', '_self', 'location=yes');
+	}
+	
 	setupSettingsPage();
 	determinStartPage();
 	
