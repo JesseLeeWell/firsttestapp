@@ -59,7 +59,7 @@ if(!tmpstartpageselection)
 function onDeviceReady() { 
 	var hideIntro = storageGet('hideintro');
 	var alreadyshowedintro = storageGet('alreadyshowedintro');
-	if(!(hideIntro && hideIntro == 'true') || !(alreadyshowedintro && alreadyshowedintro == 'true'))
+	if(!(hideIntro && hideIntro == 'true') && !(alreadyshowedintro && alreadyshowedintro == 'true'))
 	{
 		//set the session storage that it showed the intro
 		window.sessionStorage.setItem("alreadyshowedintro", "true");
