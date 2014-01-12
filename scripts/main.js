@@ -70,27 +70,27 @@ function iabLoadStart(event) {
 	
 	if(cururl.indexOf("?displayname") != -1)
 	{
-		alert("in found displayname");
+		
 		storeURLInfo(cururl);
-alert("in found displayname");		
+		
 		setupSettingsPage();
-		alert("in found displayname");
-		//browserwindow.removeEventListener('exit', iabCloseSearch);
+	
+		browserwindow.removeEventListener('exit', iabCloseSearch);
 		//browserwindow.addEventListener('exit', iabCloseDonation);
 		//browserwindow.close();
-		//showMessage("Now that your page is set, you can put your kiosk into donation or point of sale mode from this settings screen ", '', " ", "OK");
+		showMessage("Now that your page is set, you can put your kiosk into donation or point of sale mode from this settings screen ", '', " ", "OK");
 		//browserwindow.close();
 		//alert("end found displayname");
 		//appwindow = window.open('index.html', '_self', 'location=yes');
-		/*
+		
 		$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
 			transition: 'slidefade',
 			changeHash: false,
 			reverse: true,
 			showLoadMsg: true
 		});
-		*/
-		browserwindow.close();
+		
+		//browserwindow.close();
 	}
 }
 
@@ -223,9 +223,9 @@ function setupSettingsPage()
 	$("input[type='radio']").checkboxradio("refresh");
 	
 	//setup the donation buttons
-	alert('before setupDonationAndPurchaseButtons');
+	
 	setupDonationAndPurchaseButtons();
-	alert('done in setup');
+	
 }
 function setupDonationAndPurchaseButtons()
 {
@@ -241,8 +241,9 @@ function setupDonationAndPurchaseButtons()
 	var infoField2 = document.getElementById("savedSearchPOSButton");
 	infoField2.innerHTML = displayname;
 	
+	
 	//determin if we should show those buttons
-	if((!pageid || /^\s*$/.test(pin)) || (!displayname || /^\s*$/.test(email)))
+	if((!pageid || /^\s*$/.test(pageid)) || (!displayname || /^\s*$/.test(displayname)))
 	{
 		$( "#preselectedpagediv" ).hide();
 	}
