@@ -4,7 +4,7 @@ $(document).on('pageinit', function(event){
     var nextpage = $(this).next('div[data-role="page"]');
       if (nextpage.length > 0) {
        // $.mobile.changePage(nextpage, "slide", false, true);
-	   event.stopImmediatePropagation();
+	  
 		$(':mobile-pagecontainer').pagecontainer('change', nextpage, {
 			transition: 'slidefade',
 			changeHash: false,
@@ -27,7 +27,17 @@ $(document).on('pageinit', function(event){
 		});
     }
   });
-  $(document).on('pagehide', function () { $(this).off('swipeleft swiperight'); });
+  
+  $("body").off().on("swipeleft", function(event) {
+		//alert('hello');
+		/*window.location.href = "html/first.html";*/             
+	});
+
+	$("body").off("swipeleft").on("swipeleft", function(event) {
+		//alert('hello');
+		/*window.location.href = "html/first.html";*/             
+	});
+ 
 });
 
- $(document).on('pagehide', function () { $(this).off('swipeleft swiperight'); });
+ 
