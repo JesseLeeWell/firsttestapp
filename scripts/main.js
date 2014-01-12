@@ -68,8 +68,7 @@ function onDeviceReady() {
 	{
 		//set the session storage that it showed the intro
 		window.sessionStorage.setItem("alreadyshowedintro", "true");
-		var alreadyshowedintro = window.sessionStorage.getItem('alreadyshowedintro');
-	alert(alreadyshowedintro);
+		
 		appwindow = window.open('intro.html', '_self', 'location=yes');
 	}
 	
