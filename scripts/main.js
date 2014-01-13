@@ -241,7 +241,7 @@ function openDonationPage(extras)
 	browserwindow = window.open(url, '_blank', 'location=no,closebuttoncaption=settings');	
 	
 	browserwindow.addEventListener('exit', iabCloseDonation);
-	browserwindow.addEventListener('loadstart', iabLoadStartDonation);
+	browserwindow.addEventListener('loadstop', iabLoadStartDonation);
 
 }
 function storageSet(key, value)
