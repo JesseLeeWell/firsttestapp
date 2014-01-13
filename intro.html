@@ -5,10 +5,15 @@
 		<meta charset="utf-8">
 		
 		<link rel="stylesheet" href="themes/ctg.min.css" />
+		<link rel="stylesheet" href="themes/animate.css" />
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
 		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-		<script type="text/javascript" charset="utf-8" src="scripts/intro.js"></script>
+		
 		<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+		<script src="scripts/jquery.fittext.js"></script>
+		<script src="scripts/jquery.lettering.js"></script>
+		<script src="scripts/jquery.textillate.js"></script>
+		<script type="text/javascript" charset="utf-8" src="scripts/intro.js"></script>
 		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 		
 		
@@ -41,13 +46,31 @@
 	 z-index: 1000000;
 	 text-align:center;
 }	
+
+.ui-page
+{
+	padding:8px;
+}
 </style>
 	<body style='padding:5px;'>
 		
 		<div data-role="page" id='intro1' >
 			<header class="header">
-				<h1>Intro page one</h1>
+				
+				<h1 class="tlt">Increase Stewardship and Start Receiving Steady Tithes & Offerings to Help Your Church Reach it's Financial Goals...</h1>
 			</header>
+			<span id='fadein1' style='display:none; padding:5px;text-align:center'>
+				<h1 style='width:250px;'>Kiosk Tithing</h1>
+				<img src='images/Convenient-Kiosk.png' />
+			</span>
+			<span id='fadein2' style='display:none; padding:5px;text-align:center'>
+				<h1 style='width:250px;'>Mobile Tithing</h1>
+				<img src='images/Smart-phone-tithes.png' /> 
+			</span>
+			<span id='fadein3' style='display:none; padding:5px;text-align:center'>
+				<h1 style='width:250px;'>Online Tithing</h1>
+				<img src='images/Easy-Website-Integration.png' />
+			</span>
 			<div >				
 				<div class="video-content desktop-fluid-video-content" style = 'z-index:0;'>
 					<iframe src="https://www.youtube.com/embed/HUqSaZbCHmc?rel=0&wmode=opaque" frameborder="0" allowfullscreen></iframe>

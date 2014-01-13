@@ -1,4 +1,37 @@
 
+$( document ).ready(function() {
+	$(function () {
+    $('.tlt').textillate({ in: { effect: 'fadeInDownBig'} });
+		
+	})
+	
+	
+	
+	setTimeout(function() {
+		 $( "#fadein1" ).fadeIn( "slow", function() {
+			// Animation complete
+			}).css("display","inline-block");// Do something after 5 seconds
+	}, 8000);
+	setTimeout(function() {
+		  $( "#fadein2" ).fadeIn( "slow", function() {
+			// Animation complete
+			}).css("display","inline-block");// Do something after 5 seconds
+	}, 10000);
+	setTimeout(function() {
+		  $( "#fadein3" ).fadeIn( "slow" ).css("display","inline-block");// Do something after 5 seconds
+	}, 12000);
+	 
+			
+			 
+			
+			 
+});
+function fadeInFunction()
+{
+	alert("Hi");
+}
+//$('.tlt').textillate({ in: { effect: 'rollIn' } });
+
 $(document).on('pageinit', function(event){
 	$('div.ui-page').unbind();
   $('div.ui-page').on("swipeleft", function () { 
