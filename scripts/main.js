@@ -156,7 +156,7 @@ function iabLoadStart(event) {
 		
 	
 		
-		browserwindow.executeScript({code: "callAlertTest();"});
+		//browserwindow.executeScript({code: "callAlertTest();"});
 
 	}
 }
