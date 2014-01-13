@@ -43,7 +43,7 @@
 		 text-align:center;
 	}	
 
-	.ui-page
+	.ui-content
 	{
 		padding:8px;
 	}
@@ -55,10 +55,10 @@
 		<div class="content">
 			<!-- Start of index page page -->
 			<div data-role="page" id="indexpage">
-				<header class="header">
+				<div data-role="page" >
 					<h1>Continue To Give</h1>
-				</header>
-				<div class="">
+				</div>
+				<div data-role="content">
 				
 					<button class="button dh" onclick ="javascript:openSignupPage();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Sign Up</button>
 					<button class="button dh" onclick ="javascript:openSearch();">Search</button>
@@ -106,9 +106,10 @@
 			<!-- Start of securekioskpage page page -->
 			<div data-role="page" id="securekioskpage">
 			<div style ='padding:10px'>
-				<header class="header">
+				<div data-role="page" >
 					<h1>Create a Pin</h1>
-				</header>
+				</div>
+				
 				<div >
 					<p>
 						Please secure your Offering Kiosk with a pin so that no one can change your setup without your pin.
@@ -140,9 +141,9 @@
 			<!-- Start of unlockkioskpage page -->
 			<div data-role="page" id="unlockkioskpage">
 				<div style ='padding:10px'>
-				<header class="header">
+				<div data-role="page" >
 					<h1>Enter Pin</h1>
-				</header>
+				</div>				
 				<div >
 					<p>
 						Please enter your pin to continue.
