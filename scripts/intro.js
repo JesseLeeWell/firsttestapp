@@ -71,14 +71,14 @@ $(document).on('pageinit', function(event){
 
 function closeIntro()
 {
-	loadSettingsPage();
-	//appwindow = window.open('index.html', '_self', 'location=yes');
+	//loadSettingsPage();
+	appwindow = window.open('index.html', '_self', 'location=yes');
 
 }
 function closeIntroPerminataly()
 {
 	//storageSet('hideintro', 'true');
 	window.localStorage.setItem('hideintro', 'true');
-	loadSettingsPage();
-	//appwindow = window.open('index.html', '_self', 'location=yes');
+	//loadSettingsPage();
+	appwindow = window.open('index.html', '_self', 'location=yes');
 }

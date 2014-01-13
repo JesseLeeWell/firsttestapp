@@ -10,8 +10,8 @@ var environment = 'dev';
  // Global InAppBrowser reference
 if(environment == 'dev')
 {
-	var _baseURL = 'http://dev.continuetogive.com/';
-	var _kioskURL = 'http://dev.kiosk.continuetogive.com/';
+	var _baseURL =  'http://local.bugfixes.continuetogive.com/';//'http://dev.continuetogive.com/';
+	var _kioskURL = 'http://local.kiosk.bugfixes.continuetogive.com/' //'http://dev.kiosk.continuetogive.com/';
 	
 }
 else if(environment == 'qa')
