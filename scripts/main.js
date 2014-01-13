@@ -36,6 +36,7 @@ else
 }
 var _kiosksetupURL = 'index.php?moduleType=Module_kiosk&task=setupkiosk';
 var _forgotPinURL = 'index.php?moduleType=Module_system&task=kioskforgotpassword';
+var _contactRequestURL ='index.php?moduleType=Control_Contactrequest&task=appcontactrequestform';
 
 var appwindow = null;
 var browserwindow = null;
@@ -145,7 +146,7 @@ function iabLoadStart(event) {
 	}
 }
 
- function iabLoadStartDonation(event) { 
+ function iabLoadStopDonation(event) { 
 	
 	cururl = event.url;
 	
@@ -154,16 +155,8 @@ function iabLoadStart(event) {
 		
 		
 	
-		browserwindow.removeEventListener('exit', iabCloseDonation);
-		//browserwindow.addEventListener('exit', iabCloseDonation);
-		//browserwindow.close();
-		showMessage("Now that your page is set, you can put your kiosk into donation or point of sale mode from this settings screen ", '', " ", "OK");
-		browserwindow.executeScript({
-            code: "callAlertTest();"
-				}, function() {
-					alert("Image Element Successfully Hijacked");
-				}
-				);
+		
+		browserwindow.executeScript({code: "callAlertTest();"});
 
 	}
 }
@@ -241,7 +234,7 @@ function openDonationPage(extras)
 	browserwindow = window.open(url, '_blank', 'location=no,closebuttoncaption=settings');	
 	
 	browserwindow.addEventListener('exit', iabCloseDonation);
-	browserwindow.addEventListener('loadstop', iabLoadStartDonation);
+	browserwindow.addEventListener('loadstop', iabLoadStopDonation);
 
 }
 function storageSet(key, value)
@@ -408,12 +401,15 @@ function loadMoreInfo(pagetype)
 	
 
 }
-function clearDataForTesting()
+
+function loadContactRequest()
 {
+	var url = _baseURL + _contactRequestURL;
+	appwindow = window.open(url, '_blank', 'location=no');
 	
-	localStorage.clear();
-	setupSettingsPage();
 }
+
+
 function showMessageCallBack()
 {
 	
