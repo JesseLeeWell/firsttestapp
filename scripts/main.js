@@ -343,7 +343,8 @@ function showSecureKioskPage()
         transition: 'slidefade',
         changeHash: false,
         reverse: false,
-        showLoadMsg: true
+        showLoadMsg: true,
+		role: "dialog"
     });
 	//$.mobile.changePage('#securekioskpage','slidefade');
 	//window.location = "securekiosk.html";
