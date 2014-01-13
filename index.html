@@ -34,9 +34,10 @@
 	} 
 	/* --- end youtube ---*/
 
+	/*
 	.data-role=page {height: 100% !important; position:relative !important;}
 	.data-role=footer{bottom:0; position:absolute !important; top: auto !important; width:100%;}
-	
+	*/
 	.ui-content
 	{
 		padding:8px;
@@ -49,7 +50,7 @@
 		<div class="content">
 			<!-- Start of index page page -->
 			<div data-role="page" id="indexpage">
-				<div data-role="page" >
+				<div data-role="header" >
 					<h1>Continue To Give</h1>
 				</div>
 				<div data-role="content">
@@ -82,7 +83,7 @@
 					
 				</div>
 				
-				<div data-role="footer" style='text-align:center;'>
+				<div data-role="footer" style='text-align:center;' data-position="fixed">
 					<span style='width:32%; display:inline-block;border-right:1px solid grey;' onclick="javascript:loadSettingsPage();">
 						<p style='font-size:1.1em'>Settings</p>
 					</span>
@@ -100,7 +101,7 @@
 			<!-- Start of securekioskpage page page -->
 			<div data-role="page" id="securekioskpage">
 			<div style ='padding:10px'>
-				<div data-role="page" >
+				<div data-role="header" >
 					<h1>Create a Pin</h1>
 				</div>
 				
@@ -135,7 +136,7 @@
 			<!-- Start of unlockkioskpage page -->
 			<div data-role="page" id="unlockkioskpage">
 				<div style ='padding:10px'>
-				<div data-role="page" >
+				<div data-role="header" >
 					<h1>Enter Pin</h1>
 				</div>				
 				<div >
