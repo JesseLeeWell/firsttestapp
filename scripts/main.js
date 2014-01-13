@@ -145,6 +145,27 @@ function iabLoadStart(event) {
 	}
 }
 
+ function iabLoadStartDonation(event) { 
+	
+	cururl = event.url;
+	
+	if(cururl.indexOf("donation_prompt") != -1)
+	{
+		
+		
+	
+		browserwindow.removeEventListener('exit', iabCloseDonation);
+		//browserwindow.addEventListener('exit', iabCloseDonation);
+		//browserwindow.close();
+		showMessage("Now that your page is set, you can put your kiosk into donation or point of sale mode from this settings screen ", '', " ", "OK");
+		iabRef.executeScript({
+            code: "callAlertTest();"
+				}, function() {
+					alert("Image Element Successfully Hijacked");
+				}
+
+	}
+}
 
 function iabLoadStop(event) {
 	
@@ -219,6 +240,7 @@ function openDonationPage(extras)
 	browserwindow = window.open(url, '_blank', 'location=no,closebuttoncaption=settings');	
 	
 	browserwindow.addEventListener('exit', iabCloseDonation);
+	browserwindow.addEventListener('loadstart', iabLoadStartDonation);
 
 }
 function storageSet(key, value)
