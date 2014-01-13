@@ -328,7 +328,7 @@ function showUnlockKioskPage()
 	
 	
 	 $(':mobile-pagecontainer').pagecontainer('change', '#unlockkioskpage', {
-        transition: 'slidefade',
+        transition: 'pop',
         changeHash: false,
         reverse: false,
         showLoadMsg: true,
@@ -340,7 +340,7 @@ function showUnlockKioskPage()
 function showSecureKioskPage()
 {
 	 $(':mobile-pagecontainer').pagecontainer('change', '#securekioskpage', {
-        transition: 'slidefade',
+        transition: 'pop',
         changeHash: false,
         reverse: false,
         showLoadMsg: true,
