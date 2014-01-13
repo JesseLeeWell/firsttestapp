@@ -190,8 +190,8 @@ function openSearchPage()
 {	
 	browserwindow = window.open(_kioskURL + 'index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=no,closebuttoncaption=settings');
 	
-	//browserwindow.addEventListener('loadstart', iabLoadStartSearch);
-	browserwindow.addEventListener('loadstop', iabLoadStartSearch);
+	browserwindow.addEventListener('loadstart', iabLoadStartSearch);
+	//browserwindow.addEventListener('loadstop', iabLoadStartSearch);
 	browserwindow.addEventListener('exit', iabCloseSearch);
 	
 }
@@ -331,7 +331,8 @@ function showUnlockKioskPage()
         transition: 'slidefade',
         changeHash: false,
         reverse: false,
-        showLoadMsg: true
+        showLoadMsg: true,
+		data-rel: "dialog"
     });
 	//$.mobile.changePage('#unlockkioskpage','slidefade');
 	//appwindow = window.open('index.html#unlockkioskpage', '_self', 'location=yes');
