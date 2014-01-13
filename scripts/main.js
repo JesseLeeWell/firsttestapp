@@ -36,7 +36,7 @@ else
 }
 var _kiosksetupURL = 'index.php?moduleType=Module_kiosk&task=setupkiosk';
 var _forgotPinURL = 'index.php?moduleType=Module_system&task=kioskforgotpassword';
-var _contactRequestURL ='index.php?moduleType=Control_Contactrequest&task=appcontactrequestform';
+var _contactRequestURL ='index.php?moduleType=Module_kiosk&task=appcontactrequestform';
 
 var appwindow = null;
 var browserwindow = null;
