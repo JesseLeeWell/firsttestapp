@@ -68,8 +68,9 @@ function onDeviceReady() {
 	else
 	{
 		//set the session storage that it showed the intro
-		window.sessionStorage.setItem("alreadyshowedintro", "true");		
-		appwindow = window.open('intro.html', '_self', 'location=yes');
+		window.sessionStorage.setItem("alreadyshowedintro", "true");	
+		loadMoreInfo('')		
+		//appwindow = window.open('intro.html', '_self', 'location=yes');
 	}
 	
 	
@@ -355,6 +356,33 @@ function saveStartPageRadioButtonValue()
 	//alert(startpageselection);
 	storageSet('startpageselection', startpageselection);
 	
+}
+function loadSettingsPage()
+{
+	appwindow = window.open('index.html', '_self', 'location=yes');
+	
+}
+
+function loadMoreInfo(pagetype)
+{
+	switch(pagetype)
+		{
+			case 'dialog':
+			   $(':mobile-pagecontainer').pagecontainer('change', 'intro.html', {
+					transition: 'pop',
+					changeHash: false,
+					reverse: false,
+					showLoadMsg: true,
+					role: "dialog"
+				});
+			  break;
+			
+			default:
+			  appwindow = window.open('intro.html', '_self', 'location=yes');
+			  break;
+		}
+	
+
 }
 function clearDataForTesting()
 {

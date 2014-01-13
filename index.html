@@ -14,6 +14,41 @@
 		<script type="text/javascript" charset="utf-8" src="scripts/securekiosk.js"></script>
 		<script type="text/javascript" charset="utf-8" src="scripts/unlockkiosk.js"></script>
 		
+		<style>
+		/* --- youtube --- */
+
+	.desktop-fluid-video-content {
+		position: relative;
+		padding-bottom: 56.25%;
+		padding-top: 30px; height: 0; overflow: hidden;
+	}
+
+	.desktop-fluid-video-content iframe,
+	.desktop-fluid-video-content object,
+	.desktop-fluid-video-content embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	} 
+	/* --- end youtube ---*/
+
+	.ui-footer
+	{
+		position: fixed;
+		bottom: 0px;
+		width: 100%;
+		 z-index: 1000000;
+		 text-align:center;
+	}	
+
+	.ui-page
+	{
+		padding:8px;
+	}
+	</style>
+		
 	</head>
 	<body style='padding:15px;'>
 		
@@ -50,6 +85,15 @@
 					</div>
 					
 					<a href="javascript:clearDataForTesting();" data-role="button" data-transition="slidefade" data-inline="true">Clear Data</a>
+					
+				</div>
+				<div data-role="footer">
+					<span style='width:50%; display:inline-block;' onlclick='loadSettingsPage()'>
+						<h1>Settings</h1>
+					</span>
+					<span style='width:50%; display:inline-block;' onlclick='loadMoreInfo('dialog')'>
+						<h1>Info</h1>
+					</span>
 					
 				</div>
 				
