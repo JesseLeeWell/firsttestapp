@@ -69,7 +69,7 @@ function onDeviceReady() {
 	{
 		//set the session storage that it showed the intro
 		window.sessionStorage.setItem("alreadyshowedintro", "true");	
-		loadMoreInfo('')		
+		loadMoreInfo('');		
 		//appwindow = window.open('intro.html', '_self', 'location=yes');
 	}
 	
@@ -365,6 +365,7 @@ function loadSettingsPage()
 
 function loadMoreInfo(pagetype)
 {
+	
 	switch(pagetype)
 		{
 			case 'dialog':
