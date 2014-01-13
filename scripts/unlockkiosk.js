@@ -21,7 +21,7 @@ function unlockKiosk()
 		{
 		
 			$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
-				transition: 'slidefade',
+				transition: 'pop',
 				changeHash: false,
 				reverse: false,
 				showLoadMsg: true
@@ -79,7 +79,7 @@ function cancelUnlockKiosk()
 	{
 		
 		$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
-			transition: 'slidefade',
+			transition: 'pop',
 			changeHash: false,
 			reverse: true,
 			showLoadMsg: true
