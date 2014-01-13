@@ -332,7 +332,7 @@ function showUnlockKioskPage()
         changeHash: false,
         reverse: false,
         showLoadMsg: true,
-		data-rel: "dialog"
+		role: "dialog"
     });
 	//$.mobile.changePage('#unlockkioskpage','slidefade');
 	//appwindow = window.open('index.html#unlockkioskpage', '_self', 'location=yes');
