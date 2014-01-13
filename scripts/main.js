@@ -409,7 +409,14 @@ function loadContactRequest()
 	
 }
 
+function clearDataForTesting()
+{
 
+	window.localStorage.clear();
+	setupSettingsPage();
+	
+
+}
 function showMessageCallBack()
 {
 	
