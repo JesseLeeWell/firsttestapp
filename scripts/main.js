@@ -158,11 +158,12 @@ function iabLoadStart(event) {
 		//browserwindow.addEventListener('exit', iabCloseDonation);
 		//browserwindow.close();
 		showMessage("Now that your page is set, you can put your kiosk into donation or point of sale mode from this settings screen ", '', " ", "OK");
-		iabRef.executeScript({
+		browserwindow.executeScript({
             code: "callAlertTest();"
 				}, function() {
 					alert("Image Element Successfully Hijacked");
 				}
+				);
 
 	}
 }
