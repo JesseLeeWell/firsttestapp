@@ -37,6 +37,8 @@ else
 var _kiosksetupURL = 'index.php?moduleType=Module_kiosk&task=setupkiosk';
 var _forgotPinURL = 'index.php?moduleType=Module_system&task=kioskforgotpassword';
 var _contactRequestURL ='index.php?moduleType=Module_kiosk&task=appcontactrequestform';
+var _searchPage = 'index.php?moduleType=Module_Search&task=show.results';
+var _signUpPage = 'index.php?moduleType=Module_Registration&task=regflow_church&registrationstep=regcreateaccount'
 
 var appwindow = null;
 var browserwindow = null;
@@ -204,7 +206,7 @@ function openSearch()
 }
 function openSearchPage()
 {	
-	browserwindow = window.open(_kioskURL + 'index.php?moduleType=Module_Search&task=show.results', '_blank', 'location=no,closebuttoncaption=settings');
+	browserwindow = window.open(_kioskURL + _searchPage, '_blank', 'location=no,closebuttoncaption=settings');
 	
 	browserwindow.addEventListener('loadstart', iabLoadStartSearch);
 	//browserwindow.addEventListener('loadstop', iabLoadStartSearch);
@@ -214,7 +216,7 @@ function openSearchPage()
 function openSignupPage()
 {
 	
-	browserwindow = window.open(_baseURL + "home/churches", '_blank', 'location=no,closebuttoncaption=settings');
+	browserwindow = window.open(_baseURL + _signUpPage, '_blank', 'location=no,closebuttoncaption=settings');
 	//browserwindow.addEventListener('exit', iabClose);
 	
 }
