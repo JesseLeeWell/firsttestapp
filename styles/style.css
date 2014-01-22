@@ -1,9 +1,17 @@
 
-
+.clr
+{
+	clear:both;
+}
+.spacer
+{
+	height:5px;
+}
 .step-outer
 {
 margin:auto; 
 width:915px;
+height:68px;
 
 }
 .step-inner-wrapper
@@ -40,9 +48,14 @@ width:915px;
 	vertical-align:middle;
 	padding-left:10px;
 }
-.step-edit-start
+.step-start
 {
 	display:inline-block;  
+	width:120px;
+}
+.step-edit
+{
+	display:none;  
 	width:120px;
 }
 .step-arrow
@@ -54,7 +67,27 @@ width:915px;
 }
 .step-checkbox
 {
+	display:none;
+	width:80px; 
+	vertical-align:bottom;
+	
+}
+
+/* completed version of divs */
+.completed  .step-edit
+{
 	display:inline-block;  
-	width:200px; 
-	height: 100%;
+}
+.completed  .step-start
+{
+	display:none;   
+}
+.completed .step-number
+{
+	background-color: #f1f1f2; 
+}
+.completed .step-checkbox
+{
+	display:inline-block;  
+	   
 }
