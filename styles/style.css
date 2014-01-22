@@ -10,7 +10,7 @@
 .step-outer
 {
 margin:auto; 
-width:915px;
+width:780px;
 height:68px;
 
 }
@@ -43,7 +43,7 @@ height:68px;
 .step-text
 {
 	display:inline-block;  
-	width:470px;
+	width:460px;
 	font-size:1.5em; 
 	vertical-align:middle;
 	padding-left:10px;
@@ -51,12 +51,14 @@ height:68px;
 .step-start
 {
 	display:inline-block;  
-	width:120px;
+	width:110px;
+	text-align:right;
 }
 .step-edit
 {
 	display:none;  
-	width:120px;
+	width:110px;
+	text-align:right;
 }
 .step-arrow
 {
@@ -68,7 +70,7 @@ height:68px;
 .step-checkbox
 {
 	display:none;
-	width:80px; 
+	width:70px; 
 	vertical-align:bottom;
 	
 }
