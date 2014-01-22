@@ -5,6 +5,7 @@
 		<meta charset="utf-8">
 		
 		<link rel="stylesheet" href="themes/ctg.min.css" />
+		<link rel="stylesheet" href="styles/style.css" />
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
 		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	
@@ -50,12 +51,33 @@
 		<div class="content">
 			<!-- Start of index page page -->
 			<div data-role="page" id="indexpage">
-				<div data-role="header" >
-					<h1>Continue To Give</h1>
+				<div data-role="header" data-position="fixed" >
+					<div style='padding:5px; background-color:white; border-bottom:1px solid grey;'>
+						<button data-role="button" data-inline="true" class="button dh" id="savedSearchDonationButton" onclick ="javascript:openDonationPage('');">Giving Mode</button>
+						<button data-role="button" data-inline="true" class="button dh" id="savedSearchDonationButton" onclick ="javascript:openDonationPage('');">Point Of Sale Mode</button>
+					</div>
 				</div>
 				<div data-role="content">
 				
 					<button class="button dh" onclick ="javascript:openSignupPage();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Sign Up</button>
+					<div class ='step-outer'>
+						
+						<span class='step-inner-wrapper'>
+							<div class='step-number' >
+								1.
+							</div>
+							<span class='step-text'>
+								Create a pin to secure your kiosk
+							</span>
+							<span class='step-edit-start'>
+								 <span class='step-arrow'>START &#10140;</span>
+							</span>
+						</span>
+						
+						<span class='step-checkbox'>
+							check box
+						</span>
+					</div>
 					<button class="button dh" onclick ="javascript:openSearch();">Search</button>
 					
 					<div id='preselectedpagediv' style=''>

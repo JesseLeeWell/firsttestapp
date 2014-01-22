@@ -447,3 +447,26 @@ function showMessage(message, callback, title, buttonName){
         }
 
     }
+	
+function setupbyscreensize()
+{
+
+	width = $(document).width(); // returns width of HTML document
+	if(width < 912)
+	{
+		
+	 $('#donation_calculator_div').hide();
+	 $('#donation_prompt_div').removeClass('inline_block');
+	}
+	else
+	{
+		$('#donation_calculator_div').show();
+		$('#donation_prompt_div').addClass('inline_block');
+		
+	}
+}
+$( window ).resize(function() {
+setupbyscreensize();
+});
+
+setupbyscreensize();
