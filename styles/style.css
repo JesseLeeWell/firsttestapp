@@ -22,6 +22,10 @@
 {
 	width:59%;
 }
+.display-inline
+{
+	display:inline-block;
+}
 .step-outer
 {
 margin:auto; 

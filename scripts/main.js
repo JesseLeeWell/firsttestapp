@@ -410,13 +410,39 @@ function showUnlockKioskPage()
 }
 function showSecureKioskPage()
 {
-	 $(':mobile-pagecontainer').pagecontainer('change', '#securekioskpage', {
-        transition: 'pop',
-        changeHash: false,
-        reverse: false,
-        showLoadMsg: true,
-		role: "dialog"
-    });
+	$(':mobile-pagecontainer').pagecontainer('change', '#securekioskpage', {
+			transition: 'pop',
+			changeHash: false,
+			reverse: false,
+			showLoadMsg: true,
+			role: "dialog"
+		});
+		
+	//first decide if they have already locked hteir kiosk or not.
+	//if they have, then they are going to edit this page.
+	//we will hide and show different buttons and pin number
+	
+	if(isPinSet())
+	{
+		//then they edit what they have
+		 $('#editpinpin').show();
+		 $('#editpintext').show();
+		 $('#createpintext').hide();
+		 $('#securepin').attr("placeholder","New Pin - Required");
+		 $('#secureconfirmpin').attr("placeholder","Confirm New Pin - Required");
+		
+	}
+	else
+	{
+		$('#editpinpin').hide();
+		$('#editpintext').hide();
+		 $('#createpintext').show();
+		$('#securepin').attr("placeholder","Pin - Required");
+		$('#secureconfirmpin').attr("placeholder","Confirm Pin - Required");
+	
+	}
+	 
+	//$('#secureconfirmpin').addClass('warning');
 	//$.mobile.changePage('#securekioskpage','slidefade');
 	//window.location = "securekiosk.html";
 }
@@ -571,6 +597,10 @@ function isStartScreenSet()
 	
 	}
 }
+ function isValidEmailAddress(emailAddress) {
+	var pattern = new RegExp(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/);
+	return pattern.test(emailAddress);
+};
 function setupbyscreensize()
 {
 

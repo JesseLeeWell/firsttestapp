@@ -30,7 +30,7 @@
 				<div data-role="content">
 				
 					<button class="button dh" onclick ="javascript:openSignupPage();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Sign Up</button>
-					<div class='step-pin-outer'>
+					<div class='step-pin-outer' onclick ="javascript:showSecureKioskPage();">
 						<div class ='step-outer'>
 							
 							<span class='step-inner-wrapper'>
@@ -159,15 +159,25 @@
 				</div>
 				
 				<div >
-					<p>
-						Please secure your Offering Kiosk with a pin so that no one can change your setup without your pin.
-					</p>
-					<input id="securepin" placeholder='Pin' value='123'/>
-					<input id="secureconfirmpin" placeholder='Confirm Pin' value='123'/>
-					<input id="email" placeholder='Email Address' value='jesseleewell@yahoo.com'/>
-					<input id="name" placeholder='Name'/>
+					<div id='editpintext'>
+						<p>
+							You can edit your information here:  Please confirm your current pin and enter your new information. 
+						</p>
+					</div>
+					<div id='createpintext'>
+						<p>
+							Please secure your Offering Kiosk with a pin so that no one can change your setup without your pin.
+						</p>
+					</div>
+					<span id ='editpinpin'>
+					<input id="currentpin" placeholder='Current Pin - Required' />
+					</span>
+					<input class='display-inline' id="securepin" placeholder='Pin - Required' />
+					<input id="secureconfirmpin" placeholder='Confirm Pin' />
+					<input id="email" placeholder='Email Address - Required' value='jesseleewell@yahoo.com'/>
+					<input id="name" placeholder='Name - Optional'/>
 					
-					<input id="phonenumber" placeholder='Phone Number'/>
+					<span>Optional</span><input id="phonenumber" placeholder='Phone Number - Optional'/>
 					<h3>I represent a</h3>
 					<select id='represents'>
 						<option value="Church" >Church</option>
