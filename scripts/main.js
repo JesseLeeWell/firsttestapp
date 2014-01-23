@@ -299,7 +299,9 @@ function setupSettingsPage()
 	
 	
 	
-	
+	setStepPin();
+	setStepSearch();
+	setStepStartScreen();
 	//setup the donation buttons
 	
 	//setupDonationAndPurchaseButtons();
@@ -308,7 +310,44 @@ function setupSettingsPage()
 function setStepPin()
 {
 	//if a pin has been setup, then set this task to completed
-	$('.step-pin-outer').addClass('completed');
+	if(!isPinSet())
+	{
+		//don't do anything
+	}
+	else
+	{
+		
+		$('.step-pin-outer').addClass('completed');
+	
+	}
+	
+}
+function setStepSearch()
+{
+	if(!isSearchSet())
+	{
+		//don't do anything
+	}
+	else
+	{
+		
+		$('.step-search-outer').addClass('completed');
+	
+	}
+}
+function setStepStartScreen()
+{
+	
+	if(!isStartScreenSet())
+	{
+		//don't do anything
+	}
+	else
+	{
+		
+		$('.step-search-outer').addClass('completed');
+	
+	}
 }
 function setupDonationAndPurchaseButtons()
 {
@@ -327,7 +366,7 @@ function setupDonationAndPurchaseButtons()
 
 	
 	//determin if we should show those buttons
-	if((!pageid || /^\s*$/.test(pageid)) || (!displayname || /^\s*$/.test(displayname)))
+	if(!isSearchSet())
 	{
 		$( "#preselectedpagediv" ).hide();
 	}
@@ -441,7 +480,7 @@ function openSetStartScreenPage()
 
 function closeSetStartScreenPage()
 {
-	storageSet('step-startscreen','true');
+	
 	 $(':mobile-pagecontainer').pagecontainer('change', '#startreceivingdonationspage', {
 		transition: 'pop',
 		changeHash: false,
@@ -499,6 +538,35 @@ function isPinSet()
 	{
 		return true;
 		
+	
+	}
+}
+function isSearchSet()
+{
+	var pageid = getPageID();
+	var displayname = getDisplayName();
+	if((!pageid || /^\s*$/.test(pageid)) || (!displayname || /^\s*$/.test(displayname)))
+	{
+		return false;
+	}
+	else
+	{
+		
+		return true;
+	
+	}
+}
+function isStartScreenSet()
+{
+	var startpageselection = storageGet('startpageselection');	
+	if((!startpageselection || /^\s*$/.test(startpageselection)) )
+	{
+		return false;
+	}
+	else
+	{
+		
+		return true;
 	
 	}
 }
