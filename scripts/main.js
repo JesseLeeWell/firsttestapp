@@ -340,14 +340,14 @@ function setStepSearch()
 function setStepStartScreen()
 {
 	
-	if(!isStartScreenSet())
+	if(isStartScreenSet())
 	{
-		//don't do anything
+		$('.step-startscreen-outer').addClass('completed');
 	}
 	else
 	{
 		
-		$('.step-startscreen-outer').addClass('completed');
+		$('.step-startscreen-outer').removeClass('completed');
 	
 	}
 }
