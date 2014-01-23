@@ -23,8 +23,8 @@
 			<div data-role="page" id="indexpage">
 				<div data-role="header" data-position="fixed" >
 					<div style='padding:5px; background-color:white; border-bottom:1px solid grey;'>
-						<button data-role="button" data-inline="true" class="button dh" id="savedSearchDonationButton" onclick ="javascript:openDonationPage('');">Giving Mode</button>
-						<button data-role="button" data-inline="true" class="button dh" id="savedSearchDonationButton" onclick ="javascript:openDonationPage('');">Point Of Sale Mode</button>
+						<button data-role="button" data-inline="true" class="button dh"  onclick ="javascript:openDonationPage('');">Giving Mode</button>
+						<button data-role="button" data-inline="true" class="button dh"  onclick ="javascript:openDonationPage('/donation_prompt?show_purchase_form=true');">Point Of Sale Mode</button>
 					</div>
 				</div>
 				<div data-role="content">
@@ -131,17 +131,6 @@
 					</div>
 					
 					<button class="button dh" onclick ="javascript:openSearch();">Search</button>
-					
-					<div id='preselectedpagediv' style=''>
-						<p>Set kiosk to donation mode</p>
-						<button class="button dh" id="savedSearchDonationButton" onclick ="javascript:openDonationPage('');"></button>
-						<p>Set kiosk to point of sale mode</p>
-						<button class="button dh" id="savedSearchPOSButton" onclick ="javascript:openDonationPage('/donation_prompt?show_purchase_form=true');"></button>
-						
-						
-						
-						
-					</div>
 					
 					<a href="javascript:clearDataForTesting();" data-role="button" data-transition="slidefade" data-inline="true">Clear Data</a>
 					

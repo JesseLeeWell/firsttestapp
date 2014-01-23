@@ -140,14 +140,14 @@ function iabLoadStart(event) {
 		//appwindow = window.open('index.html', '_self', 'location=yes');
 		
 		//
-		/*
+		
 		$(':mobile-pagecontainer').pagecontainer('change', '#setstartscreenpage', {
 			transition: 'slidefade',
 			changeHash: false,
 			reverse: true,
 			showLoadMsg: true
 		});
-		*/
+		
 		/*
 		$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
 			transition: 'slidefade',
@@ -203,9 +203,8 @@ function openSearch()
 	storageSet('securesuccesspath', 'search');
 	storageSet('securecancelpath', 'index');
 	//determin if they should go to the secure kiosk or the unlock kiosk page
-	var pin = storageGet(_storagePin);
-	var email = storageGet('email');
-	if((!pin || /^\s*$/.test(pin)) || (!email || /^\s*$/.test(email)))
+	
+	if(!isPinSet())
 	{
 		showSecureKioskPage();
 	}
@@ -297,18 +296,23 @@ function storeURLInfo(fullURL)
 }
 function setupSettingsPage()
 {
-	alert('setupSettingsPage');
-	//set up the radio buttons for start page
+	
+	
 	
 	
 	//setup the donation buttons
-	alert('setupSettingsPage');
-	setupDonationAndPurchaseButtons();
 	
+	//setupDonationAndPurchaseButtons();
+	
+}
+function setStepPin()
+{
+	//if a pin has been setup, then set this task to completed
+	$('.step-pin-outer').addClass('completed');
 }
 function setupDonationAndPurchaseButtons()
 {
-	alert('setupDonationAndPurchaseButtons');
+	
 	var fullURL = getFullURL();
 	//now get the pageid
 	
@@ -320,7 +324,7 @@ function setupDonationAndPurchaseButtons()
 	
 	var infoField2 = document.getElementById("savedSearchPOSButton");
 	infoField2.innerHTML = displayname;
-	alert('setupDonationAndPurchaseButtons');
+
 	
 	//determin if we should show those buttons
 	if((!pageid || /^\s*$/.test(pageid)) || (!displayname || /^\s*$/.test(displayname)))
@@ -333,8 +337,6 @@ function setupDonationAndPurchaseButtons()
 		$( "#preselectedpagediv" ).show();
 	
 	}
-	alert('setupDonationAndPurchaseButtons');
-	
 	
 
 }
@@ -430,7 +432,7 @@ function openSetStartScreenPage()
 		showLoadMsg: true,
 		role: "dialog"
 	});
-	
+	//set up the radio buttons for start page
 	var startpageselection = storageGet('startpageselection');	
 	var nametoset = "radiostartpagegroup"+startpageselection;
 	$("#"+nametoset).prop("checked", true);
@@ -484,7 +486,22 @@ function showMessage(message, callback, title, buttonName){
         }
 
     }
-
+function isPinSet()
+{
+	var pin = storageGet(_storagePin);
+	var email = storageGet('email');
+	if((!pin || /^\s*$/.test(pin)) || (!email || /^\s*$/.test(email)))
+	{
+		return false;
+		
+	}
+	else
+	{
+		return true;
+		
+	
+	}
+}
 function setupbyscreensize()
 {
 
