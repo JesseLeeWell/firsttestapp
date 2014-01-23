@@ -65,7 +65,7 @@ function onDeviceReady() {
 	
 	if((hideIntro && hideIntro == 'true') || (alreadyshowedintro && alreadyshowedintro == 'true'))
 	{
-		setupSettingsPage();
+		loadSettingsPage();
 		determinStartPage();
 	}
 	else
@@ -78,6 +78,10 @@ function onDeviceReady() {
 	
 	
 	
+}
+function loadSettingsPage()
+{
+	setupSettingsPage();
 }
 function determinStartPage()
 {
@@ -127,7 +131,7 @@ function iabLoadStart(event) {
 		
 		storeURLInfo(cururl);
 		
-		setupSettingsPage();
+		loadSettingsPage();
 		
 		storageSet('step-search','true');
 	
@@ -310,9 +314,10 @@ function setupSettingsPage()
 function setStepPin()
 {
 	//if a pin has been setup, then set this task to completed
-	
+	alert(isPinSet());
 	if(isPinSet())
 	{
+		
 		$('.step-pin-outer').addClass('completed');
 	}
 	else
@@ -325,6 +330,7 @@ function setStepPin()
 }
 function setStepSearch()
 {
+	alert(isSearchSet());
 	
 	if(isSearchSet())
 	{
@@ -339,7 +345,7 @@ function setStepSearch()
 }
 function setStepStartScreen()
 {
-	
+	alert(isStartScreenSet());
 	if(isStartScreenSet())
 	{
 		$('.step-startscreen-outer').addClass('completed');
@@ -495,7 +501,7 @@ function clearDataForTesting()
 {
 
 	window.localStorage.clear();
-	setupSettingsPage();
+	loadSettingsPage();
 	
 
 }
