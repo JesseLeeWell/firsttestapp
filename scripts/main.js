@@ -564,6 +564,7 @@ function isSearchSet()
 function isStartScreenSet()
 {
 	var startpageselection = storageGet('startpageselection');	
+	alert(startpageselection);
 	if((!startpageselection || /^\s*$/.test(startpageselection)) )
 	{
 		return false;
