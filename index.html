@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Local Storage Sample</title>
+		<title>Offering Kiosk</title>
 		<meta charset="utf-8">
 		
 		<link rel="stylesheet" href="themes/ctg.min.css" />
@@ -14,37 +14,7 @@
 		<script type="text/javascript" charset="utf-8" src="scripts/main.js"></script>
 		<script type="text/javascript" charset="utf-8" src="scripts/securekiosk.js"></script>
 		<script type="text/javascript" charset="utf-8" src="scripts/unlockkiosk.js"></script>
-		
-		<style>
-		/* --- youtube --- */
-
-	.desktop-fluid-video-content {
-		position: relative;
-		padding-bottom: 56.25%;
-		padding-top: 30px; height: 0; overflow: hidden;
-	}
-
-	.desktop-fluid-video-content iframe,
-	.desktop-fluid-video-content object,
-	.desktop-fluid-video-content embed {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	} 
-	/* --- end youtube ---*/
-
-	/*
-	.data-role=page {height: 100% !important; position:relative !important;}
-	.data-role=footer{bottom:0; position:absolute !important; top: auto !important; width:100%;}
-	*/
-	.ui-content
-	{
-		padding:8px;
-	}
-	</style>
-		
+	
 	</head>
 	<body >
 		
@@ -60,7 +30,7 @@
 				<div data-role="content">
 				
 					<button class="button dh" onclick ="javascript:openSignupPage();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Sign Up</button>
-					<div class='steponeouter completed'>
+					<div class='step-pin-outer completed'>
 						<div class ='step-outer'>
 							
 							<span class='step-inner-wrapper'>
@@ -84,16 +54,16 @@
 							
 						</div>
 					</div>
-					<div class='spacer'></div><div class='spacer'></div>
-					<div class='steponeouter'>
+					<div class='spacer'></div><div class='spacer'></div><div class='spacer'></div>
+					<div class='step-search-outer' onclick ="javascript:openSearch();">
 						<div class ='step-outer'>
 							
 							<span class='step-inner-wrapper'>
 								<div class='step-number' >
-									1.
+									2.
 								</div>
 								<span class='step-text'>
-									Create a pin to secure your kiosk
+									Set Kiosk to your Church or Organization
 								</span>
 								<span class='step-start'>
 									 <span class='step-arrow'>START &#10140;</span>
@@ -109,6 +79,57 @@
 							
 						</div>
 					</div>
+					<div class='spacer'></div><div class='spacer'></div><div class='spacer'></div>
+					<div class='step-startscreen-outer' onclick ="javascript:openSetStartScreenPage();">
+						<div class ='step-outer'>
+							
+							<span class='step-inner-wrapper'>
+								<div class='step-number' >
+									3.
+								</div>
+								<span class='step-text'>
+									Set start screen
+								</span>
+								<span class='step-start'>
+									 <span class='step-arrow'>START &#10140;</span>
+								</span>
+								<span class='step-edit'>
+									 <span class='step-arrow'>EDIT &#10140;</span>
+								</span>
+							</span>
+							
+							<span class='step-checkbox'>
+								<img width='60px' height='60px'src='images/tick.png' />
+							</span>
+							
+						</div>
+					</div>
+					<div class='spacer'></div><div class='spacer'></div><div class='spacer'></div>
+					<div class='step-recievedonations-outer'>
+						<div class ='step-outer'>
+							
+							<span class='step-inner-wrapper'>
+								<div class='step-number' >
+									4.
+								</div>
+								<span class='step-text'>
+									Start Receiving Donations!
+								</span>
+								<span class='step-start'>
+									 <span class='step-arrow'>START &#10140;</span>
+								</span>
+								<span class='step-edit'>
+									 <span class='step-arrow'>EDIT &#10140;</span>
+								</span>
+							</span>
+							
+							<span class='step-checkbox'>
+								<img width='60px' height='60px'src='images/tick.png' />
+							</span>
+							
+						</div>
+					</div>
+					
 					<button class="button dh" onclick ="javascript:openSearch();">Search</button>
 					
 					<div id='preselectedpagediv' style=''>
@@ -119,17 +140,7 @@
 						
 						
 						
-						<fieldset data-role="controlgroup">
-							<legend>When you start your app, what screen do you want to open:</legend>
 						
-							<input type="radio" onclick="javascript:saveStartPageRadioButtonValue();" name="startpagegroup" id="radiostartpagegroupsettingspage" value="settingspage">
-							<label for="radiostartpagegroupsettingspage">Settings Page</label>
-
-							<input type="radio" onclick="javascript:saveStartPageRadioButtonValue();" name="startpagegroup" id="radiostartpagegroupdonationpage" value="donationpage">
-							<label for="radiostartpagegroupdonationpage">Donation Page</label>
-							<input type="radio" onclick="javascript:saveStartPageRadioButtonValue();" name="startpagegroup" id="radiostartpagegrouppointofsalepage" value="pointofsalepage" >
-							<label for="radiostartpagegrouppointofsalepage">Point of Sale Page</label>
-						</fieldset>
 					</div>
 					
 					<a href="javascript:clearDataForTesting();" data-role="button" data-transition="slidefade" data-inline="true">Clear Data</a>
@@ -208,6 +219,41 @@
 			</div>
 			</div>
 			<!-- end unlockkioskpage page -->
+			<!-- Start of setstartscreenpage page -->
+			<div data-role="page" id="setstartscreenpage">
+				<div style ='padding:10px'>
+				<div data-role="header" >
+					<h1>Set your start screen</h1>
+				</div>				
+				<div >
+					<fieldset data-role="controlgroup" data-inline="true">
+						<legend>When you start your app, what screen do you want to open:</legend>
+					
+						<input data-inline="true" type="radio" onclick="javascript:saveStartPageRadioButtonValue();" name="startpagegroup" id="radiostartpagegroupsettingspage" value="settingspage">
+						<label for="radiostartpagegroupsettingspage">Settings Page</label>
+
+						<input type="radio" onclick="javascript:saveStartPageRadioButtonValue();" name="startpagegroup" id="radiostartpagegroupdonationpage" value="donationpage">
+						<label for="radiostartpagegroupdonationpage">Kiosk: Giving Page</label>
+						<input type="radio" onclick="javascript:saveStartPageRadioButtonValue();" name="startpagegroup" id="radiostartpagegrouppointofsalepage" value="pointofsalepage" >
+						<label for="radiostartpagegrouppointofsalepage">Kiosk:Point of Sale Page</label>
+					</fieldset>
+					<button class="button dh" onclick ="javascript:closeSetStartScreenPage();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Close</button>
+				</div>
+			</div>
+			</div>
+			<!-- end setstartscreenpage page -->
+			<!-- Start of startreceivingdonationspage page -->
+			<div data-role="page" id="startreceivingdonationspage">
+				<div style ='padding:10px'>
+				<div data-role="header" >
+					<h1>Start Receivng Donations!</h1>
+				</div>				
+				<div >
+					body goes here:
+				</div>
+			</div>
+			</div>
+			<!-- end startreceivingdonationspage page -->
 			
 		</div>
 	</body>

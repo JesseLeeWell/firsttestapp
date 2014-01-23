@@ -128,6 +128,8 @@ function iabLoadStart(event) {
 		storeURLInfo(cururl);
 		
 		setupSettingsPage();
+		
+		storageSet('step-search',true);
 	
 		browserwindow.removeEventListener('exit', iabCloseSearch);
 		//browserwindow.addEventListener('exit', iabCloseDonation);
@@ -137,13 +139,21 @@ function iabLoadStart(event) {
 		//alert("end found displayname");
 		//appwindow = window.open('index.html', '_self', 'location=yes');
 		
+		//
+		$(':mobile-pagecontainer').pagecontainer('change', '#setstartscreenpage', {
+			transition: 'slidefade',
+			changeHash: false,
+			reverse: true,
+			showLoadMsg: true
+		});
+		/*
 		$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
 			transition: 'slidefade',
 			changeHash: false,
 			reverse: true,
 			showLoadMsg: true
 		});
-		
+		*/
 		browserwindow.close();
 	}
 }
@@ -410,7 +420,28 @@ function loadContactRequest()
 	appwindow = window.open(url, '_blank', 'location=no');
 	
 }
+function openSetStartScreenPage()
+{
+	 $(':mobile-pagecontainer').pagecontainer('change', '#setstartscreenpage', {
+		transition: 'pop',
+		changeHash: false,
+		reverse: false,
+		showLoadMsg: true,
+		role: "dialog"
+	});
+}
 
+function closeSetStartScreenPage()
+{
+	storageSet('step-startscreen',true);
+	 $(':mobile-pagecontainer').pagecontainer('change', '#startreceivingdonationspage', {
+		transition: 'pop',
+		changeHash: false,
+		reverse: true,
+		showLoadMsg: true,
+		role: "dialog"
+	});
+}
 function clearDataForTesting()
 {
 
@@ -447,7 +478,7 @@ function showMessage(message, callback, title, buttonName){
         }
 
     }
-	
+
 function setupbyscreensize()
 {
 

@@ -1,4 +1,7 @@
-
+.ui-content
+{
+	padding:8px;
+}
 .clr
 {
 	clear:both;
@@ -7,6 +10,18 @@
 {
 	height:5px;
 }
+.thirtypercent
+{
+	width:30%;
+}
+.fiftypercent
+{
+	width:49%;
+}
+.sixtypercent
+{
+	width:59%;
+}
 .step-outer
 {
 margin:auto; 
@@ -14,6 +29,7 @@ width:780px;
 height:68px;
 
 }
+
 .step-inner-wrapper
 {
 	display:inline-block; border:1px solid #f1f1f2; width:700px;
@@ -53,17 +69,21 @@ height:68px;
 	display:inline-block;  
 	width:110px;
 	text-align:right;
+	color: #00adee;
+	font-size:1.5em;
 }
 .step-edit
 {
 	display:none;  
 	width:110px;
 	text-align:right;
+	color: #6b6b6b;
+	font-size:1.3em;
 }
 .step-arrow
 {
-	font-size:1.5em;
-	color: #00adee;
+	
+	
 	display:inline-block;
 	vertical-align:middle;
 }
@@ -93,3 +113,39 @@ height:68px;
 	display:inline-block;  
 	   
 }
+.completed .step-text
+{
+	color: #6b6b6b;
+}
+
+.moresettingsdiv
+{
+	margin:auto; 
+	width:780px;
+}
+
+
+/* --- youtube --- */
+
+.desktop-fluid-video-content {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.desktop-fluid-video-content iframe,
+.desktop-fluid-video-content object,
+.desktop-fluid-video-content embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+} 
+/* --- end youtube ---*/
+
+	/*
+	.data-role=page {height: 100% !important; position:relative !important;}
+	.data-role=footer{bottom:0; position:absolute !important; top: auto !important; width:100%;}
+	*/
+	
