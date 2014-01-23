@@ -131,7 +131,7 @@ function iabLoadStart(event) {
 		
 		//storageSet('step-search','true');
 	
-		browserwindow.removeEventListener('exit', iabCloseSearch);
+		//browserwindow.removeEventListener('exit', iabCloseSearch);
 		//browserwindow.addEventListener('exit', iabCloseDonation);
 		//browserwindow.close();
 		showMessage("Now that your page is set, you can put your kiosk into donation or point of sale mode from this settings screen ", '', " ", "OK");
