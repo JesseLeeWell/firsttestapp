@@ -1,6 +1,6 @@
  // Wait for Cordova to load
     //
-document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("onDeviceReady", onDeviceReady, false);
 
 //environment
 var environment = 'dev';
@@ -292,19 +292,20 @@ function setupSettingsPage()
 {
 	
 	
-	
+	alert('start setup');
 	setStepPin();
 	setStepSearch();
 	setStepStartScreen();
 	//setup the donation buttons
 	
 	//setupDonationAndPurchaseButtons();
+	alert('end setup');
 	
 }
 function setStepPin()
 {
 	//if a pin has been setup, then set this task to completed
-	alert(isPinSet());
+	
 	if(isPinSet())
 	{
 		
@@ -320,7 +321,7 @@ function setStepPin()
 }
 function setStepSearch()
 {
-	alert(isSearchSet());
+	
 	
 	if(isSearchSet())
 	{
@@ -335,7 +336,7 @@ function setStepSearch()
 }
 function setStepStartScreen()
 {
-	alert(isStartScreenSet());
+	
 	if(isStartScreenSet())
 	{
 		$('.step-startscreen-outer').addClass('completed');
@@ -557,7 +558,7 @@ function isSearchSet()
 function isStartScreenSet()
 {
 	var startpageselection = storageGet('startpageselection');	
-	alert(startpageselection);
+	
 	if((!startpageselection || /^\s*$/.test(startpageselection)) )
 	{
 		return false;
