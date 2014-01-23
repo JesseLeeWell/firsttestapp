@@ -470,8 +470,14 @@ function saveStartPageRadioButtonValue()
 }
 function loadSettingsPage()
 {
-	
-	appwindow = window.open('index.html', '_self', 'location=yes');
+	setupSettingsPage();
+	$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
+			transition: 'slidefade',
+			changeHash: false,
+			reverse: true,
+			showLoadMsg: true
+		});
+	//appwindow = window.open('index.html', '_self', 'location=yes');
 	
 }
 
@@ -511,8 +517,10 @@ function openSetStartScreenPage()
 		changeHash: false,
 		reverse: false,
 		showLoadMsg: true,
-		role: "dialog"
+		role: "dialog",
+		btn: "none"
 	});
+	
 	//set up the radio buttons for start page
 	var startpageselection = storageGet('startpageselection');	
 	var nametoset = "radiostartpagegroup"+startpageselection;
@@ -537,12 +545,7 @@ function openStartRecivingDonationsPage()
 }
 function closeStartRecivingDonationsPage()
 {
-	$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
-			transition: 'slidefade',
-			changeHash: false,
-			reverse: true,
-			showLoadMsg: true
-		});
+	loadSettingsPage();
 }
 function clearDataForTesting()
 {
