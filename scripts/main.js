@@ -72,7 +72,7 @@ function onDeviceReady() {
 	{
 		//set the session storage that it showed the intro
 		window.sessionStorage.setItem("alreadyshowedintro", "true");	
-		loadMoreInfo('');		
+		//loadMoreInfo('');		
 		//appwindow = window.open('intro.html', '_self', 'location=yes');
 	}
 	
@@ -326,14 +326,14 @@ function setStepPin()
 function setStepSearch()
 {
 	
-	if(!isSearchSet())
+	if(isSearchSet())
 	{
-		//don't do anything
+		$('.step-search-outer').addClass('completed');
 	}
 	else
 	{
 		
-		$('.step-search-outer').addClass('completed');
+		$('.step-search-outer').removeClass('completed');
 	
 	}
 }
