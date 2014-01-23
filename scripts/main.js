@@ -300,7 +300,7 @@ function setupSettingsPage()
 	//setup the donation buttons
 	
 	//setupDonationAndPurchaseButtons();
-	alert('end setup');
+	
 	
 }
 function setStepPin()
@@ -346,6 +346,20 @@ function setStepStartScreen()
 	{
 		
 		$('.step-startscreen-outer').removeClass('completed');
+	
+	}
+}
+function setStepStartRecivingDonations()
+{
+	
+	if(isStartRecivingDonationsSet())
+	{
+		$('.step-recievedonations-outer').addClass('completed');
+	}
+	else
+	{
+		
+		$('.step-recievedonations-outer').removeClass('completed');
 	
 	}
 }
@@ -410,6 +424,7 @@ function showUnlockKioskPage()
 }
 function showSecureKioskPage()
 {
+	
 	$(':mobile-pagecontainer').pagecontainer('change', '#securekioskpage', {
 			transition: 'pop',
 			changeHash: false,
@@ -455,6 +470,7 @@ function saveStartPageRadioButtonValue()
 }
 function loadSettingsPage()
 {
+	
 	appwindow = window.open('index.html', '_self', 'location=yes');
 	
 }
@@ -514,6 +530,19 @@ function closeSetStartScreenPage()
 		showLoadMsg: true,
 		role: "page"
 	});
+}
+function openStartRecivingDonationsPage()
+{
+	storageSet('step-recievedonations','true');
+}
+function closeStartRecivingDonationsPage()
+{
+	$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
+			transition: 'slidefade',
+			changeHash: false,
+			reverse: true,
+			showLoadMsg: true
+		});
 }
 function clearDataForTesting()
 {
@@ -596,6 +625,22 @@ function isStartScreenSet()
 		return true;
 	
 	}
+}
+function isStartRecivingDonationsSet()
+{	
+	var steprecievedonations = storageGet('step-recievedonations');	
+	
+	if((!steprecievedonations || /^\s*$/.test(steprecievedonations)) )
+	{
+		return false;
+	}
+	else
+	{
+		
+		return true;
+	
+	}
+
 }
  function isValidEmailAddress(emailAddress) {
 	var pattern = new RegExp(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/);
