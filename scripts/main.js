@@ -53,8 +53,8 @@ var _storagePin = 'pin';
 
 
 function onDeviceReady() { 
-	alert('in on device ready');
-	var hideIntro = storageGet('hideintro');
+	
+	var hideIntro = 'true';//storageGet('hideintro');
 	var alreadyshowedintro = window.sessionStorage.getItem('alreadyshowedintro');
 	
 	if((hideIntro && hideIntro == 'true') || (alreadyshowedintro && alreadyshowedintro == 'true'))
@@ -66,7 +66,7 @@ function onDeviceReady() {
 	{
 		//set the session storage that it showed the intro
 		window.sessionStorage.setItem("alreadyshowedintro", "true");	
-		//loadMoreInfo('');		
+		loadMoreInfo('');		
 		//appwindow = window.open('intro.html', '_self', 'location=yes');
 	}
 	
@@ -293,7 +293,7 @@ function setupSettingsPage()
 {
 	
 	
-	alert('start setup');
+	
 	setStepPin();
 	setStepSearch();
 	setStepStartScreen();
