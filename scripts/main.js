@@ -129,7 +129,7 @@ function iabLoadStart(event) {
 		
 		setupSettingsPage();
 		
-		storageSet('step-search',true);
+		storageSet('step-search','true');
 	
 		browserwindow.removeEventListener('exit', iabCloseSearch);
 		//browserwindow.addEventListener('exit', iabCloseDonation);
@@ -433,13 +433,13 @@ function openSetStartScreenPage()
 
 function closeSetStartScreenPage()
 {
-	storageSet('step-startscreen',true);
+	storageSet('step-startscreen','true');
 	 $(':mobile-pagecontainer').pagecontainer('change', '#startreceivingdonationspage', {
 		transition: 'pop',
 		changeHash: false,
 		reverse: true,
 		showLoadMsg: true,
-		role: "dialog"
+		role: "page"
 	});
 }
 function clearDataForTesting()
