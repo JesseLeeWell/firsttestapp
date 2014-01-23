@@ -1,6 +1,6 @@
  // Wait for Cordova to load
     //
-document.addEventListener("onDeviceReady", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReady, false);
 
 //environment
 var environment = 'dev';
@@ -53,6 +53,7 @@ var _storagePin = 'pin';
 
 
 function onDeviceReady() { 
+	alert('in on device ready');
 	var hideIntro = storageGet('hideintro');
 	var alreadyshowedintro = window.sessionStorage.getItem('alreadyshowedintro');
 	
