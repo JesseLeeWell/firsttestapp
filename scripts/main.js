@@ -46,13 +46,6 @@ var _storagePageID = "storagePageID";
 var _storageDisplayName = "storageDisplayName";
 var _storageFullURL = "storageFullURL";
 var _storagePin = 'pin';
-//set our startpageselection
-var tmpstartpageselection = storageGet('startpageselection');
-if(!tmpstartpageselection)
-{
-	//if they never set it before, set it to settingspage
-	storageSet('startpageselection', 'settingspage');
-}
 
 
 // Cordova is ready
