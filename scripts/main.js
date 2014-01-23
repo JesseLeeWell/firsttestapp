@@ -65,7 +65,7 @@ function onDeviceReady() {
 	
 	if((hideIntro && hideIntro == 'true') || (alreadyshowedintro && alreadyshowedintro == 'true'))
 	{
-		loadSettingsPage();
+		setupSettingsPage();
 		determinStartPage();
 	}
 	else
@@ -79,10 +79,7 @@ function onDeviceReady() {
 	
 	
 }
-function loadSettingsPage()
-{
-	setupSettingsPage();
-}
+
 function determinStartPage()
 {
 	//based on the settings they chose, open the correct screen
@@ -131,7 +128,7 @@ function iabLoadStart(event) {
 		
 		storeURLInfo(cururl);
 		
-		loadSettingsPage();
+		setupSettingsPage();
 		
 		storageSet('step-search','true');
 	
