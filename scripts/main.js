@@ -299,10 +299,7 @@ function setupSettingsPage()
 {
 	alert('setupSettingsPage');
 	//set up the radio buttons for start page
-	var startpageselection = storageGet('startpageselection');	
-	var nametoset = "radiostartpagegroup"+startpageselection;
-	$("#"+nametoset).prop("checked", true);
-	$("input[type='radio']").checkboxradio("refresh");
+	
 	
 	//setup the donation buttons
 	alert('setupSettingsPage');
@@ -433,6 +430,11 @@ function openSetStartScreenPage()
 		showLoadMsg: true,
 		role: "dialog"
 	});
+	
+	var startpageselection = storageGet('startpageselection');	
+	var nametoset = "radiostartpagegroup"+startpageselection;
+	$("#"+nametoset).prop("checked", true);
+	$("input[type='radio']").checkboxradio("refresh");
 }
 
 function closeSetStartScreenPage()
