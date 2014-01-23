@@ -129,9 +129,9 @@ function iabLoadStart(event) {
 		
 		setupSettingsPage();
 		
-		//storageSet('step-search','true');
+		storageSet('step-search','true');
 	
-		//browserwindow.removeEventListener('exit', iabCloseSearch);
+		browserwindow.removeEventListener('exit', iabCloseSearch);
 		//browserwindow.addEventListener('exit', iabCloseDonation);
 		//browserwindow.close();
 		showMessage("Now that your page is set, you can put your kiosk into donation or point of sale mode from this settings screen ", '', " ", "OK");
@@ -297,6 +297,7 @@ function storeURLInfo(fullURL)
 }
 function setupSettingsPage()
 {
+	alert('setupSettingsPage');
 	//set up the radio buttons for start page
 	var startpageselection = storageGet('startpageselection');	
 	var nametoset = "radiostartpagegroup"+startpageselection;
@@ -304,12 +305,13 @@ function setupSettingsPage()
 	$("input[type='radio']").checkboxradio("refresh");
 	
 	//setup the donation buttons
-	
+	alert('setupSettingsPage');
 	setupDonationAndPurchaseButtons();
 	
 }
 function setupDonationAndPurchaseButtons()
 {
+	alert('setupDonationAndPurchaseButtons');
 	var fullURL = getFullURL();
 	//now get the pageid
 	
@@ -321,7 +323,7 @@ function setupDonationAndPurchaseButtons()
 	
 	var infoField2 = document.getElementById("savedSearchPOSButton");
 	infoField2.innerHTML = displayname;
-	
+	alert('setupDonationAndPurchaseButtons');
 	
 	//determin if we should show those buttons
 	if((!pageid || /^\s*$/.test(pageid)) || (!displayname || /^\s*$/.test(displayname)))
@@ -334,7 +336,7 @@ function setupDonationAndPurchaseButtons()
 		$( "#preselectedpagediv" ).show();
 	
 	}
-	
+	alert('setupDonationAndPurchaseButtons');
 	
 	
 
