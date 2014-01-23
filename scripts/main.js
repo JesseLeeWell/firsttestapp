@@ -310,22 +310,22 @@ function setupSettingsPage()
 function setStepPin()
 {
 	//if a pin has been setup, then set this task to completed
-	alert(isPinSet());
-	if(!isPinSet())
+	
+	if(isPinSet())
 	{
 		$('.step-pin-outer').addClass('completed');
 	}
 	else
 	{
 		
-		
+		$('.step-pin-outer').removeClass('completed');
 	
 	}
 	
 }
 function setStepSearch()
 {
-	alert(isSearchSet());
+	
 	if(!isSearchSet())
 	{
 		//don't do anything
