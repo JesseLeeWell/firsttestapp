@@ -312,12 +312,12 @@ function setStepPin()
 	//if a pin has been setup, then set this task to completed
 	if(!isPinSet())
 	{
-		//don't do anything
+		$('.step-pin-outer').addClass('completed');
 	}
 	else
 	{
 		
-		$('.step-pin-outer').addClass('completed');
+		
 	
 	}
 	
