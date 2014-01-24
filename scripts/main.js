@@ -241,11 +241,6 @@ function openDonationPage(extras)
 {
 	if(isSearchSet())
 	{
-		showMessage("Please set the kiosk to your organization or fundraiser by in step 2 below. ", '', " ", "OK");
-	}
-	else
-	{
-		
 		storageSet('securesuccesspath', 'index');
 		storageSet('securecancelpath', 'donation');
 		var pageid = getPageID();
@@ -255,6 +250,11 @@ function openDonationPage(extras)
 		
 		browserwindow.addEventListener('exit', iabCloseDonation);
 		browserwindow.addEventListener('loadstop', iabLoadStopDonation);
+	}
+	else
+	{
+		showMessage("Please set the kiosk to your organization or fundraiser by in step 2 below. ", '', " ", "OK");
+		
 	
 	}
 	
@@ -307,14 +307,14 @@ function storeURLInfo(fullURL)
 function setupSettingsPage()
 {
 	
-	//alert('in setup');
+	alert('in setup');
 	setupKioskOrganizationDisplayName();
 	setStepPin();
 	setStepSearch();
 	setStepStartScreen();
 	setStepStartRecivingDonations();
 	setStepClaimOrganization();
-	
+	alert('end setup');
 	
 }
 function setStepPin()
