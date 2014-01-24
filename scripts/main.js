@@ -681,7 +681,9 @@ function isFundraisingPageClaimed()
 	{
 	
 		var pageinfo = getPageInformation();
-		
+		alert("here");
+		alert(pageinfo);
+		alert(pageinfo.userid);
 		if(!pageinfo.userid || pageinfo.userid == 'null')
 		{
 			$('.step-claimorganization-outer').show();
