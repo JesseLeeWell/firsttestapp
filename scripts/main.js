@@ -582,7 +582,8 @@ function openStartRecivingDonationsPage()
 	if(!pageinfo.userid || pageinfo.userid == 'null')
 	{
 		var displayname = getDisplayName();
-		var address = displayname +"</br>"+ pageinfo.address +"</br>"+ pageinfo.city+" "+ pageinfo.state+" "+ pageinfo.zip;	
+		
+		var address = displayname +"</br>"+ ((pageinfo.address) ? pageinfo.address : " ")+"</br>"+ ((pageinfo.city) ? pageinfo.city : " ")+" "+ pageinfo.state+" "+ ((pageinfo.zip) ? pageinfo.zip : " ");	
 		
 		$("#organizationinfo").html(address);
 
