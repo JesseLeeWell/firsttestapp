@@ -130,30 +130,31 @@ function iabLoadStart(event) {
 		storageSet('step-search','true');
 	
 		browserwindow.removeEventListener('exit', iabCloseSearch);
-		//browserwindow.addEventListener('exit', iabCloseDonation);
-		//browserwindow.close();
-		showMessage("Now that your page is set, you can put your kiosk into donation or point of sale mode from this settings screen ", '', " ", "OK");
-		//browserwindow.close();
-		//alert("end found displayname");
-		//appwindow = window.open('index.html', '_self', 'location=yes');
 		
-		//
+		//determin what step to send the user to.  eiteher settings page or screen selection page
+		if(isStartScreenSet())
+		{
+			showMessage("Now that your page is set, you can put your kiosk into donation or point of sale mode from this settings screen ", '', " ", "OK");
+			
+			$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
+				transition: 'slidefade',
+				changeHash: false,
+				reverse: true,
+				showLoadMsg: true
+			});
+		}
+		else
+		{
+			$(':mobile-pagecontainer').pagecontainer('change', '#setstartscreenpage', {
+				transition: 'slidefade',
+				changeHash: false,
+				reverse: true,
+				showLoadMsg: true
+			});
 		
-		$(':mobile-pagecontainer').pagecontainer('change', '#setstartscreenpage', {
-			transition: 'slidefade',
-			changeHash: false,
-			reverse: true,
-			showLoadMsg: true
-		});
+		}		
 		
-		/*
-		$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
-			transition: 'slidefade',
-			changeHash: false,
-			reverse: true,
-			showLoadMsg: true
-		});
-		*/
+		//close the search window
 		browserwindow.close();
 	}
 }
@@ -183,7 +184,14 @@ function iabCloseSearch(event) {
 	 browserwindow.removeEventListener('loadstop', iabLoadStop);
 	 browserwindow.removeEventListener('exit', iabCloseSearch);
 	 //make sure the home screen is back to index
-	 appwindow = window.open('index.html', '_self', 'location=yes');	
+	 setupSettingsPage();
+	 $(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
+			transition: 'slidefade',
+			changeHash: false,
+			reverse: true,
+			showLoadMsg: true
+		});
+	// appwindow = window.open('index.html', '_self', 'location=yes');	
 }
 
 function iabCloseDonation(event) {	
