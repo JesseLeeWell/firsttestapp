@@ -677,9 +677,12 @@ function isFundraisingPageClaimed()
 		
 	var urltocall = _baseURL + _getPageInformationURL + urlstring;
 	$.ajax({
-		  url: 'http://www.google.com',
+		  url: urltocall,
 		  success:function(data){
 			alert(data);
+			var obj = jQuery.parseJSON(data );
+				alert( obj.userid )
+				;
 		  }
 		});
 		
