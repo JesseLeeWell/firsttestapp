@@ -130,6 +130,8 @@ function iabLoadStart(event) {
 		storageSet('step-search','true');
 	
 		browserwindow.removeEventListener('exit', iabCloseSearch);
+		//remove the page data from storage
+		window.sessionStorage.removeItem('pagedata');
 		
 		//determin what step to send the user to.  eiteher settings page or screen selection page
 		if(isStartScreenSet())
@@ -727,24 +729,27 @@ function getPageInformation(callback)
 	else
 	{
 		//check if we have it in sessionstorage
-		//var pagedata = window.sessionStorage.getItem('pagedata');
-		//alert(pagedata);
-		if(false)
+		var pagedata = window.sessionStorage.getItem('pagedata');
+		alert(pagedata);
+		if( (!pagedata || /^\s*$/.test(pagedata)))
 		{
+			alert('in if');
+			var obj = jQuery.parseJSON(pagedata );
 			callback(pagedata);	
 		}
 		else
 		{
+			alert('in else');
 			var urlstring = pageid;
 					
 			var urltocall = _baseURL + _getPageInformationURL + urlstring;
 			$.ajax({
 			  url: urltocall,
 			  success:function(data){
-				alert('in success');
+				
 				var obj = jQuery.parseJSON(data );
-				alert(data);
-				//window.sessionStorage.setItem('pagedata',obj);
+				
+				window.sessionStorage.setItem('pagedata',data);
 				callback(obj);	
 				//return obj;
 			  }
