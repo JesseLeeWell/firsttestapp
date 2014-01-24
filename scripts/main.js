@@ -475,13 +475,16 @@ function showSecureKioskPage()
 	//$.mobile.changePage('#securekioskpage','slidefade');
 	//window.location = "securekiosk.html";
 }
+/*
 function saveStartPageRadioButtonValue()
 {
+	alert('in save');
 	var startpageselection = $('input[name=startpagegroup]:checked').val();
 	//alert(startpageselection);
 	storageSet('startpageselection', startpageselection);
 	
 }
+*/
 function loadSettingsPage()
 {
 	
@@ -542,6 +545,10 @@ function openSetStartScreenPage()
 
 function closeSetStartScreenPage()
 {	
+	var startpageselection = $('input[name=startpagegroup]:checked').val();
+	//alert(startpageselection);
+	storageSet('startpageselection', startpageselection);
+	
 	if(isStartRecivingDonationsSet())
 	{
 		loadSettingsPage();
@@ -660,10 +667,11 @@ function isStartScreenSet()
 	if((!startpageselection || /^\s*$/.test(startpageselection)) )
 	{
 		return false;
+		alert('true');
 	}
 	else
 	{
-		
+		alert('false');
 		return true;
 	
 	}

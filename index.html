@@ -29,7 +29,14 @@
 					</div>
 				</div>
 				<div data-role="content">
-					<span id='kioskOrganizationDisplayName'>
+					<div style='text-align:center;'>
+						<img src='images/ContinueToGive.png' />
+						<p>
+							Making Giving Easy
+						</p>
+					</div>
+					
+					<span id='kioskOrganizationDisplayName' style='text-align:center;'>
 							
 					</span>
 					<div class='step-pin-outer' onclick ="javascript:showSecureKioskPage();">
@@ -258,12 +265,12 @@
 					<fieldset data-role="controlgroup" data-inline="true">
 						<legend>When you start your app, what screen do you want to open:</legend>
 					
-						<input data-inline="true" type="radio" onclick="javascript:saveStartPageRadioButtonValue();" name="startpagegroup" id="radiostartpagegroupsettingspage" value="settingspage">
+						<input data-inline="true" type="radio"  name="startpagegroup" id="radiostartpagegroupsettingspage" value="settingspage">
 						<label for="radiostartpagegroupsettingspage">Settings Page</label>
 
-						<input type="radio" onclick="javascript:saveStartPageRadioButtonValue();" name="startpagegroup" id="radiostartpagegroupdonationpage" value="donationpage">
+						<input type="radio"  name="startpagegroup" id="radiostartpagegroupdonationpage" value="donationpage">
 						<label for="radiostartpagegroupdonationpage">Kiosk: Giving Page</label>
-						<input type="radio" onclick="javascript:saveStartPageRadioButtonValue();" name="startpagegroup" id="radiostartpagegrouppointofsalepage" value="pointofsalepage" >
+						<input type="radio"  name="startpagegroup" id="radiostartpagegrouppointofsalepage" value="pointofsalepage" >
 						<label for="radiostartpagegrouppointofsalepage">Kiosk:Point of Sale Page</label>
 					</fieldset>
 					
