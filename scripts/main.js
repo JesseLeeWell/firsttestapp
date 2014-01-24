@@ -188,13 +188,8 @@ function iabCloseSearch(event) {
 	 browserwindow.removeEventListener('loadstop', iabLoadStop);
 	 browserwindow.removeEventListener('exit', iabCloseSearch);
 	 //make sure the home screen is back to index
-	 setupSettingsPage();
-	 $(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
-			transition: 'slidefade',
-			changeHash: false,
-			reverse: true,
-			showLoadMsg: true
-		});
+	
+	 loadSettingsPage();
 	// appwindow = window.open('index.html', '_self', 'location=yes');	
 }
 
@@ -512,7 +507,7 @@ function loadSettingsPage()
 			reverse: true,
 			showLoadMsg: true
 		});
-		setupSettingsPage();
+	setupSettingsPage();
 	//appwindow = window.open('index.html', '_self', 'location=yes');
 	
 }
