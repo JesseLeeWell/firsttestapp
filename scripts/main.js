@@ -302,14 +302,14 @@ function storeURLInfo(fullURL)
 function setupSettingsPage()
 {
 	
-	
+	alert("in setupSettingsPage start");
 	setupKioskOrganizationDisplayName();
 	setStepPin();
 	setStepSearch();
 	setStepStartScreen();
 	setStepStartRecivingDonations();
 	setStepClaimOrganization();
-		
+	alert("in setupSettingsPage end");	
 	
 }
 function setStepPin()
