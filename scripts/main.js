@@ -731,7 +731,7 @@ function getPageInformation(callback)
 		//check if we have it in sessionstorage
 		var pagedata = window.sessionStorage.getItem('pagedata');
 		alert(pagedata);
-		if( (!pagedata || /^\s*$/.test(pagedata)))
+		if( !(!pagedata || /^\s*$/.test(pagedata)))
 		{
 			alert('in if');
 			var obj = jQuery.parseJSON(pagedata );
