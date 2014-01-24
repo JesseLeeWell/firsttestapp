@@ -571,6 +571,26 @@ function openStartRecivingDonationsPage()
 		showLoadMsg: true,
 		role: "page"
 	});
+	getPageInformation(setupOpenStartRecivingDonationsPageAfterAjax);
+}
+function setupOpenStartRecivingDonationsPageAfterAjax(pageinfo)
+{
+	if(!pageinfo.userid || pageinfo.userid == 'null')
+	{
+		var displayname = getDisplayName();
+		var address = displayname +"</br>"+ pageinfo.address +"</br>"+ pageinfo.city+" "+ pageinfo.state+" "+ pageinfo.zip;
+		
+		var infoField = document.getElementById("organizationinfo");
+		infoField.innerHTML = address;
+		$('.startrecievingdonations-unclaimeddiv').show();
+		$('.startrecievingdonations-claimeddiv').hide();
+	}
+	else
+	{
+		$('.startrecievingdonations-unclaimeddiv').hide();
+		$('.startrecievingdonations-claimeddiv').show();
+	}
+
 }
 function closeStartRecivingDonationsPage()
 {

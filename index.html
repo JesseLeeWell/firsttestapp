@@ -280,21 +280,23 @@
 							<button data-role="button" data-inline="true" class="button dh"  onclick ="javascript:openDonationPage('/donation_prompt?show_purchase_form=true');">Point Of Sale Mode</button>
 						</div>
 						
-					</div>				
-					<div >
+					</div>	
+					<div>
 						<h1>You are ready to start accepting donations on this kiosk!</h1>
 						<p>
 						Just click the Giving or Point of Sale mode above, then set your kiosk in a convenient place so anyone can walk up and give via credit card or ACH, its that simple!
 						</p>
 						
 						<img src='images/kiosk.png' />
+					</div>
+					<div id='startrecievingdonations-unclaimeddiv' style='display:none;'>
+						
 						<p>
 							Since this Organization has not been claimed, we will mail your donations to:
 						
 						</p>
-						<span style='text-align:left;'>
-						P4121 pin view rd </br>
-						Birnamwood WI. 54414
+						<span id='organizationinfo' style='text-align:left;'>
+						
 						</span>
 						<p>
 							Want Donations to go directly to your organization's bank account?</br>
@@ -302,10 +304,13 @@
 							Then claim your organization on Continue To Give now!
 						
 						</p>
-					</div>
-					<span class='cancelflowbutton' onclick ="javascript:closeStartRecivingDonationsPage();"  data-transition="reverse slidefade" data-inline="true">LATER</span>
-					<span class='mailflowbutton' onclick ="javascript:openSignupPage();"  data-transition="slidefade" data-inline="true">ClAIM MY ORGANIZATION &#10140;</span>
 					
+						<span class='cancelflowbutton' onclick ="javascript:closeStartRecivingDonationsPage();"  data-transition="reverse slidefade" data-inline="true">LATER</span>
+						<span class='mailflowbutton' onclick ="javascript:openSignupPage();"  data-transition="slidefade" data-inline="true">ClAIM MY ORGANIZATION &#10140;</span>
+					</div>
+					<div id='startrecievingdonations-claimeddiv' style='display:none;'>
+						<span class='cancelflowbutton' onclick ="javascript:closeStartRecivingDonationsPage();"  data-transition="reverse slidefade" data-inline="true">LATER</span>
+					</div>
 				</div>
 			</div>
 			<!-- end startreceivingdonationspage page -->
