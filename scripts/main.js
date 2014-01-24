@@ -384,7 +384,7 @@ function setStepClaimOrganization()
 	
 	
 }
-function setStepClaimOrganizationAfterAjax()
+function setStepClaimOrganizationAfterAjax(data)
 {
 	alert('in callback');
 	
@@ -685,9 +685,7 @@ function isFundraisingPageClaimed()
 	{
 	
 		var pageinfo = getPageInformation('setStepClaimOrganizationAfterAjax');
-		alert("here");
-		alert(pageinfo);
-		alert(pageinfo.userid);
+		
 		if(!pageinfo.userid || pageinfo.userid == 'null')
 		{
 			$('.step-claimorganization-outer').show();
@@ -716,8 +714,9 @@ function getPageInformation(callback)
 		$.ajax({
 		  url: urltocall,
 		  success:function(data){
-			alert(data);
+			
 			var obj = jQuery.parseJSON(data );
+			alert('before callback');
 			callback(obj);	
 			//return obj;
 		  }
