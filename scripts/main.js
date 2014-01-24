@@ -52,7 +52,7 @@ var _storagePin = 'pin';
 // Cordova is ready
 //
 $( document ).ready(function() {
-onDeviceReady();
+ //onDeviceReady();
 });
 
 function onDeviceReady() { 
@@ -670,23 +670,37 @@ function isStartRecivingDonationsSet()
 function isFundraisingPageClaimed()
 {
 	//do an ajax call to c2g and see if the page is claimed. 
-	
+	var returnval = false;
 	var pageid = getPageID();
-	pageid = 123;
-	var urlstring = pageid;
-		
-	var urltocall = _baseURL + _getPageInformationURL + urlstring;
-	$.ajax({
-		  url: urltocall,
-		  success:function(data){
-			alert(data);
-			var obj = jQuery.parseJSON(data );
-				alert( obj.userid )
-				;
-		  }
-		});
-		
-	return true;
+	if(!pageid)
+	{
+		//return true since they have not page selected to claim
+		returnval = true;
+	}
+	else
+	{
+		var urlstring = pageid;
+			
+		var urltocall = _baseURL + _getPageInformationURL + urlstring;
+		$.ajax({
+			  url: urltocall,
+			  success:function(data){
+				alert(data);
+				var obj = jQuery.parseJSON(data );
+					alert( obj.userid )
+					;
+				if(!obj.userid || obj.userid == 'null')
+				{
+					returnval = false;
+				}
+				else
+				{
+					returnval = true;
+				}
+			  }
+			});
+	}
+	return returnval;
 }
  function isValidEmailAddress(emailAddress) {
 	var pattern = new RegExp(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/);
