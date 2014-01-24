@@ -63,7 +63,7 @@ function onDeviceReady() {
 	setupSettingsPage();
 	if((hideIntro && hideIntro == 'true') || (alreadyshowedintro && alreadyshowedintro == 'true'))
 	{
-		//setupSettingsPage();
+		
 		determinStartPage();
 	}
 	else
@@ -71,7 +71,7 @@ function onDeviceReady() {
 		//set the session storage that it showed the intro
 		window.sessionStorage.setItem("alreadyshowedintro", "true");	
 		loadMoreInfo('');		
-		//appwindow = window.open('intro.html', '_self', 'location=yes');
+		
 	}
 	
 	
@@ -81,10 +81,6 @@ function onDeviceReady() {
 //bind to our indexpage so that we can set it up every tiem we go there
 $(document).bind( "pagechange", function( e, data ) {
 
-//alert(data.options.target.toSource());
-
-	// We only want to handle changePage() calls where the caller is
-	// asking us to load a page by URL.
 	if ( data.options.target == "#indexpage" ) {
 
 
@@ -149,27 +145,12 @@ function iabLoadStart(event) {
 		{
 			showMessage("Now that your page is set, you can put your kiosk into donation or point of sale mode from this settings screen ", '', " ", "OK");
 			loadSettingsPage();
-			/*
-			$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
-				transition: 'slidefade',
-				changeHash: false,
-				reverse: true,
-				showLoadMsg: true
-			});
-			setupSettingsPage();
-			*/
+			
 		}
 		else
 		{
 			openSetStartScreenPage();
-			/*
-			$(':mobile-pagecontainer').pagecontainer('change', '#setstartscreenpage', {
-				transition: 'slidefade',
-				changeHash: false,
-				reverse: true,
-				showLoadMsg: true
-			});
-			*/
+			
 		
 		}		
 		
@@ -510,10 +491,7 @@ function loadSettingsPage()
 			reverse: true,
 			showLoadMsg: true
 		});
-	//setupSettingsPage();
 	
-	//appwindow = window.open('#index', '_self', 'location=yes');
-	//setupSettingsPage();
 }
 
 function loadMoreInfo(pagetype)
@@ -564,7 +542,15 @@ function openSetStartScreenPage()
 
 function closeSetStartScreenPage()
 {	
-	 openStartRecivingDonationsPage();
+	if(isStartRecivingDonationsSet())
+	{
+		loadSettingsPage();
+	}
+	else
+	{
+		 openStartRecivingDonationsPage();
+	}
+	
 }
 function openStartRecivingDonationsPage()
 {
@@ -710,7 +696,7 @@ function isFundraisingPageClaimed()
 	}
 	else
 	{
-		alert('in else');
+		
 		var pageinfo = getPageInformation();
 		if(!pageinfo.userid || pageinfo.userid == 'null')
 		{
