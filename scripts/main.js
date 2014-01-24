@@ -38,7 +38,8 @@ var _kiosksetupURL = 'index.php?moduleType=Module_kiosk&task=setupkiosk';
 var _forgotPinURL = 'index.php?moduleType=Module_system&task=kioskforgotpassword';
 var _contactRequestURL ='index.php?moduleType=Module_kiosk&task=appcontactrequestform';
 var _searchPage = 'index.php?moduleType=Module_Search&task=show.results';
-var _signUpPage = 'index.php?moduleType=Module_Registration&task=regflow_church&registrationstep=regcreateaccount'
+var _signUpPage = 'index.php?moduleType=Module_Registration&task=regflow_church&registrationstep=regcreateaccount';
+var _getPageInformationURL = 'router/Kiosk/getpageinformation?pageid=';
 
 var appwindow = null;
 var browserwindow = null;
@@ -50,16 +51,18 @@ var _storagePin = 'pin';
 
 // Cordova is ready
 //
-
+$( document ).ready(function() {
+onDeviceReady();
+});
 
 function onDeviceReady() { 
 	
 	var hideIntro = 'true';//storageGet('hideintro');
 	var alreadyshowedintro = window.sessionStorage.getItem('alreadyshowedintro');
-	
+	setupSettingsPage();
 	if((hideIntro && hideIntro == 'true') || (alreadyshowedintro && alreadyshowedintro == 'true'))
 	{
-		setupSettingsPage();
+		//setupSettingsPage();
 		determinStartPage();
 	}
 	else
@@ -297,6 +300,8 @@ function setupSettingsPage()
 	setStepPin();
 	setStepSearch();
 	setStepStartScreen();
+	setStepStartRecivingDonations();
+	setStepClaimOrganization();
 	//setup the donation buttons
 	
 	//setupDonationAndPurchaseButtons();
@@ -363,6 +368,23 @@ function setStepStartRecivingDonations()
 	
 	}
 }
+function setStepClaimOrganization()
+{
+	
+	if(isFundraisingPageClaimed())
+	{
+		$('.step-claimorganization-outer').hide();
+	}
+	else
+	{
+		
+		$('.step-claimorganization-outer').show();
+	
+	}
+	
+	$
+}
+
 function setupDonationAndPurchaseButtons()
 {
 	
@@ -529,19 +551,19 @@ function openSetStartScreenPage()
 }
 
 function closeSetStartScreenPage()
+{	
+	 storageSet('step-recievedonations','true');
+}
+function openStartRecivingDonationsPage()
 {
-	
-	 $(':mobile-pagecontainer').pagecontainer('change', '#startreceivingdonationspage', {
+	storageSet('step-recievedonations','true');
+	$(':mobile-pagecontainer').pagecontainer('change', '#startreceivingdonationspage', {
 		transition: 'pop',
 		changeHash: false,
 		reverse: true,
 		showLoadMsg: true,
 		role: "page"
 	});
-}
-function openStartRecivingDonationsPage()
-{
-	storageSet('step-recievedonations','true');
 }
 function closeStartRecivingDonationsPage()
 {
@@ -644,6 +666,48 @@ function isStartRecivingDonationsSet()
 	
 	}
 
+}
+function isFundraisingPageClaimed()
+{
+	//do an ajax call to c2g and see if the page is claimed. 
+	alert("here");
+	var pageid = getPageID();
+	pageid = 123;
+	var urlstring = pageid;
+		
+	var urltocall = _baseURL + _getPageInformationURL + urlstring;
+	alert(urltocall);
+	$.post(urltocall,  function(response) {
+			// log the response to the console
+			alert(response);
+		});
+			alert("here");
+	var jqxhr = $.post( urltocall);
+	//alert(jqxhr.responseText);
+	  $.ajax({
+            type: 'GET',
+            url: urltocall
+        })
+        .done(function(data){
+            
+            // show the response
+           alert(data);
+            
+        })
+        .fail(function(data) {
+        
+            // just in case posting your form failed
+            alert( "Posting failed." );
+			 alert( data.responseText );
+            
+        });
+		$.ajax({
+		  url: 'http://www.google.com',
+		  success:function(data){
+			alert(data);
+		  }
+		});
+	return true;
 }
  function isValidEmailAddress(emailAddress) {
 	var pattern = new RegExp(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/);

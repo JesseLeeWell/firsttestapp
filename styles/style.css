@@ -201,6 +201,13 @@ height:68px;
 	.data-role=footer{bottom:0; position:absolute !important; top: auto !important; width:100%;}
 	*/
 	
+/* preset hidden elements */
+
+.step-claimorganization-outer
+{
+	display:none;
+}
+/* end preset hidden elements *?
 /* jquery overrides */
 
  .ui-dialog .ui-header a.ui-btn { display:none; }
