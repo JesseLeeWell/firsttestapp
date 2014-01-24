@@ -727,9 +727,9 @@ function getPageInformation(callback)
 	else
 	{
 		//check if we have it in sessionstorage
-		var pagedata = window.sessionStorage.getItem('pagedata');
-		alert(pagedata);
-		if(pagedata)
+		//var pagedata = window.sessionStorage.getItem('pagedata');
+		//alert(pagedata);
+		if(false)
 		{
 			callback(pagedata);	
 		}
@@ -744,7 +744,7 @@ function getPageInformation(callback)
 				alert('in success');
 				var obj = jQuery.parseJSON(data );
 				alert(data);
-				window.sessionStorage.setItem('pagedata',obj);
+				//window.sessionStorage.setItem('pagedata',obj);
 				callback(obj);	
 				//return obj;
 			  }
