@@ -123,12 +123,8 @@ function iabLoadStart(event) {
 	if(cururl.indexOf("?displayname") != -1)
 	{
 		
-		storeURLInfo(cururl);
-		
-		setupSettingsPage();
-		
-		storageSet('step-search','true');
-	
+		storeURLInfo(cururl);		
+		storageSet('step-search','true');	
 		browserwindow.removeEventListener('exit', iabCloseSearch);
 		//remove the page data from storage
 		window.sessionStorage.removeItem('pagedata');
@@ -137,22 +133,28 @@ function iabLoadStart(event) {
 		if(isStartScreenSet())
 		{
 			showMessage("Now that your page is set, you can put your kiosk into donation or point of sale mode from this settings screen ", '', " ", "OK");
-			
+			loadSettingsPage();
+			/*
 			$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
 				transition: 'slidefade',
 				changeHash: false,
 				reverse: true,
 				showLoadMsg: true
 			});
+			setupSettingsPage();
+			*/
 		}
 		else
 		{
+			openSetStartScreenPage();
+			/*
 			$(':mobile-pagecontainer').pagecontainer('change', '#setstartscreenpage', {
 				transition: 'slidefade',
 				changeHash: false,
 				reverse: true,
 				showLoadMsg: true
 			});
+			*/
 		
 		}		
 		
@@ -393,7 +395,7 @@ function setStepClaimOrganization()
 }
 function setStepClaimOrganizationAfterAjax(pageinfo)
 {
-	alert(pageinfo);
+	
 	if(!pageinfo.userid || pageinfo.userid == 'null')
 	{
 		$('.step-claimorganization-outer').show();
