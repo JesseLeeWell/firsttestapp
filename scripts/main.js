@@ -717,6 +717,7 @@ function getPageInformation(callback)
 			
 			var obj = jQuery.parseJSON(data );
 			alert('before callback');
+			alert(callback);
 			callback(obj);	
 			//return obj;
 		  }
