@@ -393,7 +393,7 @@ function setStepClaimOrganization()
 }
 function setStepClaimOrganizationAfterAjax(pageinfo)
 {
-	
+	alert(pageinfo);
 	if(!pageinfo.userid || pageinfo.userid == 'null')
 	{
 		$('.step-claimorganization-outer').show();
