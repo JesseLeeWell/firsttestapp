@@ -79,6 +79,7 @@ function cancelUnlockKiosk()
 	var securecancelpath = storageGet('securecancelpath');
 	if(securecancelpath == 'index')
 	{
+		loadSettingsPage();
 		/*
 		$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
 			transition: 'pop',

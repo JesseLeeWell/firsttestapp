@@ -302,14 +302,14 @@ function storeURLInfo(fullURL)
 function setupSettingsPage()
 {
 	
-	alert("in setupSettingsPage start");
+	alert('in setup');
 	setupKioskOrganizationDisplayName();
 	setStepPin();
 	setStepSearch();
 	setStepStartScreen();
 	setStepStartRecivingDonations();
 	setStepClaimOrganization();
-	alert("in setupSettingsPage end");	
+	
 	
 }
 function setStepPin()
@@ -500,7 +500,7 @@ function saveStartPageRadioButtonValue()
 }
 function loadSettingsPage()
 {
-	alert("in load settings page");
+	
 	$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
 			transition: 'slidefade',
 			changeHash: false,
@@ -508,8 +508,9 @@ function loadSettingsPage()
 			showLoadMsg: true
 		});
 	setupSettingsPage();
-	//appwindow = window.open('index.html', '_self', 'location=yes');
 	
+	//appwindow = window.open('#index', '_self', 'location=yes');
+	//setupSettingsPage();
 }
 
 function loadMoreInfo(pagetype)
