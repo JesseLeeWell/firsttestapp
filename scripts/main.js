@@ -503,13 +503,14 @@ function saveStartPageRadioButtonValue()
 }
 function loadSettingsPage()
 {
-	setupSettingsPage();
+	
 	$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
 			transition: 'slidefade',
 			changeHash: false,
 			reverse: true,
 			showLoadMsg: true
 		});
+		setupSettingsPage();
 	//appwindow = window.open('index.html', '_self', 'location=yes');
 	
 }
