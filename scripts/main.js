@@ -552,7 +552,7 @@ function openSetStartScreenPage()
 
 function closeSetStartScreenPage()
 {	
-	 storageSet('step-recievedonations','true');
+	 openStartRecivingDonationsPage();
 }
 function openStartRecivingDonationsPage()
 {
