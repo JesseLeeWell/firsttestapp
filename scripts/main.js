@@ -384,9 +384,17 @@ function setStepClaimOrganization()
 	
 	
 }
-function setStepClaimOrganizationAfterAjax(data)
+function setStepClaimOrganizationAfterAjax(pageinfo)
 {
-	alert('in callback');
+	
+	if(!pageinfo.userid || pageinfo.userid == 'null')
+	{
+		$('.step-claimorganization-outer').show();
+	}
+	else
+	{
+		$('.step-claimorganization-outer').hide();
+	}
 	
 }
 function setupDonationAndPurchaseButtons()
@@ -684,16 +692,9 @@ function isFundraisingPageClaimed()
 	else
 	{
 	
-		var pageinfo = getPageInformation(setStepClaimOrganizationAfterAjax);
+		getPageInformation(setStepClaimOrganizationAfterAjax);
 		
-		if(!pageinfo.userid || pageinfo.userid == 'null')
-		{
-			$('.step-claimorganization-outer').show();
-		}
-		else
-		{
-			$('.step-claimorganization-outer').hide();
-		}
+		
 		
 		
 	}
@@ -716,8 +717,7 @@ function getPageInformation(callback)
 		  success:function(data){
 			
 			var obj = jQuery.parseJSON(data );
-			alert('before callback');
-			alert(callback);
+			
 			callback(obj);	
 			//return obj;
 		  }
