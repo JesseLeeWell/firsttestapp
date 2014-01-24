@@ -679,27 +679,44 @@ function isFundraisingPageClaimed()
 	}
 	else
 	{
-		var urlstring = pageid;
-			
-		var urltocall = _baseURL + _getPageInformationURL + urlstring;
-		$.ajax({
-			  url: urltocall,
-			  success:function(data){
-				
-				var obj = jQuery.parseJSON(data );
-					
-				if(!obj.userid || obj.userid == 'null')
-				{
-					$('.step-claimorganization-outer').show();
-				}
-				else
-				{
-					$('.step-claimorganization-outer').hide();
-				}
-			  }
-			});
+	
+		var pageinfo = getPageInformation();
+		
+		if(!pageinfo.userid || pageinfo.userid == 'null')
+		{
+			$('.step-claimorganization-outer').show();
+		}
+		else
+		{
+			$('.step-claimorganization-outer').hide();
+		}
+		
+		
 	}
 	return returnval;
+}
+function getPageInformation()
+{
+	var pageid = getPageID();
+	if(!pageid)
+	{
+		return jQuery.parseJSON('' );
+	}
+	else
+	{
+		var urlstring = pageid;
+				
+		var urltocall = _baseURL + _getPageInformationURL + urlstring;
+		$.ajax({
+		  url: urltocall,
+		  success:function(data){
+			
+			var obj = jQuery.parseJSON(data );
+				
+			return obj;
+		  }
+		});
+	}
 }
  function isValidEmailAddress(emailAddress) {
 	var pattern = new RegExp(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/);
