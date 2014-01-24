@@ -578,7 +578,8 @@ function openStartRecivingDonationsPage()
 function setupOpenStartRecivingDonationsPageAfterAjax(pageinfo)
 {
 	alert('in setupOpenStartRecivingDonationsPageAfterAjax');
-	alert(pageinfo);
+	alert(pageinfo.userid);
+	alert(pageinfo.city);
 	if(!pageinfo.userid || pageinfo.userid == 'null')
 	{
 		var displayname = getDisplayName();
@@ -730,16 +731,16 @@ function getPageInformation(callback)
 	{
 		//check if we have it in sessionstorage
 		var pagedata = window.sessionStorage.getItem('pagedata');
-		alert(pagedata);
+		
 		if( !(!pagedata || /^\s*$/.test(pagedata)))
 		{
-			alert('in if');
+			
 			var obj = jQuery.parseJSON(pagedata );
-			callback(pagedata);	
+			callback(obj);	
 		}
 		else
 		{
-			alert('in else');
+			
 			var urlstring = pageid;
 					
 			var urltocall = _baseURL + _getPageInformationURL + urlstring;
