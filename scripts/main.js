@@ -670,7 +670,7 @@ function isStartRecivingDonationsSet()
 function isFundraisingPageClaimed()
 {
 	//do an ajax call to c2g and see if the page is claimed. 
-	var returnval = false;
+	var returnval = true;
 	var pageid = getPageID();
 	if(!pageid)
 	{
@@ -685,17 +685,16 @@ function isFundraisingPageClaimed()
 		$.ajax({
 			  url: urltocall,
 			  success:function(data){
-				alert(data);
+				
 				var obj = jQuery.parseJSON(data );
-					alert( obj.userid )
-					;
+					
 				if(!obj.userid || obj.userid == 'null')
 				{
-					returnval = false;
+					$('.step-claimorganization-outer').show();
 				}
 				else
 				{
-					returnval = true;
+					$('.step-claimorganization-outer').hide();
 				}
 			  }
 			});
