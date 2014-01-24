@@ -710,7 +710,7 @@ function getPageInformation()
 		$.ajax({
 		  url: urltocall,
 		  success:function(data){
-			
+			alert(data);
 			var obj = jQuery.parseJSON(data );
 				
 			return obj;
