@@ -684,7 +684,7 @@ function isFundraisingPageClaimed()
 	else
 	{
 	
-		var pageinfo = getPageInformation('setStepClaimOrganizationAfterAjax');
+		var pageinfo = getPageInformation(setStepClaimOrganizationAfterAjax);
 		
 		if(!pageinfo.userid || pageinfo.userid == 'null')
 		{
