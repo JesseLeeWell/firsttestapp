@@ -48,7 +48,7 @@ var _storageDisplayName = "storageDisplayName";
 var _storageFullURL = "storageFullURL";
 var _storagePin = 'pin';
 
-setPageInformation();
+//setPagePaymentInformation();
 
 // Cordova is ready
 //
@@ -57,7 +57,7 @@ $( document ).ready(function() {
 });
 
 function onDeviceReady() { 
-	
+	setPagePaymentInformation();
 	var hideIntro = 'true';//storageGet('hideintro');
 	var alreadyshowedintro = window.sessionStorage.getItem('alreadyshowedintro');
 	setupSettingsPage();
@@ -79,7 +79,7 @@ function onDeviceReady() {
 }
 
 //bind to our indexpage so that we can set it up every tiem we go there
-$(document).bind( "pagechange", function( e, data ) {
+$(document).bind( "pagechange", function( e, data ) { 
 
 	if ( data.options.target == "#indexpage" ) {
 
@@ -138,7 +138,7 @@ function iabLoadStart(event) {
 		browserwindow.removeEventListener('exit', iabCloseSearch);
 		//remove the page data from storage
 		window.sessionStorage.removeItem('pagedata');
-		setPageInformation();
+		setPagePaymentInformation();
 		
 		//determin what step to send the user to.  eiteher settings page or screen selection page
 		if(isStartScreenSet())
@@ -307,14 +307,14 @@ function storeURLInfo(fullURL)
 function setupSettingsPage()
 {
 	
-	alert('in setup');
+	//alert('in setup');
 	setupKioskOrganizationDisplayName();
 	setStepPin();
 	setStepSearch();
 	setStepStartScreen();
 	setStepStartRecivingDonations();
 	setStepClaimOrganization();
-	alert('end setup');
+	//alert('end setup');
 	
 }
 function setStepPin()
@@ -578,7 +578,7 @@ function openStartRecivingDonationsPage()
 		showLoadMsg: true,
 		role: "page"
 	});
-	var pageinfo = getPageInformation();
+	var pageinfo = getPagePaymentInformation();
 	if(!pageinfo.userid || pageinfo.userid == 'null')
 	{
 		var displayname = getDisplayName();
@@ -714,7 +714,7 @@ function isFundraisingPageClaimed()
 	else
 	{
 		
-		var pageinfo = getPageInformation();
+		var pageinfo = getPagePaymentInformation();
 		if(!pageinfo.userid || pageinfo.userid == 'null')
 		{
 			returnval = false;
@@ -728,7 +728,7 @@ function isFundraisingPageClaimed()
 	}
 	return returnval;
 }
-function setPageInformation()
+function setPagePaymentInformation()
 {
 	var pageid = getPageID();
 	if(!pageid)
@@ -756,7 +756,7 @@ function setPageInformation()
 	}
 
 }
-function getPageInformation()
+function getPagePaymentInformation()
 {
 	var pagedata = window.sessionStorage.getItem('pagedata');
 	var obj = jQuery.parseJSON(pagedata );
