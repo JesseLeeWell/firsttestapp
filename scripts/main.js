@@ -391,7 +391,7 @@ function setStepClaimOrganization()
 }
 function setStepClaimOrganizationAfterAjax(pageinfo)
 {
-	alert('in setStepClaimOrganizationAfterAjax');
+	
 	if(!pageinfo.userid || pageinfo.userid == 'null')
 	{
 		$('.step-claimorganization-outer').show();
@@ -575,7 +575,8 @@ function openStartRecivingDonationsPage()
 }
 function setupOpenStartRecivingDonationsPageAfterAjax(pageinfo)
 {
-	alert('in callback');
+	alert('in setupOpenStartRecivingDonationsPageAfterAjax');
+	alert(pageinfo);
 	if(!pageinfo.userid || pageinfo.userid == 'null')
 	{
 		var displayname = getDisplayName();
