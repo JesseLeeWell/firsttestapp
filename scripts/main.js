@@ -77,6 +77,19 @@ function onDeviceReady() {
 	
 }
 
+//bind to our indexpage so that we can set it up every tiem we go there
+$(document).bind( "pagechange", function( e, data ) {
+
+//alert(data.options.target.toSource());
+
+	// We only want to handle changePage() calls where the caller is
+	// asking us to load a page by URL.
+	if ( data.options.target == "#indexpage" ) {
+
+
+		setupSettingsPage();
+	}
+});
 function determinStartPage()
 {
 	//based on the settings they chose, open the correct screen
@@ -507,7 +520,7 @@ function loadSettingsPage()
 			reverse: true,
 			showLoadMsg: true
 		});
-	setupSettingsPage();
+	//setupSettingsPage();
 	
 	//appwindow = window.open('#index', '_self', 'location=yes');
 	//setupSettingsPage();
