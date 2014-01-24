@@ -403,9 +403,9 @@ function setStepClaimOrganization()
 }
 function setStepClaimOrganizationAfterAjax(pageinfo)
 {
-	alert('in setStepClaimOrganizationAfterAjax');
-	alert(pageinfo.userid);
-	alert(pageinfo.id);
+	//alert('in setStepClaimOrganizationAfterAjax');
+	//alert(pageinfo.userid);
+	//alert(pageinfo.id);
 	if(!pageinfo.userid || pageinfo.userid == 'null')
 	{
 		alert('in if');
@@ -747,6 +747,7 @@ function getPageInformation(callback)
 	}
 	else
 	{ 
+		/* cutting this out because otherwise it doesn't run ascyn cause it comes back from mem right away
 		//check if we have it in sessionstorage
 		var pagedata = window.sessionStorage.getItem('pagedata');
 		
@@ -758,7 +759,7 @@ function getPageInformation(callback)
 		}
 		else
 		{
-			
+		*/
 			var urlstring = pageid;
 					
 			var urltocall = _baseURL + _getPageInformationURL + urlstring;
@@ -773,7 +774,7 @@ function getPageInformation(callback)
 				//return obj;
 			  }
 			});
-		}
+		//}
 	}
 }
  function isValidEmailAddress(emailAddress) {
