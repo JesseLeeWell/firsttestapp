@@ -391,7 +391,7 @@ function setStepClaimOrganization()
 }
 function setStepClaimOrganizationAfterAjax(pageinfo)
 {
-	
+	alert('in setStepClaimOrganizationAfterAjax');
 	if(!pageinfo.userid || pageinfo.userid == 'null')
 	{
 		$('.step-claimorganization-outer').show();
@@ -575,6 +575,7 @@ function openStartRecivingDonationsPage()
 }
 function setupOpenStartRecivingDonationsPageAfterAjax(pageinfo)
 {
+	alert('in callback');
 	if(!pageinfo.userid || pageinfo.userid == 'null')
 	{
 		var displayname = getDisplayName();
@@ -582,13 +583,13 @@ function setupOpenStartRecivingDonationsPageAfterAjax(pageinfo)
 		
 		var infoField = document.getElementById("organizationinfo");
 		infoField.innerHTML = address;
-		$('.startrecievingdonations-unclaimeddiv').show();
-		$('.startrecievingdonations-claimeddiv').hide();
+		$('.startrecievingdonationsunclaimeddiv').show();
+		$('.startrecievingdonationsclaimeddiv').hide();
 	}
 	else
 	{
-		$('.startrecievingdonations-unclaimeddiv').hide();
-		$('.startrecievingdonations-claimeddiv').show();
+		$('.startrecievingdonationsunclaimeddiv').hide();
+		$('.startrecievingdonationsclaimeddiv').show();
 	}
 
 }
@@ -724,19 +725,29 @@ function getPageInformation(callback)
 	}
 	else
 	{
-		var urlstring = pageid;
+		//check if we have it in sessionstorage
+		var pagedata = window.sessionStorage.getItem('pagedata');
+		alert(pagedata);
+		if(pagedata)
+		{
+			callback(pagedata);	
+		}
+		else
+		{
+			var urlstring = pageid;
+					
+			var urltocall = _baseURL + _getPageInformationURL + urlstring;
+			$.ajax({
+			  url: urltocall,
+			  success:function(data){
 				
-		var urltocall = _baseURL + _getPageInformationURL + urlstring;
-		$.ajax({
-		  url: urltocall,
-		  success:function(data){
-			
-			var obj = jQuery.parseJSON(data );
-			
-			callback(obj);	
-			//return obj;
-		  }
-		});
+				var obj = jQuery.parseJSON(data );
+				window.sessionStorage.setItem('pagedata',obj);
+				callback(obj);	
+				//return obj;
+			  }
+			});
+		}
 	}
 }
  function isValidEmailAddress(emailAddress) {
