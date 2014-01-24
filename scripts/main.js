@@ -408,18 +408,19 @@ function setStepClaimOrganizationAfterAjax(pageinfo)
 function setupKioskOrganizationDisplayName()
 {
 	
-	var infoField = document.getElementById("kioskOrganizationDisplayName");
+	//var infoField = document.getElementById("kioskOrganizationDisplayName");
 	if(isSearchSet())
 	{
 		var displayname = getDisplayName();
 	
-		infoField.innerHTML = "Kiosk is set to: "+ displayname;
+		//infoField.innerHTML = "Kiosk is set to: "+ displayname;
+		$("#kioskOrganizationDisplayName").html("Kiosk is set to: "+ displayname);
 		
 	}
 	else
 	{
-		
-		infoField.innerHTML = "";
+		$("#kioskOrganizationDisplayName").html("");
+		//infoField.innerHTML = "";
 	
 	}
 	
@@ -577,24 +578,23 @@ function openStartRecivingDonationsPage()
 }
 function setupOpenStartRecivingDonationsPageAfterAjax(pageinfo)
 {
-	alert('in setupOpenStartRecivingDonationsPageAfterAjax');
-	alert(pageinfo.userid);
-	alert(pageinfo.city);
+	
 	if(!pageinfo.userid || pageinfo.userid == 'null')
 	{
 		var displayname = getDisplayName();
-		var address = displayname +"</br>"+ pageinfo.address +"</br>"+ pageinfo.city+" "+ pageinfo.state+" "+ pageinfo.zip;
+		var address = displayname +"</br>"+ pageinfo.address +"</br>"+ pageinfo.city+" "+ pageinfo.state+" "+ pageinfo.zip;	
 		
-		var infoField = document.getElementById("organizationinfo");
-		infoField.innerHTML = address;
-		$('.startrecievingdonationsunclaimeddiv').show();
-		$('.startrecievingdonationsclaimeddiv').hide();
+		$("#organizationinfo").html(address);
+
+
+		$('#startrecievingdonationsunclaimeddiv').show();
+		$('#startrecievingdonationsclaimeddiv').hide();
 	}
 	else
 	{
-		alert('in else');
-		$('.startrecievingdonationsunclaimeddiv').hide();
-		$('.startrecievingdonationsclaimeddiv').show();
+		
+		$('#startrecievingdonationsunclaimeddiv').hide();
+		$('#startrecievingdonationsclaimeddiv').show();
 	}
 
 }
