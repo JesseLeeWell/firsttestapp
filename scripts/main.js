@@ -743,6 +743,7 @@ function getPageInformation(callback)
 			  success:function(data){
 				
 				var obj = jQuery.parseJSON(data );
+				alert(obj);
 				window.sessionStorage.setItem('pagedata',obj);
 				callback(obj);	
 				//return obj;
