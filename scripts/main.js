@@ -592,6 +592,7 @@ function setupOpenStartRecivingDonationsPageAfterAjax(pageinfo)
 	}
 	else
 	{
+		alert('in else');
 		$('.startrecievingdonationsunclaimeddiv').hide();
 		$('.startrecievingdonationsclaimeddiv').show();
 	}
