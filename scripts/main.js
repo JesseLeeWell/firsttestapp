@@ -57,7 +57,7 @@ $( document ).ready(function() {
 });
 
 function onDeviceReady() { 
-	setPagePaymentInformation();
+	setPagePaymentInformation(setStepClaimOrganization);
 	var hideIntro = 'true';//storageGet('hideintro');
 	var alreadyshowedintro = window.sessionStorage.getItem('alreadyshowedintro');
 	setupSettingsPage();
@@ -728,7 +728,7 @@ function isFundraisingPageClaimed()
 	}
 	return returnval;
 }
-function setPagePaymentInformation()
+function setPagePaymentInformation(callback)
 {
 	var pageid = getPageID();
 	if(!pageid)
@@ -749,6 +749,10 @@ function setPagePaymentInformation()
 			var obj = jQuery.parseJSON(data );
 			
 			window.sessionStorage.setItem('pagedata',data);
+			if(callback)
+			{
+				callback();
+			}
 			
 		  }
 		});
