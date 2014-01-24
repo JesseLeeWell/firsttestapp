@@ -86,7 +86,7 @@ function determinStartPage()
 	var pageid = getPageID();
 	var displayname = getDisplayName();	
 	
-	if((!pageid || /^\s*$/.test(pageid)) || (!displayname || /^\s*$/.test(displayname)))
+	if(!(isSearchSet()))
 	{
 		return true; //just leave them on the settings screen
 	}
@@ -304,16 +304,13 @@ function setupSettingsPage()
 {
 	
 	
-	
+	setupKioskOrganizationDisplayName();
 	setStepPin();
 	setStepSearch();
 	setStepStartScreen();
 	setStepStartRecivingDonations();
 	setStepClaimOrganization();
-	//setup the donation buttons
-	
-	//setupDonationAndPurchaseButtons();
-	
+		
 	
 }
 function setStepPin()
@@ -405,31 +402,22 @@ function setStepClaimOrganizationAfterAjax(pageinfo)
 	}
 	
 }
-function setupDonationAndPurchaseButtons()
+
+function setupKioskOrganizationDisplayName()
 {
 	
-	var fullURL = getFullURL();
-	//now get the pageid
-	
-	var pageid = getPageID();
-	var displayname = getDisplayName();
-	
-	var infoField = document.getElementById("savedSearchDonationButton");
-	infoField.innerHTML = displayname;
-	
-	var infoField2 = document.getElementById("savedSearchPOSButton");
-	infoField2.innerHTML = displayname;
-
-	
-	//determin if we should show those buttons
-	if(!isSearchSet())
+	var infoField = document.getElementById("kioskOrganizationDisplayName");
+	if(isSearchSet())
 	{
-		$( "#preselectedpagediv" ).hide();
+		var displayname = getDisplayName();
+	
+		infoField.innerHTML = "Kiosk is set to: "+ displayname;
+		
 	}
 	else
 	{
 		
-		$( "#preselectedpagediv" ).show();
+		infoField.innerHTML = "";
 	
 	}
 	
@@ -559,8 +547,7 @@ function openSetStartScreenPage()
 		changeHash: false,
 		reverse: false,
 		showLoadMsg: true,
-		role: "dialog",
-		btn: "none"
+		role: "dialog"
 	});
 	
 	//set up the radio buttons for start page

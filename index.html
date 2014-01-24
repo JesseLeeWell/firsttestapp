@@ -30,7 +30,9 @@
 				<div data-role="content">					
 					<div class='step-pin-outer' onclick ="javascript:showSecureKioskPage();">
 						<div class ='step-outer'>
+							<span id='kioskOrganizationDisplayName'>
 							
+							</span>
 							<span class='step-inner-wrapper'>
 								<div class='step-number' >
 									1.
@@ -263,7 +265,8 @@
 						<input type="radio" onclick="javascript:saveStartPageRadioButtonValue();" name="startpagegroup" id="radiostartpagegrouppointofsalepage" value="pointofsalepage" >
 						<label for="radiostartpagegrouppointofsalepage">Kiosk:Point of Sale Page</label>
 					</fieldset>
-					<button class="button dh" onclick ="javascript:closeSetStartScreenPage();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Close</button>
+					
+					<span class='mailflowbutton' onclick ="javascript:closeSetStartScreenPage();"  data-transition="slidefade" data-inline="true">Save  &#38; Continue &#10140;</span>
 				</div>
 			</div>
 			</div>
