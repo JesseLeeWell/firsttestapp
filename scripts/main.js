@@ -723,13 +723,14 @@ function isFundraisingPageClaimed()
 }
 function getPageInformation(callback)
 {
+	
 	var pageid = getPageID();
 	if(!pageid)
 	{
 		return jQuery.parseJSON('' );
 	}
 	else
-	{
+	{ 
 		//check if we have it in sessionstorage
 		var pagedata = window.sessionStorage.getItem('pagedata');
 		
