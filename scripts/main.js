@@ -239,16 +239,25 @@ function getParameterByName(name, url) {
 
 function openDonationPage(extras)
 {
+	if(isSearchSet())
+	{
+		showMessage("Please set the kiosk to your organization or fundraiser by in step 2 below. ", '', " ", "OK");
+	}
+	else
+	{
+		
+		storageSet('securesuccesspath', 'index');
+		storageSet('securecancelpath', 'donation');
+		var pageid = getPageID();
+		var url =_kioskURL + pageid + extras;
+		
+		browserwindow = window.open(url, '_blank', 'location=no,closebuttoncaption=settings');	
+		
+		browserwindow.addEventListener('exit', iabCloseDonation);
+		browserwindow.addEventListener('loadstop', iabLoadStopDonation);
 	
-	storageSet('securesuccesspath', 'index');
-	storageSet('securecancelpath', 'donation');
-	var pageid = getPageID();
-	var url =_kioskURL + pageid + extras;
+	}
 	
-	browserwindow = window.open(url, '_blank', 'location=no,closebuttoncaption=settings');	
-	
-	browserwindow.addEventListener('exit', iabCloseDonation);
-	browserwindow.addEventListener('loadstop', iabLoadStopDonation);
 
 }
 function storageSet(key, value)
@@ -667,11 +676,11 @@ function isStartScreenSet()
 	if((!startpageselection || /^\s*$/.test(startpageselection)) )
 	{
 		return false;
-		alert('true');
+		
 	}
 	else
 	{
-		alert('false');
+		
 		return true;
 	
 	}
