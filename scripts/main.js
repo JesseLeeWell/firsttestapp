@@ -500,7 +500,7 @@ function saveStartPageRadioButtonValue()
 }
 function loadSettingsPage()
 {
-	
+	alert("in load settings page");
 	$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
 			transition: 'slidefade',
 			changeHash: false,

@@ -19,6 +19,8 @@ function unlockKiosk()
 		}
 		else
 		{
+			loadSettingsPage()
+			/*
 		
 			$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
 				transition: 'pop',
@@ -26,7 +28,7 @@ function unlockKiosk()
 				reverse: false,
 				showLoadMsg: true
 			});
-			
+			*/
 			//$.mobile.changePage('#indexkpage','slide');
 			//appwindow = window.open('index.html', '_self', 'location=yes');
 		}
@@ -77,14 +79,14 @@ function cancelUnlockKiosk()
 	var securecancelpath = storageGet('securecancelpath');
 	if(securecancelpath == 'index')
 	{
-		
+		/*
 		$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
 			transition: 'pop',
 			changeHash: false,
 			reverse: true,
 			showLoadMsg: true
 		});
-		
+		*/
 		//appwindow = window.open('index.html', '_self', 'location=yes');
 	}
 	else
