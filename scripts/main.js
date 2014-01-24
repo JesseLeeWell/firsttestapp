@@ -315,7 +315,7 @@ function storeURLInfo(fullURL)
 function setupSettingsPage()
 {
 	
-	alert('in setup');
+	//alert('in setup');
 	setupKioskOrganizationDisplayName();
 	setStepPin();
 	setStepSearch();
@@ -403,7 +403,8 @@ function setStepClaimOrganization()
 }
 function setStepClaimOrganizationAfterAjax(pageinfo)
 {
-	
+	alert('in setStepClaimOrganizationAfterAjax');
+	alert(pageinfo.userid);
 	if(!pageinfo.userid || pageinfo.userid == 'null')
 	{
 		$('.step-claimorganization-outer').show();
@@ -724,7 +725,7 @@ function isFundraisingPageClaimed()
 	}
 	else
 	{
-	
+		alert('in else');
 		getPageInformation(setStepClaimOrganizationAfterAjax);
 		
 		
