@@ -21,8 +21,8 @@ else if(environment == 'qa')
 }
 else if(environment == 'local')
 {
-	var _baseURL = 'http://dev.continuetogive.com/';
-	var _kioskURL = 'http://dev.kiosk.continuetogive.com/';
+	var _baseURL = 'http://local.bugfixes.continuetogive.com/';
+	var _kioskURL = 'http://local.bugfixes.continuetogive.com/';
 }
 else if(environment == 'prod')
 {
@@ -670,43 +670,19 @@ function isStartRecivingDonationsSet()
 function isFundraisingPageClaimed()
 {
 	//do an ajax call to c2g and see if the page is claimed. 
-	alert("here");
+	
 	var pageid = getPageID();
 	pageid = 123;
 	var urlstring = pageid;
 		
 	var urltocall = _baseURL + _getPageInformationURL + urlstring;
-	alert(urltocall);
-	$.post(urltocall,  function(response) {
-			// log the response to the console
-			alert(response);
-		});
-			alert("here");
-	var jqxhr = $.post( urltocall);
-	//alert(jqxhr.responseText);
-	  $.ajax({
-            type: 'GET',
-            url: urltocall
-        })
-        .done(function(data){
-            
-            // show the response
-           alert(data);
-            
-        })
-        .fail(function(data) {
-        
-            // just in case posting your form failed
-            alert( "Posting failed." );
-			 alert( data.responseText );
-            
-        });
-		$.ajax({
+	$.ajax({
 		  url: 'http://www.google.com',
 		  success:function(data){
 			alert(data);
 		  }
 		});
+		
 	return true;
 }
  function isValidEmailAddress(emailAddress) {
