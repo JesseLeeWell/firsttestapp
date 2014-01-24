@@ -58,7 +58,8 @@ $( document ).ready(function() {
 
 function onDeviceReady() { 
 	setPagePaymentInformation(setStepClaimOrganization);
-	var hideIntro = 'true';//storageGet('hideintro');
+	//var hideIntro = 'true';//storageGet('hideintro');
+	var hideIntro = storageGet('hideintro');
 	var alreadyshowedintro = window.sessionStorage.getItem('alreadyshowedintro');
 	setupSettingsPage();
 	if((hideIntro && hideIntro == 'true') || (alreadyshowedintro && alreadyshowedintro == 'true'))
