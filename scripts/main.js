@@ -405,12 +405,15 @@ function setStepClaimOrganizationAfterAjax(pageinfo)
 {
 	alert('in setStepClaimOrganizationAfterAjax');
 	alert(pageinfo.userid);
+	alert(pageinfo.id);
 	if(!pageinfo.userid || pageinfo.userid == 'null')
 	{
+		alert('in if');
 		$('.step-claimorganization-outer').show();
 	}
 	else
 	{
+		alert('in else');
 		$('.step-claimorganization-outer').hide();
 	}
 	
