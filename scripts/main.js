@@ -741,9 +741,9 @@ function getPageInformation(callback)
 			$.ajax({
 			  url: urltocall,
 			  success:function(data){
-				
+				alert('in success');
 				var obj = jQuery.parseJSON(data );
-				alert(obj);
+				alert(data);
 				window.sessionStorage.setItem('pagedata',obj);
 				callback(obj);	
 				//return obj;
