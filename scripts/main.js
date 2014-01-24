@@ -48,6 +48,7 @@ var _storageDisplayName = "storageDisplayName";
 var _storageFullURL = "storageFullURL";
 var _storagePin = 'pin';
 
+setPageInformation();
 
 // Cordova is ready
 //
@@ -141,6 +142,7 @@ function iabLoadStart(event) {
 		browserwindow.removeEventListener('exit', iabCloseSearch);
 		//remove the page data from storage
 		window.sessionStorage.removeItem('pagedata');
+		setPageInformation();
 		
 		//determin what step to send the user to.  eiteher settings page or screen selection page
 		if(isStartScreenSet())
@@ -401,23 +403,7 @@ function setStepClaimOrganization()
 	
 	
 }
-function setStepClaimOrganizationAfterAjax(pageinfo)
-{
-	//alert('in setStepClaimOrganizationAfterAjax');
-	//alert(pageinfo.userid);
-	//alert(pageinfo.id);
-	if(!pageinfo.userid || pageinfo.userid == 'null')
-	{
-		alert('in if');
-		$('.step-claimorganization-outer').show();
-	}
-	else
-	{
-		alert('in else');
-		$('.step-claimorganization-outer').hide();
-	}
-	
-}
+
 
 function setupKioskOrganizationDisplayName()
 {
@@ -590,11 +576,7 @@ function openStartRecivingDonationsPage()
 		showLoadMsg: true,
 		role: "page"
 	});
-	getPageInformation(setupOpenStartRecivingDonationsPageAfterAjax);
-}
-function setupOpenStartRecivingDonationsPageAfterAjax(pageinfo)
-{
-	
+	var pageinfo = getPageInformation();
 	if(!pageinfo.userid || pageinfo.userid == 'null')
 	{
 		var displayname = getDisplayName();
@@ -612,8 +594,8 @@ function setupOpenStartRecivingDonationsPageAfterAjax(pageinfo)
 		$('#startrecievingdonationsunclaimeddiv').hide();
 		$('#startrecievingdonationsclaimeddiv').show();
 	}
-
 }
+
 function closeStartRecivingDonationsPage()
 {
 	loadSettingsPage();
@@ -729,16 +711,54 @@ function isFundraisingPageClaimed()
 	else
 	{
 		alert('in else');
-		getPageInformation(setStepClaimOrganizationAfterAjax);
-		
-		
+		var pageinfo = getPageInformation();
+		if(!pageinfo.userid || pageinfo.userid == 'null')
+		{
+			returnval = false;
+		}
+		else
+		{
+			returnval = true;
+		}	
 		
 		
 	}
 	return returnval;
 }
-function getPageInformation(callback)
+function setPageInformation()
 {
+	var pageid = getPageID();
+	if(!pageid)
+	{
+		window.sessionStorage.setItem('pagedata',jQuery.parseJSON('' ));
+		
+	}
+	else
+	{ 
+		
+		var urlstring = pageid;
+				
+		var urltocall = _baseURL + _getPageInformationURL + urlstring;
+		$.ajax({
+		  url: urltocall,
+		  success:function(data){
+			
+			var obj = jQuery.parseJSON(data );
+			
+			window.sessionStorage.setItem('pagedata',data);
+			
+		  }
+		});
+		
+	}
+
+}
+function getPageInformation()
+{
+	var pagedata = window.sessionStorage.getItem('pagedata');
+	var obj = jQuery.parseJSON(pagedata );
+	return obj;
+	
 	
 	var pageid = getPageID();
 	if(!pageid)
