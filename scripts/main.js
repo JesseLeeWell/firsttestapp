@@ -382,9 +382,13 @@ function setStepClaimOrganization()
 	
 	}
 	
-	$
+	
 }
-
+function setStepClaimOrganizationAfterAjax()
+{
+	alert('in callback');
+	
+}
 function setupDonationAndPurchaseButtons()
 {
 	
@@ -680,7 +684,7 @@ function isFundraisingPageClaimed()
 	else
 	{
 	
-		var pageinfo = getPageInformation();
+		var pageinfo = getPageInformation('setStepClaimOrganizationAfterAjax');
 		alert("here");
 		alert(pageinfo);
 		alert(pageinfo.userid);
@@ -697,7 +701,7 @@ function isFundraisingPageClaimed()
 	}
 	return returnval;
 }
-function getPageInformation()
+function getPageInformation(callback)
 {
 	var pageid = getPageID();
 	if(!pageid)
@@ -714,8 +718,8 @@ function getPageInformation()
 		  success:function(data){
 			alert(data);
 			var obj = jQuery.parseJSON(data );
-				
-			return obj;
+			callback(obj);	
+			//return obj;
 		  }
 		});
 	}
