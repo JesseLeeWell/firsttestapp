@@ -6,6 +6,7 @@ $( document ).ready(function() {
 });
 function onDeviceReady() { 
 	setupbyscreensize();
+	
 	$(function () {
     $('.tlt').textillate({ in: { effect: 'fadeInDownBig'} });
 		
