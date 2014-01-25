@@ -2,22 +2,22 @@
 .smallScreen .mailflowbutton
 {
 	
-	font-size: 12px;
+	font-size: 14px;
 	
-	padding:8px;
+	padding:10px;
 	
-	line-height: 1.1;
+	line-height: 1.2;
 	
 	
 
 }
 .smallScreen .cancelflowbutton
 {
-	font-size: 12px;
+	font-size: 14px;
 	
-	padding:8px;
+	padding:10px;
 	
-	line-height: 1.1;
+	line-height: 1.2;
 	
 
 }

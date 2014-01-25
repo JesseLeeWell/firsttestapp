@@ -78,8 +78,9 @@
 .step-outer
 {
 	margin:auto; 
-	width:780px;
+	width:710px;
 	height:63px;
+	padding-left:40px;
 
 }
 
