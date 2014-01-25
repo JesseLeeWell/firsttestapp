@@ -19,7 +19,7 @@
 		<script type="text/javascript" charset="utf-8" src="scripts/unlockkiosk.js"></script>
 	
 	</head>
-	<body >
+	<body id='pagebody'>
 		
 		<div class="content">
 			<!-- Start of index page page -->
@@ -42,7 +42,7 @@
 					<div id='kioskOrganizationDisplayName' style='text-align:center;'>
 							
 					</div>
-					<div class='largeScreen'>large
+					<div class='largeScreen-setupSteps'>
 						<div class='step-pin-outer' onclick ="javascript:showSecureKioskPage();">
 							<div class ='step-outer'>
 								
@@ -57,17 +57,15 @@
 										 <span class='step-arrow'>START &#10140;</span>
 									</span>
 									<span class='step-edit'>
-										 <span class='step-arrow'>EDIT&#10140;</span>
+										 <span style='padding-right: 10px;'>EDIT </span><img width='20px'src='images/editicon.jpg' />
 									</span>
 								</span>
-								
 								<span class='step-checkbox'>
-									<img width='60px' height='60px'src='images/tick.png' />
-								</span>
-								
+									<img width='100%'src='images/tick.png' />
+								</span>	
 							</div>
 						</div>
-						<div class='spacer'></div><div class='spacer'></div><div class='spacer'></div>
+						<div class='spacer'></div><div class='spacer'></div>
 						<div class='step-search-outer' onclick ="javascript:openSearch();">
 							<div class ='step-outer'>
 								
@@ -82,17 +80,15 @@
 										 <span class='step-arrow'>START &#10140;</span>
 									</span>
 									<span class='step-edit'>
-										 <span class='step-arrow'>EDIT &#10140;</span>
+										 <span style='padding-right: 10px;'>EDIT </span><img width='20px'src='images/editicon.jpg' />
 									</span>
 								</span>
-								
 								<span class='step-checkbox'>
-									<img width='60px' height='60px'src='images/tick.png' />
-								</span>
-								
+									<img width='100%'src='images/tick.png' />
+								</span>	
 							</div>
 						</div>
-						<div class='spacer'></div><div class='spacer'></div><div class='spacer'></div>
+						<div class='spacer'></div><div class='spacer'></div>
 						<div class='step-startscreen-outer' onclick ="javascript:openSetStartScreenPage();">
 							<div class ='step-outer'>
 								
@@ -107,17 +103,15 @@
 										 <span class='step-arrow'>START &#10140;</span>
 									</span>
 									<span class='step-edit'>
-										 <span class='step-arrow'>EDIT &#10140;</span>
+										 <span style='padding-right: 10px;'>EDIT </span><img width='20px'src='images/editicon.jpg' />
 									</span>
 								</span>
-								
 								<span class='step-checkbox'>
-									<img width='60px' height='60px'src='images/tick.png' />
-								</span>
-								
+									<img width='100%'src='images/tick.png' />
+								</span>	
 							</div>
 						</div>
-						<div class='spacer'></div><div class='spacer'></div><div class='spacer'></div>
+						<div class='spacer'></div><div class='spacer'></div>
 						<div class='step-recievedonations-outer' onclick ="javascript:openStartRecivingDonationsPage();">
 							<div class ='step-outer'>
 								
@@ -132,17 +126,15 @@
 										 <span class='step-arrow'>START &#10140;</span>
 									</span>
 									<span class='step-edit'>
-										 <span class='step-arrow'>EDIT &#10140;</span>
+										 <span style='padding-right: 10px;'>EDIT </span><img width='20px'src='images/editicon.jpg' />
 									</span>
 								</span>
-								
 								<span class='step-checkbox'>
-									<img width='60px' height='60px'src='images/tick.png' />
-								</span>
-								
+									<img width='100%'src='images/tick.png' />
+								</span>	
 							</div>
 						</div>
-						<div class='spacer'></div><div class='spacer'></div><div class='spacer'></div>
+						<div class='spacer'></div><div class='spacer'></div>
 						<div class='step-claimorganization-outer'>
 							<div class ='step-outer'>
 								
@@ -157,24 +149,22 @@
 										 <span class='step-arrow'>START &#10140;</span>
 									</span>
 									<span class='step-edit'>
-										 <span class='step-arrow'>EDIT &#10140;</span>
+										 <span style='padding-right: 10px;'>EDIT </span><img width='20px'src='images/editicon.jpg' />
 									</span>
-								</span>
-								
+								</span>								
 								<span class='step-checkbox'>
-									<img width='60px' height='60px'src='images/tick.png' />
-								</span>
-								
+									<img width='100%'src='images/tick.png' />
+								</span>								
 							</div>
 						</div>
 					</div>
-					<div class='smallScreen'>small
+					<div class='smallScreen-setupSteps'>
 						<div class='step-pin-outer' onclick ="javascript:showSecureKioskPage();">
 							<div class ='step-outer'>
 								
 								<span class='step-inner-wrapper'>
 									<div class='step-number' >
-										1.
+										1
 									</div>
 									<div class='step-checkbox'>
 										<img width='100%'src='images/tick.png' />
@@ -183,10 +173,10 @@
 										Create a pin to secure your kiosk
 									</span>
 									<span class='step-start'>
-										 <span class='step-arrow'>&#10140;</span>
+										 &#10140;
 									</span>
 									<span class='step-edit'>
-										 <span class='step-arrow'>&#10140;</span>
+										 <img width='20px'src='images/editicon.jpg' />
 									</span>
 								</span>
 							</div>
@@ -197,19 +187,19 @@
 								
 								<span class='step-inner-wrapper'>
 									<div class='step-number' >
-										2.
+										2
 									</div>
 									<div class='step-checkbox'>
 										<img width='100%'src='images/tick.png' />
 									</div>
 									<span class='step-text'>
-										Set Kiosk to your Church or Organization
+										Set Kiosk to your Organization
 									</span>
 									<span class='step-start'>
-										 <span class='step-arrow'>&#10140;</span>
+										 &#10140;
 									</span>
 									<span class='step-edit'>
-										 <span class='step-arrow'>&#10140;</span>
+										 <img width='20px'src='images/editicon.jpg' />
 									</span>
 								</span>
 								
@@ -221,7 +211,7 @@
 								
 								<span class='step-inner-wrapper'>
 									<div class='step-number' >
-										3.
+										3
 									</div>
 									<div class='step-checkbox'>
 										<img width='100%'src='images/tick.png' />
@@ -230,10 +220,10 @@
 										Set start screen
 									</span>
 									<span class='step-start'>
-										 <span class='step-arrow'>&#10140;</span>
+										 &#10140;
 									</span>
 									<span class='step-edit'>
-										 <span class='step-arrow'>&#10140;</span>
+										 <img width='20px'src='images/editicon.jpg' />
 									</span>
 								</span>
 							</div>
@@ -244,7 +234,7 @@
 								
 								<span class='step-inner-wrapper'>
 									<div class='step-number' >
-										4.
+										4
 									</div>
 									<div class='step-checkbox'>
 										<img width='100%'src='images/tick.png' />
@@ -253,10 +243,10 @@
 										Start Receiving Donations!
 									</span>
 									<span class='step-start'>
-										 <span class='step-arrow'>&#10140;</span>
+										 &#10140;
 									</span>
 									<span class='step-edit'>
-										 <span class='step-arrow'>&#10140;</span>
+										 <img width='20px'src='images/editicon.jpg' />
 									</span>
 								</span>
 							</div>
@@ -267,7 +257,7 @@
 								
 								<span class='step-inner-wrapper'>
 									<div class='step-number' >
-										5.
+										5
 									</div>
 									<div class='step-checkbox'>
 										<img width='100%'src='images/tick.png' />
@@ -276,10 +266,10 @@
 										Claim Your Organization!
 									</span>
 									<span class='step-start'>
-										 <span class='step-arrow'>&#10140;</span>
+										 &#10140;
 									</span>
 									<span class='step-edit'>
-										 <span class='step-arrow'>&#10140;</span>
+										 <img width='20px'src='images/editicon.jpg' />
 									</span>
 								</span>
 							</div>

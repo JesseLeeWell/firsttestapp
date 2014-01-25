@@ -816,18 +816,21 @@ function setupbyscreensize()
 {
 
 	width = $(document).width(); // returns width of HTML document
-	
-	if(width < 700)
+	//alert(width);
+	if(width < 720)
 	{
-		
-	 $('.largeScreen').hide();
-	 $('.smallScreen').show();
+	 $('#pagebody').addClass('smallScreen');	
+	 $('.largeScreen-setupSteps').hide();
+	 $('.smallScreen-setupSteps').show();
+	 
+	 
 	
 	}
 	else
 	{
-		$('.smallScreen').hide();
-		$('.largeScreen').show();
+		$('#pagebody').removeClass('smallScreen');
+		$('.smallScreen-setupSteps').hide();
+		$('.largeScreen-setupSteps').show();
 		
 		//$('#donation_prompt_div').addClass('inline_block');
 		

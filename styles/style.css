@@ -77,15 +77,15 @@
 }
 .step-outer
 {
-margin:auto; 
-width:780px;
-height:68px;
+	margin:auto; 
+	width:780px;
+	height:63px;
 
 }
 
 .step-inner-wrapper
 {
-	display:inline-block; border:1px solid #f1f1f2; width:700px;
+	display:inline-block; border:1px solid #f1f1f2; width:640px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	border-top-left-radius: 10px;
@@ -93,14 +93,15 @@ height:68px;
 	 
 	-moz-border-radius-bottomleft: 10px;
 	-moz-border-radius-topleft: 10px;
+	background-color:white;
 }
 .step-number
 {
-	line-height:65px;
+	line-height:60px;
 	display:inline-block; 
 	background-color: #00adee; 
-	width:65px;  
-	height:65px;
+	width:60px;  
+	height:60px;
 	text-align: center;
 	
 	color:white;
@@ -112,8 +113,8 @@ height:68px;
 .step-text
 {
 	display:inline-block;  
-	width:460px;
-	font-size:1.5em; 
+	width:420px;
+	font-size:1.4em; 
 	vertical-align:middle;
 	padding-left:10px;
 }
@@ -123,7 +124,7 @@ height:68px;
 	width:110px;
 	text-align:right;
 	color: #00adee;
-	font-size:1.5em;
+	font-size:1em;
 }
 .step-edit
 {
@@ -131,20 +132,21 @@ height:68px;
 	width:110px;
 	text-align:right;
 	color: #6b6b6b;
-	font-size:1.3em;
+	font-size:1em;
 }
 .step-arrow
 {
 	
-	
+	line-height:60px;
 	display:inline-block;
 	vertical-align:middle;
 }
 .step-checkbox
 {
 	display:none;
-	width:70px; 
-	vertical-align:bottom;
+	width:60px; 
+	height:60px; 
+	vertical-align:middle;	
 	
 }
 
@@ -208,7 +210,7 @@ height:68px;
 {
 	display:none;
 }
-/* end preset hidden elements *?
+/* end preset hidden elements */
 /* jquery overrides */
 
  .ui-dialog .ui-header a.ui-btn { display:none; }
