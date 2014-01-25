@@ -53,16 +53,18 @@ var _storagePin = 'pin';
 // Cordova is ready
 //
 $( document ).ready(function() {
- //onDeviceReady();
+ onDeviceReady();
 });
 
 function onDeviceReady() { 
+	setupbyscreensize();
 	setPagePaymentInformation(setStepClaimOrganization);
+	
 	//var hideIntro = 'true';//storageGet('hideintro');
 	var hideIntro = storageGet('hideintro');
-	var alreadyshowedintro = window.sessionStorage.getItem('alreadyshowedintro');
+	//var alreadyshowedintro = window.sessionStorage.getItem('alreadyshowedintro');
 	setupSettingsPage();
-	if((hideIntro && hideIntro == 'true') || (alreadyshowedintro && alreadyshowedintro == 'true'))
+	if((hideIntro && hideIntro == 'true'))// || (alreadyshowedintro && alreadyshowedintro == 'true'))
 	{
 		
 		determinStartPage();
@@ -70,7 +72,7 @@ function onDeviceReady() {
 	else
 	{
 		//set the session storage that it showed the intro
-		window.sessionStorage.setItem("alreadyshowedintro", "true");	
+		//window.sessionStorage.setItem("alreadyshowedintro", "true");	
 		loadMoreInfo('');		
 		
 	}
@@ -509,7 +511,7 @@ function loadSettingsPage()
 
 function loadMoreInfo(pagetype)
 {
-	
+	storageSet('hideintro', true);
 	switch(pagetype)
 		{
 			case 'dialog':
@@ -814,16 +816,20 @@ function setupbyscreensize()
 {
 
 	width = $(document).width(); // returns width of HTML document
+	alert(width);
 	if(width < 912)
 	{
 		
-	 $('#donation_calculator_div').hide();
-	 $('#donation_prompt_div').removeClass('inline_block');
+	 $('.largeScreen').hide();
+	 $('.smallScreen').show();
+	
 	}
 	else
 	{
-		$('#donation_calculator_div').show();
-		$('#donation_prompt_div').addClass('inline_block');
+		$('#smallScreen').hide();
+		$('#largeScreen').show();
+		
+		//$('#donation_prompt_div').addClass('inline_block');
 		
 	}
 }
