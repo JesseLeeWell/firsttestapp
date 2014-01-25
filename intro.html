@@ -8,7 +8,8 @@
 		<link rel="stylesheet" href="themes/animate.css" />
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
 		<link rel="stylesheet" href="themes/ctg.min.css" />
-		<link rel="stylesheet" href="styles/style.css" />		
+		<link rel="stylesheet" href="styles/style.css" />
+		<link rel="stylesheet" href="styles/intro.css" />		
 		<link rel="stylesheet" href="styles/stylesmall.css" />
 		
 		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -30,38 +31,68 @@
 		<div class="content">
 			<div data-role="page" id='intro1' >
 				<div data-role="header" style='text-align:center;' >
+					<div class='spacer'></div>
 					<img  src='images/ContinueToGive.png' style='width:60%; max-width:450px; min-width:130px;'/>
 				</div>
-				<div data-role="content">	
-					<h1 >Wouldn't it be Great if a "Do Good Company" made it easy for people to support your organization with:</h1>
-					<span class='fiftypercent'>
-						<div id='fadein1' style='display:none; width:100%; padding:5px;text-align:center'>
-							
+				<div id='smallScreenIntroPage1'>
+					<div data-role="content">
+						<div class='introheading'>Wouldn't it be Great if a "Do Good Company" made it easy for people to support your organization with:</div>
+						<div id='scrolltofadein1' class='fadein1' style='display:none; width:100%; padding:5px;text-align:center'>
+								
 							<img  src='images/kioskgiving.png' />
 						</div>
-						<div id='fadein2' style='display:none; width:100%; padding:5px;text-align:center'>
+						<div id='scrolltofadein2' class='fadein2' style='display:none; width:100%; padding:5px;text-align:center'>
 							<img  src='images/mobilegiving.png' />
 						</div>
-						<div id='fadein3' style='display:none; width:100%; padding:5px;text-align:center'>
+						<div id='scrolltofadein3' class='fadein3' style='display:none; width:100%; padding:5px;text-align:center'>
 							<img  src='images/onlinegiving.png' />
 						</div>
-					</span>
-					<span class='fiftypercent'>
-						<div >	
-							<p id='fadein4' style='display:none;'>
-								Continue To Give feels the same way.  And we are bringing you these great tools for Free!
+						<div >
+							<p id='scrolltofadein4' class ='videoheading fadein4'  style='display:none;'>
+								Continue To Give feels the same way, and getting set up with us if Free and Easy!
 							</p>
-							<div id='fadein5'  style='display:none;'>
+							<div id='scrolltofadein5' class='fadein5'  style='display:none;'>
 								<div  style='z-index:0;' class="video-content desktop-fluid-video-content" >
 									<iframe src="https://www.youtube.com/embed/HUqSaZbCHmc?rel=0&wmode=opaque" frameborder="0" allowfullscreen></iframe>
 								</div> <!-- end .video-content -->
 							
-							</div>
+							</div>							
 						</div>
-					</span>
-					
-					
+					</div>					
 				</div>
+				<div id='largeScreenIntroPage1'>
+					<div data-role="content">	
+						<div class='spacer'></div>
+						<div class='introheading'>Wouldn't it be Great if a "Do Good Company" made it easy for people to support your organization with:</div>
+						<div class='spacer'></div>
+						<span class='fiftypercent' style='vertical-align:top;'>
+							<div class='fadein1' style='display:none; width:100%; padding:5px;text-align:center'>
+								
+								<img  src='images/kioskgiving.png' />
+							</div>
+							<div class='fadein2' style='display:none; width:100%; padding:5px;text-align:center'>
+								<img  src='images/mobilegiving.png' />
+							</div>
+							<div class='fadein3' style='display:none; width:100%; padding:5px;text-align:center'>
+								<img  src='images/onlinegiving.png' />
+							</div>
+						</span>
+						<span class='fiftypercent' style='vertical-align:top;'>
+							<div >	
+								<p class ='videoheading fadein4'  style='display:none;'>
+									Continue To Give feels the same way, and getting set up with us if Free and Easy!
+								</p>
+								<div class='fadein5'  style='display:none;'>
+									<div  style='z-index:0;' class="video-content desktop-fluid-video-content" >
+										<iframe src="https://www.youtube.com/embed/HUqSaZbCHmc?rel=0&wmode=opaque" frameborder="0" allowfullscreen></iframe>
+									</div> <!-- end .video-content -->
+								
+								</div>
+							</div>
+						</span>
+					</div>
+				</div>
+				
 				<div data-role="footer" style='text-align:center;' data-position="fixed">
 					<div>
 						<span style='color:red; font-size:1.2em;'>1</span> -2-3-4

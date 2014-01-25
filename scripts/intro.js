@@ -1,5 +1,11 @@
-
+document.addEventListener("deviceready", onDeviceReady, false);
+//this is for testing on a browser, make sure it is removed 
 $( document ).ready(function() {
+	onDeviceReady();		
+			 
+});
+function onDeviceReady() { 
+	setupbyscreensize();
 	$(function () {
     $('.tlt').textillate({ in: { effect: 'fadeInDownBig'} });
 		
@@ -8,30 +14,34 @@ $( document ).ready(function() {
 	
 	
 	setTimeout(function() {
-		 $( "#fadein1" ).fadeIn( "slow", function() {
-			// Animation complete
+		 $( ".fadein1" ).fadeIn( "slow", function() {
+				 
 			}).css("display","inline-block");// Do something after 5 seconds
-	}, 1000);
-	setTimeout(function() {
-		  $( "#fadein2" ).fadeIn( "slow", function() {
-			// Animation complete
-			}).css("display","inline-block");// Do something after 5 seconds
-	}, 1000);
-	setTimeout(function() {
-		  $( "#fadein3" ).fadeIn( "slow" ).css("display","inline-block");// Do something after 5 seconds
-	}, 1000);
-	setTimeout(function() {
-		  $( "#fadein4" ).fadeIn( "slow" ).css("display","inline-block");// Do something after 5 seconds
+			$('html,body').animate({scrollTop: $("#"+'scrolltofadein1').offset().top},'slow');
 	}, 2000);
 	setTimeout(function() {
-		  $( "#fadein5" ).fadeIn( "slow" ).css("display","block");// Do something after 5 seconds
-	}, 2000);
+		  $( ".fadein2" ).fadeIn( "slow", function() {
+				 
+			}).css("display","inline-block"); 
+			$('html,body').animate({scrollTop: $("#"+'scrolltofadein2').offset().top},'slow');// Do something after 5 seconds
+	}, 4000);
+	setTimeout(function() {
+		  $( ".fadein3" ).fadeIn( "slow" ).css("display","inline-block"); 
+		   $('html,body').animate({scrollTop: $("#"+'scrolltofadein3').offset().top},'slow');
+	}, 5000);
+	setTimeout(function() {
+		  $( ".fadein4" ).fadeIn( "slow" ).css("display","inline-block");
+		   $('html,body').animate({scrollTop: $("#"+'scrolltofadein4').offset().top},'slow');
+	}, 8000);
+	setTimeout(function() {
+		  $( ".fadein5" ).fadeIn( "slow" ).css("display","block");
+		  $('html,body').animate({scrollTop: $("#"+'scrolltofadein5').offset().top},'slow');
+	}, 12000);
 	 
 			
-			 
-			
-			 
-});
+
+}
+
 function fadeInFunction()
 {
 	alert("Hi");
@@ -88,3 +98,33 @@ function closeIntroPerminataly()
 	//loadSettingsPage();
 	appwindow = window.open('index.html', '_self', 'location=yes');
 }
+
+function setupbyscreensize()
+{
+
+	width = $(document).width(); // returns width of HTML document
+	//alert(width);
+	if(width < 720)
+	{
+	 $('#pagebody').addClass('smallScreen');	
+	 $('#largeScreenIntroPage1').hide();
+	 $('#smallScreenIntroPage1').show();
+	 
+	 
+	
+	}
+	else
+	{
+		$('#pagebody').removeClass('smallScreen');
+		$('#smallScreenIntroPage1').hide();
+		$('#largeScreenIntroPage1').show();
+		
+		//$('#donation_prompt_div').addClass('inline_block');
+		
+	}
+}
+$( window ).resize(function() {
+setupbyscreensize();
+});
+
+setupbyscreensize();
