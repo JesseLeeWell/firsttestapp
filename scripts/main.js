@@ -816,8 +816,8 @@ function setupbyscreensize()
 {
 
 	width = $(document).width(); // returns width of HTML document
-	alert(width);
-	if(width < 912)
+	
+	if(width < 700)
 	{
 		
 	 $('.largeScreen').hide();
@@ -826,8 +826,8 @@ function setupbyscreensize()
 	}
 	else
 	{
-		$('#smallScreen').hide();
-		$('#largeScreen').show();
+		$('.smallScreen').hide();
+		$('.largeScreen').show();
 		
 		//$('#donation_prompt_div').addClass('inline_block');
 		

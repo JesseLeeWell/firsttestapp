@@ -1,31 +1,4 @@
-.ui-content
-{
-	padding:8px;
-}
-.clr
-{
-	clear:both;
-}
-.spacer
-{
-	height:5px;
-}
-.thirtypercent
-{
-	width:30%;
-}
-.fiftypercent
-{
-	width:49%;
-}
-.sixtypercent
-{
-	width:59%;
-}
-.display-inline
-{
-	display:inline-block;
-}
+
 .mailflowbutton
 {
 	background-color: #29b473;
@@ -75,17 +48,17 @@
 	
 
 }
-.step-outer
+.smallScreen .step-outer
 {
 margin:auto; 
-width:780px;
-height:68px;
+width:324px;
+height:58px;
 
 }
 
-.step-inner-wrapper
+.smallScreen .step-inner-wrapper
 {
-	display:inline-block; border:1px solid #f1f1f2; width:700px;
+	display:inline-block; border:1px solid #f1f1f2; width:320px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	border-top-left-radius: 10px;
@@ -94,41 +67,41 @@ height:68px;
 	-moz-border-radius-bottomleft: 10px;
 	-moz-border-radius-topleft: 10px;
 }
-.step-number
+.smallScreen .step-number
 {
-	line-height:65px;
+	line-height:55px;
 	display:inline-block; 
 	background-color: #00adee; 
-	width:65px;  
-	height:65px;
+	width:50px;  
+	height:55px;
 	text-align: center;
 	
 	color:white;
-	font-size:2em;
+	font-size:1.8em;
 	vertical-align:middle;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 }
-.step-text
+.smallScreen .step-text
 {
 	display:inline-block;  
-	width:460px;
-	font-size:1.5em; 
+	width:200px;
+	font-size:1.2em; 
 	vertical-align:middle;
 	padding-left:10px;
 }
-.step-start
+.smallScreen .step-start
 {
 	display:inline-block;  
-	width:110px;
+	width:25px;
 	text-align:right;
 	color: #00adee;
 	font-size:1.5em;
 }
-.step-edit
+.smallScreen .step-edit
 {
 	display:none;  
-	width:110px;
+	width:25px;
 	text-align:right;
 	color: #6b6b6b;
 	font-size:1.3em;
@@ -143,7 +116,7 @@ height:68px;
 .step-checkbox
 {
 	display:none;
-	width:70px; 
+	width:55px; 
 	vertical-align:bottom;
 	
 }
@@ -157,13 +130,14 @@ height:68px;
 {
 	display:none;   
 }
-.completed .step-number
+.smallScreen .completed .step-number
 {
-	background-color: #f1f1f2; 
+	display:none; 
 }
 .completed .step-checkbox
 {
-	display:inline-block;  
+	display:inline-block;
+	vertical-align:middle;	
 	   
 }
 .completed .step-text
