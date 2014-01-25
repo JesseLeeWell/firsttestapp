@@ -38,6 +38,10 @@ function onDeviceReady() {
 		  $( ".fadein5" ).fadeIn( "slow" ).css("display","block");
 		  $('html,body').animate({scrollTop: $("#"+'scrolltofadein5').offset().top},'slow');
 	}, 12000);
+	setTimeout(function() {
+		  $( "#swipeformore" ).fadeIn( "slow" ).css("display","block");
+		  $('html,body').animate({scrollTop: $("#"+'swipeformore').offset().top},'slow');
+	}, 13000);
 	 
 			
 
