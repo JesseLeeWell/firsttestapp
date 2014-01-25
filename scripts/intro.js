@@ -11,15 +11,21 @@ $( document ).ready(function() {
 		 $( "#fadein1" ).fadeIn( "slow", function() {
 			// Animation complete
 			}).css("display","inline-block");// Do something after 5 seconds
-	}, 8000);
+	}, 1000);
 	setTimeout(function() {
 		  $( "#fadein2" ).fadeIn( "slow", function() {
 			// Animation complete
 			}).css("display","inline-block");// Do something after 5 seconds
-	}, 10000);
+	}, 1000);
 	setTimeout(function() {
 		  $( "#fadein3" ).fadeIn( "slow" ).css("display","inline-block");// Do something after 5 seconds
-	}, 12000);
+	}, 1000);
+	setTimeout(function() {
+		  $( "#fadein4" ).fadeIn( "slow" ).css("display","inline-block");// Do something after 5 seconds
+	}, 2000);
+	setTimeout(function() {
+		  $( "#fadein5" ).fadeIn( "slow" ).css("display","block");// Do something after 5 seconds
+	}, 2000);
 	 
 			
 			 

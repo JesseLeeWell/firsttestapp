@@ -17,6 +17,7 @@
 .fiftypercent
 {
 	width:49%;
+	display:inline-block;
 }
 .sixtypercent
 {
@@ -74,6 +75,11 @@
 	text-align: center;
 	
 
+}
+.settingsfooter
+{
+	font-weight:normal;
+	text-shadow:none;
 }
 .step-outer
 {

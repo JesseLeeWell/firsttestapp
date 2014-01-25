@@ -256,7 +256,7 @@ function openDonationPage(extras)
 	}
 	else
 	{
-		showMessage("Please set the kiosk to your organization or fundraiser by in step 2 below. ", '', " ", "OK");
+		showMessage("Please set the kiosk to your church, organization, or fundraiser in step 2 below. ", '', " ", "OK");
 		
 	
 	}

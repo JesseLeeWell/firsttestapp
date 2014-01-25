@@ -10,8 +10,8 @@
 		<link rel="stylesheet" href="themes/ctg.min.css" />
 		<link rel="stylesheet" href="styles/style.css" />
 		<link rel="stylesheet" href="styles/stylesmall.css" />
-		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-	
+		
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>	
 		<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
 		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 		<script type="text/javascript" charset="utf-8" src="scripts/main.js"></script>
@@ -281,16 +281,17 @@
 				</div>
 				
 				<div data-role="footer" style='text-align:center;' data-position="fixed">
-					<span style='width:32%; display:inline-block;border-right:1px solid grey;' onclick="javascript:loadSettingsPage();">
-						<p >Settings</p>
-					</span>
-					<span style='width:32%; display:inline-block;border-right:1px solid grey;' onclick="javascript:loadContactRequest();">
-						<p >Contact</p>
-					</span>
-					<span style='width:32%; display:inline-block;' onclick="javascript:loadMoreInfo();">
-						<p >Intro</p>
-					</span>
-					
+					<div class='settingsfooter'>
+						<span style='width:32%; display:inline-block;border-right:1px solid grey; background-color:#00adee; color:white;' onclick="javascript:loadSettingsPage();">
+							<p >Settings</p>
+						</span>
+						<span style='width:32%; display:inline-block;border-right:1px solid grey;' onclick="javascript:loadContactRequest();">
+							<p >Contact</p>
+						</span>
+						<span style='width:32%; display:inline-block;' onclick="javascript:loadMoreInfo();">
+							<p >Intro</p>
+						</span>
+					</div>
 				</div>
 				
 			</div>

@@ -4,10 +4,13 @@
 		<title>Local Storage Sample</title>
 		<meta charset="utf-8">
 		
-		<link rel="stylesheet" href="themes/ctg.min.css" />
+		
 		<link rel="stylesheet" href="themes/animate.css" />
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
-		<link rel="stylesheet" href="styles/style.css" />
+		<link rel="stylesheet" href="themes/ctg.min.css" />
+		<link rel="stylesheet" href="styles/style.css" />		
+		<link rel="stylesheet" href="styles/stylesmall.css" />
+		
 		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 		
 		<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
@@ -23,108 +26,114 @@
 
 
 </style>
-	<body style='padding:5px;'>
-		
-		<div data-role="page" id='intro1' >
-			<div data-role="header" >
-				<h1>Intro</h1>
-			</div>
-			<div data-role="content">	
-				<h1 class="tlt">Increase Stewardship and Start Receiving Steady Tithes & Offerings to Help Your Church Reach it's Financial Goals...</h1>
-				
-				<span id='fadein1' style='display:none; padding:5px;text-align:center'>
-					<h1 style='width:250px;'>Kiosk Tithing</h1>
-					<img src='images/Convenient-Kiosk.png' />
-				</span>
-				<span id='fadein2' style='display:none; padding:5px;text-align:center'>
-					<h1 style='width:250px;'>Mobile Tithing</h1>
-					<img src='images/Smart-phone-tithes.png' /> 
-				</span>
-				<span id='fadein3' style='display:none; padding:5px;text-align:center'>
-					<h1 style='width:250px;'>Online Tithing</h1>
-					<img src='images/Easy-Website-Integration.png' />
-				</span>
-				<div >				
-					<div class="video-content desktop-fluid-video-content" style = 'z-index:0;'>
-						<iframe src="https://www.youtube.com/embed/HUqSaZbCHmc?rel=0&wmode=opaque" frameborder="0" allowfullscreen></iframe>
-					</div> <!-- end .video-content -->
-					<p>
-						adfadsf
-					</p>
-				
+	<body id='pagebody'>
+		<div class="content">
+			<div data-role="page" id='intro1' >
+				<div data-role="header" style='text-align:center;' >
+					<img  src='images/ContinueToGive.png' style='width:60%; max-width:450px; min-width:130px;'/>
 				</div>
-			</div>
-			<div data-role="footer" style='text-align:center;' data-position="fixed">
-				<div>
-					<span style='color:red; font-size:1.2em;'>1</span> -2-3-4
-				</div>
-				<button class="button dh" onclick ="javascript:closeIntro();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Close Intro</button>
-				<button class="button dh" onclick ="javascript:closeIntroPerminataly();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Don't show intro again</button>
-			</div>
-		</div>
-		<div data-role="page" id='intro2' >
-			<div data-role="header" >
-				<h1>Intro</h1>
-			</div>
-			<div data-role="content">	
-				<h1>intro2</h1>
-				
-				<div >
-					<p>
-						adfadsf
-					</p>
+				<div data-role="content">	
+					<h1 >Wouldn't it be Great if a "Do Good Company" made it easy for people to support your organization with:</h1>
+					<span class='fiftypercent'>
+						<div id='fadein1' style='display:none; width:100%; padding:5px;text-align:center'>
+							
+							<img  src='images/kioskgiving.png' />
+						</div>
+						<div id='fadein2' style='display:none; width:100%; padding:5px;text-align:center'>
+							<img  src='images/mobilegiving.png' />
+						</div>
+						<div id='fadein3' style='display:none; width:100%; padding:5px;text-align:center'>
+							<img  src='images/onlinegiving.png' />
+						</div>
+					</span>
+					<span class='fiftypercent'>
+						<div >	
+							<p id='fadein4' style='display:none;'>
+								Continue To Give feels the same way.  And we are bringing you these great tools for Free!
+							</p>
+							<div id='fadein5'  style='display:none;'>
+								<div  style='z-index:0;' class="video-content desktop-fluid-video-content" >
+									<iframe src="https://www.youtube.com/embed/HUqSaZbCHmc?rel=0&wmode=opaque" frameborder="0" allowfullscreen></iframe>
+								</div> <!-- end .video-content -->
+							
+							</div>
+						</div>
+					</span>
+					
 					
 				</div>
-			</div>
-			<div data-role="footer" style='text-align:center;' data-position="fixed">
-				<div>
-					1-<span style='color:red; font-size:1.2em;'>2</span>-3-4
+				<div data-role="footer" style='text-align:center;' data-position="fixed">
+					<div>
+						<span style='color:red; font-size:1.2em;'>1</span> -2-3-4
+					</div>
+					<button class="button dh" onclick ="javascript:closeIntro();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Close Intro</button>
+					<button class="button dh" onclick ="javascript:closeIntroPerminataly();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Don't show intro again</button>
 				</div>
-				<button class="button dh" onclick ="javascript:closeIntro();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Close Intro</button>
-				<button class="button dh" onclick ="javascript:closeIntroPerminataly();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Don't show intro again</button>
 			</div>
-		</div>
-		<div data-role="page" id='intro3'>
-			<div data-role="header" >
-				<h1>Intro</h1>
-			</div>
-			<div data-role="content">
-				<h1>intro3</h1>
-				
-				<div >
-					<p>
-						adfadsf
-					</p>
+			<div data-role="page" id='intro2' >
+				<div data-role="header" >
+					<h1>Intro</h1>
+				</div>
+				<div data-role="content">	
+					<h1>intro2</h1>
 					
+					<div >
+						<p>
+							adfadsf
+						</p>
+						
+					</div>
+				</div>
+				<div data-role="footer" style='text-align:center;' data-position="fixed">
+					<div>
+						1-<span style='color:red; font-size:1.2em;'>2</span>-3-4
+					</div>
+					<button class="button dh" onclick ="javascript:closeIntro();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Close Intro</button>
+					<button class="button dh" onclick ="javascript:closeIntroPerminataly();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Don't show intro again</button>
 				</div>
 			</div>
-			<div data-role="footer" style='text-align:center;' data-position="fixed">
-				<div>
-					1-2-<span style='color:red; font-size:1.2em;'>3</span>-4
+			<div data-role="page" id='intro3'>
+				<div data-role="header" >
+					<h1>Intro</h1>
 				</div>
-				<button class="button dh" onclick ="javascript:closeIntro();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Close Intro</button>
-				<button class="button dh" onclick ="javascript:closeIntroPerminataly();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Don't show intro again</button>
-			</div>
-		</div>
-		<div data-role="page" id='intro4'>
-			<div data-role="header" >
-				<h1>Intro</h1>
-			</div>
-			<div data-role="content">
-				<h1>intro4</h1>
-				<div >
-					<p>
-						adfadsf
-					</p>
+				<div data-role="content">
+					<h1>intro3</h1>
 					
+					<div >
+						<p>
+							adfadsf
+						</p>
+						
+					</div>
+				</div>
+				<div data-role="footer" style='text-align:center;' data-position="fixed">
+					<div>
+						1-2-<span style='color:red; font-size:1.2em;'>3</span>-4
+					</div>
+					<button class="button dh" onclick ="javascript:closeIntro();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Close Intro</button>
+					<button class="button dh" onclick ="javascript:closeIntroPerminataly();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Don't show intro again</button>
 				</div>
 			</div>
-			<div data-role="footer" style='text-align:center;' data-position="fixed">
-				<div>
-					1-2-3-<span style='color:red; font-size:1.2em;'>4</span>
+			<div data-role="page" id='intro4'>
+				<div data-role="header" >
+					<h1>Intro</h1>
 				</div>
-				<button class="button dh" onclick ="javascript:closeIntro();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Close Intro</button>
-				<button class="button dh" onclick ="javascript:closeIntroPerminataly();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Don't show intro again</button>
+				<div data-role="content">
+					<h1>intro4</h1>
+					<div >
+						<p>
+							adfadsf
+						</p>
+						
+					</div>
+				</div>
+				<div data-role="footer" style='text-align:center;' data-position="fixed">
+					<div>
+						1-2-3-<span style='color:red; font-size:1.2em;'>4</span>
+					</div>
+					<button class="button dh" onclick ="javascript:closeIntro();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Close Intro</button>
+					<button class="button dh" onclick ="javascript:closeIntroPerminataly();" data-role="button" data-rel="dialog" data-transition="slidefade" data-inline="true" >Don't show intro again</button>
+				</div>
 			</div>
 		</div>
 	</body>
