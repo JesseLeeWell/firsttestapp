@@ -53,10 +53,11 @@ var _storagePin = 'pin';
 // Cordova is ready
 //
 $( document ).ready(function() {
- //onDeviceReady();
+ onDeviceReady();
 });
 
 function onDeviceReady() { 
+
 	setupbyscreensize();	
 	setPagePaymentInformation(setStepClaimOrganization);
 	//var hideIntro = 'true';//storageGet('hideintro');
@@ -73,11 +74,19 @@ function onDeviceReady() {
 	{
 		//set the session storage that it showed the intro
 		//window.sessionStorage.setItem("alreadyshowedintro", "true");	
-		loadMoreInfo('');		
+		$.mobile.loading( 'show', {
+			text: 'Loading Intro',
+			textVisible: true,
+			theme: 'a',
+			html: ""
+		});
+		setTimeout( function() { 
+			loadMoreInfo('');
+			
+			}, 2000 );
+				
 		
-	}
-	
-	
+	}	
 	
 }
 
@@ -525,7 +534,15 @@ function loadMoreInfo(pagetype)
 			  break;
 			
 			default:
-			  appwindow = window.open('intro.html', '_self', 'location=yes');
+			
+				 $(':mobile-pagecontainer').pagecontainer('change', 'intro.html', {
+					transition: 'slidefade',
+					changeHash: false,
+					reverse: false,
+					showLoadMsg: true
+				});
+			
+			 // appwindow = window.open('intro.html', '_self', 'location=yes');
 			  break;
 		}
 	
