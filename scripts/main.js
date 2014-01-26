@@ -534,15 +534,19 @@ function loadMoreInfo(pagetype)
 			  break;
 			
 			default:
-			
+				//using the click technique so that we can load it with a transistion and still use the external relation tag it has on a tags
+				//alert("here");
+				//$('#moreinfolink').click();
+				/*
 				 $(':mobile-pagecontainer').pagecontainer('change', 'intro.html', {
 					transition: 'slidefade',
 					changeHash: false,
 					reverse: false,
-					showLoadMsg: true
+					showLoadMsg: true,
+					rel: 'external'
 				});
-			
-			 // appwindow = window.open('intro.html', '_self', 'location=yes');
+			*/
+			  appwindow = window.open('intro.html', '_self', 'location=yes');
 			  break;
 		}
 	
