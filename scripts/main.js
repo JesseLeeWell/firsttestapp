@@ -53,20 +53,17 @@ var _storagePin = 'pin';
 // Cordova is ready
 //
 $( document ).ready(function() {
- onDeviceReady();
+ //onDeviceReady();
 });
 
 function onDeviceReady() { 
-	setupbyscreensize();
-	alert("done setup");
+	setupbyscreensize();	
 	setPagePaymentInformation(setStepClaimOrganization);
-	alert("done setup");
 	//var hideIntro = 'true';//storageGet('hideintro');
 	var hideIntro = storageGet('hideintro');
-	alert(hideIntro);
+	
 	//var alreadyshowedintro = window.sessionStorage.getItem('alreadyshowedintro');
-	setupSettingsPage();
-	alert("done setup");
+	setupSettingsPage();	
 	if((hideIntro && hideIntro == 'true'))// || (alreadyshowedintro && alreadyshowedintro == 'true'))
 	{
 		
@@ -385,7 +382,7 @@ function setStepStartRecivingDonations()
 }
 function setStepClaimOrganization()
 {
-	alert('in setStepClaimOrganization');
+	
 	if(isFundraisingPageClaimed())
 	{
 		$('.step-claimorganization-outer').hide();
@@ -737,10 +734,12 @@ function isFundraisingPageClaimed()
 }
 function setPagePaymentInformation(callback)
 {
+	
 	var pageid = getPageID();
 	if(!pageid)
-	{
-		window.sessionStorage.setItem('pagedata',jQuery.parseJSON('' ));
+	{	
+		window.sessionStorage.setItem('pagedata','' );
+		
 		
 	}
 	else
@@ -762,6 +761,18 @@ function setPagePaymentInformation(callback)
 			}
 			
 		  }
+		  ,
+		  fail:function(data){
+			
+			var obj = jQuery.parseJSON(data );
+			
+			window.sessionStorage.setItem('pagedata','' );
+			if(callback)
+			{
+				callback();
+			}
+			
+		  }
 		});
 		
 	}
@@ -769,6 +780,7 @@ function setPagePaymentInformation(callback)
 }
 function getPagePaymentInformation()
 {
+	
 	var pagedata = window.sessionStorage.getItem('pagedata');
 	var obj = jQuery.parseJSON(pagedata );
 	return obj;
