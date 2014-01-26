@@ -58,8 +58,9 @@ $( document ).ready(function() {
 
 function onDeviceReady() { 
 	setupbyscreensize();
+	alert("here");
 	setPagePaymentInformation(setStepClaimOrganization);
-	
+	alert("here");
 	//var hideIntro = 'true';//storageGet('hideintro');
 	var hideIntro = storageGet('hideintro');
 	//var alreadyshowedintro = window.sessionStorage.getItem('alreadyshowedintro');
@@ -382,7 +383,7 @@ function setStepStartRecivingDonations()
 }
 function setStepClaimOrganization()
 {
-	
+	alert('in setStepClaimOrganization');
 	if(isFundraisingPageClaimed())
 	{
 		$('.step-claimorganization-outer').hide();
