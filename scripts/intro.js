@@ -29,7 +29,7 @@ function onDeviceReady() {
 	setTimeout(function() {
 		  $( ".fadein3" ).fadeIn( "slow" ).css("display","inline-block"); 
 		   $('html,body').animate({scrollTop: $("#"+'scrolltofadein3').offset().top},'slow');
-	}, 5000);
+	}, 6000);
 	setTimeout(function() {
 		  $( ".fadein4" ).fadeIn( "slow" ).css("display","inline-block");
 		   $('html,body').animate({scrollTop: $("#"+'scrolltofadein4').offset().top},'slow');
@@ -37,11 +37,11 @@ function onDeviceReady() {
 	setTimeout(function() {
 		  $( ".fadein5" ).fadeIn( "slow" ).css("display","block");
 		  $('html,body').animate({scrollTop: $("#"+'scrolltofadein5').offset().top},'slow');
-	}, 12000);
+	}, 13000);
 	setTimeout(function() {
 		  $( "#swipeformore" ).fadeIn( "slow" ).css("display","block");
 		  $('html,body').animate({scrollTop: $("#"+'swipeformore').offset().top},'slow');
-	}, 13000);
+	}, 14000);
 	 
 			
 
