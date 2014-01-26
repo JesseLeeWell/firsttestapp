@@ -63,8 +63,10 @@ function onDeviceReady() {
 	alert("here");
 	//var hideIntro = 'true';//storageGet('hideintro');
 	var hideIntro = storageGet('hideintro');
+	alert(hideIntro);
 	//var alreadyshowedintro = window.sessionStorage.getItem('alreadyshowedintro');
 	setupSettingsPage();
+	alert("done setup");
 	if((hideIntro && hideIntro == 'true'))// || (alreadyshowedintro && alreadyshowedintro == 'true'))
 	{
 		
