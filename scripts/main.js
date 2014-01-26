@@ -58,9 +58,9 @@ $( document ).ready(function() {
 
 function onDeviceReady() { 
 	setupbyscreensize();
-	alert("here");
-	setPagePaymentInformation(setStepClaimOrganization);
-	alert("here");
+	alert("done setup");
+	//setPagePaymentInformation(setStepClaimOrganization);
+	alert("done setup");
 	//var hideIntro = 'true';//storageGet('hideintro');
 	var hideIntro = storageGet('hideintro');
 	alert(hideIntro);
