@@ -111,15 +111,14 @@ function setupbyscreensize()
 	//alert(width);
 	if(width < 720)
 	{
-	 $('#pagebody').addClass('smallScreen');	
-	 $('#largeScreenIntroPage1').hide();
-	 $('#smallScreenIntroPage1').show();
-	 
-	 
-	
+		$('.mobile_hide').css('display','none');
+		 $('#pagebody').addClass('smallScreen');	
+		 $('#largeScreenIntroPage1').hide();
+		 $('#smallScreenIntroPage1').show();
 	}
 	else
 	{
+		$('.mobile_hide').css('display','block');
 		$('#pagebody').removeClass('smallScreen');
 		$('#smallScreenIntroPage1').hide();
 		$('#largeScreenIntroPage1').show();
