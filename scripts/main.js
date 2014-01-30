@@ -272,7 +272,7 @@ function openDonationPage(extras)
 		var url =_kioskURL + pageid + extras;
 		
 		
-		browserwindow = window.open(url, '_blank', 'toolbar=no');	
+		browserwindow = window.open(url, '_blank', 'toolbar=no,location=no');	
 		browserwindow.addEventListener('exit', iabCloseDonation);
 		browserwindow.addEventListener('loadstop', iabLoadStopDonation);
 		browserwindow.addEventListener('loadstart', iabLoadStartDonation);
