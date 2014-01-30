@@ -271,11 +271,11 @@ function openDonationPage(extras)
 		var pageid = getPageID();
 		var url =_kioskURL + pageid + extras;
 		
+		
+		browserwindow = window.open(url, '_blank', 'toolbar=no');	
 		browserwindow.addEventListener('exit', iabCloseDonation);
 		browserwindow.addEventListener('loadstop', iabLoadStopDonation);
 		browserwindow.addEventListener('loadstart', iabLoadStartDonation);
-		browserwindow = window.open(url, '_blank', 'toolbar=no');	
-		
 		
 	}
 	else
