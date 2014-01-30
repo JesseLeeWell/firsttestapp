@@ -185,6 +185,19 @@ function iabLoadStart(event) {
 
 	}
 }
+ function iabLoadStartDonation(event) { 
+	
+	cururl = event.url;
+	
+	if(cururl.indexOf("kiosksettings") != -1)
+	{
+		
+		
+		browserwindow.close();		
+		
+
+	}
+}
 
 function iabLoadStop(event) {
 	
@@ -258,10 +271,12 @@ function openDonationPage(extras)
 		var pageid = getPageID();
 		var url =_kioskURL + pageid + extras;
 		
-		browserwindow = window.open(url, '_blank', 'location=no,closebuttoncaption=settings');	
-		
 		browserwindow.addEventListener('exit', iabCloseDonation);
 		browserwindow.addEventListener('loadstop', iabLoadStopDonation);
+		browserwindow.addEventListener('loadstart', iabLoadStartDonation);
+		browserwindow = window.open(url, '_blank', 'location=no,location=no,closebuttoncaption=settings');	
+		
+		
 	}
 	else
 	{
