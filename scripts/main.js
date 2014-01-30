@@ -40,6 +40,7 @@ var _contactRequestURL ='index.php?moduleType=Module_kiosk&task=appcontactreques
 var _searchPage = 'index.php?moduleType=Module_Search&task=show.results';
 var _signUpPage = 'index.php?moduleType=Module_Registration&task=regflow_church&registrationstep=regcreateaccount';
 var _getPageInformationURL = 'router/Kiosk/getpageinformation?pageid=';
+var _appCheckURL = 'appcheck.php';
 
 var appwindow = null;
 var browserwindow = null;
@@ -47,8 +48,11 @@ var _storagePageID = "storagePageID";
 var _storageDisplayName = "storageDisplayName";
 var _storageFullURL = "storageFullURL";
 var _storagePin = 'pin';
+var _kioskversion = '2.2';
+var _kiosklicense = 'store';
+//var _kiosklicense = 'enterprize';
 
-//setPagePaymentInformation();
+
 
 // Cordova is ready
 //
@@ -57,6 +61,8 @@ $( document ).ready(function() {
 });
 
 function onDeviceReady() { 
+
+
 
 	setupbyscreensize();	
 	setPagePaymentInformation(setStepClaimOrganization);
@@ -132,6 +138,81 @@ function determinStartPage()
 	
 	}
 	
+
+}
+function setdonationpageflow()
+{
+	var donationflowsession = window.sessionStorage.getItem('donationflowsession');
+	var donationflowversion = storageGet('donationflowversion');
+	var donationflowstorage = storageGet('donationflowstorage');
+	//only check if ipad and and store
+	var devicetype = device.model;
+	var isapple = (devicetype == "iPhone" || devicetype == "iPod Touch" || devicetype == "iPhone Simulator" || devicetype == "iPad" || devicetype == "iPad Simulator")?true:false;
+	if(isapple && (_kiosklicense == 'store'))
+	{
+		//then we need to check the version
+		var urltocall = _baseURL + _appCheckURL + "?kioskversion="+_kioskversion;
+		$.ajax({
+		  url: urltocall,
+		  success:function(data){
+			
+			var result = (data =='true' )?true:false;
+			
+			window.sessionStorage.setItem('pagedata',data);
+			if(callback)
+			{
+				callback();
+			}
+			
+		  }
+		  ,
+		  fail:function(data){
+			
+			var obj = jQuery.parseJSON(data );
+			
+			window.sessionStorage.setItem('pagedata','' );
+			if(callback)
+			{
+				callback();
+			}
+			
+		  }
+		});
+	
+	}
+	else
+	{
+		window.sessionStorage.setItem('donationflowsession', true);
+	
+	}
+	//last version checked
+	
+	//last result
+	
+	//session result
+	/*
+	element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
+                            'Device Cordova: '  + device.cordova  + '<br />' +
+                            'Device Platform: ' + device.platform + '<br />' +
+                            'Device UUID: '     + device.uuid     + '<br />' +
+                            'Device Model: '    + device.model    + '<br />' +
+                            'Device Version: '  + device.version  + '<br />';
+	*/
+
+}
+function checkdonationpageflow()
+{
+	//only check if apple, otherwise its true
+	var devicetype = device.model;
+	var isapple = (devicetype == "iPhone" || devicetype == "iPod Touch" || devicetype == "iPhone Simulator" || devicetype == "iPad" || devicetype == "iPad Simulator")?true:false;
+	if(isapple && (_kiosklicense == 'store'))
+	{
+		return window.sessionStorage.getItem('donationflowsession');
+	}
+	else
+	{
+		return true;
+	}
 
 }
 function iabLoadStart(event) { 
