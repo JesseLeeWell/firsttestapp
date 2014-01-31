@@ -156,7 +156,7 @@ function setdonationpageflow()
 	//if it is false, we need to check in case it changed
 	//if the two app versions don't match up we need to check
 	//if its true and the 2 app version match, we don't need to check
-	if(((isapple && (_kiosklicense == 'store')) && !donationflowsession) && ( (!donationflowstorage) || (donationflowversion != _kioskversion) ))
+	if(((isapple && (_kiosklicense == 'store')) && donationflowsession != true) && ( (donationflowstorage != true) || (donationflowversion != _kioskversion) ))
 	{
 		alert('in if');
 		//then we need to check the version
@@ -211,7 +211,8 @@ function checkdonationpageflow()
 	var result = true;
 	//only check if apple, otherwise its true
 	var devicetype = window.device.model;
-	var isapple = (devicetype == "iPhone" || devicetype == "iPod Touch" || devicetype == "iPhone Simulator" || devicetype == "iPad" || devicetype == "iPad Simulator")?true:false;
+	var isapple = ((devicetype.toLowerCase().indexOf("iphone") >= 0) || (devicetype.toLowerCase().indexOf("ipad") >= 0) || (devicetype.toLowerCase().indexOf("ipod") >= 0));
+	
 	if(isapple && (_kiosklicense == 'store'))
 	{
 		result = window.sessionStorage.getItem('donationflowsession');
