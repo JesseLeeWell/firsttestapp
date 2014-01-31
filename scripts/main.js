@@ -165,7 +165,7 @@ function setdonationpageflow()
 	alert('type = '+jQuery.type(donationflowstorage));
 	alert(!(donationflowstorage));
 	
-	if(((isapple && (_kiosklicense == 'store')) ) && ( !(donationflowstorage) || !(donationflowversion == _kioskversion) ))
+	if(((isapple && (_kiosklicense == 'store')) ) && ( !(donationflowstorage == 'true') || !(donationflowversion == _kioskversion) ))
 	{
 		alert('in if');
 		//then we need to check the version
@@ -174,7 +174,7 @@ function setdonationpageflow()
 		  url: urltocall,
 		  success:function(data){
 			
-			var result = (data =='true' )?true:null;
+			var result = (data =='true' )?'true':'false';
 			alert('in if rusult is ' +result);
 			
 			storageSet('donationflowversion', _kioskversion);
@@ -188,8 +188,8 @@ function setdonationpageflow()
 			
 			
 			storageSet('donationflowversion', _kioskversion);
-			storageSet('donationflowstorage', null);
-			window.sessionStorage.setItem('donationflowsession', null);
+			storageSet('donationflowstorage', 'false');
+			window.sessionStorage.setItem('donationflowsession', 'false');
 			
 			
 		  }
@@ -199,7 +199,7 @@ function setdonationpageflow()
 	else
 	{
 		alert("in set else");
-		window.sessionStorage.setItem('donationflowsession', true);
+		window.sessionStorage.setItem('donationflowsession', 'true');
 	
 	}
 	//last version checked
@@ -219,7 +219,7 @@ function setdonationpageflow()
 }
 function checkdonationpageflow()
 {
-	var result = true;
+	var result = 'true';
 	//only check if apple, otherwise its true
 	var devicetype = window.device.model;
 	var isapple = ((devicetype.toLowerCase().indexOf("iphone") >= 0) || (devicetype.toLowerCase().indexOf("ipad") >= 0) || (devicetype.toLowerCase().indexOf("ipod") >= 0));
