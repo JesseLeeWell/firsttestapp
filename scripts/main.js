@@ -41,6 +41,8 @@ var _searchPage = 'index.php?moduleType=Module_Search&task=show.results';
 var _signUpPage = 'index.php?moduleType=Module_Registration&task=regflow_church&registrationstep=regcreateaccount';
 var _getPageInformationURL = 'router/Kiosk/getpageinformation?pageid=';
 var _appCheckURL = 'appcheck.php';
+var _purchasePageURL = 'content/learn_more_kiosk.html';
+var _lockKioskHelpURL = 'content/kiosk_ios_kiosk_mode.html';
 
 var appwindow = null;
 var browserwindow = null;
@@ -63,7 +65,7 @@ $( document ).ready(function() {
 function onDeviceReady() { 
 
 
-	setdonationpageflow();
+	setapplesafe();
 	setupbyscreensize();	
 	setPagePaymentInformation(setStepClaimOrganization);
 	
@@ -116,7 +118,7 @@ function determinStartPage()
 	//first make sure we have a donation page set, if not defaule to settings.
 	var pageid = getPageID();
 	var displayname = getDisplayName();	
-	var donationflow = checkdonationpageflow();
+	var applesafe = getapplesafe();
 	if(!(isSearchSet()))
 	{
 		return true; //just leave them on the settings screen
@@ -143,26 +145,26 @@ function determinStartPage()
 	
 
 }
-function setdonationpageflow()
+function setapplesafe()
 {
 	
 	
-	var donationflowversion = storageGet('donationflowversion');
-	var donationflowstorage = storageGet('donationflowstorage');
+	var applesafeversion = storageGet('applesafeversion');
+	var applesafestorage = storageGet('applesafestorage');
 	
 	//only check if ipad and and store
 	var devicetype = window.device.model;
 	
-	var isapple = ((devicetype.toLowerCase().indexOf("iphone") >= 0) || (devicetype.toLowerCase().indexOf("ipad") >= 0) || (devicetype.toLowerCase().indexOf("ipod") >= 0));
+	var isapple = isApple();
 	
 	//if it is false, we need to check in case it changed
 	//if the two app versions don't match up we need to check
 	//if its true and the 2 app version match, we don't need to check	
 	
-	if(((isapple && (_kiosklicense == 'store')) ) && ( !(donationflowstorage == 'true') || !(donationflowversion == _kioskversion) ))
+	if(((isapple && (_kiosklicense == 'store')) ) && ( !(applesafestorage == 'true') || !(applesafeversion == _kioskversion) ))
 	{
 		//if it came in here, we set the flow to false until we know otherwise
-		storageSet('donationflowstorage', 'false');
+		storageSet('applesafestorage', 'false');
 		
 		//then we need to check the version
 		var urltocall = _baseURL + _appCheckURL + "?kioskversion="+_kioskversion;
@@ -173,8 +175,8 @@ function setdonationpageflow()
 			var result = (data =='true' )?'true':'false';
 			
 			
-			storageSet('donationflowversion', _kioskversion);
-			storageSet('donationflowstorage', result);
+			storageSet('applesafeversion', _kioskversion);
+			storageSet('applesafestorage', result);
 			
 			
 			
@@ -183,8 +185,8 @@ function setdonationpageflow()
 		  fail:function(data){
 			
 			
-			storageSet('donationflowversion', _kioskversion);
-			storageSet('donationflowstorage', 'false');
+			storageSet('applesafeversion', _kioskversion);
+			storageSet('applesafestorage', 'false');
 			
 			
 			
@@ -195,7 +197,7 @@ function setdonationpageflow()
 	else
 	{
 		
-		storageSet('donationflowstorage', 'true');
+		storageSet('applesafestorage', 'true');
 	
 	}
 	//last version checked
@@ -213,16 +215,16 @@ function setdonationpageflow()
 	*/
 
 }
-function checkdonationpageflow()
+function getapplesafe()
 {
 	var result = 'true';
 	//only check if apple, otherwise its true
 	var devicetype = window.device.model;
-	var isapple = ((devicetype.toLowerCase().indexOf("iphone") >= 0) || (devicetype.toLowerCase().indexOf("ipad") >= 0) || (devicetype.toLowerCase().indexOf("ipod") >= 0));
+	var isapple = isApple();
 	
 	if(isapple && (_kiosklicense == 'store'))
 	{
-		result = storageGet('donationflowstorage');
+		result = storageGet('applesafestorage');
 	}
 	
 	return result;
@@ -435,6 +437,7 @@ function setupSettingsPage()
 	setStepStartScreen();
 	
 	setStepStartRecivingDonations();
+	setHelpfullLinks();
 	
 	setStepClaimOrganization();
 	
@@ -517,8 +520,37 @@ function setStepClaimOrganization()
 	
 	
 }
-
-
+function setDeviceSpecificClasses()
+{
+	if(isApple())
+	{
+		$('.appleonly').show();
+	}
+	else
+	{
+		
+		$('.appleonly').hide();
+	
+	}
+}
+function setHelpfullLinks()
+{
+	//if the search is set, we can show these
+	if(isSearchSet())
+	{
+		$('#helpfullinks').hide();
+	}
+	else
+	{
+		
+		$('#helpfullinks').show();
+	
+	}
+}
+function isApple()
+{
+	return ((devicetype.toLowerCase().indexOf("iphone") >= 0) || (devicetype.toLowerCase().indexOf("ipad") >= 0) || (devicetype.toLowerCase().indexOf("ipod") >= 0));
+}
 function setupKioskOrganizationDisplayName()
 {
 	
@@ -670,6 +702,17 @@ function loadContactRequest()
 	var url = _baseURL + _contactRequestURL;
 	appwindow = window.open(url, '_blank', 'location=no');
 	
+}
+function loadPurchasePage()
+{
+	var url = _kioskURL + _purchasePageURL;
+	appwindow = window.open(url, '_blank', 'location=no');
+}
+
+function loadLockKioskHelp()
+{
+	var url = _kioskURL + _lockKioskHelpURL;
+	appwindow = window.open(url, '_blank', 'location=no');
 }
 function openSetStartScreenPage()
 {
