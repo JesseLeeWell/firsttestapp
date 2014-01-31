@@ -156,9 +156,9 @@ function setapplesafe()
 	
 	//only check if ipad and and store
 	var devicetype = window.device.model;
-	
+	alert("here");
 	var isapple = isApple();
-	
+	alert("here");
 	//if it is false, we need to check in case it changed
 	//if the two app versions don't match up we need to check
 	//if its true and the 2 app version match, we don't need to check	
