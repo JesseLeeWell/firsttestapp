@@ -158,6 +158,10 @@ function setdonationpageflow()
 	//if it is false, we need to check in case it changed
 	//if the two app versions don't match up we need to check
 	//if its true and the 2 app version match, we don't need to check
+	alert('donationflowsession = '+donationflowsession);
+	alert('donationflowstorage = '+donationflowstorage);
+	alert('_kioskversion = '+_kioskversion);
+	alert('donationflowversion = '+donationflowversion);
 	if(((isapple && (_kiosklicense == 'store')) && donationflowsession != true) && ( (donationflowstorage != true) || (donationflowversion != _kioskversion) ))
 	{
 		alert('in if');
