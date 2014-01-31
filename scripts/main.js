@@ -75,12 +75,12 @@ function onDeviceReady() {
 alert("here");	
 	if((hideIntro && hideIntro == 'true'))// || (alreadyshowedintro && alreadyshowedintro == 'true'))
 	{
-		alert("in if");	
+		alert("in dtermin start page if");	
 		determinStartPage();
 	}
 	else
 	{
-		alert("in else");	
+		alert("in dtermin start page else");	
 		//set the session storage that it showed the intro
 		//window.sessionStorage.setItem("alreadyshowedintro", "true");	
 		$.mobile.loading( 'show', {
@@ -433,12 +433,14 @@ function setupSettingsPage()
 {
 	
 	//alert('in setup');
+	/*
 	setupKioskOrganizationDisplayName();
 	setStepPin();
 	setStepSearch();
 	setStepStartScreen();
 	setStepStartRecivingDonations();
 	setStepClaimOrganization();
+	*/
 	//alert('end setup');
 	
 }
