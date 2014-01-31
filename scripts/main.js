@@ -64,13 +64,13 @@ $( document ).ready(function() {
 
 function onDeviceReady() { 
 
-	alert("here");
+	
 	setapplesafe();
-	alert("here");
+	
 	setupbyscreensize();
-alert("here");	
+
 	setPagePaymentInformation(setStepClaimOrganization);
-	alert("here");
+	
 	//var hideIntro = 'true';//storageGet('hideintro');
 	var hideIntro = storageGet('hideintro');
 	
@@ -155,10 +155,10 @@ function setapplesafe()
 	var applesafestorage = storageGet('applesafestorage');
 	
 	//only check if ipad and and store
-	var devicetype = window.device.model;
-	alert("here");
+	
+	
 	var isapple = isApple();
-	alert("here");
+	
 	//if it is false, we need to check in case it changed
 	//if the two app versions don't match up we need to check
 	//if its true and the 2 app version match, we don't need to check	
@@ -221,7 +221,7 @@ function getapplesafe()
 {
 	var result = 'true';
 	//only check if apple, otherwise its true
-	var devicetype = window.device.model;
+	
 	var isapple = isApple();
 	
 	if(isapple && (_kiosklicense == 'store'))
@@ -551,7 +551,10 @@ function setHelpfullLinks()
 }
 function isApple()
 {
-	return ((devicetype.toLowerCase().indexOf("iphone") >= 0) || (devicetype.toLowerCase().indexOf("ipad") >= 0) || (devicetype.toLowerCase().indexOf("ipod") >= 0));
+	var devicetype = window.device.model;
+	var result = ((devicetype.toLowerCase().indexOf("iphone") >= 0) || (devicetype.toLowerCase().indexOf("ipad") >= 0) || (devicetype.toLowerCase().indexOf("ipod") >= 0));
+	
+	return result
 }
 function setupKioskOrganizationDisplayName()
 {
