@@ -41,8 +41,8 @@ var _searchPage = 'index.php?moduleType=Module_Search&task=show.results';
 var _signUpPage = 'index.php?moduleType=Module_Registration&task=regflow_church&registrationstep=regcreateaccount';
 var _getPageInformationURL = 'router/Kiosk/getpageinformation?pageid=';
 var _appCheckURL = 'appcheck.php';
-var _purchasePageURL = 'content/learn_more_kiosk.html';
-var _lockKioskHelpURL = 'content/kiosk_ios_kiosk_mode.html';
+var _purchasePageURL = 'index.php?moduleType=Module_Content&task=text&article=learn_more_kiosk';
+var _lockKioskHelpURL = 'index.php?moduleType=Module_Content&task=text&article=kiosk_ios_kiosk_mode';
 
 var appwindow = null;
 var browserwindow = null;
