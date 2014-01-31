@@ -72,7 +72,7 @@ function onDeviceReady() {
 	
 	//var alreadyshowedintro = window.sessionStorage.getItem('alreadyshowedintro');
 	setupSettingsPage();
-alert("here after setup settings page");	
+	
 	if((hideIntro && hideIntro == 'true'))// || (alreadyshowedintro && alreadyshowedintro == 'true'))
 	{
 		
@@ -171,7 +171,7 @@ function setdonationpageflow()
 		  success:function(data){
 			
 			var result = (data =='true' )?'true':'false';
-			alert('in check flow if rusult is ' +result);
+			
 			
 			storageSet('donationflowversion', _kioskversion);
 			storageSet('donationflowstorage', result);
@@ -194,7 +194,7 @@ function setdonationpageflow()
 	}
 	else
 	{
-		alert("in check flow set else");
+		
 		storageSet('donationflowstorage', 'true');
 	
 	}
@@ -225,7 +225,6 @@ function checkdonationpageflow()
 		result = storageGet('donationflowstorage');
 	}
 	
-	alert('in check result = ' + result);
 	return result;
 }
 function iabLoadStart(event) { 
