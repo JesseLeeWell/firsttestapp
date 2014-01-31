@@ -427,16 +427,17 @@ function storeURLInfo(fullURL)
 function setupSettingsPage()
 {
 	
-	//alert('in setup');
+	alert('in setup');
 	
 	setupKioskOrganizationDisplayName();
 	setStepPin();
 	setStepSearch();
 	setStepStartScreen();
+	alert('end setup');
 	setStepStartRecivingDonations();
 	setStepClaimOrganization();
 	
-	//alert('end setup');
+	alert('end setup');
 	
 }
 function setStepPin()
