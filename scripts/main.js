@@ -161,7 +161,9 @@ function setdonationpageflow()
 	
 	if(((isapple && (_kiosklicense == 'store')) ) && ( !(donationflowstorage == 'true') || !(donationflowversion == _kioskversion) ))
 	{
-		alert('in if');
+		//if it came in here, we set the flow to false until we know otherwise
+		storageSet('donationflowstorage', 'false');
+		
 		//then we need to check the version
 		var urltocall = _baseURL + _appCheckURL + "?kioskversion="+_kioskversion;
 		$.ajax({
@@ -173,7 +175,7 @@ function setdonationpageflow()
 			
 			storageSet('donationflowversion', _kioskversion);
 			storageSet('donationflowstorage', result);
-			window.sessionStorage.setItem('donationflowsession', result);
+			
 			
 			
 		  }
@@ -183,7 +185,7 @@ function setdonationpageflow()
 			
 			storageSet('donationflowversion', _kioskversion);
 			storageSet('donationflowstorage', 'false');
-			window.sessionStorage.setItem('donationflowsession', 'false');
+			
 			
 			
 		  }
@@ -193,7 +195,7 @@ function setdonationpageflow()
 	else
 	{
 		alert("in check flow set else");
-		window.sessionStorage.setItem('donationflowsession', 'true');
+		storageSet('donationflowstorage', 'true');
 	
 	}
 	//last version checked
@@ -220,7 +222,7 @@ function checkdonationpageflow()
 	
 	if(isapple && (_kiosklicense == 'store'))
 	{
-		result = window.sessionStorage.getItem('donationflowsession');
+		result = storageGet('donationflowstorage');
 	}
 	
 	alert('in check result = ' + result);
