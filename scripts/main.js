@@ -64,11 +64,13 @@ $( document ).ready(function() {
 
 function onDeviceReady() { 
 
-
+	alert("here");
 	setapplesafe();
-	setupbyscreensize();	
+	alert("here");
+	setupbyscreensize();
+alert("here");	
 	setPagePaymentInformation(setStepClaimOrganization);
-	
+	alert("here");
 	//var hideIntro = 'true';//storageGet('hideintro');
 	var hideIntro = storageGet('hideintro');
 	
