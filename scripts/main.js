@@ -175,9 +175,9 @@ function setdonationpageflow()
 		  url: urltocall,
 		  success:function(data){
 			
-			var result = (data =='true' )?true:false;
+			var result = (data =='true' )?true:null;
 			alert('in if rusult is ' +result);
-			window.sessionStorage.setItem('pagedata',result);
+			
 			storageSet('donationflowversion', _kioskversion);
 			storageSet('donationflowstorage', result);
 			window.sessionStorage.setItem('donationflowsession', result);
@@ -187,10 +187,10 @@ function setdonationpageflow()
 		  ,
 		  fail:function(data){
 			
-			window.sessionStorage.setItem('pagedata',false);
+			
 			storageSet('donationflowversion', _kioskversion);
-			storageSet('donationflowstorage', false);
-			window.sessionStorage.setItem('donationflowsession', false);
+			storageSet('donationflowstorage', null);
+			window.sessionStorage.setItem('donationflowsession', null);
 			
 			
 		  }
