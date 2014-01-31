@@ -714,11 +714,6 @@ function openStartRecivingDonationsPage()
 		showLoadMsg: true,
 		role: "page"
 	});
-	setPagePaymentInformation(insertPageInfo);
-	
-}
-function insertPageInfo()
-{
 	var pageinfo = getPagePaymentInformation();
 	if(!pageinfo.userid || pageinfo.userid == 'null')
 	{
@@ -738,7 +733,9 @@ function insertPageInfo()
 		$('#startrecievingdonationsunclaimeddiv').hide();
 		$('#startrecievingdonationsclaimeddiv').show();
 	}
+	
 }
+
 function closeStartRecivingDonationsPage()
 {
 	loadSettingsPage();
@@ -872,7 +869,7 @@ function isFundraisingPageClaimed()
 	}
 	return returnval;
 }
-function setPagePaymentInformation(callback)
+function setPagePaymentInformation(callback = null)
 {
 	alert('in setPagePaymentInformation'); 
 	var pageid = getPageID();
