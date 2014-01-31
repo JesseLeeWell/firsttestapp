@@ -112,7 +112,7 @@ function determinStartPage()
 {
 	//based on the settings they chose, open the correct screen
 	//settings vs donation vs point of sale
-	alert('in determin start page');
+	
 	//first make sure we have a donation page set, if not defaule to settings.
 	var pageid = getPageID();
 	var displayname = getDisplayName();	
@@ -435,10 +435,10 @@ function setupSettingsPage()
 	setStepStartScreen();
 	
 	setStepStartRecivingDonations();
-	alert('middle setup');
+	
 	setStepClaimOrganization();
 	
-	alert('end setup');
+	//alert('end setup');
 	
 }
 function setStepPin()
@@ -853,19 +853,19 @@ function isFundraisingPageClaimed()
 	}
 	else
 	{
-		alert("before getPagePaymentInformation call:");
+		
 		var pageinfo = getPagePaymentInformation();
-		alert("after getPagePaymentInformation call:");
-		alert(pageinfo);
+		
+		
 		jQuery.type( pageinfo );
 		if(jQuery.type( pageinfo ) == 'object' && (!pageinfo.userid || pageinfo.userid == 'null'))
 		{
-			alert("getPagePaymentInformation if:");
+			
 			returnval = false;
 		}
 		else
 		{
-			alert("getPagePaymentInformation else:");
+		
 			returnval = true;
 		}	
 		
