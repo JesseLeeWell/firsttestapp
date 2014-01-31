@@ -853,15 +853,18 @@ function isFundraisingPageClaimed()
 	}
 	else
 	{
-		
+		alert("before getPagePaymentInformation call:");
 		var pageinfo = getPagePaymentInformation();
-		
+		alert("after getPagePaymentInformation call:");
+		alert(pageinfo);
 		if(!pageinfo.userid || pageinfo.userid == 'null')
 		{
+			alert("getPagePaymentInformation if:");
 			returnval = false;
 		}
 		else
 		{
+			alert("getPagePaymentInformation else:");
 			returnval = true;
 		}	
 		
@@ -921,12 +924,11 @@ function setPagePaymentInformation(callback)
 }
 function getPagePaymentInformation()
 {
-	alert('in getPagePaymentInformation');
+	
 	var pagedata = window.sessionStorage.getItem('pagedata');
-	alert(pagedata);
+	
 	var obj = jQuery.parseJSON(pagedata );
-	alert(pagedata);
-	alert(obj);
+	
 	return obj;
 	
 }
