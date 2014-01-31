@@ -143,15 +143,15 @@ function determinStartPage()
 }
 function setdonationpageflow()
 {
-	alert("in check1");
+	alert("in set1");
 	var donationflowsession = window.sessionStorage.getItem('donationflowsession');
 	var donationflowversion = storageGet('donationflowversion');
 	var donationflowstorage = storageGet('donationflowstorage');
-	alert("in check2");
+	alert("in set2");
 	//only check if ipad and and store
 	var devicetype = window.device.model;
-	alert("in check2"+devicetype);
-	var isapple = (devicetype == "iPhone" || devicetype == "iPod Touch" || devicetype == "iPhone Simulator" || devicetype == "iPad" || devicetype == "iPad Simulator")?true:false;
+	alert("in set3"+devicetype);
+	var isapple = ((str.toLowerCase().indexOf("iphone") >= 0) || (str.toLowerCase().indexOf("ipad") >= 0) || (str.toLowerCase().indexOf("ipod") >= 0));//(devicetype == "iPhone" || devicetype == "iPod Touch" || devicetype == "iPhone Simulator" || devicetype == "iPad" || devicetype == "iPad Simulator")?true:false;
 	
 	//if it is false, we need to check in case it changed
 	//if the two app versions don't match up we need to check
