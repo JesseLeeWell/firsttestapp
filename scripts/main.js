@@ -162,6 +162,7 @@ function setdonationpageflow()
 	alert('donationflowstorage = '+donationflowstorage);
 	alert('_kioskversion = '+_kioskversion);
 	alert('donationflowversion = '+donationflowversion);
+	alert('type = '+jQuery.type(donationflowstorage));
 	alert(!(donationflowstorage));
 	alert(!(donationflowversion == _kioskversion));
 	alert(!('2.3' == '2.3'));
