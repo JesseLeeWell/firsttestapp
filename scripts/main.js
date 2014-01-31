@@ -714,6 +714,11 @@ function openStartRecivingDonationsPage()
 		showLoadMsg: true,
 		role: "page"
 	});
+	setPagePaymentInformation(insertPageInfo);
+	
+}
+function insertPageInfo()
+{
 	var pageinfo = getPagePaymentInformation();
 	if(!pageinfo.userid || pageinfo.userid == 'null')
 	{
@@ -734,7 +739,6 @@ function openStartRecivingDonationsPage()
 		$('#startrecievingdonationsclaimeddiv').show();
 	}
 }
-
 function closeStartRecivingDonationsPage()
 {
 	loadSettingsPage();
@@ -922,43 +926,6 @@ function getPagePaymentInformation()
 	var obj = jQuery.parseJSON(pagedata );
 	return obj;
 	
-	
-	var pageid = getPageID();
-	if(!pageid)
-	{
-		return jQuery.parseJSON('' );
-	}
-	else
-	{ 
-		/* cutting this out because otherwise it doesn't run ascyn cause it comes back from mem right away
-		//check if we have it in sessionstorage
-		var pagedata = window.sessionStorage.getItem('pagedata');
-		
-		if( !(!pagedata || /^\s*$/.test(pagedata)))
-		{
-			
-			var obj = jQuery.parseJSON(pagedata );
-			callback(obj);	
-		}
-		else
-		{
-		*/
-			var urlstring = pageid;
-					
-			var urltocall = _baseURL + _getPageInformationURL + urlstring;
-			$.ajax({
-			  url: urltocall,
-			  success:function(data){
-				
-				var obj = jQuery.parseJSON(data );
-				
-				window.sessionStorage.setItem('pagedata',data);
-				callback(obj);	
-				//return obj;
-			  }
-			});
-		//}
-	}
 }
  function isValidEmailAddress(emailAddress) {
 	var pattern = new RegExp(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/);
