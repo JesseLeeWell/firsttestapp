@@ -151,7 +151,7 @@ function setdonationpageflow()
 	//only check if ipad and and store
 	var devicetype = window.device.model;
 	alert("in set"+devicetype);
-	var isapple = ((str.toLowerCase().indexOf("iphone") >= 0) || (str.toLowerCase().indexOf("ipad") >= 0) || (str.toLowerCase().indexOf("ipod") >= 0));
+	var isapple = ((devicetype.toLowerCase().indexOf("iphone") >= 0) || (devicetype.toLowerCase().indexOf("ipad") >= 0) || (devicetype.toLowerCase().indexOf("ipod") >= 0));
 	alert('isapple' + isapple);
 	//if it is false, we need to check in case it changed
 	//if the two app versions don't match up we need to check
