@@ -57,7 +57,7 @@ var _kiosklicense = 'store';
 // Cordova is ready
 //
 $( document ).ready(function() {
- onDeviceReady();
+ //onDeviceReady();
 });
 
 function onDeviceReady() { 
@@ -110,7 +110,7 @@ function determinStartPage()
 {
 	//based on the settings they chose, open the correct screen
 	//settings vs donation vs point of sale
-	
+	alert('in determin start page');
 	//first make sure we have a donation page set, if not defaule to settings.
 	var pageid = getPageID();
 	var displayname = getDisplayName();	
@@ -143,16 +143,16 @@ function determinStartPage()
 }
 function setdonationpageflow()
 {
-	alert("in set1");
+	
 	var donationflowsession = window.sessionStorage.getItem('donationflowsession');
 	var donationflowversion = storageGet('donationflowversion');
 	var donationflowstorage = storageGet('donationflowstorage');
-	alert("in set2");
+	
 	//only check if ipad and and store
 	var devicetype = window.device.model;
-	alert("in set3"+devicetype);
-	var isapple = ((str.toLowerCase().indexOf("iphone") >= 0) || (str.toLowerCase().indexOf("ipad") >= 0) || (str.toLowerCase().indexOf("ipod") >= 0));//(devicetype == "iPhone" || devicetype == "iPod Touch" || devicetype == "iPhone Simulator" || devicetype == "iPad" || devicetype == "iPad Simulator")?true:false;
-	
+	alert("in set"+devicetype);
+	var isapple = ((str.toLowerCase().indexOf("iphone") >= 0) || (str.toLowerCase().indexOf("ipad") >= 0) || (str.toLowerCase().indexOf("ipod") >= 0));
+	alert('isapple' + isapple);
 	//if it is false, we need to check in case it changed
 	//if the two app versions don't match up we need to check
 	//if its true and the 2 app version match, we don't need to check
@@ -187,6 +187,7 @@ function setdonationpageflow()
 	}
 	else
 	{
+		alert("in else");
 		window.sessionStorage.setItem('donationflowsession', true);
 	
 	}
