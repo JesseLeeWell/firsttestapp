@@ -440,6 +440,7 @@ function setupSettingsPage()
 	
 	setStepStartRecivingDonations();
 	setHelpfullLinks();
+	setDeviceSpecificClasses();
 	
 	setStepClaimOrganization();
 	
@@ -540,12 +541,12 @@ function setHelpfullLinks()
 	//if the search is set, we can show these
 	if(isSearchSet())
 	{
-		$('#helpfullinks').hide();
+		$('#helpfullinks').show();
 	}
 	else
 	{
 		
-		$('#helpfullinks').show();
+		$('#helpfullinks').hide();
 	
 	}
 }
