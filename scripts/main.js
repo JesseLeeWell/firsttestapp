@@ -63,7 +63,7 @@ $( document ).ready(function() {
 function onDeviceReady() { 
 
 
-
+	setdonationpageflow();
 	setupbyscreensize();	
 	setPagePaymentInformation(setStepClaimOrganization);
 	//var hideIntro = 'true';//storageGet('hideintro');
@@ -113,7 +113,7 @@ function determinStartPage()
 	//first make sure we have a donation page set, if not defaule to settings.
 	var pageid = getPageID();
 	var displayname = getDisplayName();	
-	
+	var donationflow = checkdonationpageflow();
 	if(!(isSearchSet()))
 	{
 		return true; //just leave them on the settings screen
@@ -148,8 +148,13 @@ function setdonationpageflow()
 	//only check if ipad and and store
 	var devicetype = device.model;
 	var isapple = (devicetype == "iPhone" || devicetype == "iPod Touch" || devicetype == "iPhone Simulator" || devicetype == "iPad" || devicetype == "iPad Simulator")?true:false;
-	if(isapple && (_kiosklicense == 'store'))
+	
+	//if it is false, we need to check in case it changed
+	//if the two app versions don't match up we need to check
+	//if its true and the 2 app version match, we don't need to check
+	if(((isapple && (_kiosklicense == 'store')) && !donationflowsession) && ( (!donationflowstorage) || (donationflowversion != _kioskversion) ))
 	{
+		alert('in if');
 		//then we need to check the version
 		var urltocall = _baseURL + _appCheckURL + "?kioskversion="+_kioskversion;
 		$.ajax({
@@ -157,24 +162,20 @@ function setdonationpageflow()
 		  success:function(data){
 			
 			var result = (data =='true' )?true:false;
+			alert('in if rusult is ' +result);
+			window.sessionStorage.setItem('pagedata',result);
+			storageSet('donationflowversion', _kioskversion);
+			storageSet('donationflowstorage', result);
 			
-			window.sessionStorage.setItem('pagedata',data);
-			if(callback)
-			{
-				callback();
-			}
 			
 		  }
 		  ,
 		  fail:function(data){
 			
-			var obj = jQuery.parseJSON(data );
+			window.sessionStorage.setItem('pagedata',false);
+			storageSet('donationflowversion', _kioskversion);
+			storageSet('donationflowstorage', false);
 			
-			window.sessionStorage.setItem('pagedata','' );
-			if(callback)
-			{
-				callback();
-			}
 			
 		  }
 		});
@@ -202,18 +203,17 @@ function setdonationpageflow()
 }
 function checkdonationpageflow()
 {
+	var result = true;
 	//only check if apple, otherwise its true
 	var devicetype = device.model;
 	var isapple = (devicetype == "iPhone" || devicetype == "iPod Touch" || devicetype == "iPhone Simulator" || devicetype == "iPad" || devicetype == "iPad Simulator")?true:false;
 	if(isapple && (_kiosklicense == 'store'))
 	{
-		return window.sessionStorage.getItem('donationflowsession');
+		result = window.sessionStorage.getItem('donationflowsession');
 	}
-	else
-	{
-		return true;
-	}
-
+	
+	alert('in check result = ' result);
+	return result;
 }
 function iabLoadStart(event) { 
 	//alert(event.type + ' - ' + event.url);
