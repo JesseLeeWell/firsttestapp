@@ -877,7 +877,10 @@ function setPagePaymentInformation(callback)
 	{	
 		
 		window.sessionStorage.setItem('pagedata','' );
-		
+		if(callback)
+		{
+			callback();
+		}
 		
 	}
 	else
@@ -920,6 +923,7 @@ function getPagePaymentInformation()
 {
 	alert('in getPagePaymentInformation');
 	var pagedata = window.sessionStorage.getItem('pagedata');
+	alert(pagedata);
 	var obj = jQuery.parseJSON(pagedata );
 	return obj;
 	
