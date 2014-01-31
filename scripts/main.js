@@ -243,7 +243,7 @@ function iabLoadStart(event) {
 		browserwindow.removeEventListener('exit', iabCloseSearch);
 		//remove the page data from storage
 		window.sessionStorage.removeItem('pagedata');
-		setPagePaymentInformation();
+		setPagePaymentInformation(null);
 		
 		//determin what step to send the user to.  eiteher settings page or screen selection page
 		if(isStartScreenSet())
@@ -869,7 +869,7 @@ function isFundraisingPageClaimed()
 	}
 	return returnval;
 }
-function setPagePaymentInformation(callback = null)
+function setPagePaymentInformation(callback)
 {
 	alert('in setPagePaymentInformation'); 
 	var pageid = getPageID();
