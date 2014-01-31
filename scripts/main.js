@@ -925,6 +925,8 @@ function getPagePaymentInformation()
 	var pagedata = window.sessionStorage.getItem('pagedata');
 	alert(pagedata);
 	var obj = jQuery.parseJSON(pagedata );
+	alert(pagedata);
+	alert(obj);
 	return obj;
 	
 }
