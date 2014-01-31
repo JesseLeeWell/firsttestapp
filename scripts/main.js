@@ -69,18 +69,18 @@ function onDeviceReady() {
 	
 	//var hideIntro = 'true';//storageGet('hideintro');
 	var hideIntro = storageGet('hideintro');
-	alert("here");	
+	
 	//var alreadyshowedintro = window.sessionStorage.getItem('alreadyshowedintro');
 	setupSettingsPage();
-alert("here");	
+alert("here after setup settings page");	
 	if((hideIntro && hideIntro == 'true'))// || (alreadyshowedintro && alreadyshowedintro == 'true'))
 	{
-		alert("in dtermin start page if");	
+		
 		determinStartPage();
 	}
 	else
 	{
-		alert("in dtermin start page else");	
+		
 		//set the session storage that it showed the intro
 		//window.sessionStorage.setItem("alreadyshowedintro", "true");	
 		$.mobile.loading( 'show', {
@@ -146,7 +146,7 @@ function determinStartPage()
 function setdonationpageflow()
 {
 	
-	var donationflowsession = window.sessionStorage.getItem('donationflowsession');
+	
 	var donationflowversion = storageGet('donationflowversion');
 	var donationflowstorage = storageGet('donationflowstorage');
 	
@@ -157,13 +157,7 @@ function setdonationpageflow()
 	
 	//if it is false, we need to check in case it changed
 	//if the two app versions don't match up we need to check
-	//if its true and the 2 app version match, we don't need to check
-	
-	alert('donationflowstorage = '+donationflowstorage);
-	
-
-	alert('type = '+jQuery.type(donationflowstorage));
-	alert(!(donationflowstorage));
+	//if its true and the 2 app version match, we don't need to check	
 	
 	if(((isapple && (_kiosklicense == 'store')) ) && ( !(donationflowstorage == 'true') || !(donationflowversion == _kioskversion) ))
 	{
@@ -175,7 +169,7 @@ function setdonationpageflow()
 		  success:function(data){
 			
 			var result = (data =='true' )?'true':'false';
-			alert('in if rusult is ' +result);
+			alert('in check flow if rusult is ' +result);
 			
 			storageSet('donationflowversion', _kioskversion);
 			storageSet('donationflowstorage', result);
@@ -198,7 +192,7 @@ function setdonationpageflow()
 	}
 	else
 	{
-		alert("in set else");
+		alert("in check flow set else");
 		window.sessionStorage.setItem('donationflowsession', 'true');
 	
 	}
@@ -433,14 +427,14 @@ function setupSettingsPage()
 {
 	
 	//alert('in setup');
-	/*
+	
 	setupKioskOrganizationDisplayName();
 	setStepPin();
 	setStepSearch();
 	setStepStartScreen();
 	setStepStartRecivingDonations();
 	setStepClaimOrganization();
-	*/
+	
 	//alert('end setup');
 	
 }
