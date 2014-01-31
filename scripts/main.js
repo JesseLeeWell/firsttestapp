@@ -857,7 +857,8 @@ function isFundraisingPageClaimed()
 		var pageinfo = getPagePaymentInformation();
 		alert("after getPagePaymentInformation call:");
 		alert(pageinfo);
-		if(!pageinfo.userid || pageinfo.userid == 'null')
+		jQuery.type( pageinfo );
+		if(jQuery.type( pageinfo ) == 'object' && (!pageinfo.userid || pageinfo.userid == 'null'))
 		{
 			alert("getPagePaymentInformation if:");
 			returnval = false;
