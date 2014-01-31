@@ -69,16 +69,18 @@ function onDeviceReady() {
 	
 	//var hideIntro = 'true';//storageGet('hideintro');
 	var hideIntro = storageGet('hideintro');
-	
+	alert("here");	
 	//var alreadyshowedintro = window.sessionStorage.getItem('alreadyshowedintro');
-	setupSettingsPage();	
+	setupSettingsPage();
+alert("here");	
 	if((hideIntro && hideIntro == 'true'))// || (alreadyshowedintro && alreadyshowedintro == 'true'))
 	{
-		
+		alert("in if");	
 		determinStartPage();
 	}
 	else
 	{
+		alert("in else");	
 		//set the session storage that it showed the intro
 		//window.sessionStorage.setItem("alreadyshowedintro", "true");	
 		$.mobile.loading( 'show', {
