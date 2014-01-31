@@ -427,14 +427,15 @@ function storeURLInfo(fullURL)
 function setupSettingsPage()
 {
 	
-	alert('in setup');
+	//alert('in setup');
 	
 	setupKioskOrganizationDisplayName();
 	setStepPin();
 	setStepSearch();
 	setStepStartScreen();
-	alert('end setup');
+	
 	setStepStartRecivingDonations();
+	alert('end setup');
 	setStepClaimOrganization();
 	
 	alert('end setup');
@@ -866,17 +867,18 @@ function isFundraisingPageClaimed()
 }
 function setPagePaymentInformation(callback)
 {
-	
+	alert('in setPagePaymentInformation'); 
 	var pageid = getPageID();
 	if(!pageid)
 	{	
+		alert('in setPagePaymentInformation no pageid'); 
 		window.sessionStorage.setItem('pagedata','' );
 		
 		
 	}
 	else
 	{ 
-		
+		alert('in setPagePaymentInformation before ajax call'); 
 		var urlstring = pageid;
 				
 		var urltocall = _baseURL + _getPageInformationURL + urlstring;
@@ -912,7 +914,7 @@ function setPagePaymentInformation(callback)
 }
 function getPagePaymentInformation()
 {
-	
+	alert('in getPagePaymentInformation');
 	var pagedata = window.sessionStorage.getItem('pagedata');
 	var obj = jQuery.parseJSON(pagedata );
 	return obj;
