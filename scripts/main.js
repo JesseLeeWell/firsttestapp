@@ -162,10 +162,10 @@ function setdonationpageflow()
 	alert('donationflowstorage = '+donationflowstorage);
 	alert('_kioskversion = '+_kioskversion);
 	alert('donationflowversion = '+donationflowversion);
-	alert((donationflowstorage != true));
+	alert(!(donationflowstorage == true));
 	alert(!(donationflowversion == _kioskversion));
 	alert(!('2.3' == '2.3'));
-	if(((isapple && (_kiosklicense == 'store')) ) && ( (donationflowstorage != true) || !(donationflowversion == _kioskversion) ))
+	if(((isapple && (_kiosklicense == 'store')) ) && ( !(donationflowstorage == true) || !(donationflowversion == _kioskversion) ))
 	{
 		alert('in if');
 		//then we need to check the version
