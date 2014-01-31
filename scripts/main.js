@@ -435,7 +435,7 @@ function setupSettingsPage()
 	setStepStartScreen();
 	
 	setStepStartRecivingDonations();
-	alert('end setup');
+	alert('middle setup');
 	setStepClaimOrganization();
 	
 	alert('end setup');
@@ -844,18 +844,18 @@ function isFundraisingPageClaimed()
 	//do an ajax call to c2g and see if the page is claimed. 
 	var returnval = true;
 	var pageid = getPageID();
-	alert('in isFundraisingPageClaimed and pageid = '+pageid);
+	
 	if(!pageid)
 	{
-		alert('in isFundraisingPageClaimed if and pageid = '+pageid);
+		
 		//return true since they have not page selected to claim
 		returnval = true;
 	}
 	else
 	{
-		alert('in isFundraisingPageClaimed else and pageid = '+pageid);
+		
 		var pageinfo = getPagePaymentInformation();
-		alert('in isFundraisingPageClaimed else and pageinfo.userid = '+pageinfo.userid);
+		
 		if(!pageinfo.userid || pageinfo.userid == 'null')
 		{
 			returnval = false;
@@ -871,18 +871,18 @@ function isFundraisingPageClaimed()
 }
 function setPagePaymentInformation(callback)
 {
-	alert('in setPagePaymentInformation'); 
+	
 	var pageid = getPageID();
 	if(!pageid)
 	{	
-		alert('in setPagePaymentInformation no pageid'); 
+		
 		window.sessionStorage.setItem('pagedata','' );
 		
 		
 	}
 	else
 	{ 
-		alert('in setPagePaymentInformation before ajax call'); 
+		
 		var urlstring = pageid;
 				
 		var urltocall = _baseURL + _getPageInformationURL + urlstring;
