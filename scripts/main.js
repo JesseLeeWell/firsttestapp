@@ -66,6 +66,7 @@ function onDeviceReady() {
 	setdonationpageflow();
 	setupbyscreensize();	
 	setPagePaymentInformation(setStepClaimOrganization);
+	
 	//var hideIntro = 'true';//storageGet('hideintro');
 	var hideIntro = storageGet('hideintro');
 	
@@ -208,14 +209,14 @@ function checkdonationpageflow()
 {
 	var result = true;
 	//only check if apple, otherwise its true
-	var devicetype = device.model;
+	var devicetype = window.device.model;
 	var isapple = (devicetype == "iPhone" || devicetype == "iPod Touch" || devicetype == "iPhone Simulator" || devicetype == "iPad" || devicetype == "iPad Simulator")?true:false;
 	if(isapple && (_kiosklicense == 'store'))
 	{
 		result = window.sessionStorage.getItem('donationflowsession');
 	}
 	
-	alert('in check result = ' result);
+	alert('in check result = ' + result);
 	return result;
 }
 function iabLoadStart(event) { 
