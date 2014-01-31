@@ -142,11 +142,14 @@ function determinStartPage()
 }
 function setdonationpageflow()
 {
+	alert("in check1");
 	var donationflowsession = window.sessionStorage.getItem('donationflowsession');
 	var donationflowversion = storageGet('donationflowversion');
 	var donationflowstorage = storageGet('donationflowstorage');
+	alert("in check2");
 	//only check if ipad and and store
-	var devicetype = device.model;
+	var devicetype = window.device.model;
+	alert("in check2"+devicetype);
 	var isapple = (devicetype == "iPhone" || devicetype == "iPod Touch" || devicetype == "iPhone Simulator" || devicetype == "iPad" || devicetype == "iPad Simulator")?true:false;
 	
 	//if it is false, we need to check in case it changed
