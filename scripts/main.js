@@ -162,7 +162,7 @@ function setdonationpageflow()
 	alert('donationflowstorage = '+donationflowstorage);
 	alert('_kioskversion = '+_kioskversion);
 	alert('donationflowversion = '+donationflowversion);
-	if(((isapple && (_kiosklicense == 'store')) && donationflowsession != true) && ( (donationflowstorage != true) || (donationflowversion != _kioskversion) ))
+	if(((isapple && (_kiosklicense == 'store')) ) && ( (donationflowstorage != true) || (donationflowversion != _kioskversion) ))
 	{
 		alert('in if');
 		//then we need to check the version
@@ -176,6 +176,7 @@ function setdonationpageflow()
 			window.sessionStorage.setItem('pagedata',result);
 			storageSet('donationflowversion', _kioskversion);
 			storageSet('donationflowstorage', result);
+			window.sessionStorage.setItem('donationflowsession', result);
 			
 			
 		  }
@@ -185,6 +186,7 @@ function setdonationpageflow()
 			window.sessionStorage.setItem('pagedata',false);
 			storageSet('donationflowversion', _kioskversion);
 			storageSet('donationflowstorage', false);
+			window.sessionStorage.setItem('donationflowsession', false);
 			
 			
 		  }
@@ -193,7 +195,7 @@ function setdonationpageflow()
 	}
 	else
 	{
-		alert("in else");
+		alert("in set else");
 		window.sessionStorage.setItem('donationflowsession', true);
 	
 	}
