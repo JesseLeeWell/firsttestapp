@@ -45,9 +45,6 @@ function secureKiosk()
 	}
 	else
 	{
-		var urlstring = "&name="+name+"&email="+email+"&phonenumber="+phonenumber+"&represents="+represents;
-		
-		var urltocall = _baseURL + _kiosksetupURL + urlstring;
 		//store this stuff locally
 		storageSet(_storagePin, pin);
 		storageSet('email', email);
@@ -55,10 +52,7 @@ function secureKiosk()
 		storageSet('phonenumber', phonenumber);
 		storageSet('represents', represents);
 		
-		// Assign handlers immediately after making the request,
-		// and remember the jqxhr object for this request
-		var jqxhr = $.post( urltocall);
-		
+		ajaxCallKioskSetup();		
 		
 		//make sure we send them on the correct path.
 		//if they have already set their search and this is an edit, then just send them to the edit screen

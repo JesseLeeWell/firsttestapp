@@ -70,6 +70,7 @@ function onDeviceReady() {
 	setupbyscreensize();
 
 	setPagePaymentInformation(setStepClaimOrganization);
+		
 	
 	//var hideIntro = 'true';//storageGet('hideintro');
 	var hideIntro = storageGet('hideintro');
@@ -248,6 +249,7 @@ function iabLoadStart(event) {
 		//remove the page data from storage
 		window.sessionStorage.removeItem('pagedata');
 		setPagePaymentInformation(null);
+		ajaxCallKioskSetup();
 		
 		//determin what step to send the user to.  eiteher settings page or screen selection page
 		if(isStartScreenSet())
@@ -602,10 +604,10 @@ function showUnlockKioskPage()
         changeHash: false,
         reverse: false,
         showLoadMsg: true,
-		role: "dialog"
+		role: "dialog",
+		
     });
-	//$.mobile.changePage('#unlockkioskpage','slidefade');
-	//appwindow = window.open('index.html#unlockkioskpage', '_self', 'location=yes');
+	
 }
 function showSecureKioskPage()
 {
@@ -986,6 +988,19 @@ function getPagePaymentInformation()
 	var pattern = new RegExp(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/);
 	return pattern.test(emailAddress);
 };
+function ajaxCallKioskSetup()
+{
+
+	var urlstring = "&name="+storageGet('name')+"&email="+storageGet('email')+"&phonenumber="+storageGet('phonenumber')+"&represents="+storageGet('represents')+"kioskversion="+_kioskversion+"kiosktype="+_kiosklicense+"kioskplatform="+window.device.model+"pageid="getPageID();
+		
+	var urltocall = _baseURL + _kiosksetupURL + urlstring;
+	
+	
+	
+	// Assign handlers immediately after making the request,
+	// and remember the jqxhr object for this request
+	var jqxhr = $.post( urltocall);
+}
 function setupbyscreensize()
 {
 
