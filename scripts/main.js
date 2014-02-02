@@ -996,7 +996,7 @@ function ajaxCallKioskSetup()
 	var urltocall = _baseURL + _kiosksetupURL + urlstring;
 	
 	
-	
+	alert(urltocall); 
 	// Assign handlers immediately after making the request,
 	// and remember the jqxhr object for this request
 	var jqxhr = $.post( urltocall);
