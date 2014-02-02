@@ -991,8 +991,8 @@ function getPagePaymentInformation()
 function ajaxCallKioskSetup()
 {
 
-	var urlstring = "&name="+storageGet('name')+"&email="+storageGet('email')+"&phonenumber="+storageGet('phonenumber')+"&represents="+storageGet('represents')+"kioskversion="+_kioskversion+"kiosktype="+_kiosklicense+"kioskplatform="+window.device.model+"pageid="+getPageID();
-		
+	var urlstring = "&name="+storageGet('name')+"&email="+storageGet('email')+"&phonenumber="+storageGet('phonenumber')+"&represents="+storageGet('represents')+"kioskversion="+_kioskversion+"kiosktype="+_kiosklicense+"pageid="+getPageID();
+		//"kioskplatform="+window.device.model+
 	var urltocall = _baseURL + _kiosksetupURL + urlstring;
 	
 	
