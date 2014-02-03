@@ -126,8 +126,8 @@ function determinStartPage()
 	//first make sure we have a donation page set, if not defaule to settings.
 	var pageid = getPageID();
 	var displayname = getDisplayName();	
-	
-	if(!(isSearchSet()))
+	//if it is not apple safe, just leave them at the settings page
+	if((!(isSearchSet())) || !(getAppleSafe()))
 	{
 		return true; //just leave them on the settings screen
 	}
@@ -368,7 +368,7 @@ function openDonationPage(extras)
 		
 		if(getAppleSafe())
 		{
-			alert("in open donation if");
+			
 			browserwindow = window.open(url, '_blank', 'toolbar=no,location=no');	
 			browserwindow.addEventListener('exit', iabCloseDonation);
 			browserwindow.addEventListener('loadstop', iabLoadStopDonation);
@@ -376,7 +376,7 @@ function openDonationPage(extras)
 		}
 		else
 		{	
-			alert("in open donation else");
+			
 			browserwindow = window.open(url, '_system', 'toolbar=no,location=no');
 		}
 		
