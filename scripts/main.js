@@ -533,7 +533,7 @@ function setStepClaimOrganization()
 }
 function setDeviceSpecificClasses()
 {
-	alert("setDeviceSpecificClasses");
+	
 	if(isApple())
 	{
 		$('.appleonly').show();
@@ -546,12 +546,12 @@ function setDeviceSpecificClasses()
 	}
 	if(getAppleSafe())
 	{
-		alert("setDeviceSpecificClasses applesafe if");
+		
 		$('.applestoresafe').show();
 	}
 	else
 	{
-		alert("setDeviceSpecificClasses applesafe else");
+		
 		$('.applestoresafe').hide();
 	
 	}
@@ -680,7 +680,7 @@ function saveStartPageRadioButtonValue()
 */
 function setupStartScreenPage()
 {
-	alert("in setupstartscreenpage");
+	
 	setDeviceSpecificClasses();
 }
 function loadSettingsPage()
