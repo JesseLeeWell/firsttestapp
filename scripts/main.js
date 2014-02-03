@@ -180,6 +180,7 @@ function setapplesafe()
 			
 			storageSet('applesafeversion', _kioskversion);
 			storageSet('applesafestorage', result);
+			alert("ajax result" + result);
 			
 			
 			
@@ -201,6 +202,7 @@ function setapplesafe()
 	{
 		
 		storageSet('applesafestorage', 'true');
+		alert("set applesafe else" );
 	
 	}
 	//last version checked
@@ -229,7 +231,7 @@ function getapplesafe()
 	{
 		result = storageGet('applesafestorage');
 	}
-	
+	alert('getapplesafe"+result);
 	return result;
 }
 function iabLoadStart(event) { 
