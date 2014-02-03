@@ -112,6 +112,11 @@ $(document).bind( "pagechange", function( e, data ) {
 
 		setupSettingsPage();
 	}
+	if ( data.options.target == "#setstartscreenpage" ) {
+
+
+		setupStartScreenPage();
+	}
 });
 function determinStartPage()
 {
@@ -121,7 +126,7 @@ function determinStartPage()
 	//first make sure we have a donation page set, if not defaule to settings.
 	var pageid = getPageID();
 	var displayname = getDisplayName();	
-	var applesafe = getAppleSafe();
+	
 	if(!(isSearchSet()))
 	{
 		return true; //just leave them on the settings screen
@@ -180,9 +185,7 @@ function setapplesafe()
 			
 			storageSet('applesafeversion', _kioskversion);
 			storageSet('applesafestorage', result);
-			alert("ajax result" + result);
-			
-			
+		
 			
 		  }
 		  ,
@@ -202,8 +205,7 @@ function setapplesafe()
 	{
 		
 		storageSet('applesafestorage', 'true');
-		alert("set applesafe else" );
-	
+			
 	}
 	//last version checked
 	
@@ -222,7 +224,7 @@ function setapplesafe()
 }
 function getAppleSafe()
 {
-	alert('in get apple safe');
+	
 	var result = 'true';
 	//only check if apple, otherwise its true
 	
@@ -232,7 +234,7 @@ function getAppleSafe()
 	{
 		result = storageGet('applesafestorage');
 	}
-	alert('getapplesafe'+result);
+	
 	return result;
 }
 function iabLoadStart(event) { 
@@ -373,11 +375,22 @@ function openDonationPage(extras)
 		var pageid = getPageID();
 		var url =_kioskURL + pageid + extras;
 		
+		//determin if this page should be open in app or not
+		//for store ios open in blank
 		
-		browserwindow = window.open(url, '_blank', 'toolbar=no,location=no');	
-		browserwindow.addEventListener('exit', iabCloseDonation);
-		browserwindow.addEventListener('loadstop', iabLoadStopDonation);
-		browserwindow.addEventListener('loadstart', iabLoadStartDonation);
+		if(getAppleSafe())
+		{
+			browserwindow = window.open(url, '_blank', 'toolbar=no,location=no');	
+			browserwindow.addEventListener('exit', iabCloseDonation);
+			browserwindow.addEventListener('loadstop', iabLoadStopDonation);
+			browserwindow.addEventListener('loadstart', iabLoadStartDonation);
+		}
+		else
+		{
+			browserwindow = window.open(url, '_system', 'toolbar=no,location=no');
+		}
+		
+		
 		
 	}
 	else
@@ -673,6 +686,10 @@ function saveStartPageRadioButtonValue()
 	
 }
 */
+function setupStartScreenPage()
+{
+	setDeviceSpecificClasses();
+}
 function loadSettingsPage()
 {
 	
@@ -682,6 +699,7 @@ function loadSettingsPage()
 			reverse: true,
 			showLoadMsg: true
 		});
+		setupStartScreenPage();
 	
 }
 
