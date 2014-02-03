@@ -231,7 +231,7 @@ function getapplesafe()
 	{
 		result = storageGet('applesafestorage');
 	}
-	alert('getapplesafe"+result);
+	alert('getapplesafe'+result);
 	return result;
 }
 function iabLoadStart(event) { 
