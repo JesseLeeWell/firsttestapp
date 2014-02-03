@@ -746,12 +746,12 @@ function loadPurchasePage()
 function loadLearnMorePage()
 {
 	var target = (getAppleSafe())?'_blank':'_system';
-	appwindow = window.open(url, target, 'location=no');
+	appwindow = window.open(_baseURL, target, 'location=no');
 }
 function loadLockKioskHelp()
 {
 	var url = _kioskURL + _lockKioskHelpURL;
-	appwindow = window.open(_baseURL, '_blank', 'location=no');
+	appwindow = window.open(url, '_blank', 'location=no');
 }
 function openSetStartScreenPage()
 {
