@@ -344,8 +344,8 @@ function openSearchPage()
 }
 function openSignupPage()
 {
-	
-	browserwindow = window.open(_baseURL + _signUpPage, '_blank', 'location=no,closebuttoncaption=settings');
+	var target = (isAppleSafe())?'_blank':'_system';
+	browserwindow = window.open(_kioskURL + _signUpPage, target, 'location=no,closebuttoncaption=settings');
 	//browserwindow.addEventListener('exit', iabClose);
 	
 }
