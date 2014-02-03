@@ -740,13 +740,18 @@ function loadContactRequest()
 function loadPurchasePage()
 {
 	var url = _kioskURL + _purchasePageURL;
-	appwindow = window.open(url, '_blank', 'location=no');
+	var target = (getAppleSafe())?'_blank':'_system';
+	appwindow = window.open(url, target, 'location=no');
 }
-
+function loadLearnMorePage()
+{
+	var target = (getAppleSafe())?'_blank':'_system';
+	appwindow = window.open(url, target, 'location=no');
+}
 function loadLockKioskHelp()
 {
 	var url = _kioskURL + _lockKioskHelpURL;
-	appwindow = window.open(url, '_blank', 'location=no');
+	appwindow = window.open(_baseURL, '_blank', 'location=no');
 }
 function openSetStartScreenPage()
 {
