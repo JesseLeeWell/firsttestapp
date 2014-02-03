@@ -344,7 +344,7 @@ function openSearchPage()
 }
 function openSignupPage()
 {
-	var target = (isAppleSafe())?'_blank':'_system';
+	var target = (getAppleSafe())?'_blank':'_system';
 	browserwindow = window.open(_kioskURL + _signUpPage, target, 'location=no,closebuttoncaption=settings');
 	//browserwindow.addEventListener('exit', iabClose);
 	
