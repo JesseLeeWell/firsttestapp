@@ -207,19 +207,7 @@ function setapplesafe()
 		storageSet('applesafestorage', 'true');
 			
 	}
-	//last version checked
 	
-	//last result
-	
-	//session result
-	/*
-	element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
-                            'Device Cordova: '  + device.cordova  + '<br />' +
-                            'Device Platform: ' + device.platform + '<br />' +
-                            'Device UUID: '     + device.uuid     + '<br />' +
-                            'Device Model: '    + device.model    + '<br />' +
-                            'Device Version: '  + device.version  + '<br />';
-	*/
 
 }
 function getAppleSafe()
@@ -380,13 +368,15 @@ function openDonationPage(extras)
 		
 		if(getAppleSafe())
 		{
+			alert("in open donation if");
 			browserwindow = window.open(url, '_blank', 'toolbar=no,location=no');	
 			browserwindow.addEventListener('exit', iabCloseDonation);
 			browserwindow.addEventListener('loadstop', iabLoadStopDonation);
 			browserwindow.addEventListener('loadstart', iabLoadStartDonation);
 		}
 		else
-		{
+		{	
+			alert("in open donation else");
 			browserwindow = window.open(url, '_system', 'toolbar=no,location=no');
 		}
 		
@@ -701,7 +691,7 @@ function loadSettingsPage()
 			reverse: true,
 			showLoadMsg: true
 		});
-		setupStartScreenPage();
+		
 	
 }
 
