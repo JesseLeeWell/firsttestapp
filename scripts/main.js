@@ -543,6 +543,7 @@ function setStepClaimOrganization()
 }
 function setDeviceSpecificClasses()
 {
+	alert("setDeviceSpecificClasses");
 	if(isApple())
 	{
 		$('.appleonly').show();
@@ -688,6 +689,7 @@ function saveStartPageRadioButtonValue()
 */
 function setupStartScreenPage()
 {
+	alert("in setupstartscreenpage");
 	setDeviceSpecificClasses();
 }
 function loadSettingsPage()
