@@ -213,14 +213,14 @@ function setapplesafe()
 function getAppleSafe()
 {
 	
-	var result = 'true';
+	var result = true;
 	//only check if apple, otherwise its true
 	
 	var isapple = isApple();
 	
 	if(isapple && (_kiosklicense == 'store'))
 	{
-		result = storageGet('applesafestorage');
+		result = (storageGet('applesafestorage') == 'true')?true:false;
 	}
 	
 	return result;
