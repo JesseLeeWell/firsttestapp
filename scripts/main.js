@@ -121,7 +121,7 @@ function determinStartPage()
 	//first make sure we have a donation page set, if not defaule to settings.
 	var pageid = getPageID();
 	var displayname = getDisplayName();	
-	var applesafe = getapplesafe();
+	var applesafe = getAppleSafe();
 	if(!(isSearchSet()))
 	{
 		return true; //just leave them on the settings screen
@@ -220,7 +220,7 @@ function setapplesafe()
 	*/
 
 }
-function getapplesafe()
+function getAppleSafe()
 {
 	alert('in get apple safe');
 	var result = 'true';
@@ -567,11 +567,11 @@ function setHelpfullLinks()
 }
 function isApple()
 {
-	alert('in isApple');
+	
 	var devicetype = window.device.model;
-	alert('in isApple2');
+	
 	var result = ((devicetype.toLowerCase().indexOf("iphone") >= 0) || (devicetype.toLowerCase().indexOf("ipad") >= 0) || (devicetype.toLowerCase().indexOf("ipod") >= 0));
-	alert('in isApple result'+result);
+	//alert('in isApple result'+result);
 	return result
 }
 function setupKioskOrganizationDisplayName()
