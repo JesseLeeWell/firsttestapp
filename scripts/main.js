@@ -222,6 +222,7 @@ function setapplesafe()
 }
 function getapplesafe()
 {
+	alert('in get apple safe');
 	var result = 'true';
 	//only check if apple, otherwise its true
 	
@@ -566,6 +567,7 @@ function setHelpfullLinks()
 }
 function isApple()
 {
+	alert('in isApple');
 	var devicetype = window.device.model;
 	var result = ((devicetype.toLowerCase().indexOf("iphone") >= 0) || (devicetype.toLowerCase().indexOf("ipad") >= 0) || (devicetype.toLowerCase().indexOf("ipod") >= 0));
 	
