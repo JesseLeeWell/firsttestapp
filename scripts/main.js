@@ -546,11 +546,12 @@ function setDeviceSpecificClasses()
 	}
 	if(getAppleSafe())
 	{
+		alert("setDeviceSpecificClasses applesafe if");
 		$('.applestoresafe').show();
 	}
 	else
 	{
-		
+		alert("setDeviceSpecificClasses applesafe else");
 		$('.applestoresafe').hide();
 	
 	}
