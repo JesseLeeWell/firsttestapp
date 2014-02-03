@@ -537,6 +537,16 @@ function setDeviceSpecificClasses()
 		$('.appleonly').hide();
 	
 	}
+	if(getAppleSafe())
+	{
+		$('.applestoresafe').show();
+	}
+	else
+	{
+		
+		$('.applestoresafe').hide();
+	
+	}
 }
 function setHelpfullLinks()
 {
