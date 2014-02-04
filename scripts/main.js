@@ -837,13 +837,19 @@ function showMessageCallBack()
 }
 function showMessage(message, callback, title, buttonName){
 	
-		
+		navigator.notification.alert(
+    'You are the winner!',  // message
+    showMessageCallBack,         // callback
+    'Game Over',            // title
+    'Done'                  // buttonName
+);
+ 
         title = title || "default title";
         buttonName = buttonName || 'OK';
 		callback = callback || showMessageCallBack;
 		 
         if(navigator.notification && navigator.notification.alert){
-			alert("message is: "+message);
+			alert("message if is: "+message);
 			navigator.notification.alert(
 				message,  // message
 				showMessageCallBack,         // callback
