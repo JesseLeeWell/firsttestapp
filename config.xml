@@ -12,8 +12,7 @@
 	<author email="continuetogive@continuetogive.com" href="http://continuetogive.com">
 		Continue To Give Team
 	</author>
-	<content src="index.html" />
-	<access origin="*" />
+	
 	
 	<icon src="App_Resources/iOS/Icon57.png"     gap:platform="ios" width="57"  height="57"  />
     <icon src="App_Resources/iOS/Icon72.png"      gap:platform="ios" width="72"  height="72"  />
