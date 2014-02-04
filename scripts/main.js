@@ -76,8 +76,9 @@ function onDeviceReady() {
 	var hideIntro = storageGet('hideintro');
 	
 	//var alreadyshowedintro = window.sessionStorage.getItem('alreadyshowedintro');
+	alert("before setup settings");
 	setupSettingsPage();
-	
+	alert("after setup settings");
 	if((hideIntro && hideIntro == 'true'))// || (alreadyshowedintro && alreadyshowedintro == 'true'))
 	{
 		
@@ -439,20 +440,20 @@ function storeURLInfo(fullURL)
 function setupSettingsPage()
 {
 	
-	//alert('in setup');
+	alert('in setup');
 	
 	setupKioskOrganizationDisplayName();
 	setStepPin();
 	setStepSearch();
 	setStepStartScreen();
-	
+	alert('mid setup');
 	setStepStartRecivingDonations();
 	setHelpfullLinks();
 	setDeviceSpecificClasses();
-	
+	alert('mid2 setup');
 	setStepClaimOrganization();
 	
-	//alert('end setup');
+	alert('end setup');
 	
 }
 function setStepPin()
