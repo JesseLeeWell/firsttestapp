@@ -574,11 +574,11 @@ function setHelpfullLinks()
 }
 function isApple()
 {
-	
+	alert("in isApple");
 	var devicetype = window.device.model;
-	
+	alert("in isAppl 2e" + devicetype);
 	var result = ((devicetype.toLowerCase().indexOf("iphone") >= 0) || (devicetype.toLowerCase().indexOf("ipad") >= 0) || (devicetype.toLowerCase().indexOf("ipod") >= 0));
-	//alert('in isApple result'+result);
+	alert('in isApple result'+result);
 	return result
 }
 function setupKioskOrganizationDisplayName()
