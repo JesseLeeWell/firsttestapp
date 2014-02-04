@@ -102,7 +102,7 @@ function onDeviceReady() {
 				
 		
 	}	
-	openSearchPage();
+	
 	
 }
 
@@ -337,7 +337,7 @@ function openSearch()
 }
 function openSearchPage()
 {	
-	alert("in open search");
+	
 	browserwindow = window.open(_kioskURL + _searchPage, '_blank', 'location=no,closebuttoncaption=settings');
 	
 	browserwindow.addEventListener('loadstart', iabLoadStartSearch);
@@ -837,10 +837,11 @@ function showMessageCallBack()
 }
 function showMessage(message, callback, title, buttonName){
 	
+		alert("in show message");
         title = title || "default title";
         buttonName = buttonName || 'OK';
-		callback = callback || 'showMessageCallBack';
-		
+		callback = callback || showMessageCallBack;
+		alert("in show message2");
         if(navigator.notification && navigator.notification.alert){
 			
 			navigator.notification.alert(
