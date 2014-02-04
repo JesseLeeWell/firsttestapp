@@ -1,0 +1,19 @@
+<widget id="com.continuetogive.www" version="0.0.1">
+	<name>Offering Kiosk</name>
+	<description>
+		Accept donations anywhere with Continue To Give's Offering Kiosk
+	</description>
+	<author email="continuetogive@continuetogive.com" href="http://continuetogive.com">
+		Continue To Give Team
+	</author>
+	<content src="index.html" />
+	<access origin="*" />
+	<preference name="Fullscreen" value="true" />
+	<preference name="WebViewBounce" value="true" />
+	<icon src="App_Resources/ios/icon57.png"          gap:platform="ios" width="57"  height="57"  />
+    <icon src="App_Resources/ios/icon72.png"       gap:platform="ios" width="72"  height="72"  />
+    <icon src="App_Resources/ios/icon114.png"    gap:platform="ios" width="114" height="114" />
+    <!-- retina iPad -->
+    <icon src="App_Resources/ios/icon144.png" gap:platform="ios" width="144" height="144" />
+
+</widget>
