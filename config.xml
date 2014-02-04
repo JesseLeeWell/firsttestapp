@@ -30,7 +30,10 @@
 	
 	
 	
-	
+	<feature name="Notification">
+		<param name="ios-package" value="CDVNotification" />
+	</feature>
+
 	
 	
 	<icon src="App_Resources/iOS/Icon57.png"     gap:platform="ios" width="57"  height="57"  />
