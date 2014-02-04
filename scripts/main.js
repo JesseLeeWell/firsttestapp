@@ -837,17 +837,11 @@ function showMessageCallBack()
 }
 function showMessage(message, callback, title, buttonName){
 	
-		alert("in show message");
+		
         title = title || "default title";
         buttonName = buttonName || 'OK';
 		callback = callback || showMessageCallBack;
-		alert("in show message2");
-		navigator.notification.alert(
-				message,  // message
-				showMessageCallBack,         // callback
-				title,            // title
-				buttonName                  // buttonName
-			);
+		
         if(navigator.notification && navigator.notification.alert){
 			
 			navigator.notification.alert(
