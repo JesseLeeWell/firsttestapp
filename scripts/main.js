@@ -1163,6 +1163,7 @@ function unlockKiosk()
 		if(successPath == 'search')
 		{
 			showMessage("Your kiosk has been unlocked.  You can now search for the church, organization, or fundraiser you are setting your kiosk to.", '', " ", "OK");
+			alert("before Open search ");
 			openSearchPage();
 		}
 		else
