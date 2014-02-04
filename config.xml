@@ -25,8 +25,8 @@
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
-	<gap:plugin name="org.apache.cordova.dialogs" />
-	<gap:plugin name="org.apache.cordova.core.dialogs.alert" />
+	<gap:plugin name="org.apache.cordova.dialogs.alert" />
+	<gap:plugin name="org.apache.cordova.core.dialogs" />
 	
 	
 	
