@@ -336,7 +336,8 @@ function openSearch()
 }
 function openSearchPage()
 {	
-	browserwindow = window.open(_kioskURL + _searchPage, '_blank', 'location=no,closebuttoncaption=settings');
+	alert("in open search");
+	browserwindow = window.open(_kioskURL + _searchPage, '_blank', 'location=no');
 	
 	browserwindow.addEventListener('loadstart', iabLoadStartSearch);
 	//browserwindow.addEventListener('loadstop', iabLoadStartSearch);

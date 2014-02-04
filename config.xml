@@ -12,6 +12,7 @@
 	<author email="continuetogive@continuetogive.com" href="http://continuetogive.com">
 		Continue To Give Team
 	</author>
+	<content src="index.html" />
 	
 	<gap:plugin name="org.apache.cordova.camera" />
     <gap:plugin name="org.apache.cordova.media-capture" />
@@ -26,7 +27,7 @@
     <gap:plugin name="org.apache.cordova.vibration" />
 	
 	
-	<content src="index.html" />
+	
 	
 	
 	
