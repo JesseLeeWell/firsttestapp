@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget id="com.continuetogive.www" version="0.0.1">
+
+<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
+<widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id = "com.continuetogive.www"
+        version = "1.0.0">
 	<name>Offering Kiosk</name>
 	<description>
 		Accept donations anywhere with Continue To Give's Offering Kiosk
