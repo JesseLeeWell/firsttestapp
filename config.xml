@@ -14,8 +14,7 @@
 	</author>
 	<content src="index.html" />
 	<access origin="*" />
-	<preference name="Fullscreen" value="true" />
-	<preference name="WebViewBounce" value="true" />
+	
 	<icon src="App_Resources/iOS/Icon57.png"     gap:platform="ios" width="57"  height="57"  />
     <icon src="App_Resources/iOS/Icon72.png"      gap:platform="ios" width="72"  height="72"  />
     <icon src="App_Resources/iOS/Icon114.png"    gap:platform="ios" width="114" height="114" />
