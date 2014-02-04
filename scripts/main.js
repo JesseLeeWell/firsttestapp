@@ -157,7 +157,7 @@ function determinStartPage()
 function setapplesafe()
 {
 	
-	
+	alert("in setApplesafe");
 	var applesafeversion = storageGet('applesafeversion');
 	var applesafestorage = storageGet('applesafestorage');
 	
@@ -165,7 +165,7 @@ function setapplesafe()
 	
 	
 	var isapple = isApple();
-	
+	alert("in setApplesafe2");
 	//if it is false, we need to check in case it changed
 	//if the two app versions don't match up we need to check
 	//if its true and the 2 app version match, we don't need to check	
@@ -208,7 +208,7 @@ function setapplesafe()
 		storageSet('applesafestorage', 'true');
 			
 	}
-	
+	alert("in setApplesafe end");
 
 }
 function getAppleSafe()
@@ -449,6 +449,7 @@ function setupSettingsPage()
 	alert('mid setup');
 	setStepStartRecivingDonations();
 	setHelpfullLinks();
+	alert('mid setup');
 	setDeviceSpecificClasses();
 	alert('mid2 setup');
 	setStepClaimOrganization();
