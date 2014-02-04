@@ -76,9 +76,9 @@ function onDeviceReady() {
 	var hideIntro = storageGet('hideintro');
 	
 	//var alreadyshowedintro = window.sessionStorage.getItem('alreadyshowedintro');
-	alert("before setup settings");
+	
 	setupSettingsPage();
-	alert("after setup settings");
+	
 	if((hideIntro && hideIntro == 'true'))// || (alreadyshowedintro && alreadyshowedintro == 'true'))
 	{
 		
@@ -157,7 +157,7 @@ function determinStartPage()
 function setapplesafe()
 {
 	
-	alert("in setApplesafe");
+	
 	var applesafeversion = storageGet('applesafeversion');
 	var applesafestorage = storageGet('applesafestorage');
 	
@@ -165,7 +165,7 @@ function setapplesafe()
 	
 	
 	var isapple = isApple();
-	alert("in setApplesafe2");
+	
 	//if it is false, we need to check in case it changed
 	//if the two app versions don't match up we need to check
 	//if its true and the 2 app version match, we don't need to check	
@@ -208,7 +208,7 @@ function setapplesafe()
 		storageSet('applesafestorage', 'true');
 			
 	}
-	alert("in setApplesafe end");
+	
 
 }
 function getAppleSafe()
@@ -440,21 +440,18 @@ function storeURLInfo(fullURL)
 function setupSettingsPage()
 {
 	
-	alert('in setup');
-	
 	setupKioskOrganizationDisplayName();
 	setStepPin();
 	setStepSearch();
 	setStepStartScreen();
-	alert('mid setup');
+	
 	setStepStartRecivingDonations();
 	setHelpfullLinks();
-	alert('mid setup');
+	
 	setDeviceSpecificClasses();
-	alert('mid2 setup');
+	
 	setStepClaimOrganization();
 	
-	alert('end setup');
 	
 }
 function setStepPin()
@@ -574,11 +571,11 @@ function setHelpfullLinks()
 }
 function isApple()
 {
-	alert("in isApple");
+	
 	var devicetype = device.platform;
-	alert("in isAppl 2e" + devicetype);
+	
 	var result = ((devicetype.toLowerCase().indexOf("iphone") >= 0) || (devicetype.toLowerCase().indexOf("ipad") >= 0) || (devicetype.toLowerCase().indexOf("ipod") >= 0));
-	alert('in isApple result'+result);
+	
 	return result
 }
 function setupKioskOrganizationDisplayName()
