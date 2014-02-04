@@ -837,19 +837,17 @@ function showMessageCallBack()
 }
 function showMessage(message, callback, title, buttonName){
 	
-		navigator.notification.alert(
-    'You are the winner!',  // message
-    showMessageCallBack,         // callback
-    'Game Over',            // title
-    'Done'                  // buttonName
-);
- 
+		//right now this issn't working, so we are just going to alert
+		alert(message);
+		return true;
+		
+		
         title = title || "default title";
         buttonName = buttonName || 'OK';
 		callback = callback || showMessageCallBack;
 		 
         if(navigator.notification && navigator.notification.alert){
-			alert("message if is: "+message);
+			
 			navigator.notification.alert(
 				message,  // message
 				showMessageCallBack,         // callback
@@ -1170,7 +1168,7 @@ function unlockKiosk()
 		if(successPath == 'search')
 		{
 			showMessage("Your kiosk has been unlocked.  You can now search for the church, organization, or fundraiser you are setting your kiosk to.", '', " ", "OK");
-			alert("before Open search ");
+			
 			openSearchPage();
 		}
 		else
