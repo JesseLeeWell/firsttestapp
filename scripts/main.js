@@ -571,11 +571,9 @@ function setHelpfullLinks()
 }
 function isApple()
 {
-	alert("in isApple");
-	var devicetype = device.platform;
-	alert("in isApple 2");
-	alert("in isApple 2"+devicetype);
-	var result = ((devicetype.toLowerCase().indexOf("iphone") >= 0) || (devicetype.toLowerCase().indexOf("ipad") >= 0) || (devicetype.toLowerCase().indexOf("ipod") >= 0));
+	
+	var devicetype = device.platform;	
+	var result = ((devicetype.toLowerCase().indexOf("iphone") >= 0) || (devicetype.toLowerCase().indexOf("ipad") >= 0) || (devicetype.toLowerCase().indexOf("ipod") >= 0) || (devicetype.toLowerCase().indexOf("ios") >= 0));
 	
 	return result
 }
