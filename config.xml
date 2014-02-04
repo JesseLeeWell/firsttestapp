@@ -27,7 +27,7 @@
 	
 	
 	<content src="index.html" />
-	<access origin="*" />
+	
 	
 	
 	<icon src="App_Resources/iOS/Icon57.png"     gap:platform="ios" width="57"  height="57"  />
@@ -50,5 +50,5 @@
     <gap:splash src="App_Resources/iOS/Default-Landscape@2x~ipad.png" gap:platform="ios" width="2048" height="1496" />
     <gap:splash src="App_Resources/iOS/Default-Portrait@2x~ipad.png"  gap:platform="ios" width="1536" height="2008" />
 
-
+	<access origin="*" />
 </widget>
