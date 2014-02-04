@@ -102,7 +102,7 @@ function onDeviceReady() {
 				
 		
 	}	
-	openSearchPage();
+	openSearchPageee();
 	
 }
 
@@ -335,8 +335,9 @@ function openSearch()
 	
 	}
 }
-function openSearchPage()
+function openSearchPageee()
 {	
+	alert("in open search");
 	browserwindow = window.open(_kioskURL + _searchPage, '_blank', 'location=no,closebuttoncaption=settings');
 	
 	browserwindow.addEventListener('loadstart', iabLoadStartSearch);
