@@ -104,6 +104,18 @@ function closeIntroPerminataly()
 	appwindow = window.open('index.html', '_self', 'location=yes');
 }
 
+function showReason(div, obj)
+{
+	
+	//update the highlighted selection
+	$(".intro_reasons_buttons").removeClass('active');
+	$(obj).addClass('active');
+	
+	//add the amount to a hidden field
+	$("#intro_reason_text_holder").html($("#"+div).html());
+	
+	
+}
 function setupbyscreensize()
 {
 

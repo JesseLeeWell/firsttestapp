@@ -41,7 +41,7 @@
 					<div class='spacer'></div><div class='spacer'></div><div class='spacer'></div>
 					<div style="width:100%;text-align:center;">
 						<div class='intro_reasons_buttons_outer'>
-							<div class='intro_reasons_buttons' style='s'>
+							<div class='intro_reasons_buttons active' onclick='showReason("intro_reason_no_monthly", this);' >
 								<img  style='margin:auto;' src='images/calendar-white.png' />
 							</div>
 							<p>
@@ -49,34 +49,46 @@
 							</p>
 						</div>
 						<div class='intro_reasons_buttons_outer'>
-							<div class='intro_reasons_buttons' style='s'>
-								<img  style='margin:auto;' src='images/calendar-white.png' />
+							<div class='intro_reasons_buttons' onclick='showReason("intro_reason_no_setup", this);'>
+								<img  style='margin:auto;' src='images/money-white.png' />
 							</div>
 							<p>
-								No monthly fees
+								No setup costs
 							</p>
 						</div>
 						<div class='intro_reasons_buttons_outer'>
-							<div class='intro_reasons_buttons' style='s'>
-								<img  style='margin:auto;' src='images/calendar-white.png' />
+							<div class='intro_reasons_buttons'  onclick='showReason("intro_reason_free_kiosk", this);'>
+								<img  style='margin:auto;' src='images/kiosk-sm-white.png' />
 							</div>
 							<p>
-								No monthly fees
+								Free Kiosk
 							</p>
 						</div>
-						<div class='intro_reasons_buttons_outer last'>
-							<div class='intro_reasons_buttons' style='s'>
-								<img  style='margin:auto;' src='images/calendar-white.png' />
+						<div class='intro_reasons_buttons_outer last' >
+							<div class='intro_reasons_buttons' onclick='showReason("intro_reason_low_rates", this);'>
+								<img  style='margin:auto;' src='images/checkbook-white.png' />
 							</div>
 							<p>
-								No monthly fees
+								Low transaction rates
 							</p>
 						</div>
 					</div>
-					<div >
-						<p>
-							adfadsf
-						</p>
+					<div class='intro_reason_text_outer'>
+						<div id='intro_reason_text_holder'>
+							Finally, a digital giving platform with no monthly fees, leaving more money	for your organization to spend on your community
+						</div>
+						<div id='intro_reason_no_monthly' class='intro_reason_text'>
+							Finally, a digital giving platform with no monthly fees, leaving more money	for your organization to spend on your community
+						</div>
+						<div id='intro_reason_no_setup' class='intro_reason_text'>
+							Getting started wit us is free! No application fees!
+						</div>
+						<div id='intro_reason_free_kiosk' class='intro_reason_text'>
+							Sign up, and we will even give you a free kiosk (That is a $200 value)!
+						</div>
+						<div id='intro_reason_low_rates' class='intro_reason_text'>
+							We work with our processor to bring you the best rates around (As low as 0.5% + $0.30 per transaction)
+						</div>
 						
 					</div>
 				</div>

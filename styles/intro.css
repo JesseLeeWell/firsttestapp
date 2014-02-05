@@ -1,7 +1,7 @@
 body
 {
 	font-family: 'Source Sans Pro', sans-serif;
-	
+	color:#707070
 }
 .content
 {
@@ -104,13 +104,30 @@ body
 .intro_reasons_buttons_outer
 {
 	width:142px; 
-	vertical-align:middle; 
+	vertical-align:top; 
 	display:inline-block;
 	
 	margin-right:25px;
+	font-size:1.3em;
 }
 .intro_reasons_buttons_outer.last
 {
 	
 	margin-right:0px;
+}
+.intro_reason_text_outer
+{
+	width: 405px; 
+	height: 100px; 
+	margin: auto;
+	font-size:1.2em;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border:1px solid #005777;
+	padding:20px 130px 20px 130px;
+	text-align:center;
+}
+.intro_reason_text
+{
+	display:none;
 }
