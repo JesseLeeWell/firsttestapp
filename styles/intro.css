@@ -86,7 +86,7 @@ body
 
 .intro_reasons_buttons
 {
-	width:130px; height:130; 
+	width:140px; height:140; 
 	vertical-align:middle; 
 	display:inline-block;
 	background-color:#f1f1f1;
@@ -103,11 +103,11 @@ body
 }
 .intro_reasons_buttons_outer
 {
-	width:132px; 
+	width:142px; 
 	vertical-align:middle; 
 	display:inline-block;
 	
-	margin-right:20px;
+	margin-right:25px;
 }
 .intro_reasons_buttons_outer.last
 {
