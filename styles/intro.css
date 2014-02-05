@@ -83,3 +83,34 @@ body
 	
     width: 100%
 }
+
+.intro_reasons_buttons
+{
+	width:120px; height:120; 
+	vertical-align:middle; 
+	display:inline-block;
+	background-color:#f1f1f1;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border:1px solid #005777;
+	
+}
+
+.intro_reasons_buttons.active
+{
+	background-color:#00adee;
+	border:1px solid #a8a8a8;
+}
+.intro_reasons_buttons_outer
+{
+	width:122px; 
+	vertical-align:middle; 
+	display:inline-block;
+	
+	margin-right:15px;
+}
+.intro_reasons_buttons_outer.last
+{
+	
+	margin-right:0px;
+}
