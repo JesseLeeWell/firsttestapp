@@ -661,7 +661,13 @@ function showSecureKioskPage()
 		$('#secureconfirmpin').attr("placeholder","Confirm Pin - Required");
 	
 	}
-	 
+	//set
+	
+	$('#email').val(storeageGet('email'));
+	$('#name').val(storeageGet('name'));	
+	$('#phonenumber').val(storeageGet('phonenumber'));
+	$('#represents').val(storeageGet('represents'));
+	
 	//$('#secureconfirmpin').addClass('warning');
 	//$.mobile.changePage('#securekioskpage','slidefade');
 	//window.location = "securekiosk.html";
@@ -1023,12 +1029,12 @@ function getPagePaymentInformation()
 function ajaxCallKioskSetup()
 {
 
-	alert("here");
+	
 	var pageid = getPageID();
-	alert(pageid);
+	
 	if((!pageid || /^\s*$/.test(pageid)))
 	{
-		alert('in if');
+		
 		pageid = '';
 	}
 	var urlstring = "&name="+encodeURIComponent(storageGet('name'))+"&email="+encodeURIComponent(storageGet('email'))+"&phonenumber="+encodeURIComponent(storageGet('phonenumber'))+"&represents="+storageGet('represents')+"&kiosktype="+_kiosklicense+"&pageid="+pageid+"&kioskplatform="+encodeURIComponent(window.device.model)+"&kioskversion="+encodeURIComponent(_kioskversion);
@@ -1127,7 +1133,7 @@ function secureKiosk()
 		storageSet('represents', represents);
 		
 		ajaxCallKioskSetup();		
-		return true;
+		
 		//make sure we send them on the correct path.
 		//if they have already set their search and this is an edit, then just send them to the edit screen
 		if(isSearchSet())
