@@ -62,11 +62,7 @@ $( document ).ready(function() {
 });
 
 function onDeviceReady() { 
-
-	navigator.notification.alert('Mesage',
-                               null,
-                               'Title',  
-                               'OK');
+	
 	setapplesafe();
 	
 	setupbyscreensize();
