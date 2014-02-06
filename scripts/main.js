@@ -663,10 +663,10 @@ function showSecureKioskPage()
 	}
 	//set
 	
-	$('#email').val(storeageGet('email'));
-	$('#name').val(storeageGet('name'));	
-	$('#phonenumber').val(storeageGet('phonenumber'));
-	$('#represents').val(storeageGet('represents'));
+	$('#email').val(storageGet('email'));
+	$('#name').val(storageGet('name'));	
+	$('#phonenumber').val(storageGet('phonenumber'));
+	$('#represents').val(storageGet('represents'));
 	
 	//$('#secureconfirmpin').addClass('warning');
 	//$.mobile.changePage('#securekioskpage','slidefade');
