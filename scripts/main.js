@@ -3,9 +3,9 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
 //environment
-var environment = 'dev';
+//var environment = 'dev';
 //var environment = 'qa';
-//var environment = 'prod';
+var environment = 'prod';
 //var environment = 'local';
  // Global InAppBrowser reference
 if(environment == 'dev')
