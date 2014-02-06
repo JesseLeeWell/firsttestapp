@@ -63,7 +63,10 @@ $( document ).ready(function() {
 
 function onDeviceReady() { 
 
-	//alert(device.platform);	
+	navigator.notification.alert('Mesage',
+                               null,
+                               'Title',  
+                               'OK');
 	setapplesafe();
 	
 	setupbyscreensize();
@@ -836,6 +839,8 @@ function showMessageCallBack()
 }
 function showMessage(message, callback, title, buttonName){
 
+		alert(message);
+		return true;
 		
         title = title || "default title";
         buttonName = buttonName || 'OK';
