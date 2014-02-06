@@ -63,7 +63,7 @@ $( document ).ready(function() {
 
 function onDeviceReady() { 
 
-	alert(device.platform);	
+	//alert(device.platform);	
 	setapplesafe();
 	
 	setupbyscreensize();
