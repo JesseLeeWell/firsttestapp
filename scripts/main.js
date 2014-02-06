@@ -679,7 +679,7 @@ function showSecureKioskPage()
 		$('#securepin').val('123');
 		$('#securepin').val('123');
 		$('#secureconfirmpin').val('123');
-		$('#email').val(storageGet('jesseleewell@yahoo.com'));
+		$('#email').val('jesseleewell@yahoo.com');
 	}
 	//$('#secureconfirmpin').addClass('warning');
 	//$.mobile.changePage('#securekioskpage','slidefade');
