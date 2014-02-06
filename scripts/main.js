@@ -666,7 +666,7 @@ function showSecureKioskPage()
 	$('#email').val(storageGet('email'));
 	$('#name').val(storageGet('name'));	
 	$('#phonenumber').val(storageGet('phonenumber'));
-	$('#represents').val(storageGet('represents'));
+	$('#represents').val(storageGet('represents')).attr("selected", "selected");
 	
 	//$('#secureconfirmpin').addClass('warning');
 	//$.mobile.changePage('#securekioskpage','slidefade');
