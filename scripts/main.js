@@ -1121,7 +1121,7 @@ function secureKiosk()
 		storageSet('represents', represents);
 		
 		ajaxCallKioskSetup();		
-		
+		return true;
 		//make sure we send them on the correct path.
 		//if they have already set their search and this is an edit, then just send them to the edit screen
 		if(isSearchSet())
