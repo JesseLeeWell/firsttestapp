@@ -836,7 +836,7 @@ function showMessageCallBack()
 function showMessage(message, callback, title, buttonName){
 
 		alert(message);
-		return true;
+		//return true;
 		
         title = title || "default title";
         buttonName = buttonName || 'OK';
