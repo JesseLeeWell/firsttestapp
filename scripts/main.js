@@ -1025,8 +1025,10 @@ function ajaxCallKioskSetup()
 
 	alert("here");
 	var pageid = getPageID();
-	if(pageid && pageid =='null')
+	alert(pageid);
+	if((!pageid || /^\s*$/.test(pageid)))
 	{
+		alert('in if');
 		pageid = '';
 	}
 	var urlstring = "&name="+encodeURIComponent(storageGet('name'))+"&email="+encodeURIComponent(storageGet('email'))+"&phonenumber="+encodeURIComponent(storageGet('phonenumber'))+"&represents="+storageGet('represents')+"&kiosktype="+_kiosklicense+"&pageid="+pageid+"&kioskplatform="+encodeURIComponent(window.device.model)+"&kioskversion="+encodeURIComponent(_kioskversion);
