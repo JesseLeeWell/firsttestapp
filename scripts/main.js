@@ -55,7 +55,6 @@ var _kiosklicense = 'store';
 //var _kiosklicense = 'enterprize';
 
 
-
 // Cordova is ready
 //
 $( document ).ready(function() {
@@ -64,7 +63,7 @@ $( document ).ready(function() {
 
 function onDeviceReady() { 
 
-	
+	alert(device.platform);	
 	setapplesafe();
 	
 	setupbyscreensize();
@@ -836,24 +835,7 @@ function showMessageCallBack()
 	return true;
 }
 function showMessage(message, callback, title, buttonName){
-		$('#page').dialog();
-		
-		$(document.createElement('div'))
-        .attr({title: 'Alert', 'class': 'alert'})
-        .html(message)
-        .dialog({
-            buttons: {OK: function(){$(this).dialog('close');}},
-            close: function(){$(this).remove();},
-            draggable: true,
-            modal: true,
-            resizable: false,
-            width: 'auto'
-        });
-		
-		//right now this issn't working, so we are just going to alert
-		//alert(message);
-		return true;
-		
+
 		
         title = title || "default title";
         buttonName = buttonName || 'OK';

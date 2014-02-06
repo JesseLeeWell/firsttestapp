@@ -6,7 +6,7 @@
 		
 			<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 			
-		<link rel="stylesheet" href="themes/animate.css" />
+	
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
 		<link rel="stylesheet" href="themes/ctg.min.css" />
 		<link rel="stylesheet" href="styles/style.css" />
@@ -16,9 +16,7 @@
 		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 		
 		<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
-		<script src="scripts/jquery.fittext.js"></script>
-		<script src="scripts/jquery.lettering.js"></script>
-		<script src="scripts/jquery.textillate.js"></script>
+		
 		<script type="text/javascript" charset="utf-8" src="scripts/intro.js"></script>
 		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 		
@@ -29,84 +27,14 @@
 
 </style>
 	<body id='pagebody'>
-		<div class="content">
-			<div data-role="page" id='intro33'>
-				<div data-role="header" style='text-align:center;' >
-					<div class='spacer'></div>
-					<img  src='images/ContinueToGive.png' style='width:60%; max-width:450px; min-width:130px;'/>
-				</div>
-				<div data-role="content">
-					<div class='spacer'></div><div class='spacer'></div>
-					<div class='introheading'>Why Continue To Give?</div>
-					<div class='spacer'></div><div class='spacer'></div><div class='spacer'></div>
-					<div style="width:100%;text-align:center;">
-						<div class='intro_reasons_buttons_outer'>
-							<div class='intro_reasons_buttons active' onclick='showReason("intro_reason_no_monthly", this);' >
-								<img  style='margin:auto;' src='images/calendar-white.png' />
-							</div>
-							<p>
-								No monthly fees
-							</p>
-						</div>
-						<div class='intro_reasons_buttons_outer'>
-							<div class='intro_reasons_buttons' onclick='showReason("intro_reason_no_setup", this);'>
-								<img  style='margin:auto;' src='images/money-white.png' />
-							</div>
-							<p>
-								No setup costs
-							</p>
-						</div>
-						<div class='intro_reasons_buttons_outer'>
-							<div class='intro_reasons_buttons'  onclick='showReason("intro_reason_free_kiosk", this);'>
-								<img  style='margin:auto;' src='images/kiosk-sm-white.png' />
-							</div>
-							<p>
-								Free Kiosk
-							</p>
-						</div>
-						<div class='intro_reasons_buttons_outer last' >
-							<div class='intro_reasons_buttons' onclick='showReason("intro_reason_low_rates", this);'>
-								<img  style='margin:auto;' src='images/checkbook-white.png' />
-							</div>
-							<p>
-								Low transaction rates
-							</p>
-						</div>
-					</div>
-					<div class='intro_reason_text_outer'>
-						<div id='intro_reason_text_holder'>
-							Finally, a digital giving platform with no monthly fees, leaving more money	for your organization to spend on your community
-						</div>
-						<div id='intro_reason_no_monthly' class='intro_reason_text'>
-							Finally, a digital giving platform with no monthly fees, leaving more money	for your organization to spend on your community
-						</div>
-						<div id='intro_reason_no_setup' class='intro_reason_text'>
-							Getting started wit us is free! No application fees!
-						</div>
-						<div id='intro_reason_free_kiosk' class='intro_reason_text'>
-							Sign up, and we will even give you a free kiosk (That is a $200 value)!
-						</div>
-						<div id='intro_reason_low_rates' class='intro_reason_text'>
-							We work with our processor to bring you the best rates around (As low as 0.5% + $0.30 per transaction)
-						</div>
-						
-					</div>
-				</div>
-				<div data-role="footer" style='text-align:center;' data-position="fixed">
-					<div>
-						1-2-<span style='color:red; font-size:1.2em;'>3</span>-4
-					</div>
-					<span class='mailflowbutton' onclick ="javascript:closeIntro();"  data-transition="slidefade" data-inline="true">Go To Setup &#10140;</span>
-					
-				</div>
-			</div>
+		<div class="content">			
 			<div data-role="page" id='intro1' >
 				<div data-role="header" style='text-align:center;' >
 					<div class='spacer'></div>
 					<img  src='images/ContinueToGive.png' style='width:60%; max-width:450px; min-width:130px;'/>
 				</div>
 				<div data-role="content">
-					<div id='smallScreenIntroPage1' style='display:none;'>
+					<div class='smallScreenIntro' style='display:none;'>
 						
 							<div class='introheading'>Wouldn't it be Great if a "Do Good Company" made it easy for people to support your organization with:</div>
 							<div id='scrolltofadein1' class='fadein1' style='display:none; width:100%; padding:5px;text-align:center'>
@@ -133,7 +61,7 @@
 							<div class='spacer'></div><div class='spacer'></div><div class='spacer'></div><div class='spacer'></div><div class='spacer'></div>
 									
 					</div>
-					<div id='largeScreenIntroPage1' style='display:none;'>
+					<div class='largeScreenIntro' style='display:none;'>
 						
 							<div class='spacer'></div>
 							<div class='introheading'>Wouldn't it be Great if a "Do Good Company" made it easy for people to support your organization with:</div>
@@ -173,14 +101,155 @@
 				</div>
 				<div data-role="footer" style='text-align:center;' data-position="fixed">
 					<div>
-						<span style='color:red; font-size:1.2em;'>1</span> -2-3-4
+						<span style='color:red; font-size:1.2em;'>1</span> -2-3
 					</div>
 					<span class='mailflowbutton' onclick ="javascript:closeIntro();"  data-transition="slidefade" data-inline="true">Go To Setup &#10140;</span>
 					
 					
 				</div>
 			</div>
-			<div data-role="page" id='intro2' >
+			<div data-role="page" id='intro2'>
+				<div data-role="header" style='text-align:center;' >
+					<div class='spacer'></div>
+					<img  src='images/ContinueToGive.png' style='width:60%; max-width:450px; min-width:130px;'/>
+				</div>
+				<div data-role="content">
+					<div class='largeScreenIntro' style='display:none;'>
+						<div class='spacer'></div><div class='spacer'></div><div class='spacer'></div><div class='spacer'></div>
+						<div class='introheading'>Why Continue To Give?</div>
+						<div class='spacer'></div><div class='spacer'></div><div class='spacer'></div><div class='spacer'></div><div class='spacer'></div>
+						<div style="width:100%;text-align:center;">
+							<div class='intro_reasons_buttons_outer'>
+								<div class='intro_reasons_buttons active' onclick='showReason("intro_reason_no_monthly", this);' >
+									<img  style='margin:auto;' src='images/calendar-white.png' />
+								</div>
+								<p>
+									No monthly fees
+								</p>
+							</div>
+							<div class='intro_reasons_buttons_outer'>
+								<div class='intro_reasons_buttons' onclick='showReason("intro_reason_no_setup", this);'>
+									<img  style='margin:auto;' src='images/money-white.png' />
+								</div>
+								<p>
+									No setup costs
+								</p>
+							</div>
+							<div class='intro_reasons_buttons_outer'>
+								<div class='intro_reasons_buttons'  onclick='showReason("intro_reason_free_kiosk", this);'>
+									<img  style='margin:auto;' src='images/kiosk-sm-white.png' />
+								</div>
+								<p>
+									Free Kiosk
+								</p>
+							</div>
+							<div class='intro_reasons_buttons_outer last' >
+								<div class='intro_reasons_buttons' onclick='showReason("intro_reason_low_rates", this);'>
+									<img  style='margin:auto;' src='images/checkbook-white.png' />
+								</div>
+								<p>
+									Low transaction rates
+								</p>
+							</div>
+						</div>
+						<div class='intro_reason_text_outer'>
+							<div id='intro_reason_text_holder'>
+								Finally, a digital giving platform with no monthly fees, leaving more money	for your organization to spend on your community
+							</div>
+							<div id='intro_reason_no_monthly' class='intro_reason_text'>
+								Finally, a digital giving platform with no monthly fees, leaving more money	for your organization to spend on your community
+							</div>
+							<div id='intro_reason_no_setup' class='intro_reason_text'>
+								Getting started wit us is free! No application fees!
+							</div>
+							<div id='intro_reason_free_kiosk' class='intro_reason_text'>
+								Sign up, and we will even give you a free kiosk (That is a $200 value)!
+							</div>
+							<div id='intro_reason_low_rates' class='intro_reason_text'>
+								We work with our processor to bring you the best rates around (As low as 0.5% + $0.30 per transaction)
+							</div>
+							
+						</div>
+					</div>
+					<div class='smallScreenIntro' style='display:none;'>
+						<div class='spacer'></div><div class='spacer'></div><div class='spacer'></div><div class='spacer'></div>
+						<div class='introheading'>Why Continue To Give?</div>
+						<div class='spacer'></div><div class='spacer'></div><div class='spacer'></div><div class='spacer'></div><div class='spacer'></div>
+						<div style="width:100%;text-align:center;">
+							<div class='intro_reasons_buttons_outer'>
+								<div class='intro_reasons_buttons active' onclick='showReason("intro_reason_no_monthly", this);' >
+									<img  style='margin:auto;' src='images/calendar-white.png' />
+								</div>
+								<p>
+									No monthly fees
+								</p>
+								
+							</div>
+							<div class='intro_reason_text_outer'>
+								<div id='intro_reason_text_holder'>
+									Finally, a digital giving platform with no monthly fees, leaving more money	for your organization to spend on your community
+								</div>
+							</div>
+							<div class='intro_reasons_buttons_outer'>
+								<div class='intro_reasons_buttons' onclick='showReason("intro_reason_no_setup", this);'>
+									<img  style='margin:auto;' src='images/money-white.png' />
+								</div>
+								<p>
+									No setup costs
+								</p>
+								
+							</div>
+							<div class='intro_reason_text_outer'>
+								<div id='intro_reason_text_holder'>
+									Getting started wit us is free! No application fees!
+								</div>								
+								
+							</div>
+							<div class='intro_reasons_buttons_outer'>
+								<div class='intro_reasons_buttons'  onclick='showReason("intro_reason_free_kiosk", this);'>
+									<img  style='margin:auto;' src='images/kiosk-sm-white.png' />
+								</div>
+								<p>
+									Free Kiosk
+								</p>
+							</div>
+							<div class='intro_reason_text_outer'>
+								<div id='intro_reason_text_holder'>
+									Sign up, and we will even give you a free kiosk (That is a $200 value)!
+								</div>
+								
+							</div>
+							<div class='intro_reasons_buttons_outer last' >
+								<div class='intro_reasons_buttons' onclick='showReason("intro_reason_low_rates", this);'>
+									<img  style='margin:auto;' src='images/checkbook-white.png' />
+								</div>
+								<p>
+									Low transaction rates
+								</p>
+							</div>
+							<div class='intro_reason_text_outer'>
+								<div id='intro_reason_text_holder'>
+									We work with our processor to bring you the best rates around (As low as 0.5% + $0.30 per transaction)
+								</div>
+								
+							</div>
+						</div>				
+					</div>					
+					<div id='swipeformore' style='text-align: center; '>
+						<p>
+							SWIPE FOR MORE &#10140;
+						</p>
+					</div>
+				</div>
+				<div data-role="footer" style='text-align:center;' data-position="fixed">
+					<div>
+						1-<span style='color:red; font-size:1.2em;'>2</span>-3
+					</div>
+					<span class='mailflowbutton' onclick ="javascript:closeIntro();"  data-transition="slidefade" data-inline="true">Go To Setup &#10140;</span>
+					
+				</div>
+			</div>
+			<div data-role="page" id='intro3' >
 				<div data-role="header" style='text-align:center;' >
 					<div class='spacer'></div>
 					<img  src='images/ContinueToGive.png' style='width:60%; max-width:450px; min-width:130px;'/>
@@ -262,65 +331,16 @@
 						"I know God loves a cheerful giver. I believe He is a God of order so He likes consistent giving as well. That is why I like and use Continue To Give. When I get really busy during the summer months I know the charities that are dear to my heart are receiving a monthly donation. It is a great giving tool to spread the Gospel."
 						</span>
 					</div>
-					<img class='mobile_hide' src="./images/testamony_bottom.jpg">
-					<div id='swipeformore' style='text-align: center; '>
-						<p>
-							SWIPE FOR MORE &#10140;
-						</p>
-					</div>
+					<img class='mobile_hide' src="./images/testamony_bottom.jpg">					
 				</div>
 				<div data-role="footer" style='text-align:center;' data-position="fixed">
 					<div>
-						1-<span style='color:red; font-size:1.2em;'>2</span>-3-4
+						1-2-<span style='color:red; font-size:1.2em;'>3</span>						
 					</div>
 					<span class='mailflowbutton' onclick ="javascript:closeIntro();"  data-transition="slidefade" data-inline="true">Go To Setup &#10140;</span>
 					
 				</div>
-			</div>
-			<div data-role="page" id='intro3'>
-				<div data-role="header" style='text-align:center;' >
-					<div class='spacer'></div>
-					<img  src='images/ContinueToGive.png' style='width:60%; max-width:450px; min-width:130px;'/>
-				</div>
-				<div data-role="content">
-					<div class='introheading'>Why Continue To Give?</div>
-					
-					<div >
-						<p>
-							adfadsf
-						</p>
-						
-					</div>
-				</div>
-				<div data-role="footer" style='text-align:center;' data-position="fixed">
-					<div>
-						1-2-<span style='color:red; font-size:1.2em;'>3</span>-4
-					</div>
-					<span class='mailflowbutton' onclick ="javascript:closeIntro();"  data-transition="slidefade" data-inline="true">Go To Setup &#10140;</span>
-					
-				</div>
-			</div>
-			<div data-role="page" id='intro4'>
-				<div data-role="header" >
-					<h1>Intro</h1>
-				</div>
-				<div data-role="content">
-					<h1>intro4</h1>
-					<div >
-						<p>
-							adfadsf
-						</p>
-						
-					</div>
-				</div>
-				<div data-role="footer" style='text-align:center;' data-position="fixed">
-					<div>
-						1-2-3-<span style='color:red; font-size:1.2em;'>4</span>
-					</div>
-					<span class='mailflowbutton' onclick ="javascript:closeIntro();"  data-transition="slidefade" data-inline="true">Go To Setup &#10140;</span>
-					
-				</div>
-			</div>
+			</div>			
 		</div>
 	</body>
 	

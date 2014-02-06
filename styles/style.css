@@ -230,4 +230,9 @@ body
 {
 	padding:8px;
 }
+.ui-dialog
+{
+	background-color:white;
+	background:url("../images/ui-bg_flat_75_ffffff_40x100.png") repeat-x scroll 50% 50% #FFFFFF !important;
+}
 /* end jqury override */

@@ -47,10 +47,16 @@ function onDeviceReady() {
 
 }
 
-function fadeInFunction()
-{
-	alert("Hi");
-}
+//bind to our indexpage so that we can set it up every tiem we go there
+$(document).bind( "pagechange", function( e, data ) { 
+
+	if ( data.options.target == "#intro2" ) {
+
+		alert('in page 2');
+		//setupSettingsPage();
+	}
+	
+});
 //$('.tlt').textillate({ in: { effect: 'rollIn' } });
 
 $(document).on('pageinit', function(event){
@@ -125,15 +131,15 @@ function setupbyscreensize()
 	{
 		$('.mobile_hide').css('display','none');
 		 $('#pagebody').addClass('smallScreen');	
-		 $('#largeScreenIntroPage1').hide();
-		 $('#smallScreenIntroPage1').show();
+		 $('.largeScreenIntro').hide();
+		 $('.smallScreenIntro').show();
 	}
 	else
 	{
 		$('.mobile_hide').css('display','block');
 		$('#pagebody').removeClass('smallScreen');
-		$('#smallScreenIntroPage1').hide();
-		$('#largeScreenIntroPage1').show();
+		$('.smallScreenIntro').hide();
+		$('.largeScreenIntro').show();
 		
 		//$('#donation_prompt_div').addClass('inline_block');
 		
