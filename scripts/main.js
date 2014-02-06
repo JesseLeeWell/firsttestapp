@@ -399,6 +399,11 @@ function storageSet(key, value)
 }
 function storageGet(key)
 {
+	if((!window.localStorage.getItem(key) || /^\s*$/.test(window.localStorage.getItem(key))))
+	{
+		
+		return null;
+	}
 	return window.localStorage.getItem(key);
 }
 function storePageID(value)
@@ -671,14 +676,16 @@ function showSecureKioskPage()
 	$('#email').val(storageGet('email'));
 	$('#name').val(storageGet('name'));	
 	$('#phonenumber').val(storageGet('phonenumber'));
-	$('#represents').val(storageGet('represents')).attr("selected", "selected").change();
-	
+	if(storageGet('represents'))
+	{
+		$('#represents').val(storageGet('represents')).attr("selected", "selected").change();
+	}
 	//dev stuff to make preset this stuff
 	if(environment != 'prod')
 	{
-		$('#securepin').val('1234');
-		$('#securepin').val('1234');
-		$('#secureconfirmpin').val('1234');
+		$('#securepin').val('123');
+		$('#securepin').val('123');
+		$('#secureconfirmpin').val('123');
 		$('#email').val('jesseleewell@yahoo.com');
 	}
 	//$('#secureconfirmpin').addClass('warning');
@@ -1055,8 +1062,6 @@ function ajaxCallKioskSetup()
 		//"&kioskplatform="+window.device.model+"&kioskversion="+_kioskversion
 	var urltocall = _baseURL + _kiosksetupURL + urlstring;
 	
-	alert(urltocall);
-	
 	// Assign handlers immediately after making the request,
 	// and remember the jqxhr object for this request
 	var jqxhr = $.post( urltocall);
@@ -1071,8 +1076,6 @@ function setupbyscreensize()
 	 $('#pagebody').addClass('smallScreen');	
 	 $('.largeScreen-setupSteps').hide();
 	 $('.smallScreen-setupSteps').show();
-	 
-	 
 	
 	}
 	else
