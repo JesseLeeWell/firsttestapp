@@ -683,8 +683,9 @@ function showSecureKioskPage()
 	//dev stuff to make preset this stuff
 	if(environment != 'prod')
 	{
+		$('#currentpin').val('123');
 		$('#securepin').val('123');
-		$('#securepin').val('123');
+		$('#secureconfirmpin').val('123');
 		$('#secureconfirmpin').val('123');
 		$('#email').val('jesseleewell@yahoo.com');
 	}
