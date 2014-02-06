@@ -1023,12 +1023,14 @@ function getPagePaymentInformation()
 function ajaxCallKioskSetup()
 {
 
+	alert("here");
+	
 	var urlstring = "&name="+encodeURIComponent(storageGet('name'))+"&email="+encodeURIComponent(storageGet('email'))+"&phonenumber="+encodeURIComponent(storageGet('phonenumber'))+"&represents="+storageGet('represents')+"&kiosktype="+_kiosklicense+"&pageid="+getPageID()+"&kioskplatform="+encodeURIComponent(window.device.model)+"&kioskversion="+encodeURIComponent(_kioskversion);
 	//var urlstring = "&name="+storageGet('name')+"&email="+storageGet('email')+"&phonenumber="+storageGet('phonenumber')+"&represents="+storageGet('represents')+"&kiosktype="+_kiosklicense+"&pageid="+getPageID();
 		//"&kioskplatform="+window.device.model+"&kioskversion="+_kioskversion
 	var urltocall = _baseURL + _kiosksetupURL + urlstring;
 	
-	
+	alert(urltocall);
 	
 	// Assign handlers immediately after making the request,
 	// and remember the jqxhr object for this request
