@@ -625,6 +625,11 @@ function showUnlockKioskPage()
 		role: "dialog",
 		
     });
+	if(environment != 'prod')
+	{
+		$('#unlockpin').val('123');
+	}
+	
 	
 }
 function showSecureKioskPage()
@@ -668,6 +673,14 @@ function showSecureKioskPage()
 	$('#phonenumber').val(storageGet('phonenumber'));
 	$('#represents').val(storageGet('represents')).attr("selected", "selected").change();
 	
+	//dev stuff to make preset this stuff
+	if(environment != 'prod')
+	{
+		$('#securepin').val('123');
+		$('#securepin').val('123');
+		$('#secureconfirmpin').val('123');
+		$('#email').val(storageGet('jesseleewell@yahoo.com'));
+	}
 	//$('#secureconfirmpin').addClass('warning');
 	//$.mobile.changePage('#securekioskpage','slidefade');
 	//window.location = "securekiosk.html";
