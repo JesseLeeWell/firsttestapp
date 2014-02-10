@@ -758,7 +758,7 @@ function loadMoreInfo(pagetype)
 
 function loadContactRequest()
 {
-	var url = _baseURL + _contactRequestURL;
+	var url = _kioskURL + _contactRequestURL;
 	appwindow = window.open(url, '_blank', 'location=no');
 	
 }
@@ -1059,8 +1059,7 @@ function ajaxCallKioskSetup()
 		pageid = '';
 	}
 	var urlstring = "&name="+encodeURIComponent(storageGet('name'))+"&email="+encodeURIComponent(storageGet('email'))+"&phonenumber="+encodeURIComponent(storageGet('phonenumber'))+"&represents="+storageGet('represents')+"&kiosktype="+_kiosklicense+"&pageid="+pageid+"&kioskplatform="+encodeURIComponent(window.device.model)+"&kioskversion="+encodeURIComponent(_kioskversion);
-	//var urlstring = "&name="+storageGet('name')+"&email="+storageGet('email')+"&phonenumber="+storageGet('phonenumber')+"&represents="+storageGet('represents')+"&kiosktype="+_kiosklicense+"&pageid="+getPageID();
-		//"&kioskplatform="+window.device.model+"&kioskversion="+_kioskversion
+	
 	var urltocall = _baseURL + _kiosksetupURL + urlstring;
 	
 	// Assign handlers immediately after making the request,
@@ -1071,7 +1070,7 @@ function setupbyscreensize()
 {
 
 	width = $(document).width(); // returns width of HTML document
-	//alert(width);
+	
 	if(width < 720)
 	{
 	 $('#pagebody').addClass('smallScreen');	
@@ -1085,7 +1084,7 @@ function setupbyscreensize()
 		$('.smallScreen-setupSteps').hide();
 		$('.largeScreen-setupSteps').show();
 		
-		//$('#donation_prompt_div').addClass('inline_block');
+		
 		
 	}
 }
